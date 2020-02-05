@@ -1,3 +1,6 @@
 [submodule "oxrign"]
 	path = oxrign
 	url = https://github.com/chxin/oxrign.git
+[submodule "org-mode-blog"]
+	path = org-mode-blog
+	url = https://github.com/chxin/org-mode-blog.git
