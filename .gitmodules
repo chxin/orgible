@@ -1,0 +1,3 @@
+[submodule "oxrign"]
+	path = oxrign
+	url = https://github.com/chxin/oxrign.git
