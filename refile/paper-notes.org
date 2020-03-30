@@ -1,0 +1,189 @@
+#+TITLE: Papers Notes from Skim Annotations
+
+* FENSAP流场控制方程 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-29 Sun 10:27]
+:CITE: cite:2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤
+:SKIM_NOTE: [[Skim:///////Users/xin/Documents/SLD/docs/references/CN/2019/2019-%E8%80%83%E8%99%91%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%95%88%E5%BA%94%E7%9A%84SLD%E7%BB%93%E5%86%B0%E7%9B%B8%E4%BC%BC%E5%8F%82%E6%95%B0%E7%A0%94%E7%A9%B6-%E6%9D%8E%E7%BB%B4%E6%B5%A9-%E6%98%93%E8%B4%A4.pdf::16;;1]]
+:SKIM_PAGE: 16
+:ID:       CA71C142-9EA2-49D3-9A08-4D982EA5E4CA
+:END:
+
+ref[45]: [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴飞溅特性数值分析_王超 (1).pdf][pdf file: 过冷大水滴飞溅特性数值分析_王超 (1).pdf]]
+
+
+* 撞击飞溅 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-29 Sun 09:54]
+:CITE: cite:2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤
+:SKIM_NOTE: [[Skim:///////Users/xin/Documents/SLD/docs/references/CN/2019/2019-%E8%80%83%E8%99%91%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%95%88%E5%BA%94%E7%9A%84SLD%E7%BB%93%E5%86%B0%E7%9B%B8%E4%BC%BC%E5%8F%82%E6%95%B0%E7%A0%94%E7%A9%B6-%E6%9D%8E%E7%BB%B4%E6%B5%A9-%E6%98%93%E8%B4%A4.pdf::16;;0][2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤.pdf, p. 16]]
+:SKIM_PAGE: 16
+:ID:       24C5F314-0376-46E7-8536-537B1CFBBD02
+:END:
+
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/qKyF86.png][撞击飞溅模型的发展]]
+
+* 破碎 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-29 Sun 09:50]
+:CITE: cite:2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2019/2019-%E8%80%83%E8%99%91%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%95%88%E5%BA%94%E7%9A%84SLD%E7%BB%93%E5%86%B0%E7%9B%B8%E4%BC%BC%E5%8F%82%E6%95%B0%E7%A0%94%E7%A9%B6-%E6%9D%8E%E7%BB%B4%E6%B5%A9-%E6%98%93%E8%B4%A4.pdf::14;;0][2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤.pdf, p. 14]]
+:SKIM_PAGE: 14
+:ID:       664B3F30-CA32-4E22-B8D9-F8B6B1773CC1
+:END:
+
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/OT8x05.png][破碎模型的发展]]
+
+* 机翼安装 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-15 Sun 11:16]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::4;;2][机翼溢流区齐平保形安装结冰探测器直接探 测SLD结冰,但将增加探测器的布装数量和安装成 本,由此引起机翼结构强度降低以及系统复杂性增加 明显]]
+:SKIM_PAGE: 4
+:ID:       DA8ABF8F-0C8B-4DB8-A1C7-CAFC4B7A6005
+:END:
+
+传统结冰探测传感器即可，偏离了我们做传感器的初衷
+
+* SLD目视法 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-15 Sun 10:01]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::3;;1][如果证实可视参考物上的结冰能包 含附录 O 条件,则可作为结冰探测手段进行审定]]
+:SKIM_PAGE: 3
+:ID:       832ADF2A-4AA3-4AC9-AA76-8215EFBC42E7
+:END:
+
+可视参考物仍然是一个传感器
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/uhIJmv.png]]
+
+* LWC和TWC直接探测 :skim_annotation:read:literature:
+  :PROPERTIES:
+  :Created:  [2020-03-14 Sat 18:40]
+  :CITE:     cite:过冷大水滴结冰探测技术研究进展_张洪
+  :SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::5;;5][文 献 {40-41}中 论 述 了 利 用 热 线 技 术 来 检 测 云 层中的水含量的方法。文献{40}中的是一个恒温热 线式探测器,该探测器由分别检测液态水含量 LWC 和 总 水 含 量 TWC(Total WaterContent,包 括 冰 晶 和 液态水)的2个传感器组成。每个传感器都有一个收 集热线探头和一个参考热线探头,并维持相同的常数 温度。收集探头暴露在流动空气中,而参考探头则避 开云层颗粒的撞击。根据收集探头结冰造成的热损 失量,可间接计算空气中的LWC和TWC。文献 {41}基 于 类 似 原 理 来 检 测 冰 水 含 量 IWC(Ice Water Content)。 文 献 {41}讲 述 了 利 用 光 纤 阵 列 探 测 颗 粒 粒径技术来诊断颗粒大小的方法。该文献介绍的是 一个二维立体探测器,该探测器利用光电二极管线性 阵列可以产生颗粒成像图。2个正交的二极管光束 在探测器的中间形成矩形的重叠区域,在重叠区域的 颗粒会有2个独立的成像,不在该区域的颗粒只有1 个成像。根据形成的衍射成像图可以间接导出颗粒 的大小]]
+:SKIM_PAGE: 5
+:ID:       9A3069DE-BDD5-4D64-9E9E-809F27BD8AD3
+:END:
+
+进一步调研该技术
+
+* SLD电磁波探测 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 18:38]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::5;;4][微波或激 光雷达,探测飞机前端云层的过冷水滴或冰晶含量, 实 现 对 飞 机 结 冰 环 境 的 预 警 探 测 {43}。 文 献 {44}采 用 环形偏振激光雷达实现了对云层结冰条件的远程探 测,并称可判别云层中 SLD 结冰条件]]
+:SKIM_PAGE: 5
+:ID:       8DF174FD-084D-4343-A6A0-4E4FA64E3E3C
+:END:
+
+不在我们的研究范围内
+
+
+* SLD气动特性探测 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 18:32]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::5;;3][机翼结冰会造成飞机升力系数下降,阻力系数上 升等气动性能变化,可将这种变化表征出来以指示结 冰 状 态 。 在 文 献 {3 5 } 中 讲 述 超 临 界 翼 型 在 受 到 S L D 溢流结冰时,翼型表面压差减小,最大升力系数和失 速迎角将显著增加。此外,不同冰型对飞机气动性能 的 影 响 也 是 不 同 的 {36-37 } 。 气 动 性 能 探 测 方 法 利 用 气 动性能监测器来监测机翼的气动性能,进而区分常规 结冰和 SLD 结冰{27,38}。文献{27}介绍了一种气动性 能监测器,利用压力传感器和信号处理器来量化机翼 表面流场的压力波动。在一个传感器桅杆上安装多 个压力传感器测量机翼的实时压力。压力输出信号 可分成稳态部分和重叠波动部分。稳态部分代表气 流的平均动态压力,重叠的波动部分代表湍流。通过 两部 分 的 无 量 纲 比 率 可 以 得 到 压 力 湍 流 强 度 因 子 {3 8 } 。]]
+:SKIM_PAGE: 5
+:ID:       A1C8E16E-F524-41B6-934F-671A45001BA9
+:END:
+
+传统方法，可用，飞行过程中压力变化太大，准确堪忧
+
+对于我们传感器，可通过该方法判断是否来流偏移
+
+* SLD溢流探测 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 18:29]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::5;;2][溢流特性检测方法使所有粒径的水滴撞击到同 一探头上,用探头上的冻结区域不同来鉴别SLD结 冰。以传统的小体积圆柱体探头为例(直径约为 1/4inch),常 规 结 冰 将 形 成 于 探 头 的 迎 风 面 ,而 SLD 结 冰 则 表 现 出 不 同 程 度 的 溢 流 特 性 (见 图 1)]]
+:SKIM_PAGE: 5
+:ID:       01EE34B3-7F40-462E-8667-48613B6351C6
+:END:
+
+如何制造溢流条件？
+如果溢流已发生，是否已发生大面积结冰，为时已晚？
+
+* 美国专利：气流漩涡 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 18:25]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::5;;1][气流漩涡。惯性小的小水滴不能穿过空气出口2 少,可作为SLD结冰防护系统的有益补充。 的气流漩涡,而越过探头1。当大水滴流向该装置 时,由于水滴惯性大,将穿过气流漩涡撞击到探头上]]
+:SKIM_PAGE: 5
+:ID:       7007BF31-817D-4075-A0B2-C6894DFB3E08
+:END:
+
+此法较理想，可以考虑为我们的设计增加外力因素，抵消掉来流方向变化的影响
+
+
+* 双圆柱SLD探测器 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 18:21]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::4;;1][文 献 {8 } 描 述 了 一 种 双 探 头 型 探 测 器 ( 见 图 4 ) , 探测器由导流装置和2个谐振探头组成。探头1上 的结冰包括所有结冰条件,而探头2则只探测 SLD 结冰。由于气流在导流装置前后形成绕流,在流体粘 性力作用下,小水滴将被带走而不会撞击到探头2, 由于惯性较大大水滴在探头2上形成结冰。根据探 头信号输出的比较可判别是否有SLD结冰发生]]
+:SKIM_PAGE: 4
+:ID:       58D6CBCD-8629-4FD9-BC61-EE3D17448534
+:END:
+
+此图看不清楚原理，进一步参考引用文献
+
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/6txX87.png]]
+
+* 传统谐振式结冰探测器 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 18:14]
+:CITE: cite:过冷大水滴结冰探测技术研究进展_张洪
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E6%8E%A2%E6%B5%8B%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95_%E5%BC%A0%E6%B4%AA.pdf::2;;1][当冰在探头上冻结时,谐振筒刚度和质量均会增 加,由于质量影响是主要的,结冰将导致谐振频率降 低。当谐振频率降低到门限频率时,探测器启动加热 除冰,停止加热后探头冷却并重新结冰。在“结冰-除 冰-冷却”的循环过程中,用循环周期时间指示结冰强 度 信 息]]
+:SKIM_PAGE: 2
+:ID:       2617868D-74AC-4809-83E9-E3F3210EA70D
+:END:
+
+文章中提到，该方法的缺点：SLD条件下，水滴破碎飞溅导致，冻结系数过小，导致探测系统失效
+
+* 1996-2016 适航研究内容 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 17:57]
+:CITE: cite:大型飞机过冷大水滴结冰理论及适航安全研究_张辰
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E7%90%86%E8%AE%BA%E5%8F%8A%E9%80%82%E8%88%AA%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6_%E5%BC%A0%E8%BE%B0.pdf::11;;1]]
+:SKIM_PAGE: 11
+:ID:       8036C878-36EC-41AD-9D57-8A7A50304B4E
+:END:
+
+从2010年，重点是大水滴
+
+* SLD研究方向 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 17:55]
+:CITE: cite:大型飞机过冷大水滴结冰理论及适航安全研究_张辰
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2016/%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E7%90%86%E8%AE%BA%E5%8F%8A%E9%80%82%E8%88%AA%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6_%E5%BC%A0%E8%BE%B0.pdf::13;;1]]
+:SKIM_PAGE: 13
+:ID:       CDC02DBF-19F4-4CE1-BCF6-D7AD1C437EF2
+:END:
+
+基础-》气动-》适航
+
+* 仿真计算过程及攻角粒径的结论 :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 10:54]
+:CITE: cite:10-机翼结冰过程中过冷水滴运动轨迹的数值研究_吴俊杰2019-3
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLd/docs/references/cn/2019/10-%E6%9C%BA%E7%BF%BC%E7%BB%93%E5%86%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%BF%87%E5%86%B7%E6%B0%B4%E6%BB%B4%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9%E7%9A%84%E6%95%B0%E5%80%BC%E7%A0%94%E7%A9%B6_%E5%90%B4%E4%BF%8A%E6%9D%B02019-3.pdf::4;;1][从 图 6 、8 中 可 以 看 到 ， 在 相 同 的 速 度 、 温 度 以 及 水滴直径的情况下，来流攻角的差异导致水滴轨迹 变化很大，同时其也对水滴在翼型表面的撞击位置 影响很大，进而影响了结冰的形状和结冰位置.从图 6和10对比中可以得出，在相同迎角下，水滴直径越大，水滴轨迹越贴近翼面，撞击翼面的范围也越大]]
+:SKIM_PAGE: 4
+:ID:       2FDE8BC5-5A72-4464-9DDB-21408F504D55
+:END:
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/mIT0Fv.png][fig 6]]
+
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/b9kQK2.png][fig 8]]
+
+[[imghttps://gitee.com/chengxinhust/graph-bed/raw/master/WlcpZ3.png][fig 10]]
+
+* 冰风洞激光测粒度                          :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-03-14 Sat 00:21]
+:CITE: cite:13-结冰风洞中SLD模拟方法及其实验验证研究-2019
+:SKIM_NOTE: [[Skim://///Users/xin/Documents/SLD/docs/references/CN/2019/13-%E7%BB%93%E5%86%B0%E9%A3%8E%E6%B4%9E%E4%B8%ADSLD%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81%E7%A0%94%E7%A9%B6-2019.pdf::2;;1][四种 MVD 条件分别为 16.9μm，20.4μm，23.3μm 和 169.2μm，其中，前三个颗粒度由一种小粒径喷 嘴产生，测试数据由相位多普勒干涉仪(PDI)测 得，MVD 为 169.2μm 的数据来自于一种大粒径喷 嘴，由基于光散射法的激光粒度仪测量获得]]
+:SKIM_PAGE: 2
+:ID:       829243CC-8695-4060-95D2-F22664472155
+:END:
+
+激光粒度仪: 基于光反射法
