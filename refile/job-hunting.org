@@ -1,0 +1,95 @@
+#+STARTUP: content
+
+* Job Hunting
+** Job Information
+** Leetcode [[/Users/xin/Documents/Leetcode/makefile][workspace]]
+*** NEXT leetcode daily
+    :PROPERTIES:
+    :LAST_REPEAT: [2020-03-29 Sun 14:15]
+    :ID:       5FB13F87-D183-41D8-A027-006D6073F9B0
+    :END:
+    - State "DONE"       from "NEXT"       [2020-03-29 Sun 14:15]
+    - State "DONE"       from "NEXT"       [2020-03-28 Sat 17:28]
+    - State "DONE"       from "NEXT"       [2020-03-27 Fri 16:34]
+    - State "DONE"       from "NEXT"       [2020-03-24 Tue 13:11]
+    - State "DONE"       from "NEXT"       [2020-03-23 Mon 20:31]
+    - State "done"       from ""           [2020-03-05 Thu 17:00]
+    [2020-03-05 Thu 11:19]
+
+    SCHEDULED: <2020-03-30 Mon 13:30 .+1d/2d>
+    :PROPERTIES:
+    :STYLE: habit
+    :REPEAT_TO_STATE: NEXT
+    :END:
+
+**** DONE 30.串联所有单词的子串
+     CLOSED: [2020-03-13 Fri 18:37]
+
+     [[~/Documents/Leetcode/30.串联所有单词的子串.cpp][solution]]
+
+      :LOGBOOK:
+      CLOCK: [2020-03-05 Thu 16:08]--[2020-03-05 Thu 16:59] =>  0:51
+      CLOCK: [2020-03-05 Thu 13:41]--[2020-03-05 Thu 14:24] =>  0:43
+      :END:
+
+**** DONE 20:有效括号
+     CLOSED: [2020-03-13 Fri 18:37]
+    :LOGBOOK:
+    CLOCK: [2020-03-01 Sun 14:35]--[2020-03-01 Sun 15:15] =>  0:40
+    :END:
+
+***** 自己方法未解决
+***** 参考[[https://www.cnblogs.com/ariel-dreamland/p/9128258.html][使用堆栈]]的方法AC了
+**** DONE 125:验证回文串
+     CLOSED: [2020-03-26 Thu 17:31]
+     :LOGBOOK:
+     CLOCK: [2020-03-26 Thu 16:21]--[2020-03-26 Thu 16:59] =>  0:38
+     :END:
+
+** Reading Milestone
+*** basic knowledge [0/5]
+
+   - [ ] C++ primer
+   - [ ] algorithm introduction
+   - [ ] network
+   - [ ] embedded linux
+   - [ ] FPGA
+
+** Interview Skills
+** Knowledge
+*** DONE string                                                        :NOTE:
+    CLOSED: [2020-03-28 Sat 20:40]
+    :PROPERTIES:
+    :ID:       60694708-4932-4F29-AF30-E839E71A61A0
+    :END:
+    :LOGBOOK:
+    CLOCK: [2020-03-06 Fri 09:27]--[2020-03-06 Fri 09:28] =>  0:01
+    :END:
+  [2020-03-06 Fri 09:27]
+
+**** special usage
+***** string s = string(10, 'c');  // 拷贝初始化
+
+      string不接变量名，也是合法的。临时变量
+
+***** for in const string
+      :LOGBOOK:
+      CLOCK: [2020-03-06 Fri 10:49]--[2020-03-06 Fri 11:03] =>  0:14
+      :END:
+  #+begin_src C++ :includes <iostream> <string> <cctype> :namespaces std
+    int main(){
+        // const string str_const = "Hello World";
+        string str_const = "Hello World";
+        for(auto & c : str_const)
+            c = toupper(c);
+
+        cout << str_const;
+
+        return 0;
+    }
+  #+end_src
+
+  #+RESULTS:
+  : HELLO WORLD
+
+   *ps:* cannot change const string
