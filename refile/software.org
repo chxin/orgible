@@ -1,0 +1,182 @@
+* Source Code
+  :PROPERTIES:
+  :ID:       35E29ECD-95A1-4CDE-93CF-5E362449B743
+  :END:
+** CANCELLED googletest source code reading                       :CANCELLED:
+   [2020-02-14 Fri 10:07]
+
+   repo: https://github.com/google/googletest.git
+  
+*** the process about handling main parameter need a second reading
+*** other part cannot understand
+* Coding Philosophy
+** code compared with c++ primer
+*** find word in a file and print the line
+    :LOGBOOK:
+    CLOCK: [2020-03-22 Sun 17:24]--[2020-03-22 Sun 18:05] =>  0:41
+    :END:
+    [[~/Documents/Snippet/CPP/primer-12-3.cpp][cpp file]]
+
+*** reproduce code according to c++ primer
+
+    [[~/Documents/Snippet/CPP/primer-12-3-official.cpp][c++ primer code file]]
+
+* Algorithm
+** DONE Duplicate Operations Algorithm
+   CLOSED: [2020-03-29 Sun 21:30]
+*** DONE recursive programming                                         :NOTE:
+    CLOSED: [2020-03-29 Sun 21:47] SCHEDULED: <2020-03-29 Sun 20:00-21:00>
+    :PROPERTIES:
+    :ID:       4999E010-DE33-4CBC-AA65-1169D96F9FB4
+    :END:
+    - State "FINISHED"   from "CANCELLED"  [2020-03-29 Sun 21:47]
+    :LOGBOOK:
+    CLOCK: [2020-03-05 Thu 09:46]--[2020-03-05 Thu 09:49] =>  0:03
+    :END:
+    [2020-03-05 Thu 09:46]
+    使用递归：每次固定操作可以减少问题的n（可能是一个多维n^m的问题）
+    递归函数：如何表示n，递归操作，终止条件
+
+    [[https://mp.weixin.qq.com/s/mJ_jZZoak7uhItNgnfmZvQ][递归及其优化参考文章]]
+
+**** 递归三要素
+ 1. 这个函数想要干什么:要完成什么样的一件事
+ 2. 寻找递归结束条件: 当参数为啥时，递归结束，之后直接把结果返回.请注意，根据参数值能够直接知道函数的结果是什么，才可以作为结束条件。
+
+   关于递归结束条件是否够严谨问题:结束条件不够严谨，导致出现死循环。也就是说，当我们在第二步找出了一个递归结束条件的时候，可以把结束条件写进代码，然后进行第三步，但是请注意，当第三步找出等价函数之后，还得再返回去第二步，根据第三步函数的调用关系，会不会出现一些漏掉的结束条件。例如：f(n-2)这个函数的调用，有可能出现 f(0) 的情况，导致死循环，所以我们把它补上。
+ 3. 不断缩小参数的范围：通过找出函数的等价关系式，例如f(n) = n * f(n - 1)
+**** example
+***** 斐波那契数列
+ #+begin_src C++
+ // 求第n项的数值
+ // 该数等于前两个数之和 f(n) = f(n-1) + f(n-2)
+ int Fibonacci(int n) {
+     if(n <= 2) {
+         return 1;
+     }
+     return f(n - 1) + f(n - 2);
+ }
+ #+end_src
+***** 跳台阶问题
+ #+begin_src C++
+   // solve n stages is the same with n - 1 stages
+   // how many of n stages
+
+   int stages_backward(int n) {
+       if(n <= 3) {
+           return n;
+       }
+       return stages(n - 1) + stages(n - 2);
+   }
+
+   void stages_forward(int n, int total, int & result) {
+       if(n == total) {
+           return;
+       }
+
+       if(n < total)
+       stages_forward(n + 1, total, result + 1);
+       if(n < total - 1)
+       stages_forward(n + 2, total, result + 1);
+   }
+ #+end_src
+***** 链表反向
+ #+begin_src C++
+   struct node {
+       int value;
+       node * next;
+   };
+
+   // change node direction
+   void reverse_link(node * node_tmp, node * next_node) {
+       if(next_node == NULL) {
+           return;
+       }
+       node * tmp = next_node->next;
+       next_node->next = node_tmp;
+       reverse_link(next_node, tmp);
+   }
+
+   int main(void) {
+       // construct list;
+       node * head;
+       node * tmp = head->next;
+       head->next = NULL;
+       reverse_link(head, tmp);
+   }
+ #+end_src
+
+**** 优化
+***** 考虑是否重复计算
+ 如果你使用递归的时候不进行优化，是有非常非常非常多的子问题被重复计算的。一般我们可以把我们计算的结果保证起来，例如把 f(4) 的计算结果保证起来，当再次要计算 f(4) 的时候，我们先判断一下，之前是否计算过，如果计算过，直接把 f(4) 的结果取出来就可以了，没有计算过的话，再递归计算。
+
+ 可以用数组或者 HashMap 保存，把 n 作为我们的数组下标，f(n) 作为值，例如 arr[n] = f(n)。f(n) 还没有计算过的时候，我们让arr[n] 等于一个特殊值，例如 arr[n] = -1。 当我们要判断的时候，如果 arr[n] = -1，则证明 f(n) 没有计算过，否则， f(n) 就已经计算过了，且 f(n) = arr[n]。直接把值取出来就行了。
+***** 考虑是否可以自底向上
+
+ 对于递归的问题，我们一般都是从上往下递归的，直到递归到最底，再一层一层着把值返回。
+ 不过，有时候当 n 比较大的时候，可能栈空间会不够用。
+
+ /备注：/ 我常用的，例如：example2，从开始n = 0开始分析(所有可能的情况，只跳一个台阶，只跳两个台阶，都分别递归），这样递归深度不会少。这样的优化的方法又该如何进行呢？
+ 我使用递归的思路是：固定的操作，每次操作之后，问题的n减小了。在每次操作，也就是一个递归func中，对每个固定子操作执行并再次跳用递归
+
+**** recursive vs Loop for cumulative(累加）
+ 递归中，重复操作太多了，可以通过数组记录结果的方法，减少重复。
+
+ 循环中，循环内部必然多次重复执行，也可以使用数组方法。
+
+ 但是，对于不知道循环次数的，只能递归才可以。
+ 对于遍历所有情况的，使用递归更方便。
+*** DONE Dynamic programming
+    CLOSED: [2020-03-28 Sat 20:43]
+    利用历史记录，来避免我们的重复计算
+**** 三个步骤
+ - 定义数组元素的含义：dp[i] 代表什么意思？
+ - 找出数组元素之间的关系式，当我们要计算 dp[n] 时，是可以利用 dp[n-1]，dp[n-2].....dp[1]，来推出 dp[n] 的，也就是可以利用历史数据来推出新的元素值：最优子结构
+ - 找出初始值
+**** 跳台阶问题
+ #+begin_src C++ includes:iostream, vector
+   int main(void) {
+       int total(100);
+       vector<int> dp(total, 0);
+       dp[0] = 1;
+       dp[1] = 2;
+       for (int i = 2; i < total; ++i) {
+           dp[i] = dp[i - 2] + dp[i - 1];
+       }
+       return dp[total - 1];
+   }
+ #+end_src
+
+ - 定义 dp[i] 的含义为：跳上一个 i 级的台阶总共有 dp[i] 种跳法
+ - dp[n] 一定会和 dp[n-1], dp[n-2]....存在某种关系的。但是关系怎么找？
+ - 蛙到达第 n 级的台阶有两种方式: 一种是从第 n-1 级跳上来, 一种是从第 n-2 级跳上来, 由于我们是要算所有可能的跳法的，所以有 dp[n] = dp[n-1] + dp[n-2]。
+ - 初始条件： n - 1 >= 0 , n - 2 >= 0， 得出n >= 2 时才可用公式，所以dp[0], dp[1]就是初值
+ - 但是，dp[2]应该2， 不是dp[0] + dp[1]的和。。。。这就是对于dp[i]的定义的问题了，这里，i表示台阶阶数，从1开始比较合适
+**** 跳棋问题
+ #+begin_src C++
+   int main(void) {
+       int m(7);
+       int n(3);
+
+       int pos[m][n];
+       pos[0][0] = 0;
+       pos[0][1] = 1;
+       pos[1][0] = 1;
+
+       for (int i = 0; i < m; ++i) {
+           for (int k = 0; k < n; ++k) {
+               if(i - 1 >= 0 && k - 1 >= 0){
+                   pos[i][k] = pos[i - 1][k] + pos[i][k - 1];
+               } else if(i - 1 > 0) {
+                   pos[i][k] = pos[i - 1][k];
+               } else if(k - 1 > 0) {
+                   pos[i][k] = pos[i][k - 1];
+               }
+           }
+       }
+       return pos[m - 1][n - 1];
+   }
+ #+end_src
+
+ - 定义 dp[i] [j]的含义为：当机器人从左上角走到(i, j) 这个位置时，一共有 dp[i] [j] 种路径
+ - 到达 (i, j) 这个位置有两种方式,一种是从 (i-1, j) 这个位置走一步到达,一种是从(i, j - 1) 这个位置走一步到达.因为是计算所有可能的步骤，所以是把所有可能走的路径都加起来，所以关系式是 dp[i] [j] = dp[i-1] [j] + dp[i] [j-1]

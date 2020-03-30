@@ -1,0 +1,282 @@
+* Emacs
+  :PROPERTIES:
+  :ID:       5A1160A6-B9CE-4E1B-9FA9-F846A3C918ED
+  :END:
+** leetcode
+*** DONE test [[https://github.com/kaiwk/leetcode.el][leetcode.el]] works well now? 
+    :LOGBOOK:
+    CLOCK: [2020-03-03 Tue 11:21]--[2020-03-03 Tue 11:59] =>  0:38
+    CLOCK: [2020-02-06 Thu 13:57]--[2020-02-06 Thu 13:57] =>  0:00
+    :END:
+  [2020-02-06 Thu 13:57]
+**** login failure issue
+***** use chrome login cookies
+      author have update the code on Jan 1, 2020
+  #+begin_quote
+  LeetCode do not allow third party login, one workaround is restore LeetCode session from local Chrome cookies. To do this, you need to install a Python3 package called my_cookies: pip3 install my_cookies. Then run my_cookies command in cmd.
+  #+end_quote
+**** use hust vpn
+     works well
+**** use ssr
+     not woek: cannot connect to leetcode.com
+**** alternative
+  - [X] vs code leetcode plugin
+  - [ ] leetcode cli
+**** my design of the leetcode
+  - both china and internal servers
+  - save the problem description and code into a file automatically
+  - support local test cases
+  - view solutions
+**** my choice <2020-03-03 Tue 11:58> 
+     VS code 
+
+** DONE org-brain learn to use
+   :LOGBOOK:
+   CLOCK: [2020-02-14 Fri 10:01]--[2020-02-14 Fri 10:02] =>  0:01
+   :END:
+*** install
+    [[https://github.com/Kungsgeten/org-brain][github page]]
+*** usage
+ [[https://www.youtube.com/watch?v=3gwdXkIHxjA][youtube video: concept mapping using org-brain]]
+
+ 1. entries
+ ’org-brain-visualize’ prompts user for a name which is suggested to start with ’index’ as your top-level, and hang everything off ’index’.
+ org-brain will then create ’index.org’ in your ’brain’ directory, and show you a visualization buffer.
+
+ 2. add children
+ There are two ways to add a child to an entry. 
+ One way, with ’c’, creates a file as a child. The filename can’t contain spaces, which is annoying but CamelCase works well enough. So let’s say you create ’Projects’ this way.
+ The other way is with ’h’ (presumably for ’h’eadline), which creates an org-mode headline in your index (or other parent) file. The headline can contain any text, but nevertheless I think you should create files instead of headlines for most purposes.
+
+ 3. edit children
+ So you can move the cursor to ’Projects’ and press enter, and then start entering a series of children for your Project node.
+
+ 4. add resource
+ Pressing ’l’ will allow you to add a resource, or link, to the active node. The resource has to be in URL format. Org link format will not work. This is quite strange and somewhat annoying. So a file link has to be entered like this:
+
+ file:///path/to/file/filename
+
+ The link will appear in a “Resources” section at the bottom of the visualization diagram, and clicking on it or pressing Enter on it will open the resource.
+** DONE snippet in spacemacs
+   [2020-03-02 Mon 17:52]
+ the repo of snippets for [[https://github.com/AndreaCrotti/yasnippet-snippets][yasnippet]] can apply the "snippets" folder to [[~/.emacs.d/elpa/yasnippet-20191222.2206/snippets][target directory]] 
+** TODO spacemacs configuration into org-mode
+   :PROPERTIES:
+   :ID:       2A4C0938-EACC-49E8-9194-FC3C1A9DE441
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-03-05 Thu 10:51]--[2020-03-05 Thu 10:51] =>  0:00
+   :END:
+ [2020-03-05 Thu 10:51]
+
+ [[~/Documents/Garage/orgible/spacemacs-babel.org][babel file]]
+
+ =C-c C-v t= to output the configuration to .spacemacs.  (org-babel-tangle)
+
+*** the errors when warnning
+**** emu4
+
+** latex
+*** DONE latex online image
+    CLOSED: [2020-03-17 Tue 16:10]
+**** write16
+   #+begin_example
+   % write18{wget http://www.some-site.com/path/to/image.png}
+   \includegraphics{image.png}
+
+   tex_engine: pdflatex --shell-escape test.tex
+   #+end_example
+**** externalfigure
+   #+begin_example
+   \externalfigure[http://www.site.com/path/to/figure.png]
+
+   tex_engine: ConTeXt (LuaTeX)
+   #+end_example
+**** href
+   #+begin_example
+   % \href{http://somewhere.com/someplace/some.jpg}{\incudegraphics{some.jpg}}
+   % \href{http://somewhere.com/someplace/some.jpg}{picture here}
+
+   tex_engine: LuaTeX
+   #+end_example
+
+** org mode authoring system
+   :PROPERTIES:
+   :ID:       A420F6B3-2900-4227-8B94-B0ECF447AEB4
+   :END:
+*** template
+ Use =C-c C-e # latex= to insert latex options for org mode.
+
+ The default org have no beamer template, add option below
+ #+startup: beamer
+
+ The html template can add the css file as following
+ #+begin_example
+ #+EXPORT_FILE_NAME: ../posts/template.html
+ #+TITLE: Article Title Goes Here
+ #+SUBTITLE: Article Sub-Title
+ #+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
+ #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/css/org.css"/>
+
+ #+BEGIN_abstract
+ Article abstract goes here.
+ #+END_abstract
+
+ # now prints out the previously disabled (toc:nil) table of contents.
+ #+TOC: headlines 2
+ Your content goes here.
+
+ # * Refrences                                                          :ignore:
+  
+ # * Footnotes
+
+ #+end_example
+
+*** Chinese
+ The org mode supports Chinese. Some exports files not. Like latex.
+
+**** latex
+ For latex only, the best practice is using ctexart class and UTF8 package and compiling with xelatex.
+ Add the org options below:
+ #+begin_example
+ #+latex_class: ctexart
+ #+latex_class_options: [UTF8]
+ #+latex_header:
+ #+latex_header_extra:
+ #+description:
+ #+keywords:
+ #+subtitle:
+ #+latex_compiler: xelatex
+ #+date: \today
+ #+end_example
+
+ If latex engine is still not xelatex, set TeX-engine in the generated latex file.
+ #  %%% Local Variables:
+ , %%% coding: utf-8
+ , %%% mode: latex
+ , %%% TeX-engine: xetex
+ , %%% End:
++begin_src latex
+ #+end_src
+
+**** beamer
+ For latex beamer, the ctexart class no longer available.
+ Alternately, specific the Chinese font and compile with pdflatex or xelatex.
+ Add the org options below:
+ #+begin_example
+ #+TITLE:
+ #+AUTHOR:
+ #+EMAIL:
+ #+DESCRIPTION:
+ #+KEYWORDS:
+ #+LANGUAGE:  en
+ #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+ #+EXPORT_SELECT_TAGS: export
+ #+EXPORT_EXCLUDE_TAGS: noexport
+ #+LINK_UP:
+ #+LINK_HOME:
+ #+XSLT:
+ #+startup: beamer
+ #+LATEX_CLASS: beamer
+ #+BEAMER_FRAME_LEVEL: 3
+ #+LaTeX_CLASS_OPTIONS: [xcolor=svgnames,bigger,presentation]
+ #+LATEX_HEADER:\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}\usecolortheme[named=FireBrick]{structure}\setbeamercovered{transparent}\setbeamertemplate{caption}[numbered]\setbeamertemplate{blocks}[rounded][shadow=true] \usetheme{Darmstadt} \usepackage{tikz}\usepackage{xeCJK}\usepackage{amsmath}\setmainfont{Times New Roman}\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Heiti Std}\setCJKsansfont{Adobe Heiti Std}\setCJKmonofont{Adobe Kaiti Std}\usepackage{verbatim}\institute{beamerinstitute} \graphicspath{{figures/}} \definecolor{lstbgcolor}{rgb}{0.9,0.9,0.9} \usepackage{listings} \usepackage{fancyvrb}\usepackage{xcolor}\lstset{escapeinside=`',frameround=ftft,language=C,breaklines=true,keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,backgroundcolor=\color{yellow!20},rulesepcolor=\color{red!20!green!20!blue!20}}
+ #+latex_compiler: xelatex
+ #+end_example
+
+ The level of subtree exported into beamer can be configured as the H:3 or BEAMER_FRAME_LEVEL:3.
+
+*** export
+ use =C-c C-e= and select desired format.
+** DONE org notes
+   CLOSED: [2020-03-28 Sat 20:40]
+*** spacemacs org
+**** snippet
+***** insert
+
+  [SPC] i s #
+
+**** heading
+
+  =, h i= insert heading
+  =, h s= insert subheading
+  = C [ENTER]= heading below with the same level
+
+**** node
+
+  =m-up= move node up
+  =, n= narrow to subtree. no trigger narrow shortkeys, but =SPC n w= to widen and escape narrow.
+  =SPC w C= center content. same trigger
+
+**** format
+
+  select content first and then use
+  =, x b= for bold or anything else
+
+***** vi yank
+
+  =y s selection marker=
+  selection including =w= for word
+  marker including =*= for bold
+
+  #+begin_example
+
+  #+end_example
+
+**** vi selection
+***** around
+
+  =v a e= select around environment
+  =v a R= select around subtree. not work
+  =d a p= delete around paragraph
+  = a R :  align a subtree
+
+**** iterm
+
+     1. one
+     2. two
+        - sub one
+        - sub two
+     3. [ ] three
+
+  continuous add new iterm below: =ESC o=
+
+**** gtd
+***** state
+
+   =:set status
+  =C-c ,= set priority. same as =S up= or =, J=
+  =, P= set property
+
+***** timestamp
+  TIME+2 last 2 hours
+  <2020-03-18 Wed 12:00-14:00>
+
+  =S UP= change TIME
+
+***** agenda
+
+  =, a t= all the todos
+  =, a a= all the entries
+
+***** sort
+
+  select and then =, ^= to sort according to option
+
+***** sparse tree
+
+  =, \= and select state of the file
+
+***** clock
+
+  go to last clock =C-c C-x C-j=
+
+**** spreadsheet
+
+  org-columns =C-c C-x C-c=
+
+**** help
+
+  =C-h i= and select org mode
