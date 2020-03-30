@@ -190,6 +190,56 @@
 
 *** export
  use =C-c C-e= and select desired format.
+** org mode [[/Users/xin/Documents/Garage/orgible][workspace]]
+*** DONE orgible repo configure
+    CLOSED: [2020-03-30 Mon 11:45] SCHEDULED: <2020-03-30 Mon 15:00-17:00>
+**** DONE org blog
+     CLOSED: [2020-03-30 Mon 11:30]
+
+   示例站点：https://www.rosecoder.com/
+   文字教程：https://www.rosecoder.com/org-to-site-tutor.html
+   页面展示：https://www.rosecoder.com/org-to-site.html
+   论坛页面：https://emacs-china.org/t/org-mode-site-v0-0-1/11409
+   file: [[~/Documents/Garage/orgible/elisp/init-site.el][init-site.el]]
+
+   *finally abandon this!*
+***** Custom
+   head number: =num:nil= not show, =num:3= show 1.1.1 but no more
+   add specific css file 'org-index.css' for index.html
+**** DONE version control with git and nutstore
+     CLOSED: [2020-03-30 Mon 11:45]
+***** hierarchy
+      - inbox.org for all org capture
+      - refile/ folder to sort and collect finished notes
+        + todo.org: todo list
+
+        + job-hunting.org: information about job interview and code test
+        + software.org: software knowledge
+        + hardware.org: hardware knowledge
+
+        + projects.org: project managemant
+
+        + paper-notes.org: notes from Skim app
+
+        + workflow.org: tool chains
+
+        + topic.org: thinking and talking except work
+
+      - oxrign/ folder to store private message
+        + password
+        + workstation
+      - org-mode-blog/ folder for posting knowledge or interestings
+
+***** sync
+      nutstore sync orgible/ folder
+
+      mobile app can use nutstore app or webdavs to get folder
+
+***** version control
+      - when capture, no vc
+      - when refile, vc
+      - when update blog, vc submodule org-mode-blog/
+      - when private, vc submodule oxrign/
 ** DONE org notes
    CLOSED: [2020-03-28 Sat 20:40]
 *** spacemacs org

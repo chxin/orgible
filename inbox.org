@@ -286,15 +286,3 @@ cause unexpected name conflict
 1. 变形程度大发生破碎，改变水滴粒径和分布
 *** 撞击
 **** 飞溅
-* TODO orgible repo configure
-  SCHEDULED: <2020-03-30 Mon 15:00-17:00>
-** org blog
-
- 示例站点：https://www.rosecoder.com/
- 文字教程：https://www.rosecoder.com/org-to-site-tutor.html
- 页面展示：https://www.rosecoder.com/org-to-site.html
- 论坛页面：https://emacs-china.org/t/org-mode-site-v0-0-1/11409
- file: [[~/Documents/Garage/orgible/elisp/init-site.el][init-site.el]]
-
-*** Custom
- head number: =num:nil= not show, =num:3= show 1.1.1 but no more
