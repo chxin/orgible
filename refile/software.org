@@ -21,6 +21,664 @@
 
     [[~/Documents/Snippet/CPP/primer-12-3-official.cpp][c++ primer code file]]
 
+** DONE C++ Project Framework                                          :NOTE:
+   CLOSED: [2020-03-31 Tue 21:41] DEADLINE: <2020-03-30 Mon 22:00>
+   :PROPERTIES:
+   :ID:       1D8F715F-A30B-432C-AA70-63D1FE8545E7
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-03-05 Thu 18:12]--[2020-03-05 Thu 18:14] =>  0:02
+   :END:
+   [2020-03-05 Thu 18:12]
+
+*** construct a c++ project?
+    [[/Users/xin/Documents/Garage/template/cpp/cmake-examples/README.adoc][cmake usage]]
+**** hierarchy
+     [[/Users/xin/Documents/Garage/template/cpp/cpp-demo/][demo project]]
+
+     /Users/xin/Documents/Garage/template/cpp/cpp-demo
+     ├── CMakeLists.txt
+     ├── README.org
+     ├── bin
+     │   ├── debug
+     │   ├── lib
+     │   │   ├── demo.o
+     │   │   └── demo.so
+     │   └── release
+     ├── build
+     ├── doc
+     │   └── issue
+     ├── example
+     │   └── demo
+     │       └── main.cpp
+     ├── include
+     │   ├── demo.hpp
+     │   └── google-test
+     │       ├── CMakeLists.txt
+     │       └── CMakeLists.txt.in
+     ├── license
+     ├── makefile
+     ├── post_test.sh
+     ├── pre_test.sh
+     ├── run_test.sh
+     ├── src
+     │   └── demo.cpp
+     └── test
+         └── unit-tests.cpp
+
+**** cmake command
+     1. CMakeLists.txt is the file which should store all your CMake commands.
+     2. cmake_minimum_required(VERSION 3.5)
+     3. project (hello_cmake)
+        set the project name to make referencing certain variables easier when using multiple projects.
+        the project() function, will create a variable ${PROJECT_NAME} with the value hello_cmake.
+     4. add_executable(hello_cmake main.cpp)
+        The add_executable() command specifies that an executable should be build from the specified source files.
+        The first argument to the add_executable() function is the name of the executable to be built, and the second argument is the list of source files to compile.
+     5. ${CMAKE_BINARY_DIR}
+        The root or top level folder that you run the cmake command from is known as your CMAKE_BINARY_DIR and is the root folder for all your binary files.
+     6. Out-of-Source Build vs In-Place Build
+     7. Directory paths
+        |--------------------------+-------------------------------------------------------------------------------------------|
+        | Variable                 | Info                                                                                      |
+        |--------------------------+-------------------------------------------------------------------------------------------|
+        | CMAKE_SOURCE_DIR         | The root source directory                                                                 |
+        | CMAKE_CURRENT_SOURCE_DIR | The current source directory if using sub-projects and directories.                       |
+        | PROJECT_SOURCE_DIR       | The source directory of the current cmake project.                                        |
+        | CMAKE_BINARY_DIR         | The root binary / build directory. This is the directory where you ran the cmake command. |
+        | CMAKE_CURRENT_BINARY_DIR | The build directory you are currently in.                                                 |
+        | PROJECT_BINARY_DIR       | The build directory for the current project.                                              |
+        |--------------------------+-------------------------------------------------------------------------------------------|
+     8. Source Files Variable
+        Creating a variable which includes the source files and add them to multiple commands
+
+        set(SOURCES src/Hello.cpp src/main.cpp)
+        add_executable(${PROJECT_NAME} ${SOURCES})
+     9. setting specific file names in the SOURCES variable use a =GLOB= command to find files using *wildcard pattern matching*.
+
+         file(GLOB SOURCES "src/*.cpp")
+
+          or use add_xxx function.
+     10. include folders
+        different include folders, you can make your compiler aware of them using the target_include_directories() When compiling this target this will add these directories to the compiler with the -I flag e.g. `-I/directory/path`
+
+        target_include_directories(target PRIVATE ${PROJECT_SOURCE_DIR}/include)
+
+        The directory passed to target_include_directories will be the root of your include directory tree and your C++ files should include the path from there to your header.
+         #include "static/Hello.h" not #include "../include/static/Hello.h"
+
+        This will cause the included directory used in the following places:
+         - When compiling the library
+         - When compiling any additional target that links the library.
+
+         PRIVATE : the directory is added to this target's include directories
+         INTERFACE : the directory is added to the include directores for any targets that link this library.
+         PUBLIC : As above, it is included int his library and also any targets that link this library.
+
+         For public headers it is often a good idea to have your include folder be "namespaced" with sub-directories.
+         Using this method means that there is less chance of header filename clashes when
+         you use multiple libraries in your project.
+
+     11. make VERBOSE=1
+        show full message
+     12. Adding a Static Library
+        The add_library() function is used to *create* a static library named ***.a from some source files.
+
+        add_library(hello_library STATIC src/Hello.cpp)
+     13. Adding a Shared Library
+         add_library(hello_library SHARED src/Hello.cpp)
+     14. Alias Target
+         add_library(hello::library ALIAS hello_library)
+     15. Linking a Library
+        creating an executable that will use your library. just like "-rdynamic libhello_library.a"
+
+        add_executable(hello_binary src/main.cpp)
+
+        target_link_libraries( hello_binary PRIVATE hello_library)
+     16. Installing
+        CMake offers the ability to add a `make install` target to allow a user to install binaries, libraries and other files.
+        `cmake .. -DCMAKE_INSTALL_PREFIX=/install/location`
+        make install DESTDIR=/tmp/stage
+        make uninstall
+
+        configure install location
+        if( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )
+        message(STATUS "Setting default CMAKE_INSTALL_PREFIX path to ${CMAKE_BINARY_DIR}/install")
+        set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE STRING "The path to use for make install" FORCE)
+        endif()
+
+        install (TARGETS target_bin DESTINATION bin)
+
+        install (TARGETS target_lib LIBRARY DESTINATION lib)
+
+        for windows
+        install (TARGETS target_lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin)
+
+        install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
+
+        install (FILES cmake-examples.conf DESTINATION etc)
+
+     17. build type
+
+         cmake .. -DCMAKE_BUILD_TYPE=Release
+
+         - Release - Adds the `-O3 -DNDEBUG` flags to the compiler # -O3 最高级别的优化，-DNDEBUG屏蔽断言
+         - Debug - Adds the `-g` flag # -g 添加调试信息
+         - MinSizeRel - Adds `-Os -DNDEBUG` # -Os 2.5级优化，比2级多了代码压缩
+         - RelWithDebInfo - Adds `-O2 -g -DNDEBUG` flags
+
+           set default build type
+           if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+              message("Setting build type to 'RelWithDebInfo' as none was specified.")
+              set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Choose the type of build." FORCE)
+              # Set the possible values of build type for cmake-gui
+              set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release"
+              "MinSizeRel" "RelWithDebInfo")
+           endif()
+     19. compile flag
+         cmake .. -DCMAKE_CXX_FLAGS="-DEX3"
+
+         add flag: -DEX3
+         target_compile_definitions(cmake_examples_compile_flags PRIVATE EX3)
+
+         set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DEX2" CACHE STRING "Set C++ Compiler Flags" FORCE)
+         The values `CACHE STRING "Set C++ Compiler Flags" FORCE` from the above command are used to force this variable to be set in the CMakeCache.txt file.
+         Once set the CMAKE_C_FLAGS and CMAKE_CXX_FLAGS will set a compler flag / definiton globally for all targets in this directory or any included sub-directories. This method is not recommended for general usage now and the target_compile_definitions function is preferred.
+     20. third party lib
+         #include<boost/filesystem.hpp>
+         find_package(Boost 1.46.1 REQUIRED COMPONENTS filesystem system)
+         This will search for CMake modules in the format "FindXXX.cmake" from the list of folders in `CMAKE_MODULE_PATH`.
+         On linux the default search path will include `/usr/share/cmake/Modules`.
+
+         The arguments are:
+         - Boost - Name of the library. This is part of used to find the module file FindBoost.cmake
+         - 1.46.1 - The minimum version of boost to find
+         - REQUIRED - Tells the module that this is required and to fail it it cannot be found
+         - COMPONENTS - The list of libraries to find.
+
+         check if found
+         if(Boost_FOUND)
+             message ("boost found")
+             include_directories(${Boost_INCLUDE_DIRS})
+             else()
+             message (FATAL_ERROR "Cannot find Boost")
+         endif()
+
+         `Boost_INCLUDE_DIRS` - The path to the include directory for the library
+         xxx_LIBRARY - A variable pointing to the library path.
+
+         # Include the boost headers
+         target_include_directories( third_party_include
+             PRIVATE ${Boost_INCLUDE_DIRS}
+         )
+
+         # link against the boost libraries
+         target_link_libraries( third_party_include
+             PRIVATE
+             ${Boost_SYSTEM_LIBRARY}
+             ${Boost_FILESYSTEM_LIBRARY}
+         )
+
+         use alias
+         the library target is exported by find command and exported result alias as LibName::subsystem
+           - `Boost::boost` for header only libraries
+           - `Boost::system` for the boost system library.
+           - `Boost::filesystem` for filesystem library.
+
+         ref alias
+         target_link_libraries( imported_targets PRIVATE Boost::filesystem)
+
+     21. compiler configure
+         cmake .. -DCMAKE_C_COMPILER=clang-3.6 -DCMAKE_CXX_COMPILER=clang++-3.6
+
+         - CMAKE_C_COMPILER - The program used to compile c code.
+         - CMAKE_CXX_COMPILER - The program used to compile c++ code.
+         - CMAKE_LINKER - The program used to link your binary.
+     22. c++ standard
+         set(CMAKE_CXX_STANDARD 11)
+     23. subproject
+         add_subdirectory(sublibrary1)
+         add_library(sub::lib2 ALIAS sublibrary2)
+
+         The variables created by CMake add_subdirectory command:
+         |--------------------+-------------------------------------------------------------------------------------------|
+         | Variable           | Info                                                                                      |
+         |--------------------+-------------------------------------------------------------------------------------------|
+         | PROJECT_NAME       | The name of the project set by the current `project()`.                                   |
+         | CMAKE_PROJECT_NAME | the name of the first project set by the `project()` command, i.e. the top level project. |
+         | PROJECT_SOURCE_DIR | The source director of the current project.                                               |
+         | PROJECT_BINARY_DIR | The build directory for the current project.                                              |
+         | name_SOURCE_DIR    | The source directory of the project called "name".                                        |
+         | name_BINARY_DIR    | The binary directory of the project called "name".                                        |
+         |--------------------+-------------------------------------------------------------------------------------------|
+
+         subdirectory only head file
+         add_library(${PROJECT_NAME} INTERFACE)
+
+*** header file should and should not
+**** should not
+     原则：尽量把能放到源文件cpp的代码都放到源文件里,头文件中应该只能有public APIs.其他所有的属于implementation detail的东西都应当放在源文件里面。一个项目的递交经常是public APIs + compiled library （for linking）。
+***** using namespace std;
+
+      cause unexpected name conflict
+
+      类的定义
+***** includes
+      如果放在头文件，即使include的那个文件没有变动，也会被重新编译。
+      比如class A里有class B的成员，计算A的内存布局需要用到B的内存布局信息，所以就需要在定义class A前include B。
+      而如果只是有一个B*， 即指向B的指针（引用同理），由于指针大小是确定的，所以不需要B的内存布局，也不需要include B。
+      这时候只要向前声明一个 class B就可以了。而如果代码里使用了B的方法，那编译器也需要能在此之前看到该方法的定义，所以也需要include。
+
+**** should
+     原则：接口文件放在头文件中
+***** 声明
+      extern变量的声明、函数的声明
+***** 定义
+      类的定义、枚举的定义、const int的定义、inline函数的定义
+
+      头文件中可以写const对象的定义。因为全局的const对象默认是没有extern的声明的，所以它只在当前文件中有效。把这样的对象写进头文件中，即使它被包含到其他多个.cpp文件中，这个对象也都只在包含它的那个文件中有效，对其他文件来说是不可见的，所以便不会导致多重定义。同时，因为这些.cpp文件中的该对象都是从一个头文件中包含进去的，这样也就保证了这些.cpp文件中的这个const对象的值是相同的，可谓一举两得。同理，static对象的定义也可以放进头文件。
+***** 依赖
+      头文件的依赖一定要写清楚
+
+     #inlcude<iostream> 应该放在头文件，还是源文件？
+     接口定义中没有使用到，就不放在头文件
+*** 静态库和动态库
+**** 导出不同
+**** 链接不同
+     静态库对函数库的链接是放在编译时期完成的。
+     动态库在程序运行是才被载入
+
+     一个静态库可以简单看成是一组目标文件（.o/.obj文件）的集合，即很多目标文件经过压缩打包后形成的一个文件
+     空间浪费是静态库的一个问题。
+*** mix c and c++
+ What do I need to know when mixing C and C++ code?
+
+ Here are some high points (though some compiler-vendors might not require all these; check with your compiler-vendor’s documentation):
+
+ You must use your C++ compiler when compiling main() (e.g., for static initialization)
+ Your C++ compiler should direct the linking process (e.g., so it can get its special libraries)
+ Your C and C++ compilers probably need to come from the same vendor and have compatible versions (e.g., so they have the same calling conventions)
+ In addition, you’ll need to read the rest of this section to find out how to make your C functions callable by C++ and/or your C++ functions callable by C.
+
+ BTW there is another way to handle this whole thing: compile all your code (even your C-style code) using a C++ compiler. That pretty much eliminates the need to mix C and C++, plus it will cause you to be more careful (and possibly —hopefully!— discover some bugs) in your C-style code. The down-side is that you’ll need to update your C-style code in certain ways, basically because the C++ compiler is more careful/picky than your C compiler. The point is that the effort required to clean up your C-style code may be less than the effort required to mix C and C++, and as a bonus you get cleaned up C-style code. Obviously you don’t have much of a choice if you’re not able to alter your C-style code (e.g., if it’s from a third-party).
+
+ How do I call a C function from C++?
+
+ Just declare the C function extern "C" (in your C++ code) and call it (from your C or C++ code). For example:
+
+     // C++ code
+
+     extern "C" void f(int); // one way
+
+     extern "C" {    // another way
+         int g(double);
+         double h();
+     };
+
+     void code(int i, double d)
+     {
+         f(i);
+         int ii = g(d);
+         double dd = h();
+         // ...
+     }
+ The definitions of the functions may look like this:
+
+     /* C code: */
+
+     void f(int i)
+     {
+         /* ... */
+     }
+
+     int g(double d)
+     {
+         /* ... */
+     }
+
+     double h()
+     {
+         /* ... */
+     }
+ Note that C++ type rules, not C rules, are used. So you can’t call function declared extern "C" with the wrong number of arguments. For example:
+
+     // C++ code
+
+     void more_code(int i, double d)
+     {
+         double dd = h(i,d); // error: unexpected arguments
+         // ...
+     }
+ How do I call a C++ function from C?
+
+ Just declare the C++ function extern "C" (in your C++ code) and call it (from your C or C++ code). For example:
+
+     // C++ code:
+
+     extern "C" void f(int);
+
+     void f(int i)
+     {
+         // ...
+     }
+ Now f() can be used like this:
+
+     /* C code: */
+
+     void f(int);
+
+     void cc(int i)
+     {
+         f(i);
+         /* ... */
+     }
+ Naturally, this works only for non-member functions. If you want to call member functions (incl. virtual functions) from C, you need to provide a simple wrapper. For example:
+
+     // C++ code:
+
+     class C {
+         // ...
+         virtual double f(int);
+     };
+
+     extern "C" double call_C_f(C* p, int i) // wrapper function
+     {
+         return p->f(i);
+     }
+ Now C::f() can be used like this:
+
+     /* C code: */
+
+     double call_C_f(struct C* p, int i);
+
+     void ccc(struct C* p, int i)
+     {
+         double d = call_C_f(p,i);
+         /* ... */
+     }
+ If you want to call overloaded functions from C, you must provide wrappers with distinct names for the C code to use. For example:
+
+     // C++ code:
+
+     void f(int);
+     void f(double);
+
+     extern "C" void f_i(int i) { f(i); }
+     extern "C" void f_d(double d) { f(d); }
+ Now the f() functions can be used like this:
+
+     /* C code: */
+
+     void f_i(int);
+     void f_d(double);
+
+     void cccc(int i,double d)
+     {
+         f_i(i);
+         f_d(d);
+         /* ... */
+     }
+ Note that these techniques can be used to call a C++ library from C code even if you cannot (or do not want to) modify the C++ headers.
+
+ How can I include a standard C header file in my C++ code?
+
+ To #include a standard header file (such as <cstdio>), you don’t have to do anything unusual. E.g.,
+
+ // This is C++ code
+
+ #include <cstdio>                // Nothing unusual in #include line
+
+ int main()
+ {
+   std::printf("Hello world\n");  // Nothing unusual in the call either
+   // ...
+ }
+ If you think the std:: part of the std::printf() call is unusual, then the best thing to do is “get over it.” In other words, it’s the standard way to use names in the standard library, so you might as well start getting used to it now.
+
+ However if you are compiling C code using your C++ compiler, you don’t want to have to tweak all these calls from printf() to std::printf(). Fortunately in this case the C code will use the old-style header <stdio.h> rather than the new-style header <cstdio>, and the magic of namespaces will take care of everything else:
+
+ /* This is C code that I'm compiling using a C++ compiler */
+
+ #include <stdio.h>          /* Nothing unusual in #include line */
+
+ int main()
+ {
+   printf("Hello world\n");  /* Nothing unusual in the call either */
+   // ...
+ }
+ Final comment: if you have C headers that are not part of the standard library, we have somewhat different guidelines for you. There are two cases: either you can’t change the header, or you can change the header.
+
+ How can I include a non-system C header file in my C++ code?
+
+ If you are including a C header file that isn’t provided by the system, you may need to wrap the #include line in an extern "C" { /*...*/ } construct. This tells the C++ compiler that the functions declared in the header file are C functions.
+
+ // This is C++ code
+
+ extern "C" {
+   // Get declaration for f(int i, char c, float x)
+   #include "my-C-code.h"
+ }
+
+ int main()
+ {
+   f(7, 'x', 3.14);   // Note: nothing unusual in the call
+   // ...
+ }
+ Note: Somewhat different guidelines apply for C headers provided by the system (such as <cstdio>) and for C headers that you can change.
+
+ How can I modify my own C header files so it’s easier to #include them in C++ code?
+
+ If you are including a C header file that isn’t provided by the system, and if you are able to change the C header, you should strongly consider adding the extern "C" {...} logic inside the header to make it easier for C++ users to #include it into their C++ code. Since a C compiler won’t understand the extern "C" construct, you must wrap the extern "C" { and } lines in an #ifdef so they won’t be seen by normal C compilers.
+
+ Step #1: Put the following lines at the very top of your C header file (note: the symbol __cplusplus is #defined if/only-if the compiler is a C++ compiler):
+
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+ Step #2: Put the following lines at the very bottom of your C header file:
+
+ #ifdef __cplusplus
+ }
+ #endif
+ Now you can #include your C header without any extern "C" nonsense in your C++ code:
+
+ // This is C++ code
+
+ // Get declaration for f(int i, char c, float x)
+ #include "my-C-code.h"   // Note: nothing unusual in #include line
+
+ int main()
+ {
+   f(7, 'x', 3.14);       // Note: nothing unusual in the call
+   // ...
+ }
+ Note: Somewhat different guidelines apply for C headers provided by the system (such as <cstdio>) and for C headers that you can’t change.
+
+ Note: #define macros are evil in 4 different ways: evil#1, evil#2, evil#3, and evil#4. But they’re still useful sometimes. Just wash your hands after using them.
+
+ How can I call a non-system C function f(int,char,float) from my C++ code?
+
+ If you have an individual C function that you want to call, and for some reason you don’t have or don’t want to #include a C header file in which that function is declared, you can declare the individual C function in your C++ code using the extern "C" syntax. Naturally you need to use the full function prototype:
+
+ extern "C" void f(int i, char c, float x);
+ A block of several C functions can be grouped via braces:
+
+ extern "C" {
+   void   f(int i, char c, float x);
+   int    g(char* s, const char* s2);
+   double sqrtOfSumOfSquares(double a, double b);
+ }
+ After this you simply call the function just as if it were a C++ function:
+
+ int main()
+ {
+   f(7, 'x', 3.14);   // Note: nothing unusual in the call
+   // ...
+ }
+ How can I create a C++ function f(int,char,float) that is callable by my C code?
+
+ The C++ compiler must know that f(int,char,float) is to be called by a C compiler using the extern "C" construct:
+
+ // This is C++ code
+
+ // Declare f(int,char,float) using extern "C":
+ extern "C" void f(int i, char c, float x);
+
+ // ...
+
+ // Define f(int,char,float) in some C++ module:
+ void f(int i, char c, float x)
+ {
+   // ...
+ }
+ The extern "C" line tells the compiler that the external information sent to the linker should use C calling conventions and name mangling (e.g., preceded by a single underscore). Since name overloading isn’t supported by C, you can’t make several overloaded functions simultaneously callable by a C program.
+
+ Why is the linker giving errors for C/C++ functions being called from C++/C functions?
+
+ If you didn’t get your extern "C" right, you’ll sometimes get linker errors rather than compiler errors. This is due to the fact that C++ compilers usually “mangle” function names (e.g., to support function overloading) differently than C compilers.
+
+ See the previous two FAQs on how to use extern "C".
+
+ How can I pass an object of a C++ class to/from a C function?
+
+ Here’s an example (for info on extern "C", see the previous two FAQs).
+
+ Fred.h:
+
+ /* This header can be read by both C and C++ compilers */
+ #ifndef FRED_H
+ #define FRED_H
+
+ #ifdef __cplusplus
+   class Fred {
+   public:
+     Fred();
+     void wilma(int);
+   private:
+     int a_;
+   };
+ #else
+   typedef
+     struct Fred
+       Fred;
+ #endif
+
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+
+ #if defined(__STDC__) || defined(__cplusplus)
+   extern void c_function(Fred*);   /* ANSI C prototypes */
+   extern Fred* cplusplus_callback_function(Fred*);
+ #else
+   extern void c_function();        /* K&R style */
+   extern Fred* cplusplus_callback_function();
+ #endif
+
+ #ifdef __cplusplus
+ }
+ #endif
+
+ #endif /*FRED_H*/
+ Fred.cpp:
+
+ // This is C++ code
+
+ #include "Fred.h"
+
+ Fred::Fred() : a_(0) { }
+
+ void Fred::wilma(int a) { }
+
+ Fred* cplusplus_callback_function(Fred* fred)
+ {
+   fred->wilma(123);
+   return fred;
+ }
+ main.cpp:
+
+ // This is C++ code
+
+ #include "Fred.h"
+
+ int main()
+ {
+   Fred fred;
+   c_function(&fred);
+   // ...
+ }
+ c-function.c:
+
+ /* This is C code */
+
+ #include "Fred.h"
+
+ void c_function(Fred* fred)
+ {
+   cplusplus_callback_function(fred);
+ }
+ Unlike your C++ code, your C code will not be able to tell that two pointers point at the same object unless the pointers are exactly the same type. For example, in C++ it is easy to check if a Derived* called dp points to the same object as is pointed to by a Base* called bp: just say if (dp == bp) .... The C++ compiler automatically converts both pointers to the same type, in this case to Base*, then compares them. Depending on the C++ compiler’s implementation details, this conversion sometimes changes the bits of a pointer’s value.
+
+ (Technical aside: Most C++ compilers use a binary object layout that causes this conversion to happen with multiple inheritance and/or virtual inheritance. However the C++ language does not impose that object layout so in principle a conversion could also happen even with non-virtual single inheritance.)
+
+ The point is simple: your C compiler will not know how to do that pointer conversion, so the conversion from Derived* to Base*, for example, must take place in code compiled with a C++ compiler, not in code compiled with a C compiler.
+
+ NOTE: you must be especially careful when converting both to void* since that conversion will not allow either the C or C++ compiler to do the proper pointer adjustments! The comparison (x == y) might be false even if (b == d) is true:
+
+ void f(Base* b, Derived* d)
+ {
+   if (b == d) {   ☺ Validly compares a Base* to a Derived*
+     // ...
+   }
+
+   void* x = b;
+   void* y = d;
+   if (x == y) {   ☹ BAD FORM! DO NOT DO THIS!
+     // ...
+   }
+ }
+ As stated above, the above pointer conversions will typically happen with multiple and/or virtual inheritance, but please do not look at that as an exhaustive list of the only times when the pointer conversions will happen.
+
+ You have been warned.
+
+ If you really want to use void* pointers, here is the safe way to do it:
+
+ void f(Base* b, Derived* d)
+ {
+   void* x = b;
+   void* y = static_cast<Base*>(d);  // If conversion is needed, it will happen in the static_cast<>
+   if (x == y) {   // ☺ Validly compares a Base* to a Derived*
+     // ...
+   }
+ }
+ Can my C function directly access data in an object of a C++ class?
+
+ Sometimes.
+
+ (For basic info on passing C++ objects to/from C functions, read the previous FAQ).
+
+ You can safely access a C++ object’s data from a C function if the C++ class:
+
+ Has no virtual functions (including inherited virtual functions)
+ Has all its data in the same access-level section (private/protected/public)
+ Has no fully-contained subobjects with virtual functions
+ If the C++ class has any base classes at all (or if any fully contained subobjects have base classes), accessing the data will technically be non-portable, since class layout under inheritance isn’t imposed by the language. However in practice, all C++ compilers do it the same way: the base class object appears first (in left-to-right order in the event of multiple inheritance), and member objects follow.
+
+ Furthermore, if the class (or any base class) contains any virtual functions, almost all C++ compilers put a void* into the object either at the location of the first virtual function or at the very beginning of the object. Again, this is not required by the language, but it is the way “everyone” does it.
+
+ If the class has any virtual base classes, it is even more complicated and less portable. One common implementation technique is for objects to contain an object of the virtual base class (V) last (regardless of where V shows up as a virtual base class in the inheritance hierarchy). The rest of the object’s parts appear in the normal order. Every derived class that has V as a virtual base class actually has a pointer to the V part of the final object.
+
+ Why do I feel like I’m “further from the machine” in C++ as opposed to C?
+
+ Because you are.
+
+ As an OO programming language, C++ allows you to model the problem domain itself, which allows you to program in the language of the problem domain rather than in the language of the solution domain.
+
+ One of C’s great strengths is the fact that it has “no hidden mechanism”: what you see is what you get. You can read a C program and “see” every clock cycle. This is not the case in C++; old line C programmers (such as many of us once were) are often ambivalent (can you say, “hostile”?) about this feature. However after they’ve made the transition to OO thinking, they often realize that although C++ hides some mechanism from the programmer, it also provides a level of abstraction and economy of expression which lowers maintenance costs without destroying run-time performance.
+
+ Naturally you can write bad code in any language; C++ doesn’t guarantee any particular level of quality, reusability, abstraction, or any other measure of “goodness.”
+
+ C++ doesn’t try to make it impossible for bad programmers to write bad programs; it enables reasonable developers to create superior software
 * Algorithm
 ** DONE Duplicate Operations Algorithm
    CLOSED: [2020-03-29 Sun 21:30]
