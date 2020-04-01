@@ -838,3 +838,96 @@
 
  - 定义 dp[i] [j]的含义为：当机器人从左上角走到(i, j) 这个位置时，一共有 dp[i] [j] 种路径
  - 到达 (i, j) 这个位置有两种方式,一种是从 (i-1, j) 这个位置走一步到达,一种是从(i, j - 1) 这个位置走一步到达.因为是计算所有可能的步骤，所以是把所有可能走的路径都加起来，所以关系式是 dp[i] [j] = dp[i-1] [j] + dp[i] [j-1]
+** DONE Binary Search
+   CLOSED: [2020-03-31 Tue 22:46] SCHEDULED: <2020-03-31 Tue 20:30-21:30>
+   Knuth once said "Although the basic idea of binary search is comparatively straightforward, the details can be surprisingly tricky"
+*** find a num in a array;
+ #+begin_src C++
+   int binary_search(int value, vector<int> & int_array) {
+       vector::size_type start = 0;
+       vector::size_type end = int_array.size() - 1;
+       vector::size_type mid = (start + end) / 2;
+       while(value != int_array.at(mid) && start != end) {
+           if(value > int_array.at(mid)) {
+               start = mid;
+               end = end;
+               mid = (start + end) / 2;
+           } else {
+               start = start;
+               end = mid;
+               mid = (start + end) / 2;
+           }
+       }
+       if(start == end){
+           return -1;
+       }
+       return mid;
+   }
+ #+end_src
+
+ A better implementation
+ #+begin_src C++
+ int binarySearch(int[] nums, int target) {
+     int left = 0;
+     int right = nums.length - 1; // 注意, 确保[left, right]都有效。这种左右闭区间一定要牢记
+
+     while(left <= right) { // 注意, 左右闭区间，如果left < right, 忽略了只有一个数值的情况， 如果left ！= right，和 < 一样的问题，同时忽略 > 的问题
+         int mid = (right + left) / 2;
+         if(nums[mid] == target)
+             return mid;
+         else if (nums[mid] < target)
+             left = mid + 1; // 注意, 已经确认mid不符合，应去除
+         else if (nums[mid] > target)
+             right = mid - 1; // 注意
+         }
+     return -1;
+ }
+ #+end_src
+*** 缺陷
+**** 查找值有重复
+     例如， 1 2 2 2 3，查找2，得到索引值是2。
+     但是，索引值1和3都是对的，分别对应于左边界和右边界。如何应对这种需求呢
+
+     左边界二分查找
+ #+begin_src C++
+ int left_bound(int[] nums, int target) {
+     if (nums.length == 0) return -1;
+     int left = 0;
+     int right = nums.length; // 注意: [left, right)左闭右开区间
+
+     while (left < right) { // 注意: 如果left == right，区间为空
+         int mid = (left + right) / 2;
+         if (nums[mid] == target) {
+             right = mid; // 去除mid，保留左边
+         } else if (nums[mid] < target) {
+             left = mid + 1;
+         } else if (nums[mid] > target) {
+             right = mid; // 注意: 右边界为开区间
+         }
+     }
+
+     if (left == nums.length) return -1; // target 比所有数都大
+     return nums[left] == target ? left : -1; // 注意，返回left，不是mid；应该返回mid，但mid是while局部变量，已销毁，同时left = mid，可用于返回
+ }
+ #+end_src
+
+     右边界二分查找
+ #+begin_src C++
+ int right_bound(int[] nums, int target) {
+     if (nums.length == 0) return -1;
+     int left = 0, right = nums.length; //[left, right)左闭右开区间
+
+     while (left < right) {
+         int mid = (left + right) / 2;
+         if (nums[mid] == target) {
+             left = mid + 1; // 注意，去除mid，保留右边
+         } else if (nums[mid] < target) {
+             left = mid + 1;
+         } else if (nums[mid] > target) {
+             right = mid;
+         }
+     }
+     return left - 1; // 注意，应返回mid，因为while结束是num[left]不一定等于target，但num[mid]一定等于target（如果存在的话）. mid = left - 1
+ }
+ #+end_src
+
