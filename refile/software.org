@@ -931,3 +931,813 @@
  }
  #+end_src
 
+** TODO sort algorithm
+   SCHEDULED: <2020-04-15 Wed 20:00-21:30>
+
+ [[eww:https://mp.weixin.qq.com/s/ZU9SwtuC-iIWq69rXQLmKQ][C language 8 sort algorithm]]
+ 内部排序：整个排序过程不需要访问外存便能完成
+ 外部排序：参加排序的记录数量很大，整个序列的排序过程不可能在内存中完成
+
+*** 插入排序
+
+ 遍历数组中的元素，依次跟前面已经排好的元素相比较，如果选择的元素比已排序的元素小，则逐步前移，直到大于前面的元素
+
+*** 希尔排序
+
+ 二分gap，从gap位置向后遍历，对以gap等间距的稀疏数组，插入排序
+
+*** 简单排序
+
+ 遍历下标，将下标之后的最小数字，放到该位置
+
+*** 堆排序
+
+ 堆：任意的叶子结点大于父节点。
+ 将数组元素入堆，逐次取出跟节点并重排
+
+*** 冒泡排序
+
+ 遍历所有元素，遍历该元素之后所有元素，相邻元素比较，如果大元素在前，就交换
+
+*** 快速排序
+
+ 二分选择基准，将所有小于该基准的元素放到前面，所有大于该基准的元素放到后面
+
+*** 归并排序
+
+ 分治法，先二分直到单个元素，在兄弟结点排序，合并到父节点
+
+*** 基数排序
+
+ 用数组或map记录所有元素的个数，在从大到小，依次输出
+
+** TODO Dynamic Programming
+   DEADLINE: <2020-04-16 Thu 18:00>
+
+ https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews?aff=K7qB
+
+** 遍历二叉树
+
+ #include <iostream>
+ #include<string.h>
+ #include<stack>
+ usingnamespace std;
+
+ typedef struct node
+ {
+     char data;
+     struct node *lchild,*rchild;
+ }BinTree;
+
+ typedef struct node1
+ {
+     BinTree *btnode;
+     bool isFirst;
+ }BTNode;
+
+
+ void creatBinTree(char*s,BinTree *&root)  //创建二叉树，s为形如A(B,C(D,E))形式的字符串
+ {
+     int i;
+     bool isRight=false;
+     stack<BinTree*> s1;          //存放结点
+     stack<char> s2;              //存放分隔符
+     BinTree *p,*temp;
+     root->data=s[0];
+     root->lchild=NULL;
+     root->rchild=NULL;
+     s1.push(root);
+     i=1;
+     while(i<strlen(s))
+     {
+         if(s[i]=='(')
+         {
+             s2.push(s[i]);
+             isRight=false;
+         }
+         elseif(s[i]==',')
+         {
+             isRight=true;
+         }
+         elseif(s[i]==')')
+         {
+             s1.pop();
+             s2.pop();
+         }
+         elseif(isalpha(s[i]))
+         {
+             p=(BinTree *)malloc(sizeof(BinTree));
+             p->data=s[i];
+             p->lchild=NULL;
+             p->rchild=NULL;
+             temp=s1.top();
+             if(isRight==true)
+             {
+                 temp->rchild=p;
+                 cout<<temp->data<<"的右孩子是"<<s[i]<<endl;
+             }
+             else
+             {
+                 temp->lchild=p;
+                 cout<<temp->data<<"的左孩子是"<<s[i]<<endl;
+             }
+             if(s[i+1]=='(')
+                 s1.push(p);
+         }
+         i++;
+     }
+ }
+
+ void display(BinTree *root)        //显示树形结构
+ {
+     if(root!=NULL)
+     {
+         cout<<root->data;
+         if(root->lchild!=NULL)
+         {
+             cout<<'(';
+             display(root->lchild);
+         }
+         if(root->rchild!=NULL)
+         {
+             cout<<',';
+             display(root->rchild);
+             cout<<')';
+         }
+     }
+ }
+
+ void preOrder1(BinTree *root)     //递归前序遍历
+ {
+     if(root!=NULL)
+     {
+         cout<<root->data<<"";
+         preOrder1(root->lchild);
+         preOrder1(root->rchild);
+     }
+ }
+
+ void inOrder1(BinTree *root)      //递归中序遍历
+ {
+     if(root!=NULL)
+     {
+         inOrder1(root->lchild);
+         cout<<root->data<<"";
+         inOrder1(root->rchild);
+     }
+ }
+
+ void postOrder1(BinTree *root)    //递归后序遍历
+ {
+     if(root!=NULL)
+     {
+         postOrder1(root->lchild);
+         postOrder1(root->rchild);
+         cout<<root->data<<"";
+     }
+ }
+
+ void preOrder2(BinTree *root)     //非递归前序遍历
+ {
+     stack<BinTree*> s;
+     BinTree *p=root;
+     while(p!=NULL||!s.empty())
+     {
+         while(p!=NULL)
+         {
+             cout<<p->data<<"";
+             s.push(p);
+             p=p->lchild;
+         }
+         if(!s.empty())
+         {
+             p=s.top();
+             s.pop();
+             p=p->rchild;
+         }
+     }
+ }
+
+ void inOrder2(BinTree *root)      //非递归中序遍历
+ {
+     stack<BinTree*> s;
+     BinTree *p=root;
+     while(p!=NULL||!s.empty())
+     {
+         while(p!=NULL)
+         {
+             s.push(p);
+             p=p->lchild;
+         }
+         if(!s.empty())
+         {
+             p=s.top();
+             cout<<p->data<<"";
+             s.pop();
+             p=p->rchild;
+         }
+     }
+ }
+
+ void postOrder2(BinTree *root)    //非递归后序遍历
+ {
+     stack<BTNode*> s;
+     BinTree *p=root;
+     BTNode *temp;
+     while(p!=NULL||!s.empty())
+     {
+         while(p!=NULL)              //沿左子树一直往下搜索，直至出现没有左子树的结点
+          {
+             BTNode *btn=(BTNode *)malloc(sizeof(BTNode));
+             btn->btnode=p;
+             btn->isFirst=true;
+             s.push(btn);
+             p=p->lchild;
+         }
+         if(!s.empty())
+         {
+             temp=s.top();
+             s.pop();
+             if(temp->isFirst==true)     //表示是第一次出现在栈顶
+              {
+                 temp->isFirst=false;
+                 s.push(temp);
+                 p=temp->btnode->rchild;
+             }
+             else//第二次出现在栈顶
+              {
+                 cout<<temp->btnode->data<<"";
+                 p=NULL;
+             }
+         }
+     }
+ }
+
+ void postOrder3(BinTree *root)     //非递归后序遍历
+ {
+     stack<BinTree*> s;
+     BinTree *cur;                      //当前结点
+     BinTree *pre=NULL;                 //前一次访问的结点
+     s.push(root);
+     while(!s.empty())
+     {
+         cur=s.top();
+         if((cur->lchild==NULL&&cur->rchild==NULL)||
+            (pre!=NULL&&(pre==cur->lchild||pre==cur->rchild)))
+         {
+             cout<<cur->data<<"";  //如果当前结点没有孩子结点或者孩子节点都已被访问过
+               s.pop();
+             pre=cur;
+         }
+         else
+         {
+             if(cur->rchild!=NULL)
+                 s.push(cur->rchild);
+             if(cur->lchild!=NULL)
+                 s.push(cur->lchild);
+         }
+     }
+ }
+
+
+ int main(int argc, char*argv[])
+ {
+     char s[100];
+     while(scanf("%s",s)==1)
+     {
+         BinTree *root=(BinTree *)malloc(sizeof(BinTree));
+         creatBinTree(s,root);
+         display(root);
+         cout<<endl;
+         preOrder2(root);
+         cout<<endl;
+         inOrder2(root);
+         cout<<endl;
+         postOrder2(root);
+         cout<<endl;
+         postOrder3(root);
+         cout<<endl;
+     }
+     return0;
+ }
+
+* Networking
+** DONE C++ Network Lib: asio
+   CLOSED: [2020-04-15 Wed 16:04]
+   :LOGBOOK:
+   CLOCK: [2020-04-10 Fri 15:51]
+   :END:
+
+ resource: 
+ - [[http://think-async.com/Asio/asio-1.16.0/doc/][HTML documentation (non-Boost)]]
+
+ Asio is a *cross-platform* C++ library for network and *low-level I/O programming* that provides developers with a *consistent asynchronous* model using a modern C++ approach
+
+ Asio has two versions: standalone asio without boost; with boost
+
+*** demo: http server
+ [[http://think-async.com/Asio/asio-1.16.0/doc/asio/tutorial.html][C++ ASIO tutorial]]
+
+ #+begin_src C++
+ #include <ctime>
+ #include <iostream>
+ #include <string>
+ #include <boost/array.hpp>
+ #include <boost/bind.hpp>
+ #include <boost/shared_ptr.hpp>
+ #include <boost/enable_shared_from_this.hpp>
+ #include <asio.hpp>
+
+ using asio::ip::tcp;
+ using asio::ip::udp;
+
+ std::string make_daytime_string()
+ {
+   using namespace std; // For time_t, time and ctime;
+   time_t now = time(0);
+   return ctime(&now);
+ }
+
+ class tcp_connection
+   : public boost::enable_shared_from_this<tcp_connection>
+ {
+ public:
+   typedef boost::shared_ptr<tcp_connection> pointer;
+
+   static pointer create(asio::io_context& io_context)
+   {
+     return pointer(new tcp_connection(io_context));
+   }
+
+   tcp::socket& socket()
+   {
+     return socket_;
+   }
+
+   void start()
+   {
+     message_ = make_daytime_string();
+
+     asio::async_write(socket_, asio::buffer(message_),
+         boost::bind(&tcp_connection::handle_write, shared_from_this()));
+   }
+
+ private:
+   tcp_connection(asio::io_context& io_context)
+     : socket_(io_context)
+   {
+   }
+
+   void handle_write()
+   {
+   }
+
+   tcp::socket socket_;
+   std::string message_;
+ };
+
+ class tcp_server
+ {
+ public:
+   tcp_server(asio::io_context& io_context)
+     : io_context_(io_context),
+       acceptor_(io_context, tcp::endpoint(tcp::v4(), 13))
+   {
+     start_accept();
+   }
+
+ private:
+   void start_accept()
+   {
+     tcp_connection::pointer new_connection =
+       tcp_connection::create(io_context_);
+
+     acceptor_.async_accept(new_connection->socket(),
+         boost::bind(&tcp_server::handle_accept, this, new_connection,
+           asio::placeholders::error));
+   }
+
+   void handle_accept(tcp_connection::pointer new_connection,
+       const asio::error_code& error)
+   {
+     if (!error)
+     {
+       new_connection->start();
+     }
+
+     start_accept();
+   }
+
+   asio::io_context& io_context_;
+   tcp::acceptor acceptor_;
+ };
+
+ class udp_server
+ {
+ public:
+   udp_server(asio::io_context& io_context)
+     : socket_(io_context, udp::endpoint(udp::v4(), 13))
+   {
+     start_receive();
+   }
+
+ private:
+   void start_receive()
+   {
+     socket_.async_receive_from(
+         asio::buffer(recv_buffer_), remote_endpoint_,
+         boost::bind(&udp_server::handle_receive, this,
+           asio::placeholders::error));
+   }
+
+   void handle_receive(const asio::error_code& error)
+   {
+     if (!error)
+     {
+       boost::shared_ptr<std::string> message(
+           new std::string(make_daytime_string()));
+
+       socket_.async_send_to(asio::buffer(*message), remote_endpoint_,
+           boost::bind(&udp_server::handle_send, this, message));
+
+       start_receive();
+     }
+   }
+
+   void handle_send(boost::shared_ptr<std::string> /*message*/)
+   {
+   }
+
+   udp::socket socket_;
+   udp::endpoint remote_endpoint_;
+   boost::array<char, 1> recv_buffer_;
+ };
+
+ int main()
+ {
+   try
+   {
+     asio::io_context io_context;
+     tcp_server server1(io_context);
+     udp_server server2(io_context);
+     io_context.run();
+   }
+   catch (std::exception& e)
+   {
+     std::cerr << e.what() << std::endl;
+   }
+
+   return 0;
+ }
+ #+end_src
+*** timer
+ [[file+emacs:~/Documents/Snippet/CPP/Network/asio/tutorial/timer/][timer tutorial code]]
+*** socket
+ [[file+emacs:~/Documents/Snippet/CPP/Network/asio/tutorial/socket/][socket tutorial code]]
+*** basic actions
+ regard the socket io as file
+**** client
+ 1. create socket
+ 2. connect server
+ 3. send data to server
+ 4. receive data
+ 5. close socket
+**** server
+ 1. create socket
+ 2. bind port
+ 3. listen port
+ 4. accept connection
+ 5. receive data
+ 6. send data
+ 7. close socket
+** NEXT c++ multi-thread
+   DEADLINE: <2020-06-07 Sun>
+*** basic functions
+ #+begin_src C++
+ /* thread */
+ std::thread t1(func, 6);
+ std::this_thread::sleep_for(chrono::milliseconds(3));
+ chrono::steady_clock::time_point tp = chrono::steady_clock::now() + chrono::microseconds(3);
+ std::this_thread::sleep_until(tp);
+
+ /* Mutex */
+ std::mutex mu;
+ std::lock_guard<std::mutex> locker(mu);
+ std::unique_lock<std::mutex> ulocker(mu);
+ ulocker.try_lock();
+ ulocker.try_lock_for(chrono::nanoseconds(500));
+ ulocker.try_lock_until(tp);
+
+ /* Conditional Variable */
+ std::condition_variable cond;
+ cond.wait_for(ulocker, chrono::microseconds(2));
+ cond.wait_until(ulocker, tp);
+
+ /* Future and Promise */
+ std::promise<int> p;
+ std::future<int> f = p.get_future();
+ f.get();
+ f.wait();
+ f.wait_for(chrono::milliseconds(2));
+ f.wait_until(tp);
+
+ /* async() */
+ std::future<int> fu = async(func, 6);
+
+ /* Package Task */
+ std::packaged_task<int(int)> t(func);
+ std::future<int> fu2 = t.get_future;
+ t(6);
+ #+end_src
+*** create thread
+ 1. a thread object std::thread should have either join() or detach() function only once.
+ 2. other object such as std::bind, std::call_once, std::async
+ 3. make sure join() once and only once
+  if(joinable())
+ #+begin_src C++
+ std::thread t1(func1);
+
+ try {
+     do_something();
+ } catch (...) {  // catch all potential error
+     t1.join();
+     throw;       // stop
+ }
+
+ if(t1.joinable())
+     t1.join();
+ #+end_src
+ 4. thread function
+ #+begin_src C++
+ void func1() {
+     do_func1();
+ }
+
+ class Factor {
+ public:
+     void func();
+     void operator() () {
+         do_func2();
+     }
+ };
+
+
+ }
+
+ int main() {
+     std::thread t1(func1); // copy of func1 in thread
+     std::thread t1(std::ref(func1)); // func1() in thread
+     std::thread t1(std::move(func1)); // func1() in thread but no usable in main
+
+     std::thread t2((Factor()));
+
+     Factor f1;
+     std::thread t3(f1);
+
+     std::thread t4(&Factor::func, a); // copy of Factor.func1
+     std::thread t4(&Factor::func, &a); // Factor.func1
+
+     std::thread t5([](){return 0;});
+
+ }
+ #+end_src
+ 5. pass argument to thread function
+ #+begin_src C++
+ void func1(string s) {
+     do_func1();
+ }
+
+ void func2(string & s) {
+     do_func2();
+ }
+
+ int main() {
+     string s = "hello, world";
+     std::thread t1(func1, s);
+     std::thread t2(func2, std::ref(s)); // s reference is passed to thread
+     std::thread t3(func2, std::move(s)); // s is moved to thread and is no longer used in main thread
+ }
+ #+end_src
+
+ 6. thread function return value
+ #+begin_src C++
+ int func1() {
+     return 1;
+ }
+
+ int main() {
+ int x;
+ # std::future<int> fu = std::async(func1); // run thread at once
+ std::future<int> fu = std::async(std::launch::async | std::launch::deferred, func1); // run thread when fu.get()
+ x = fu.get();
+ }
+ #+end_src
+
+ if func1() have some parameter, use promise to set the value when needed
+ #+begin_src C++
+ int func1(int n) {
+     return n;
+ }
+ int func2(std::future<int> & f) {
+     return f.get();
+ }
+
+ int main() {
+     std::promise<int> p;
+     std::future<int> f = p.get_future;
+     std::future<int> fu = std::async(std::launch::async | std::launch::deferred, func1, 1); // give argument directly
+     std::future<int> fu2 = std::async(std::launch::async | std::launch::deferred, func2, std:ref(f)); // future give argument
+
+ // ...
+
+     p.set_value(4); // if not promise, exception: std::future_errc::broken_promise
+     int x = fu.get();
+ }
+ #+end_src
+
+ if main thread calls func2 thread for 1000, use shared_future
+ #+begin_src C++
+ int func(std::shared_future<int> f);
+
+ std::shared_future<int> sf = f.share();
+ std::future<int> fu3 = std::async(std::launch::async | std::launch::deferred, func2, sf);
+ // .... 1000 thread
+ std::future<int> fu1000 = std::async(std::launch::async | std::launch::deferred, func2, sf);
+
+ #+end_src
+*** thread management
+ 1. move vs copy
+ - thread can only be moved
+ #+begin_src C++
+ std::thread t2 = t1; // wrong
+ std::thread t3 = std::move(t1);
+ #+end_src
+ 2. thread id
+ #+begin_src C++
+ auto id = std::this_thread::get_id(); // current thread id
+ auto id = t1::get_id(); // thread t1 id
+ #+end_src
+ 3. max thread nums
+ #+begin_src C++
+ auto nums = std::thread::hardware_concurrency(); // max running threads on my hardware
+ #+end_src
+*** mutex
+ 1. std::cout, most common shared resource may be used in both main thread or child thread
+ 2. lock() unlock()
+ std::mutex mu;
+ before change value, mu.lock(); after changed, mu.unlock()
+
+ control all the shared resource not the specified, which is very bad
+ 3. lock_guard()
+ std::lock_guard<std::mutex> guard(mu);
+ helps lock and unlock automatically
+
+ whenever the code go out the scope of guard, the mutex will always be unlock, which is note safe enough for global resource
+
+ 4. bind mutex and resource
+ in any function, guard m_mutex before use f
+ #+begin_src C++
+ class BindClass {
+ private:
+     std::mutex m_mutex;
+     ofstream f;
+ private:
+
+ }
+ #+end_src
+
+ to make sure f is inside the guard, and f cannot be accessed without going through guard
+ - never return f to outside world;
+ #+begin_src C++
+ ofstream & getfstream() {return f;}
+ #+end_src
+ - never pass f as an argument to user provided function
+ #+begin_src C++
+ void procee_f(void fun(ofstream &)) { fun(f); }
+ #+end_src
+ 5. guard range
+ a stack has pop() and top() which both works on data inside.
+ if pop() guard data and top() guard data separately, two thread may top(), top(), and pop(), pop(). the top data is got twice but next data is jumped.
+
+ DESIGN interface APPROPRIATELY
+ 6. unique_lock
+ because lock_guard() lock mutex since it executes until the function return.
+ the mutex cannot be used even if data do not need locked.
+ #+begin_src C++
+ std::unique_lock<mutex> locker(mu);
+ // ...
+ locker.unlock();
+ // unlock_process();
+ locker.lock();
+
+ locker.unlock();
+ #+end_src
+*** dead lock
+  1. more than one mutex enable safe guarantee for files or else.
+  #+begin_src C++
+  if(!file.is_open()) {
+      std::unique_lock<mutex> locker(mu_file); // before change file, lock it
+      file.open("log.txt");
+  }  // not safe: when two thread go into if{} at same time, file open twice synchronous
+
+  {
+      std::unique_lock<mutex> locker(mu_file); // before change file, lock it
+      if(!file.is_open()) {
+          file.open("log.txt");
+      }
+  } // not good: file.open() only conduct once, but lock every time
+
+  if(locked == 0) {
+      if(!file.is_open() {
+          if(locked == 0) {
+              locked = 1;
+              file.open();
+              locked = 0;
+          }
+      }
+  } // wrong, not mutex
+
+  std::lock(mu);
+  do_something();
+  std::unlock(mu);
+  #+end_src
+
+  2. once_flag for once operator such class instruction or file.open()
+  std::once_flag _flag;
+
+  std::call_once(_flag, [&](){_f.open("log");});
+
+  3. dead lock.
+  #+begin_src C++
+  std::mutex mu1;
+  std::mutex mu2;
+
+  void func1() {
+      std::lock_guard<std::mutex> guard1(mu1);
+      std::lock_guard<std::mutex> guard2(mu2);
+  }
+  void func2() {
+      std::lock_guard<std::mutex> guard2(mu2);
+      std::lock_guard<std::mutex> guard1(mu1);
+  }
+  #+end_src
+
+  thread1 call func1 and lock mu1, waiting for mu2; thread 2 call func2 and lock mu2, waiting for mu1.
+  the both waiting is a dead lock.
+
+  Avoid deaklock:
+  - prefer guard locking single mutex and process, then another
+  - avoid guard locking a mutex and then calling a user function which may lock other mutexs
+  - use std::lock() to lock more than one mutex. use std::lock_guard<std::mutex> guard(mu1, std:adopt_lock) to avoid dead lock
+  - guard lock mutex in same order in different function
+
+**** wait and notify
+  if two thread access data at different speed, instead of thread::sleep_for(chrono::seconds(1)), set fast as wait and slow one as notify
+
+  the same usage is also ensure a thread occurs after another.
+
+  std::condition_variable cond;
+
+  // func1
+  cond.notify_one(); // notify one waiting thread if any
+  cond.notify_all();
+
+  //func2
+  cond.wait(unique_locker, [](){ return !q.empty() } ); // awake by locker or notification or lamda function
+* Basic
+** DONE C++ string                                                     :NOTE:
+   CLOSED: [2020-03-28 Sat 20:40]
+   :PROPERTIES:
+   :ID:       60694708-4932-4F29-AF30-E839E71A61A0
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-03-06 Fri 09:27]--[2020-03-06 Fri 09:28] =>  0:01
+   :END:
+ [2020-03-06 Fri 09:27]
+
+*** special usage
+**** string s = string(10, 'c');  // 拷贝初始化
+
+     string不接变量名，也是合法的。临时变量
+
+**** for in const string
+     :LOGBOOK:
+     CLOCK: [2020-03-06 Fri 10:49]--[2020-03-06 Fri 11:03] =>  0:14
+     :END:
+ #+begin_src C++ :includes <iostream> <string> <cctype> :namespaces std
+   int main(){
+       // const string str_const = "Hello World";
+       string str_const = "Hello World";
+       for(auto & c : str_const)
+           c = toupper(c);
+
+       cout << str_const;
+
+       return 0;
+   }
+ #+end_src
+
+ #+RESULTS:
+ : HELLO WORLD
+
+  *ps:* cannot change const string

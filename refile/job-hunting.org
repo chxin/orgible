@@ -2,12 +2,39 @@
 
 * Job Hunting
 ** Job Information
-** Leetcode [[/Users/xin/Documents/Leetcode/makefile][workspace]]
-*** NEXT leetcode daily
+** Resume
+https://github.com/chxin/resume
+** DONE Leetcode [[/Users/xin/Documents/Leetcode/makefile][workspace]]
+   CLOSED: [2020-06-09 Tue 08:43]
+*** TODO leetcode daily
     :PROPERTIES:
-    :LAST_REPEAT: [2020-03-29 Sun 14:15]
+    :LAST_REPEAT: [2020-06-06 Sat 13:45]
     :ID:       5FB13F87-D183-41D8-A027-006D6073F9B0
     :END:
+    - State "DONE"       from "NEXT"       [2020-06-06 Sat 13:45]
+    - State "DONE"       from "NEXT"       [2020-06-05 Fri 13:37]
+    - State "DONE"       from "NEXT"       [2020-06-04 Thu 14:52]
+    - State "DONE"       from "NEXT"       [2020-05-31 Sun 19:12]
+    - State "DONE"       from "NEXT"       [2020-05-30 Sat 13:32]
+    - State "DONE"       from "NEXT"       [2020-05-29 Fri 13:56]
+    - State "DONE"       from "NEXT"       [2020-05-27 Wed 21:43]
+    - State "DONE"       from "NEXT"       [2020-05-25 Mon 21:23]
+    - State "DONE"       from "NEXT"       [2020-05-23 Sat 16:55]
+    - State "DONE"       from "NEXT"       [2020-05-09 Sat 15:07]
+    - State "DONE"       from "NEXT"       [2020-05-08 Fri 13:25]
+    - State "DONE"       from "NEXT"       [2020-05-06 Wed 13:58]
+    - State "DONE"       from "NEXT"       [2020-05-05 Tue 13:25]
+    - State "DONE"       from "NEXT"       [2020-05-04 Mon 17:31]
+    - State "DONE"       from "NEXT"       [2020-04-16 Thu 13:51]
+    - State "DONE"       from "NEXT"       [2020-04-15 Wed 14:21]
+    - State "DONE"       from "NEXT"       [2020-04-14 Tue 11:14]
+    - State "DONE"       from "NEXT"       [2020-04-10 Fri 15:15]
+    - State "DONE"       from "NEXT"       [2020-04-06 Mon 13:20]
+    - State "DONE"       from "NEXT"       [2020-04-05 Sun 14:27]
+    - State "DONE"       from "NEXT"       [2020-04-04 Sat 14:22]
+    - State "DONE"       from "NEXT"       [2020-04-03 Fri 13:37]
+    - State "DONE"       from "NEXT"       [2020-04-01 Wed 15:10]
+    - State "DONE"       from "NEXT"       [2020-03-30 Mon 14:01]
     - State "DONE"       from "NEXT"       [2020-03-29 Sun 14:15]
     - State "DONE"       from "NEXT"       [2020-03-28 Sat 17:28]
     - State "DONE"       from "NEXT"       [2020-03-27 Fri 16:34]
@@ -16,7 +43,7 @@
     - State "done"       from ""           [2020-03-05 Thu 17:00]
     [2020-03-05 Thu 11:19]
 
-    SCHEDULED: <2020-03-30 Mon 13:30 .+1d/2d>
+    SCHEDULED: <2020-06-07 Sun 13:30 .+1d/2d>
     :PROPERTIES:
     :STYLE: habit
     :REPEAT_TO_STATE: NEXT
@@ -46,50 +73,47 @@
      CLOCK: [2020-03-26 Thu 16:21]--[2020-03-26 Thu 16:59] =>  0:38
      :END:
 
-** Reading Milestone
-*** basic knowledge [0/5]
 
+*** TODO leetcode solution
+从 Leetcode 中精选大概 200左右的题目，去除了某些繁杂但是没有多少算法思想的题目，同时保留了面试中经常被问到的经典题目。
+
+**** 数据结构相关
+   1. [[file:~/Documents/Leetcode/note/Leetcode-%E9%93%BE%E8%A1%A8.org][链表]]
+   2. [[file:~/Documents/Leetcode/note/Leetcode-%E6%A0%91.org][树]]
+   3. [[file:~/Documents/Leetcode/note/Leetcode-栈和队列.org][栈和队列]]
+   4. [[file:~/Documents/Leetcode/note/Leetcode-哈希表.org][哈希表]]
+   5. [[file:~/Documents/Leetcode/note/Leetcode-字符串.org][字符串]]
+   6. [[file:~/Documents/Leetcode/note/Leetcode-数组与矩阵.org][数组与矩阵]]
+   7. [[file:~/Documents/Leetcode/note/Leetcode-图.org][图]]
+   8. [[file:~/Documents/Leetcode/note/Leetcode-位运算.org][位运算]]
+
+**** 算法思想
+   1. [[file:~/Documents/Leetcode/note/Leetcode-双指针.org][双指针]]
+   2. [[file:~/Documents/Leetcode/note/Leetcode-排序.org][排序]]
+   3. [[file:~/Documents/Leetcode/note/Leetcode-贪心思想.org][贪心思想]]
+   4. [[file:~/Documents/Leetcode/note/Leetcode-二分查找.org][二分查找]]
+   5. [[file:~/Documents/Leetcode/note/Leetcode-分治.org][分治]]
+   6. [[file:~/Documents/Leetcode/note/Leetcode-搜索.org][搜索]]
+   7. [[file:~/Documents/Leetcode/note/Leetcode-动态规划.org][动态规划]]
+   8. [[file:~/Documents/Leetcode/note/Leetcode-数学.org][数学]]
+
+**** 参考资料
+   1. Leetcode
+   2. Weiss M A, 冯舜玺. 数据结构与算法分析------C 语言描述[J]. 2004.
+   3. Sedgewick R. Algorithms[M]. Pearson Education India, 1988.
+   4. 何海涛, 软件工程师. 剑指 Offer: 名企面试官精讲典型编程题[M]. 电子工业出版社, 2014.
+   5. 《编程之美》小组. 编程之美[M]. 电子工业出版社, 2008.
+   6. 左程云. 程序员代码面试指南[M]. 电子工业出版社, 2015.
+** Reading Milestone
+*** software basic knowledge [0/4]
    - [ ] C++ primer
    - [ ] algorithm introduction
    - [ ] network
    - [ ] embedded linux
+
+*** hardware basic knowledge [0/1]
    - [ ] FPGA
+   - [ ] Digital Circuit
 
 ** Interview Skills
 ** Knowledge
-*** DONE string                                                        :NOTE:
-    CLOSED: [2020-03-28 Sat 20:40]
-    :PROPERTIES:
-    :ID:       60694708-4932-4F29-AF30-E839E71A61A0
-    :END:
-    :LOGBOOK:
-    CLOCK: [2020-03-06 Fri 09:27]--[2020-03-06 Fri 09:28] =>  0:01
-    :END:
-  [2020-03-06 Fri 09:27]
-
-**** special usage
-***** string s = string(10, 'c');  // 拷贝初始化
-
-      string不接变量名，也是合法的。临时变量
-
-***** for in const string
-      :LOGBOOK:
-      CLOCK: [2020-03-06 Fri 10:49]--[2020-03-06 Fri 11:03] =>  0:14
-      :END:
-  #+begin_src C++ :includes <iostream> <string> <cctype> :namespaces std
-    int main(){
-        // const string str_const = "Hello World";
-        string str_const = "Hello World";
-        for(auto & c : str_const)
-            c = toupper(c);
-
-        cout << str_const;
-
-        return 0;
-    }
-  #+end_src
-
-  #+RESULTS:
-  : HELLO WORLD
-
-   *ps:* cannot change const string

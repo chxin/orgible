@@ -1,4 +1,4 @@
-#+FILETAGS: REFILE
+#+FILETAGS: Inbox
 #+STARTUP: content
 
 * 2020
@@ -82,38 +82,9 @@ string does not have the method 'find()'
 
      [2020-03-05 Thu 17:19]
 
-* TODO binary search
-  SCHEDULED: <2020-03-31 Tue 20:30-21:30>
-* TODO header file should and should not:NOTE:
-  DEADLINE: <2020-03-30 Mon 22:00>
-  :PROPERTIES:
-  :ID:       1D8F715F-A30B-432C-AA70-63D1FE8545E7
-  :END:
-  :LOGBOOK:
-  CLOCK: [2020-03-05 Thu 18:12]--[2020-03-05 Thu 18:14] =>  0:02
-  :END:
-  [2020-03-05 Thu 18:12]
-
-how to construct a c++ project?
-** should not
-*** using namespace std;
-
-cause unexpected name conflict
-
-** should
-* SLD Research
-** TODO SLD sensor model summary
-   :PROPERTIES:
-   :ID:       5876BFF9-635A-4FC5-ACB6-ED8B1801633A
-   :END:
-   :LOGBOOK:
-   CLOCK: [2020-03-13 Fri 22:16]
-   :END:
- [2020-03-13 Fri 22:16]
- According to GK's instruments and my plan, make a survey about the existing SLD sensor of the *shape*, *principle*, *evaluation*, and *improvement* for our sensor.
-
-*** reading list
-**** CN
+* TODO SLD Research
+** reading list
+*** CN
 
  #+name: list and link
  #+begin_src shell :results scalar
@@ -227,46 +198,57 @@ cause unexpected name conflict
    16. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/9-六角冰晶生长过程的相场模拟.pdf][pdf file: 9-六角冰晶生长过程的相场模拟.pdf]]
    17. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/专利：一种过冷水滴结冰探测装置.pdf][pdf file: 专利：一种过冷水滴结冰探测装置.pdf]]
 
-**** EN
+*** EN
+
 - 2019
- 1) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Refined In-Flight Icing Model and its Numerical Implementation.pdf][pdf file:  A Refined In-Flight Icing Model and its Numerical Implementation.pdf]]
- 2) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf][pdf file:  A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf]]
- 3) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf][pdf file:  Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf]]
- 4) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf][pdf file:  Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf]]
- 5) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf][pdf file:  Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf]]
- 6) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Influence of Freestream Temperature on Ice Accretion Roughness .pdf][pdf file:  Influence of Freestream Temperature on Ice Accretion Roughness .pdf]]
- 7) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Korean Utility Helicopter KUH-1 Icing Certification Program.pdf][pdf file:  Korean Utility Helicopter KUH-1 Icing Certification Program.pdf]]
- 8) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf][pdf file:  Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf]]
- 9) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf][pdf file:  Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf]]
- 10) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf][pdf file:  SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf]]
- 11) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf][pdf file:  Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf]]
- 12) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ The Cloud Detectability Conundrum.pdf][pdf file:  The Cloud Detectability Conundrum.pdf]]
- 13) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A 3D mesh deformation technique for irregular in-flight ice.pdf][pdf file: A 3D mesh deformation technique for irregular in-flight ice.pdf]]
- 14) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A Meteorological Supersite for Aviation and Cold Weather Applications.pdf][pdf file: A Meteorological Supersite for Aviation and Cold Weather Applications.pdf]]
- 15) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A multiphase SPH framework for supercooled large droplets dynamics.pdf][pdf file: A multiphase SPH framework for supercooled large droplets dynamics.pdf]]
- 16) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Aircraft Icing Study Using Integrated Observations and Model Data.pdf][pdf file: Aircraft Icing Study Using Integrated Observations and Model Data.pdf]]
- 17) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Correction An Extended Finite-Element Method for.pdf][pdf file: Correction An Extended Finite-Element Method for.pdf]]
- 18) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet Breakup Onset Modeling in Combination with.pdf][pdf file: Droplet Breakup Onset Modeling in Combination with.pdf]]
- 19) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet in the Shoulder Region of an Incoming Airfoil..pdf][pdf file: Droplet in the Shoulder Region of an Incoming Airfoil..pdf]]
- 20) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Effect of nucleation and icing evolution on run-back freezing.pdf][pdf file: Effect of nucleation and icing evolution on run-back freezing.pdf]]
- 21) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Frosty Weather The Regulatory History of Aircraft.pdf][pdf file: Frosty Weather The Regulatory History of Aircraft.pdf]]
- 22) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf][pdf file: ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf]]
- 23) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf][pdf file: Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf]]
- 24) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Impact freezing modes of supercooled droplets determined by both.pdf][pdf file: Impact freezing modes of supercooled droplets determined by both.pdf]]
- 25) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf][pdf file: Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf]]
- 26) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf][pdf file: Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf]]
- 27) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf][pdf file: Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf]]
- 28) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Model-Based Design of Complex Aeronautical.pdf][pdf file: Model-Based Design of Complex Aeronautical.pdf]]
- 29) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical Simulation of Supercooled Large Droplet Icing.pdf][pdf file: Numerical Simulation of Supercooled Large Droplet Icing.pdf]]
- 30) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf][pdf file: Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf]]
- 31) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical simulation of ice accretion in supercooled large droplet.pdf][pdf file: Numerical simulation of ice accretion in supercooled large droplet.pdf]]
- 32) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf][pdf file: On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf]]
- 33) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/README.org][pdf file: README.org]]
- 34) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf][pdf file: Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf]]
- 35) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Role of surrounding gas in the outcome of droplet splashing.pdf][pdf file: Role of surrounding gas in the outcome of droplet splashing.pdf]]
- 36) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf][pdf file: Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf]]
- 37) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Temperature measurement and state determination of supercooled.pdf][pdf file: Temperature measurement and state determination of supercooled.pdf]]
- 38) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf][pdf file: The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf]]
+  1) [X] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Refined In-Flight Icing Model and its Numerical Implementation.pdf][pdf file:  A Refined In-Flight Icing Model and its Numerical Implementation.pdf]] 
+  2) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf][pdf file:  A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf]]
+  3) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf][pdf file:  Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf]]
+  4) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf][pdf file:  Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf]]
+  5) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf][pdf file:  Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf]]
+  6) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Influence of Freestream Temperature on Ice Accretion Roughness .pdf][pdf file:  Influence of Freestream Temperature on Ice Accretion Roughness .pdf]]
+  7) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Korean Utility Helicopter KUH-1 Icing Certification Program.pdf][pdf file:  Korean Utility Helicopter KUH-1 Icing Certification Program.pdf]]
+  8) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf][pdf file:  Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf]]
+  9) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf][pdf file:  Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf]]
+  10) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf][pdf file:  SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf]]
+  11) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf][pdf file:  Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf]]
+  12) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ The Cloud Detectability Conundrum.pdf][pdf file:  The Cloud Detectability Conundrum.pdf]]
+  13) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A 3D mesh deformation technique for irregular in-flight ice.pdf][pdf file: A 3D mesh deformation technique for irregular in-flight ice.pdf]]
+  14) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A Meteorological Supersite for Aviation and Cold Weather Applications.pdf][pdf file: A Meteorological Supersite for Aviation and Cold Weather Applications.pdf]]
+  15) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A multiphase SPH framework for supercooled large droplets dynamics.pdf][pdf file: A multiphase SPH framework for supercooled large droplets dynamics.pdf]]
+  16) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Aircraft Icing Study Using Integrated Observations and Model Data.pdf][pdf file: Aircraft Icing Study Using Integrated Observations and Model Data.pdf]]
+  17) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Correction An Extended Finite-Element Method for.pdf][pdf file: Correction An Extended Finite-Element Method for.pdf]]
+  18) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet Breakup Onset Modeling in Combination with.pdf][pdf file: Droplet Breakup Onset Modeling in Combination with.pdf]]
+  19) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet in the Shoulder Region of an Incoming Airfoil..pdf][pdf file: Droplet in the Shoulder Region of an Incoming Airfoil..pdf]]
+  20) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Effect of nucleation and icing evolution on run-back freezing.pdf][pdf file: Effect of nucleation and icing evolution on run-back freezing.pdf]]
+  21) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Frosty Weather The Regulatory History of Aircraft.pdf][pdf file: Frosty Weather The Regulatory History of Aircraft.pdf]]
+  22) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf][pdf file: ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf]]
+  23) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf][pdf file: Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf]]
+  24) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Impact freezing modes of supercooled droplets determined by both.pdf][pdf file: Impact freezing modes of supercooled droplets determined by both.pdf]]
+  25) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf][pdf file: Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf]]
+  26) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf][pdf file: Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf]]
+  27) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf][pdf file: Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf]]
+  28) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Model-Based Design of Complex Aeronautical.pdf][pdf file: Model-Based Design of Complex Aeronautical.pdf]]
+  29) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical Simulation of Supercooled Large Droplet Icing.pdf][pdf file: Numerical Simulation of Supercooled Large Droplet Icing.pdf]]
+  30) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf][pdf file: Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf]]
+  31) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical simulation of ice accretion in supercooled large droplet.pdf][pdf file: Numerical simulation of ice accretion in supercooled large droplet.pdf]]
+  32) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf][pdf file: On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf]]
+  33) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/README.org][pdf file: README.org]]
+  34) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf][pdf file: Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf]]
+  35) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Role of surrounding gas in the outcome of droplet splashing.pdf][pdf file: Role of surrounding gas in the outcome of droplet splashing.pdf]]
+  36) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf][pdf file: Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf]]
+  37) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Temperature measurement and state determination of supercooled.pdf][pdf file: Temperature measurement and state determination of supercooled.pdf]]
+  38) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf][pdf file: The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf]]
+
+** TODO SLD sensor model summary
+   :PROPERTIES:
+   :ID:       5876BFF9-635A-4FC5-ACB6-ED8B1801633A
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-03-13 Fri 22:16]
+   :END:
+ [2020-03-13 Fri 22:16]
+ According to GK's instruments and my plan, make a survey about the existing SLD sensor of the *shape*, *principle*, *evaluation*, and *improvement* for our sensor.
 
 *** notes from papers
     :PROPERTIES:
@@ -276,13 +258,352 @@ cause unexpected name conflict
     [[~/Documents/Garage/orgible/refile/paper-notes.org][skim annotation notes]] is employed according to the workflow of skim & org-ref to take notes of papers.
 
 *** reports
+
  - [[/Users/xin/Documents/SLD/docs/sld-sensor-structure-analysis.org][SLD structure report]]
 
 ** SLD aerodynamic effect
 *** 运动
 **** 变形
+
 1. 变形水滴导致阻力系数增加，从而影响水滴轨迹
+
 **** 破碎
+
 1. 变形程度大发生破碎，改变水滴粒径和分布
+
 *** 撞击
 **** 飞溅
+*** Euler equation
+**** droplet conservation equations
+
+$\frac{\partial\alpha\rho}{\partial t} + \nabla\dot(\alpha\rho u) = 0$
+$\frac{\partial\alpha\rho u}{\partial t} + \nabla(\alpha\rho u\otimes u) = K\alpha\rho(u_a - u) + \alpha\rho F$
+$K = \frac{18u_{\alpha}f}{\rho d^2_p}$
+$f=\frac{C_DRe}{24}$
+$Re = \rho_{\alpha}|u_a - u|d_p}{u_a}$
+\begin{equations}
+$C_{D,Shpere}=\left\{
+\begin{aligned}
+\frac{24(1+0.15Re^{0.687})}{Re} & , & Re \leqslant 1000 \\
+0.44      & , & Re \textgreater 1000
+\end{aligned}$
+\end{equations}
+$C_D = C_{D, Shpere} \times (1+2.632y)$
+$F = \left(1-\frac{\rho_a}{\rho_d}\left)\frac{\hat{g}}{F_r^2}$
+
+** Hardware
+*** 锁定放大器
+
+https://blog.csdn.net/kvdz_taobao_com/article/details/103508319
+
+** TODO paper
+   DEADLINE: <2020-04-20 Mon 12:00>
+
+[[file:~/Documents/SLD/latex/preliminary-work/manuscript.tex][paper latex file]]
+
+*** 空难
+
+http://www.safehoo.com/Case/Case/Air/List_1.shtml
+
+空难事故
+
+*** 模拟
+
+1. Due to the highly complex nature of the involved physical processes comprising, e.g., compressible air flow over ice-covered surfaces, droplet transport and breakup, convective heat transfer, phase changes as well as the intricate dynamics of the runback water flow, today’s research is by no means final- ized or even close to being finalized
+
+*** 研究过程
+
+Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf
+
+** Structure
+*** dual-spindle
+**** circle
+
+- (0,0) r3: [(0+3, 0); (0, 0+3)]
+- (25, 14) r5.5: [(25+5.5, 14); (25, 14+5.5)]
+- (25, -14) r5.5: [(25+5.5, -14); (25, -14+5.5)]
+- (40, 20) r7: [(65+7, 20); (65, 20+7)]
+- (40, -20) r7: [(65+7, -20); (65, -20+7)]
+- (90, 16) r10: [(90+10, 16); (90, 16+10)]
+- (90, -16) r10: [(90+10. -16); (90, -16+10)]
+- (135, 0) r3: [(135+3, 0); (135, 0+3)]
+
+**** tangent
+
+#+CAPTION: ratio
+| radius1 | radius2 |         inner ratio |     external ratio |
+|     3.0 |     5.5 | 0.35294117647058826 | 2.8333333333333335 |
+|     5.5 |     7.0 |                0.44 |  2.272727272727273 |
+|     7.0 |    10.0 |  0.4117647058823529 | 2.4285714285714284 |
+|    10.0 |     3.0 |  0.7692307692307693 |                1.3 |
+#+TBLFM: @2$3..@5$3='(/ $1 (+ $1 $2));N::@2$4..@5$4='(/ (+ $1 $2) $1);N
+
+**** surface
+
+     use 2-4 curves: select model first to create suface1; then select all curves to create surface2; lastly, remove the surface1
+
+**** part
+
+- inlet:
+- outlet:
+- wall:
+- model:
+- bottom: create from surface
+
+*** mesh
+
+https://www.bilibili.com/video/av96436039
+
+https://jingyan.baidu.com/article/08b6a59198b3a414a80922be.html
+
+- 边界线在拉伸之后将形成不同的侧面，因此需对这些线分别命名，拉伸后形成的面的名字将继承这些线的名字，命名如下。注意，若此时不对线进行命名，那
+ 么拉伸后顶面和所有的侧面将包含在同一个PART中，需要在或许CFD求解器中再分离。
+- 设置网格尺寸, 生成面网格
+- 拉伸成体网格。依次点击“Edit mesh”-“Extrude mesh”，弹出“Extrude mesh”的属性窗口。
+ 1. Elements：指源网格，即前面已创建的面网格；
+ 2. New volume part name：指即将生成的体网格名称，默认fluid,可改。
+ 3. New side part name：指侧面名字，默认inherited，即边界线的名字。
+ 4. New top part name：指拉伸后顶面的名字，自动给一个默认名可改。改为top
+ 5. Extrude mesh method：指拉伸方式，共四种：extrude by element normal、extrude along curve、extrude by vector、extrude by rotation。选择extrude by element normal
+ 6. Number of layers：指拉伸层数。设置30
+ 7. Reverse direction：可选项，指拉伸方向是否要反向。不需要
+ 8. Spacing type：可选fixed或者Fuction。选择固定距离
+ 9. Spacing：指每层网格厚度。设为1mm，30层
+ 10. Delete original elements：可选项，指是否删除源网格。不选，因为原网格需要作为下表面
+
+** Simulation
+*** conditions
+
+| Configuration                    |                          5 |
+| Characteristic Length (m)        |                      0.141 |
+| Altitude (m)                     |                       1000 |
+| Angle of Attack (degree)         |                          0 |
+| Air velocity (m/s)               |                        100 |
+| Temperature (Celsius)            |                        -10 |
+| Medium Volume Diameter (Microns) |                  20 or 100 |
+| Liquid Water Content (g/m3)      |                        0.7 |
+| Droplet distribution             | Monodisperse or Langmuir D |
+| Icing time (mins)                |                         30 |
+
+*** configuration
+**** character length
+
+The Characteristic length setting has no impact on the flow, but it will change the scale of the average residual which is reported in non-dimensional form.
+A large characteristic length will make the average residual appear smaller.
+It is a good practice to choose a characteristic length that matches the scale of the computational domain.
+In this case, 0.05m is the diameter of the piccolo tube.
+
+- [X] 0.141
+the length of sensor, not include the flow field.
+the result is wrong, no image
+- [ ] 0.4
+the length of flow field, that is all the length of model.
+
+**** prism layer
+
+how to set?
+what functions?
+
+** Grid
+https://www.bilibili.com/video/BV1w741177BW?p=1
+** TODO Experimental Data clear up
+   :LOGBOOK:
+   CLOCK: [2020-04-04 Sat 15:19]--[2020-04-04 Sat 16:49] =>  1:30
+   :END:
+ [2020-04-04 Sat 15:19]
+
+*** tools
+
+ My desired tools should include three parts: the sensors to produce data; the data_inbox to collect data from all accessed sensors and send data to next; the database to store or process or remind.
+
+ The sensor works as developers want. The sensor can send data at any time at any place.
+
+ The data_inbox can receive multi data, and send to next one by one. Users can get real-time data.
+
+ The database can plot the data with fitted curve. Remind users to process the data within a day with notifications. Store or remove the data or beautify the output with commands according to users.
+
+*** workflow
+**** describe data
+     :PROPERTIES:
+     :ID:       E42496B0-D2FA-4F06-B719-3AC5554CF73E
+     :END:
+
+ https://gitee.com/chengxinhust/graph-bed/raw/master/oMsYXV.jpg
+
+* TODO Hust 311 team meeting
+  :PROPERTIES:
+  :ID:       A1F972AA-1004-493D-A078-923EDBE764B3
+  :LAST_REPEAT: [2020-04-15 Wed 15:54]
+  :END:
+  - State "DONE"       from "NEXT"       [2020-04-13 Mon 15:54]
+  [2020-04-06 Mon 13:21]
+
+SCHEDULED: <2020-04-22 Wed 14:30 .+1w>
+:PROPERTIES:
+:STYLE: habit
+:REPEAT_TO_STATE: NEXT
+:END:
+
+** Slides
+
+[[file:~/Documents/SLD/WorkUpdate/%E7%BB%84%E4%BC%9A.key][311-workupdate]]
+
+** 写论文原理部分
+*** 水滴轨迹
+
+1. 流场的计算，根据N-S方程，可以得到压强、速度、密度、温度
+2. 根据拉格朗日法，求水滴的加速度、位置
+3. 水收集率的计算
+
+** 商飞讨论 20200413
+
+1. 国栋发技术协议，叶老师比较满意
+2. 6月份做冰风洞实验
+3. 合同，报价单，资质文件表，叶老师明天到实验室办理
+
+4. 服务合同，知识产权归商飞
+5. 修改稿，问题稿
+6. 电话会议
+
+7. 理论，模拟仿真
+8. 模型修改
+9. 研制工作加快
+10. 两个构形，平面图
+11. 安装位置，和谐振杆位置一致；我们定位置，伸出的位置比较高
+12. 三维形状？
+
+13. 以前的构形，及实验或者仿真的结果
+
+14. 三种探测：单光纤，单阻抗，光纤阻抗复合
+
+15. TODO 考虑长度，不考虑坡度。水滴速度怎么选
+16. 实验室产业化
+
+** 超算-广州
+*** 试用
+
+- [ ] 用户单位盖章？我们不能返校。
+- [ ] 虚拟机只能最大24核吗？如果需要更多核，怎么选择？
+- 32 64G
+- [ ] 可以随意安装其它软件吗？fensap ice盗版？
+- [ ] 时长计算和收费。使用时长如何计算？连续计时还是使用计时？怎么收费？使用前收费还是使用后收费？可以暂停和续订吗？
+- 镜像安装
+- [ ] 软件费用怎么算？
+- [ ] 其它费用。内存，存储空间，网络收费吗？如何租用？
+- [ ] 申请表中“天河星光”账号是什么？
+- [ ] 费用预估。600h * 100 * 0.1 = 6000(6k)
+- 1T存储
+
+桂博，广州超算这方面，我把我们昨天讨论的一些问题问清楚了。1. 申请表的盖章可以不用。2. 计算资源最高配置32核64G内存1T存储，更高配置需要进一步申请。3. 系统可以是win或者linux。 4. 软件可以自己装，自己为版权问题负责。 5. 只能连续使用，创建资源开始计时，释放资源停止计时。中间可以随时释放资源随时创建。 6. 没有额外收费，按时计算0.1/核/小时，
+
+天津超算中心
+65375552
+- 版权
+65375553
+硬件环境
+账号： 1个星期
+系统： windows 没有，linux 使用效率高
+收费： 1.5
+核： 弹性控制
+包年： 100核 28核/28G内存/结点
+1个结点（28核） 1年 2.8万
+2个结点（56核） 1年 5.6万
+3个结点（84核） 1年 8.4万
+4个结点（112核） 1年 9.9万
+
+** work plan
+** 小水滴的命名问题
+
+   |--------------------------------+---------------------------------------------------+------------------------|
+   | 命名                           | 出处                                              | 单位                   |
+   |--------------------------------+---------------------------------------------------+------------------------|
+   | 常规水滴                       | 过冷大水滴飞溅特性数值分析                        | 王超（北航）           |
+   | 附录C结冰条件                  | 国外运输类飞机最新 结冰适航规章差异初步研究与分析 | 丁媛媛（南航）         |
+   | 常规水滴                       | 过冷大水滴动力学特性对结冰影响数值研究            | 桑为民（西北工业大学） |
+   | 过冷小水滴                     | 过冷大水滴变形与破碎的影响因素                    | 李维浩（气动中心）     |
+   | 常规水滴                       | SLD结冰对舵面翼型及多段翼型的气动影响分析         | 李冬（上交硕士）       |
+   | 普通小粒径水滴                 | 飞机过冷大粒径水滴结冰冰型数值模拟                | 由立岩（商飞）         |
+   | 常规水滴                       | 专利：过冷水滴结冰探测器和混合态结冰探测器        | （商飞）               |
+   | 小尺度过冷水滴                 | 专利：一种过冷水滴结冰探测装置                    | （气动中心）           |
+   | 常规水滴                       | 过冷大水滴结冰探测技术研究进展                    | 张洪（华科）           |
+   | conventional small droplets    |                                                   |                        |
+   | icing conditions of Appendix C | （附录O）                                         | FAA                    |
+   |--------------------------------+---------------------------------------------------+------------------------|
+
+** 光纤传感器设计
+
+   [2020-05-04 Mon 10:30]
+
+*** 构形
+
+1. 实验室已有光纤
+   - 矩形
+   - 圆形
+
+2. 端面形状设计
+   - 圆形设计可能光纤不多
+
+3. 端面的设计标准是什么
+
+4. 光纤的分布
+   - 目的是增大接受光纤的光强，线性度和灵敏度
+   - 是散布的吗
+   - 几发几收
+
+5. 光纤选择
+   - 波长：光纤和光源
+   - 介质吸收率
+
+6. 倾斜角度
+
+*** 安装
+
+1. 安装位置
+   - 固定方式是什么？
+
+2. 光纤位置
+   - 不选择对称分布
+
+*** 电路
+
+1. 方波发生器
+2. 锁定放大器
+ad2200
+
+* TODO HDL时序分析
+
+<2020-05-09 Sat>
+
+** 基本概念
+https://blog.csdn.net/u012176730/article/details/54412323
+- 时序余量
+时序余量也称为时间余量，是 *数据到达时间点* 与 *数据建立时间点* 的差，
+或者，是 *数据到达时间点* 与 *数据保持结束时间点* 的差。
+
+如果数据在数据建立之前到达，寄存器建立。如果新的数据在数据保持结束之后达到，数据就有足够的稳定时间，寄存器能够锁存数据。
+所以时序余量的正负值和数据的稳定性有直接关系
+
+时序余量的大小和组合逻辑的长度（数据到达时间）相关
+
+b 建立时间 h保持时间 x数据存在时间（和clk周期相等）
+
+__________----------__________----------__________
+                         bbbbbhhh
+
+             xxxxxxxxxxxxxxxxxxxx 数据长，浪费了时间：考虑缩小周期
+
+最优的clk周期，就是建立时间+保持时间
+
+d 组合逻辑传输延迟
+
+____----____|----____----
+       bbbbb|hhh
+
+    dddxxxxx|xxx  数据到达的时间刚刚好：时间余量为0
+
+     xxxxxxx|x    数据到达早:建立时间余量为负
+
+         xxx|xxxxx数据到达晚：保持时间余量为正
+** 运算关系
+时序余量 + 建立保持时间 = 最小周期 = 最大频率的倒数
+
