@@ -71,7 +71,8 @@ change to 'console.log()'.
 ** DONE snippet in spacemacs
    [2020-03-02 Mon 17:52]
  the repo of snippets for [[https://github.com/AndreaCrotti/yasnippet-snippets][yasnippet]] can apply the "snippets" folder to [[~/.emacs.d/elpa/yasnippet-20191222.2206/snippets][target directory]] 
-** TODO spacemacs configuration into org-mode
+** DONE spacemacs configuration into org-mode
+   CLOSED: [2020-07-02 Thu 18:51]
    :PROPERTIES:
    :ID:       2A4C0938-EACC-49E8-9194-FC3C1A9DE441
    :END:
@@ -742,6 +743,170 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
  x (org-agenda-exit)
  Exit agenda, remove the agenda buffer and all buffers loaded by Emacs for the compilation of the agenda. Buffers created by the user to visit Org files are not removed
 
+** DONE org mode gtd
+   CLOSED: [2020-07-02 Thu 18:51]
+ http://doc.norang.ca/org-mode.html
+**** clock in
+     :LOGBOOK:
+     CLOCK: [2020-07-02 Thu 17:38]--[2020-07-02 Thu 17:39] =>  0:01
+     :END:
+ (global-set-key (kbd "<f9> SPC") 'bh/clock-in-last-task)
+**** DONE block agenda
+     CLOSED: [2020-07-02 Thu 18:51]
+     :LOGBOOK:
+     CLOCK: [2020-07-02 Thu 17:43]--[2020-07-02 Thu 17:44] =>  0:01
+     :END:
+ Tasks to refile are in their own section of the block agenda. To find tasks to refile I run my agenda view with F12 SPC and scroll down to second section of the block agenda: Tasks to Refile. This view shows all tasks (even ones marked in a done state).
+
+ Bulk refiling in the agenda works very well for multiple tasks going to the same place. Just mark the tasks with m and then B r to refile all of them to a new location. Occasionally I'll also refile tasks as subtasks of the current clocking task using C-2 C-c C-w from the refile.org file.
+
+ Refiling all of my tasks tends to take less than a minute so I normally do this a couple of times a day.
+**** agenda day view
+ If I want just today's calendar view then F12 a is still faster than generating the block agenda - especially if I want to view a week or month's worth of information, or check my clocking data. In that case the extra detail on the block agenda view is never really needed and I don't want to spend time waiting for it to be generated.
+**** agenda project view
+ After selecting a project (with P on any task in the agenda) the block agenda changes to show the project and any subprojects in the Projects section. Tasks show project-related tasks that are hidden when not narrowed to a project.
+**** top-down
+ I generally work top-down on the agenda. Things with deadlines and scheduled dates (planned to work on today or earlier) show up in the agenda at the top.
+
+ My day goes generally like this:
+
+ - Punch in (this starts the clock on the default task)
+   - Look at the agenda and make a mental note of anything important to deal with today
+   - Read email and news
+   - create notes, and tasks for things that need responses with org-capture
+   - Check refile tasks and respond to emails
+ - Look at my agenda and work on important tasks for today
+   - Clock it in
+   - Work on it until it is DONE or it gets interrupted
+ - Work on tasks
+ - Make journal entries (C-c c j) for interruptions
+ - Punch out for lunch and punch back in after lunch
+ - work on more tasks
+ - Refile tasks to empty the list
+   - Tag tasks to be refiled with m collecting all tasks for the same target
+   - Bulk refile the tasks to the target location with B r
+   - Repeat (or refile individually with C-c C-w) until all refile tasks are gone
+ - Mark habits done today as DONE
+ - Punch out at the end of the work day
+
+ Start with deadlines and tasks scheduled today or earlier from the daily agenda view. Then move on to tasks in the Next Tasks list in the block agenda view. I tend to schedule current projects to 'today' when I start work on them and they sit on my daily agenda reminding me that they need to be completed. I normally only schedule one or two projects to the daily agenda and unschedule things that are no longer important and don't deserve my attention today.
+**** new task
+ When I look for a new task to work on I generally hit F12 SPC to get the block agenda and follow this order:
+
+ - Pick something off today's agenda
+   - deadline for today (do this first - it's not late yet)
+   - deadline in the past (it's already late)
+   - a scheduled task for today (it's supposed to be done today)
+ - a scheduled task that is still on the agenda
+ - deadline that is coming up soon
+ - pick a NEXT task
+
+ If you run out of items to work on look for a NEXT task in the current context pick a task from the Tasks list of the current project.
+**** a NEXT task
+ A NEXT task is something that *is available to work on now* , it is the next logical step in some project.
+ Having an agenda view that shows NEXT tasks makes it easy to pick the thing to clock - and I don't have to remember if I need to look in the ONGOING list or the NEXT list when looking for the task to clock-in.
+ The NEXT list is basically 'what is current' - any task that moves a project forward. I want to find the thing to work on as fast as I can and actually do work on it - not spend time hunting through my org files for the task that needs to be clocked-in.
+**** email
+ If there are emails that require a response I use org-capture to create a new task with a heading of 'Respond to <user>' for each one. This automatically links to the email in the task and makes it easy to find later.
+ The capture template for Repond To tasks is now scheduled for today so I can refile the task to the appropriate org file without losing the task for a week.
+ Next, I go to my newly created tasks to be refiled from the block agenda with F12 a and clock in an email task and deal with it. Repeat this until all of the 'Respond to <user>' tasks are marked DONE.
+**** note
+ If an article has a useful piece of information I want to remember I create a note for it with C-c c n and enter the topic and file it. This takes practically no time at all and I know the note is safely filed for later retrieval. The time I spend in the capture buffer is clocked with that capture note.
+**** small task
+ I need to find small tasks that I can knock off the list.
+
+ How do we do this? Get a list of NEXT tasks from the block agenda and then narrow it down with filtering. Tasks are ordered in the NEXT agenda view by estimated effort so the short tasks are first – just start at the top and work your way down.
+ I can limit the displayed agenda tasks to those estimates of 10 minutes or less with / + 1 and I can pick something that fits the minutes I have left before I take off for lunch.
+**** / RET
+ I need to stop working on these immediately. I put the project task on HOLD and work on something else. The / RET filter removes HOLD tasks and subtasks (because of tag inheritance).
+
+ At home I have some tasks tagged with farm since these need to be performed when I am physically at our family farm. Since I am there infrequently I have added farm to the list of auto-excluded tags on my system. I can always explicitly filter to just farm tasks with / TAB farm RET when I am physically there.
+**** punch in and out
+ Without clocking data it's hard to tell how long something took to do after the fact.
+ I now use the concept of punching in and punching out at the start and end of my work day. I punch in when I arrive at work, punch out for lunch, punch in after lunch, and punch out at the end of the day. Every minute is clocked between punch-in and punch-out times.
+
+ Punching in defines a default task to clock time on whenever the clock would normally stop. I found that with the default org-mode setup I would lose clocked minutes during the day, a minute here, a minute there, and that all adds up. This is especially true if you write notes when moving to a DONE state - in this case the clock normally stops before you have composed the note – and good notes take a few minutes to write.
+**** clock setup
+ My clocking setup basically works like this:
+
+ - Punch in (start the clock)
+   - This clocks in a predefined task by org-id that is the default task to clock in whenever the clock normally stops
+ - Clock in tasks normally, and let moving to a DONE state clock out
+ - clocking out automatically clocks time on a parent task or moves back to the predefined default task if no parent exists.
+ - Continue clocking whatever tasks you work on
+ - Punch out (stop the clock)
+
+ I'm free to change the default task multiple times during the day but with the clock moving up the project tree on clock out I no longer need to do this. I simply have a single task that gets clocked in when I punch-in.
+
+ If I punch-in with a prefix on a task in Project X then that task automatically becomes the default task and all clocked time goes on that project until I either punch out or punch in some other task.
+**** clock in and out
+ If I am working on some task, then I simply clock in on the task. Clocking out moves the clock up to a parent task with a todo keyword (if any) which keeps the clock time in the same subtree. If there is no parent task with a todo keyword then the clock moves back to the default clocking task until I punch out or clock in some other task. When an interruption occurs I start a capture task which keeps clocked time on the interruption task until I close it with C-c C-c.
+ Clocking out will now clock in the parent task (if there is one with a todo keyword) or clock in the default task if not parent exists.
+ Keeping the clock running when moving a subtask to a DONE state means clocking continues to apply to the project task. I can pick the next task from the parent and clock that in without losing a minute or two while I'm deciding what to work on next.
+**** clock example
+ For example, consider the following org file:
+ #+begin_src org
+ - TODO Project A
+ -- NEXT TASK 1
+ -- TODO TASK 2
+ -- TODO TASK 3
+ - Tasks
+ -- TODO Some miscellaneous task
+ #+end_src
+ I'll work on this file in the following sequence:
+
+ I punch in with F9-I at the start of my day
+ That clocks in the Organization task by id in my todo.org file.
+
+ F12-SPC to review my block agenda
+ Pick 'TODO Some miscellaneous task' to work on next and clock that in with I The clock is now on 'TODO Some miscellaneous task'
+
+ I complete that task and mark it done with C-c C-t d
+ This stops the clock and moves it back to the Organization task.
+
+ Now I want to work on Project A so I clock in Task 1
+ I work on Task 1 and mark it DONE. This clocks out Task 1 and moves the clock to Project A. Now I work on Task 2 and clock that in.
+
+ The entire time I'm working on and clocking some subtask of Project A all of the clock time in the interval is applied somewhere to the Project A tree. When I eventually mark Project A done then the clock will move back to the default organization task.
+**** clock command
+ When I start or continue working on a task I clock it in with any of the following:
+
+ C-c C-x C-i
+ I in the agenda
+ I speed key on the first character of the heading line
+ f9 I while on the task in the agenda
+ f9 I while in the task in an org file
+**** clock small task
+ While reorganizing my org-files, reading email, clearing my inbox, and doing other planning work that isn't for a specific project I'll clock in this task.
+**** clock history
+ Clock history selection buffer for C-u C-c C-x C-i
+**** interupt
+ If it's a one-shot uninteresting task (like a coffee break) I create a capture journal entry for it that goes to the diary.org date tree. If it's a task that actually needs to be tracked and marked done, and applied to some project then I create a capture task instead which files it in refile.org.
+**** agenda log mode
+ To visit the clock line for an entry quickly use the agenda log mode. F12 a l shows all clock lines for today. I use this to navigate to the appropriate clock lines quickly. F11 goes to the current clocked task but the agenda log mode is better for finding and visiting older clock entries.
+ I always check that I haven't created task overlaps when fixing time clock entries by viewing them with log mode on in the agenda. There is a new view in the agenda for this – just hit v c in the daily agenda and clock gaps and overlaps are identified.
+**** bill clock
+ If you have a clocked time with an entry that is not closed (ie. it has no end time) then that is a hole in your clocked day and it gets counted as zero (0) for time spent on the task when generating clock reports. Counting it as zero is almost certainly wrong.
+
+ To check for unclosed clock times I use the agenda-view clock check (v c in the agenda). This view shows clocking gaps and overlaps in the agenda.
+**** month agenda
+ To check the last month's clock data I use F12 a v m b v c which shows a full month in the agenda, moves to the previous month, and shows the clocked times only. It's important to remove any agenda restriction locks and filters when checking the logs for gaps and overlaps.
+**** clock table
+ Save your original estimate by creating a dynamic clock report table at the top of your estimated project subtree. Entering C-c C-x i RET inserts a clock table report with your estimated values and any clocked time to date.
+ Column view is great for reviewing your estimate. This shows your estimated time value and the total clock time for the project side-by-side.
+
+ Creating a dynamic clock table with C-c C-x i RET is a great way to save this project review if you need to make it available to other applications.
+
+ C-c C-x C-d also provides a quick summary of clocked time for the current org file.
+
+**** report
+ To generate the report I pull up the agenda for the appropriate time frame (today, yesterday, this week, or last week) and hit the key sequence l R to add the log report (without clocking data lines) and the agenda clock report at the end.
+
+ Then it's simply a matter of exporting the resulting agenda in some useful format to provide to other people. C-x C-w /tmp/agenda.html RET exports to HTML and C-x C-w /tmp/agenda.txt RET exports to plain text. Other formats are available but I use these two the most.
+
+ Combining this export with tag filters and C-u R can limit the report to exactly the tags that people are interested in.
+**** Note
+ Notes are created with a NOTE tag already applied by the capture template so I'm free to refile the note anywhere. As long as the note is in a project file that contributes to my agenda (ie. in org-agenda-files) then I can find the note back easily with my notes agenda view by hitting the key combination F12 N. I'm free to limit the agenda view of notes using standard agenda tag filtering.
 * Tools
 ** manim
 *** Install
@@ -779,8 +944,8 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
  - tag tag-name: show tags
  After get the index of the target, =Option + Command + \= or =Option + Control= give the basic operations, =Option + Shift= quick view.
 
-** TODO Debug
-   SCHEDULED: <2020-04-20 Mon 14:00-17:00>
+** DONE Debug
+   CLOSED: [2020-07-01 Wed 12:24] SCHEDULED: <2020-04-20 Mon 14:00-17:00>
 
 *** LLDB
 

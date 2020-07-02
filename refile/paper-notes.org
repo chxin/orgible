@@ -1,5 +1,26 @@
 #+TITLE: Papers Notes from Skim Annotations
 
+* cap :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-07-02 Thu 16:32]
+:CITE: cite:stx_cookbook
+:SKIM_NOTE: [[Skim:///Users/xin/Downloads/stx_cookbook.pdf::9;;2][can use the cell in shared arithmetic mode]]
+:SKIM_PAGE: 9
+:ID:       D14E2F89-09BE-4249-9C93-C69EFE4CFD3D
+:END:
+
+so
+
+* skim :skim_annotation:read:literature:
+:PROPERTIES:
+:Created: [2020-07-02 Thu 16:29]
+:CITE: cite:stx_cookbook
+:SKIM_NOTE: [[Skim:///Users/xin/Downloads/stx_cookbook.pdf::9;;1][Stratix II, Stratix III, Stratix IV, and Stratix V]]
+:SKIM_PAGE: 9
+:END:
+
+skim
+
 * FENSAP流场控制方程 :skim_annotation:read:literature:
 :PROPERTIES:
 :Created: [2020-03-29 Sun 10:27]

@@ -1,0 +1,201 @@
+* HDL
+** DONE verilog simulation and synthesis on MacOS
+   CLOSED: [2020-07-02 Thu 17:01]
+   :PROPERTIES:
+   :ID:       D9C15D64-25C0-4776-9D50-E8B24117506F
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-07-01 Wed 11:14]--[2020-07-01 Wed 11:26] =>  0:12
+   :END:
+ [2020-07-01 Wed 11:14]
+
+*** code complier
+ #+begin_src shell
+ brew install icarus-verilog
+ brew install verilator
+ brew cask install xquartz
+ brew cask insatll gtkwave
+ cpan install Switch
+ alias gtkwave = /Applications/gtkwave.app/Contents/Resources/bin/gtkwave
+ #+end_src
+
+ if Switch located in '/usr/local/Cellar/perl/...'
+ move it to Library folder:
+ #+begin_src shell
+ sudo cp /usr/local/Cellar/perl/5.*/lib/perl5/site_perl/5.*/Switch.pm /Library/Perl/5.*/
+ #+end_src
+*** verilog synthesis
+    :PROPERTIES:
+    :ID:       AC48B934-8FE4-4C2A-9D37-42251687425D
+    :END:
+ #+begin_src shell
+ brew install yosys
+ brew install graphviz
+ #+end_src
+
+**** code example
+ #+begin_src verilog
+ module counter (clk, rst, en, count);
+    input clk, rst, en;
+    output reg [3:0] count;
+    always @(posedge clk)
+       if (rst)
+          count <= 4'd0;
+       else if (en)
+          count <= count + 4'd1;
+ endmodule
+ #+end_src
+
+**** synthesis commands
+ creat show_rtl.ys with following command:
+ #+begin_src shell
+ # read design
+ read_verilog counter.v
+ hierarchy -top counter
+ # high-level synthesis
+ proc; opt; fsm; opt; memory; opt; #techmap; opt;
+ write_verilog synth.v
+ #+end_src
+
+ convert verilog code to net table
+ #+begin_src shell
+ # get net table after synthesis
+ yosys show_rtl.ys
+ # change circuit diagram to image
+ yosys -p "prep; show -stretch -prefix counter -format dot" counter.v
+ # view image
+ dot counter.dot -T png -o counter.png
+ #+end_src
+** DONE 状态机 FSM
+   CLOSED: [2020-07-02 Thu 16:59]
+   状态转移，每个状态的输出，状态转移规律
+
+*** 好的状态机的标准
+
+ 1. 安全：FSM不会进入死循环，不会进入非预知的状态，不会由于扰动进入非设计状态。
+    FSM的综合结果无毛刺（最好使用同步时序）；FSM要完备
+
+ 2. 达到速度面积要求。
+
+ 3. 设计清晰易懂、易维护
+
+*** 设计方式
+
+ 状态转移一定是时序逻辑，因为要在每个时钟上升沿切换；
+ 状态转移规律一定是组合逻辑，不产生额外的时钟节拍，监视current state和data in的上升沿和下降沿（错误，应该是监视电平变化）；
+ 输出和输出，可以是组合逻辑，也可以是时序逻辑，在每个时钟的上升沿。（时序逻辑利于减短路径）。
+
+ 1. 一段式
+    整个状态机在一个always模块，即描述状态转移，又描述状态的输入和输出。
+
+ 2. 两段式
+    一个always模块采用同步时序描述状态转移；另一个模块再用组合逻辑判断状态转移条件以及输入输出。
+
+    同步时序和组合逻辑分开，利于synthesis，添加约束条件，利于布线。
+
+    描述输出用组合逻辑，容易产生毛刺，组合逻辑路径可能过长。
+
+ 3. 三段式
+    一个always模块采用同步时序描述转移；一个always采用组合逻辑判断状态转移条件；另一个always模块描述状态输出，可以用组合电路，也可以用时序电路。
+
+*** 状态编码
+
+ FPGA用one-hot code，只需要判断一个bit，组合电路简单；
+
+ CPLD因为组合电路资源丰富，触发器资源较少，用binary和gray-code
+
+*** demo
+
+ #+begin_src verilog
+ //第一个进程，同步时序always模块，格式化描述次态寄存器迁移到现态寄存器
+ always @ (posedge clk or negedge rst_n) //异步复位
+ if(!rst_n)
+     current_state <= IDLE;
+ else
+     current_state <= next_state; //注意，使用的是非阻塞赋值
+
+
+ //第二个进程，组合逻辑always模块，描述状态转移条件判断
+ always @ (current_state or data_in) //电平触发
+ begin
+     next_state = x; //要初始化，使得系统复位后能进入正确的状态
+ case(current_state)
+     S1: if(...)
+         next_state = S2; //阻塞赋值
+     ...
+ endcase
+ end
+
+ //第三个进程，同步时序always模块，格式化描述次态寄存器输出
+ always @ (posedge clk or negedge rst_n)
+ ...//初始化
+ case(next_state) // !!!!!根据下一个状态，不是当前状态
+ S1:
+     out1 <= 1'b1; //注意是非阻塞逻辑
+ S2:
+     out2 <= 1'b1;
+ default:... //default的作用是免除综合工具综合出锁存器
+ endcase
+ end
+ #+end_src
+
+ 为什么在第三个always描述输出模块中，根据next state而不是current statue呢？
+
+ 在时钟上升沿，current state变为next state。如果在同上升沿，判断current state，必然是没有没有改变的值。根据current state进行输出，该周期输出的就是上一个状态的输出。
+
+ next state是组合逻辑，在该时钟上升沿必然就已经是下一个状态的值，因为在上一个上升沿就已经变了。
+
+*** design process
+
+ 1. 确定输入
+ 2. 划分状态：每个状态仅根据输入就能直接进入下一个状态，不用运算之后才选择下一个状态。这样的考虑是，让状态和输入强相关，同时减小组合路径长度
+ 3. 确定每个状态的输出
+
+ 当然，如果，状态比较复杂，或者根据任务就能够分出不同的状态，以上步骤就可以倒序进行。
+
+** Verilog demo
+*** code demo and test bench demo
+
+    [[~/Documents/Snippet/HDL/counter/makefile][ripple carrier counter]]
+
+** DONE HDL时序分析
+   CLOSED: [2020-07-02 Thu 17:21]
+
+ <2020-05-09 Sat>
+
+*** 基本概念
+
+ https://blog.csdn.net/u012176730/article/details/54412323
+ - 时序余量
+ 时序余量也称为时间余量，是 *数据到达时间点* 与 *数据建立时间点* 的差，
+ 或者，是 *数据到达时间点* 与 *数据保持结束时间点* 的差。
+
+ 如果数据在数据建立之前到达，寄存器建立。如果新的数据在数据保持结束之后达到，数据就有足够的稳定时间，寄存器能够锁存数据。
+ 所以时序余量的正负值和数据的稳定性有直接关系
+
+ 时序余量的大小和组合逻辑的长度（数据到达时间）相关
+
+ b 建立时间 h保持时间 x数据存在时间（和clk周期相等）
+
+ __________----------__________----------__________
+                          bbbbbhhh
+
+              xxxxxxxxxxxxxxxxxxxx 数据长，浪费了时间：考虑缩小周期
+
+ 最优的clk周期，就是建立时间+保持时间
+
+ d 组合逻辑传输延迟
+
+ ____----____|----____----
+        bbbbb|hhh
+
+     dddxxxxx|xxx  数据到达的时间刚刚好：时间余量为0
+
+      xxxxxxx|x    数据到达早:建立时间余量为负
+
+          xxx|xxxxx数据到达晚：保持时间余量为正
+
+*** 运算关系
+
+ 时序余量 + 建立保持时间 = 最小周期 = 最大频率的倒数
+
