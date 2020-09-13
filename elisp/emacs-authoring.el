@@ -5,7 +5,7 @@
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 (setq-default fill-column 200)
 (setq preview-gs-command "/usr/local/bin/gs")
-;; == use skim on macos to utilize synctex.
+;; === use skim on macos to utilize synctex.
 ;; confer https://mssun.me/blog/spacemacs-and-latex.html
 ;; (require 'tex-buf)
 (setq TeX-source-correlate-mode t)
@@ -60,7 +60,6 @@
 (setq org-html-htmlize-output-type 'css)
 ;; = org online image
 ;; add image link tag: [[imghttp(s)://xxxx.png]]
-;; (push "~/Documents/Garage/orgible/elisp/" load-path)
 (require 'org-yt)
 (defun chxin/org-image-link (protocol link _description)
   "Interpret LINK as base64-encoded image data."
@@ -181,7 +180,7 @@
 ;; (setq org-mobile-directory "~/dl/owncloud/mobileorg")
 ;; the file to store pull message and tags
 ;; (setq org-mobile-inbox-for-pull "/Users/xin/Documents/Garage/orgible/inbox.org")
-;; == org blog site
+;; === org blog site
 ;; (require 'init-site)
 ;; (setq org-export-in-background nil
 ;;       ;; Hide html built-in style and script.
@@ -189,7 +188,6 @@
 ;;       org-html-head-include-default-style nil
 ;;       org-html-head-include-scripts nil
 ;;       )
-
 ;; ===== org ref
 ;; bibtex
 (setq org-ref-default-bibliography '("~/Documents/Garage/orgible/references.bib")
@@ -450,5 +448,6 @@ the entry of interest in the bibfile.  but does not check that."
                                    "\\" (substring argument end (1+ end)))
                     start (1+ end))))
         (concat "\"" result (substring argument start) "\"")))))
+
 ;; end
 (provide 'emacs-authoring)

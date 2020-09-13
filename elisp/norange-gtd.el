@@ -7,7 +7,8 @@
     (setq org-agenda-files org-user-agenda-files)
   (setq org-agenda-files (quote ("~/Documents/Garage/orgible/inbox.org"
                                  "~/Documents/Garage/orgible/refile/"
-                                 "~/Documents/Garage/orgible/oxrign/"))))
+                                 "~/Documents/Garage/orgible/oxrign/"
+                                 ))))
 ;; ===== Standard key bindings
 ;; Custom Key Bindings
 (global-set-key (kbd "C-c b f") 'bh/org-todo)
@@ -52,9 +53,10 @@
 ;; ===== org todo keywords
 ;;; "@" to add comments
 ;;; "!" to add timestamp
+(setq system-time-locale "C")
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-              (sequence "SCHEDULE(s)" "DEADLINE(d)" "WAITING(w@)" "HOLD(h@/!)" "|" "CANCELLED(c@)" "FINISHED(n!)" "PHONE" "MEETING"))))
+              (sequence "SCHEDULE(s)" "DEADLINE(d)" "WAITING(w@)" "HOLD(h@/!)" "|" "CANCELLED(c@)" "FINISHED(f!)" "PHONE" "MEETING"))))
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
               ("NEXT" :foreground "blue" :weight bold)
@@ -93,11 +95,13 @@
               ("w" "Review" entry (file "~/Documents/Garage/orgible/inbox.org")
                 "* TODO Review %c\t%F\n%U\n" :immediate-finish t)
               ("m" "Meeting" entry (file "~/Documents/Garage/orgible/inbox.org")
-                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+               "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone Call" entry (file "~/Documents/Garage/orgible/inbox.org")
                 "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ("e" "Email" entry (file "~/Documents/Garage/orgible/inbox.org")
+               "* TODO [#A] %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n%a\n" :immediate-finish t)
               ("h" "Habit" entry (file "~/Documents/Garage/orgible/inbox.org")
-                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+               "* NEXT %?\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n%U\n%a\n"))))
 ;; Remove empty LOGBOOK drawers on clock out
 (defun bh/remove-empty-drawer-on-clock-out ()
   (interactive)
@@ -452,7 +456,7 @@ A prefix arg forces clock in of the default task."
 ; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
 ;; ===== archive
-(setq org-archive-location (quote ("~/Documents/Garage/orgible/refile/archive.org")))
+(setq org-archive-location "~/org/datetree.org::datetree/* Finished Tasks")
 ;; ===== org projectile
 (setq org-projectile-projects-file
       "~/Documents/Garage/orgible/refile/projects.org")

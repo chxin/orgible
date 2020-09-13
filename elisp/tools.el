@@ -1,7 +1,8 @@
 ;; ===== autocompletion mode
 (setq auto-completion-enable-sort-by-usage t
       auto-completion-enable-snippets-in-popup t)
-
+(global-company-mode t)
+(setq company-global-modes (list "c-mode" "c++-mode" "BSDmakefile-mode" "makefile-mode" "Verilog-mode"))
 ;; ===== leetcode mode
 (setq-default leetcode-prefer-language "cpp")
 (setq-default leetcode-prefer-sql "mysql")
@@ -18,12 +19,62 @@
 (setq rmh-elfeed-org-files (list
                             "~/Documents/Garage/orgible/elfeed.org"
                             ))
-
 ;; ===== email mu4e mode
 (setq mu4e-account-alist t
       mu4e-enable-notifications t
       mu4e-installation-path "/usr/local/Cellar/mu/1.2.0_1/share/emacs/site-lisp/mu/mu4e")
-
+(setq mu4e-attachment-dir "~/Downloads")
+(require 'org-mu4e)
+(require 'org-mime)
+(setq org-mu4e-convert-to-html t)
+;; html mail
+(defun my-htmlize-and-send ()
+  "When in an org-mu4e-compose-org-mode message, htmlize and send it."
+  (interactive)
+  (when (member 'org~mu4e-mime-switch-headers-or-body post-command-hook)
+   (org-mime-htmlize)
+   ;; (org-mu4e-compose-org-mode)
+   ;; (mu4e-compose-mode)
+   (message-send-and-exit)))
+;; multiaccount
+;; (require 'mu4e-context)
+;; (setq stmpmail-stream-type 'starttls)
+;; (setq mu4e-contexts
+;;       `( ,(make-mu4e-context
+;;            :name "163"
+;;            :enter-func (lambda () (mu4e-message "Entering 163 context"))
+;;            :leave-func (lambda () (mu4e-message "Leaving 163 context"))
+;;            ;; we match based on the contact-fields of the message
+;;            :match-func (lambda (msg)
+;;                          (when msg
+;;                            (mu4e-message-contact-field-matches msg :to "chengxinhust163.com")))
+;;            :vars '( ( user-mail-address	    . "chengxinhust@163.com"  )
+;;                     ( user-full-name	    . "Xin Cheng" )
+;;                     ( smtpmail-smtp-server  . "smtp.163.com")
+;;                     ( smtpmail-smtp-service  . "465")
+;;                     ( mu4e-compose-signature .
+;;                                              (concat
+;;                                               "Xin Cheng\n"
+;;                                               "HUST, China\n"))))
+;;          ,(make-mu4e-context
+;;            :name "hust"
+;;            :enter-func (lambda () (mu4e-message "Switch to the hust context"))
+;;            ;; no leave-func
+;;            ;; we match based on the maildir of the message
+;;            ;; this matches maildir /Arkham and its sub-directories
+;;            :match-func (lambda (msg)
+;;                          (when msg
+;;                            (string-match-p "^/CHxin" (mu4e-message-field msg :maildir))))
+;;            :vars '( ( user-mail-address	     . "chengxin@hust.edu.cn" )
+;;                     ( user-full-name	     . "Xin Cheng" )
+;;                     ( smtpmail-smtp-server  . "mail.hust.edu.cn")
+;;                     ( smtpmail-smtp-service  . "25")
+;;                     ( mu4e-compose-signature  .
+;;                                               (concat
+;;                                                "Xin Cheng\n"
+;;                                                "HUST, China\n"))))))
+;; mu4e email account list
+(require 'smtpmail)
 (setq mu4e-account-alist
       '(
         ;; ("outlook"
@@ -38,22 +89,32 @@
          (mu4e-sent-folder "/college/.sent-items")
          (mu4e-drafts-folder "/college/.drafts")
          (user-mail-address "chengxin@hust.edu.cn")
-         (user-full-name "xin cheng"))
+         (user-full-name "xin cheng")
+         (smtpmail-smtp-server "mail.hust.edu.cn")
+         (smtpmail-default-smtp-server "mail.hust.edu.cn")
+         (message-send-mail-function message-smtpmail-send-it)
+         (smtpmail-smtp-service 25)
+         )
         ("163"
          (mu4e-sent-messages-behavior sent)
          (mu4e-sent-folder "/163/.sent-items")
          (mu4e-drafts-folder "/163/.drafts")
          (user-mail-address "chengxinhust@163.com")
-         (user-full-name "xin cheng"))
+         (user-full-name "xin cheng")
+         (smtpmail-smtp-server "smtp.163.com")
+         (smtpmail-default-smtp-server "smtp.163.com")
+         (message-send-mail-function smtpmail-send-it)
+         (smtpmail-smtp-service 25)
+         )
         ))
-;; (mu4e/mail-account-reset)
+(mu4e/mail-account-reset)
 ;; set up some common mu4e variables
 (setq mu4e-maildir "~/.mail"
       mu4e-trash-folder "/.mail/.trash"
       mu4e-refile-folder "/.mail/.archive"
       mu4e-get-mail-command "offlineimap"
       mu4e-update-interval 3600
-      mu4e-compose-signature-auto-include nil
+      mu4e-compose-signature-auto-include t
       mu4e-view-show-images t
       mu4e-view-show-addresses t)
 ;; mail directory shortcuts
@@ -80,30 +141,107 @@
   ;; enable desktop notifications
   ;; (mu4e-alert-set-default-style 'notifications)) ; for linux
   ;; (mu4e-alert-set-default-style 'libnotify))  ; alternative for linux
-  (mu4e-alert-set-default-style 'notifier))   ; for mac osx (through the
-                                        ; terminal notifier app)
+  (mu4e-alert-set-default-style 'notifier))   ; for mac osx (through the terminal notifier app)
 ;; (mu4e-alert-set-default-style 'growl))      ; alternative for mac osx
 (setq mu4e-enable-mode-line t)
 ;; ===== eww
-;; (defun eww-toggle-images ()
-;;   "toggle whether images are loaded and reload the current page fro cache."
-;;   (interactive)
-;;   (setq shr-inhibit-images (not shr-inhibit-images))
-;;   (eww-reload t)
-;;   (message "images are now %s"
-;;            (if shr-inhibit-images "off" "on")))
-;; ;; toggle image display
-;; (define-key eww-mode-map (kbd "i") #'eww-toggle-images)
-;; (define-key eww-link-keymap (kbd "i") #'eww-toggle-images)
-;; ;; minimal rendering by default
-;; (setq shr-inhibit-images t)   ; toggle with `i`
-;; (setq shr-use-fonts nil)      ; toggle with `f`
+;; minimal rendering by default
+(setq shr-inhibit-images t)
+(setq shr-use-fonts nil)
+;; toggle image display
+(defun eww-toggle-images ()
+  "toggle whether images are loaded and reload the current page fro cache."
+  (interactive)
+  (setq shr-inhibit-images (not shr-inhibit-images))
+  (eww-reload t)
+  (message "images are now %s"
+           (if shr-inhibit-images "off" "on")))
 (setq browse-url-browser-function 'eww-browse-url)
 ;; ===== shell mode
 (setq shell-default-shell 'term
       shell-default-height 30
       shell-default-position 'bottom)
-
+;; ===== fonts
+;; https://github.com/jixiuf/vmacs/blob/master/conf/custom-file.el
+;; 如果配置好了， 下面20个汉字与40个英文字母应该等长
+;; here are 20 hanzi and 40 english chars, see if they are the same width
+;; aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa|
+;; 你你你你你你你你你你你你你你你你你你你你|
+;; ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,|
+;; 。。。。。。。。。。。。。。。。。。。。|
+;; 1111111111111111111111111111111111111111|
+;; 東東東東東東東東東東東東東東東東東東東東|
+;; ここここここここここここここここここここ|
+;; ｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺｺ|
+;; 까까까까까까까까까까까까까까까까까까까까|
+(defun create-frame-font-mac ()  ;; mac emacs
+  (set-face-attribute
+   'default nil :font "Menlo 19")
+  ;; Chinese Font
+  (dolist (charset '( han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "STKaiti" :size 22)))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'kana
+                    (font-spec :family "Hiragino Sans" :size 22))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'hangul
+                    (font-spec :family "Apple SD Gothic Neo" :size 26))
+  )
+(when (and (equal system-type 'darwin) (window-system))
+  (add-hook 'after-init-hook (create-frame-font-mac)))
+(defun create-frame-font-w32 ()  ;; windows emacs
+  (set-face-attribute
+   'default nil :font "Courier New 10")
+  ;; Chinese Font
+  (dolist (charset '( han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "新宋体" :size 16)))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'kana
+                    (font-spec :family "MS Mincho" :size 17))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'hangul
+                    (font-spec :family "GulimChe" :size 17)))
+(when (and (equal system-type 'windows-nt) (window-system))
+  (add-hook 'after-init-hook (create-frame-font-w32)))
+(defun  emacs-daemon-after-make-frame-hook(&optional f) ;emacsclient
+  ;; (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+  ;; (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+  ;; (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+  (with-selected-frame f
+    (when (window-system)
+      (when (equal system-type 'darwin) (create-frame-font-mac))
+      (when (equal system-type 'windows-nt) (create-frame-font-w32))
+      ;; (set-frame-position f 160 80)
+      ;; (set-frame-size f 140 50)
+      ;; (set-frame-parameter f 'alpha 85)
+      ;; (raise-frame)
+      )))
+(add-hook 'after-make-frame-functions 'emacs-daemon-after-make-frame-hook)
+;; ===== appointments notifications
+(require 'appt)
+(appt-activate t)                     ;; active appointments notifications
+(setq appt-display-format 'echo)    ;; message display
+(setq appt-audible t)
+(setq appt-display-mode-line t)       ;; display time on mode line
+(setq appt-message-warning-time '5)   ;; display notifications 5 minutes before
+(setq appt-display-duration '30)
+(setq org-agenda-include-diary t)
+(setq appt-time-msg-list nil)
+(org-agenda-to-appt)                  ;; add event to appt, or press 'r' on agenda to add event
+(defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
+  "Pressing `r' on the agenda will also add appointments."
+  (progn
+    (setq appt-time-msg-list nil)
+    (org-agenda-to-appt)))
+(ad-activate 'org-agenda-redo)
+;; ===== yassnippet
+(setq yas-snippet-dirs
+      '("~/Documents/Garage/orgible/snippets/"                 ;; personal snippets
+        ))
 
 ;; end
 (provide 'tools)

@@ -32,6 +32,12 @@ Because of submission error.
 using!
 
 *** leetcode-cli
+
+**** configuration
+https://skygragon.github.io/leetcode-cli/advanced
+**** issue: plugins cannot download
+download from https://github.com/skygragon/leetcode-cli-plugins/tree/master/plugins.
+copy to /usr/local/lib/node_modules/leetcode-cli/lib/plugins/
 **** issue: 'leetcode show 1' not work
 /usr/local/lib/node_modules/leetcode-cli/lib/core.js::92
 
@@ -343,6 +349,40 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
       - when refile, vc
       - when update blog, vc submodule org-mode-blog/
       - when private, vc submodule oxrign/
+*** org mode video [[https://www.youtube.com/watch?v=PVsSOmUB7ic][Learn Emacs Org Mode: Spacemacs Intro Tutorial - YouTube]]
+    :LOGBOOK:
+    CLOCK: [2020-03-02 Mon 17:48]--[2020-03-02 Mon 17:52] =>  0:04
+    CLOCK: [2020-03-02 Mon 17:36]--[2020-03-02 Mon 17:47] =>  0:11
+    :END:
+  [2020-03-02 Mon 17:36]
+
+**** org capture and refile
+
+     - capture the line and the file
+     - refile to the todo list of tomorrow, show in agenda
+
+**** insert snippet
+
+     have no snippet in emacs.
+
+**** shortkeys
+
+     - new sibling: C-Enter
+     - toggle global content: S-Tab
+     - toggle focus: Space w c c
+     - format: , x
+     - vi comment package: y s w ~
+     - paragraph selection: v a p
+     - org column: C-c C-x C-c
+
+**** agenda time last for 2 hours:
+
+     14:00 + 2
+
+**** org mobile
+
+     orgzly
+
 ** DONE org notes
    CLOSED: [2020-03-28 Sat 20:40]
 *** spacemacs org
@@ -946,7 +986,6 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
 
 ** DONE Debug
    CLOSED: [2020-07-01 Wed 12:24] SCHEDULED: <2020-04-20 Mon 14:00-17:00>
-
 *** LLDB
 
     [[https://blog.csdn.net/a184251289/article/details/98670441?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2][LLDB浅析]]
@@ -1024,3 +1063,11 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
    image list
  - image: find error location
    im lookup -a 0x1ec4
+
+** Finder preview enhance
+https://github.com/sindresorhus/quick-look-plugins
+*** install
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package quicklookase qlvideo
+xattr -r ~/Library/QuickLook
+*** uninstall
+xattr -d -r com.apple.quarantine ~/Library/QuickLook

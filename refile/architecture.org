@@ -1,0 +1,304 @@
+* network of computer
+** DONE 计算机网络
+   CLOSED: [2020-08-26 Wed 21:34]
+
+*** DONE 应用层
+    CLOSED: [2020-08-26 Wed 21:34]
+
+**** DONE DNS
+     CLOSED: [2020-08-18 Tue 10:21]
+     :LOGBOOK:
+     CLOCK: [2020-08-18 Tue 10:05]--[2020-08-18 Tue 10:21] =>  0:16
+     :END:
+
+***** 架构
+
+ 大量的DNS服务器以层次结构组织起来
+ - 根服务器
+   13个
+ - 顶级域服务器
+   负责顶级域名：com, org, net, edu, gov, uk
+ - 权威服务器
+ - 本地服务器
+   不属于DNS服务器的层次结构中
+
+***** 用户角度分析功能
+
+ 应用程序将URL转换为域名，调用DNS客户端，使用UDP数据包经53端口发送DNS查询报文；
+ 收到一个DNS回答报文，传递到DNS应用程序，得到IP。
+
+***** 系统角度分析功能
+
+ 1. 应用程序根据域名，先检查本地的hosts文件是否保存网址映射关系，如果有，就先调用该IP，完成域名解析
+ 2. DNS客户端查找DNS解析器缓存
+ 3. 与TCP/IP参数中设置首选的DNS服务器通信，发送查询报文
+ 4. DNS服务器查询本地配置区资源，该解析具有权威性
+ 5. DNS服务器查询缓存
+ 6. 如果未用转发模式，DNS服务器将请求报文发到13台根服务器，接受一个顶级域服务器的IP，再发送报文到顶级域服务器，接受下一个IP，如此循环
+ 7. 如果使用转发模式，DNS服务器将请求转发到上一级DNS服务器，逐步向上传递，最后的结果返回本地服务器，再返回本地客户端，传递给应用程序
+
+**** DONE P2P
+     CLOSED: [2020-08-18 Tue 11:10]
+     :LOGBOOK:
+     CLOCK: [2020-08-18 Tue 10:37]--[2020-08-18 Tue 11:09] =>  0:32
+     :END:
+     激励机制：一报还一报。
+     追踪器标记是否在洪流中；
+     选择部分对等方建立并行TCP链接，询问对等方的块列表；
+     请求最稀缺的块，优先发送最高速率的邻居
+
+**** socket编程
+     :LOGBOOK:
+     CLOCK: [2020-08-18 Tue 11:13]--[2020-08-18 Tue 11:29] =>  0:16
+     :END:
+ UDP服务器不用监听通道，收到就处理。
+
+***** TCP
+
+ 服务器：创建socket，绑定端口，监听，接受连结，接收并处理数据，发送数据，关闭socket
+
+***** UDP
+
+ 服务器：创建socket，绑定端口，接受并数据，发送数据，关闭socket
+
+**** http解析报文
+
+ #+begin_src C
+ /* 解析请求行 */
+	 int parse_start_line(int sockfd, char *recv_buf, req_pack *rp)
+	 {
+		 char *p = recv_buf;
+		 char *ch = p;
+		 int i = 0;
+		 enum parts { method, url, ver } req_part = method;
+		 char *method_str;
+		 char *url_str;
+		 char *ver_str;
+		 int k = 0;
+
+		 if (*ch < 'A' || *ch > 'Z') {
+			 return -1;
+		 }
+
+		 while (*ch != CR) {
+			 if (*ch != BLANK) {
+				 k++;
+			 } else if (req_part == method) {
+				 method_str = (char *)malloc(k * sizeof(char *));
+				 memset(method_str, 0, sizeof(char *));
+				 strncpy(method_str, recv_buf, k);
+				 k = 0;
+				 req_part = url;
+			 } else if (req_part == url) {
+				 url_str = (char *)malloc(k * sizeof(char *));
+				 memset(url_str, 0, sizeof(char *));
+				 strncpy(url_str, recv_buf + strlen(method_str) + 1, k);
+				 k = 0;
+				 req_part = ver;
+			 }
+			 ch++;
+			 i++;
+		 }
+
+		 if (req_part == url) {
+			 if (k != 0) {
+				 url_str = (char *)malloc(k * sizeof(char));
+				 memset(url_str, 0, sizeof(char));
+				 strncpy(url_str, recv_buf + strlen(method_str) + 1, k);
+				 k = 0;
+			 } else {
+				 return -1;
+			 }
+		 }
+
+		 if (k == 0) {
+			 ver_str = (char *)malloc(8 * sizeof(char));
+			 memset(ver_str, 0, sizeof(char));
+			 strcpy(ver_str, "HTTP/1.1");
+		 } else {
+			 ver_str = (char *)malloc(k * sizeof(char));
+			 memset(ver_str, 0, sizeof(char));
+			 strncpy(ver_str,
+					 recv_buf + strlen(method_str) + strlen(url_str) + 2, k);
+		 }
+
+		 rp->method = method_str;
+		 rp->url = url_str;
+		 rp->version = ver_str;
+
+		 return (i + 2);
+	 }
+
+	 /* 解析首部字段 */
+	 int parse_header(int sockfd, char *recv_buf, header headers[])
+	 {
+		 char *p = recv_buf;
+		 char *ch = p;
+		 int i = 0;
+		 int k = 0;
+		 int v = 0;
+		 int h_i = 0;
+		 bool is_newline = false;
+		 char *key_str;
+		 char *value_str;
+		 header *tmp_header = (header *)malloc(sizeof(header *));
+		 memset(tmp_header, 0, sizeof(header));
+
+		 while (1) {
+			 if (*ch == CR && *(ch + 1) == LF) {
+				 break;
+			 }
+			 while (*ch != COLON) {
+				 ch++;
+				 i++;
+				 k++;
+			 }
+			 if (*ch == COLON) {
+				 key_str = (char *)malloc(k * sizeof(char *));
+				 memset(key_str, 0, sizeof(char *));
+				 strncpy(key_str, recv_buf + i - k, k);
+				 k = 0;
+				 ch++;
+				 i++;
+			 }
+			 while (*ch != CR) {
+				 ch++;
+				 i++;
+				 v++;
+			 }
+			 if (*ch == CR) {
+				 value_str = (char *)malloc(v * sizeof(char *));
+				 memset(value_str, 0, sizeof(char *));
+				 strncpy(value_str, recv_buf + i - v, v);
+				 v = 0;
+				 i++;
+				 ch++;
+			 }
+			 i++;
+			 ch++;
+			 headers[h_i].key = key_str;
+
+			 h_i++;
+		 }
+
+		 return (i + 2);
+	 }
+ #+end_src
+
+*** DONE 传输层
+    CLOSED: [2020-08-26 Wed 21:34]
+
+**** 复用
+
+ 根据端口的不同，将传输层报文发送到不同的进程中
+
+**** 可靠传输
+***** 差错控制
+
+ 校验码
+
+***** 可靠数据传输
+
+ 编号、确认、重传
+
+***** 流量控制
+
+ 滑窗
+
+***** 拥塞控制
+
+ 慢启动，快增长
+
+*** DONE Web Request Process
+    CLOSED: [2020-08-26 Wed 21:34]
+
+ 一名学生Bob将他的计算机与学校的以太网交换机相连，下载Web页面
+
+**** DHCP
+
+ 假设DHCP服务器运行在路由器中。
+ 1. Bob的计算机的操作系统应用层生成一个DHCP请求报文UDP，在传输层添加目的端口号67和源端口号68，在网络层添加IP目的地址255.255.255.255（广播）和IP源地址0.0.0.0（此时Bob还没有IP），在数据链路层添加目的MAC地址FF:FF:FF:FF:FF:FF（广播）和源MAC地址，在物理层以比特流的方式发送到物理链路中，发送给交换机。
+ 2. 交换机在所有出端口广播该帧，由于DHCP服务器和Bob主机不在同一局域网，只有发往路由器的端口才会响应。
+ 3. 路由器提取以太网帧中的IP数据报，该数据报的广播IP目的地址，表明了这个数据报应该在高层协议处理。运行在该路由器的DHCP服务器接收请求，发送DHCP ACK报文UDP，在网络层添加目的和源IP地址（这两个IP都没用），在数据链路层添加目的（Bob主机Mac）和源MAC地址（路由器的端口MAC）。
+ 4. 在第一次Bob主机发送DHCP请求时，交换机自学习了Bob的mac地址和交换机端口，所以DHCP ACK可以被送回给Bob主机。
+ 5. Bob主机根据DHCP ACK报文，经物理层、数据链路层、网络层、传输层，在应用层设置自己的IP和DNS服务器IP，在IP转发表中设置默认网关地址（交换机地址）
+
+**** DNS和ARP
+
+ Bob在浏览器中键入www.google.com，发起HTTP get请求。
+ 1. Bob的Web浏览器生成一个TCP套接字，为了得到IP，首先生成一个DNS查询报文，传输层设置目的端口号，网络层设置目的IP地址（DHCP ACK中有）和源目的地址。
+ 2. 在数据链路层需要设置目的MAC地址。根据目的DNS的ip，使用arp查询报文，在数据链路层设置广播目的mac地址（FF:FF:FF:FF:FF:FF），在当前局域网中广播该以太网帧，在网关路由器中，根据ARP报文的目的IP地址，返回MAC地址。Bob主机收到ARP回答报文，设置DNS报文的目的MAC地址。
+ 3. 在物理层发送DNS报文，网关路由器根据目的IP地址，根据域内协议和域间协议向上转发，直至DNS服务器。
+ 4. DNS服务器根据www.google.com查询DNS源记录，生成返回Bob主机的DNS回答报文
+ 5. Bob的主机根据www.google.com的IP地址，生成TCP套接字，准备与服务器交互
+
+**** TCP和HTTP
+
+ 1. TCP三次握手：生成TCP SYN报文段，谷歌服务器生成TCP套接字，返回TCP 报文段
+ 2. web浏览器将URL转化为HTTP GET报文，向www.google.com发送HTTP GET报文，服务器生成一个HTTP响应报文，Web页面放在响应体中
+
+*** DONE 链路层
+    CLOSED: [2020-08-26 Wed 21:34]
+
+**** DONE MAC地址
+     CLOSED: [2020-08-26 Wed 21:33]
+
+***** 为什么需要MAC地址
+****** 因为TCP/IP协议没有规定数据链路层的实现
+
+   网卡有了MAC地址，可以不依赖于任何网络层协议，可以直接用来组局域网，可以独立判断一个以太帧是否接收（依据MAC地址匹配），这样大大简化了网卡的实现。
+
+****** 从mac固定，IP不固定这个角度看，mac固定地址也不是必要的
+
+   在整个互联网的体系中，数据的传递都是根据IP地址，在路由器中传递，数据链路层只是封装发送。只有在主机不是直接连接路由器时，即主机在局域网中，才根据mac地址进行交换机转发（改变交换机的mac地址为分配的地址即可），或者通过广播的方式在以太网中发送接收（这样更是只有一个分配的标号的就行，不用固定）。
+
+****** 但以太网已经这样规定了，使用ARP代价很小，没必要改变mac的机制
+
+                                                          
+
+                                                   Made with   by the community
+* system of computer
+** DONE 计算机系统
+   CLOSED: [2020-08-26 Wed 21:34]
+
+*** book:深入理解计算机系统
+**** DONE chapter10:系统IO
+     CLOSED: [2020-08-03 Mon 09:56] DEADLINE: <2020-08-03 Mon 09:55> SCHEDULED: <2020-08-03 Mon 09:00>
+     :LOGBOOK:
+     CLOCK: [2020-08-03 Mon 09:00]--[2020-08-03 Mon 09:25] =>  0:25
+     :END:
+ Linux 内核提供三个标准的数据结构表示打开的文件：描述符表、打开文件表、vnode表
+
+ Linux 的读和写操作会出现不足值
+
+ Linux 函数能够提供元数据，C标准函数不能提供
+
+***** RIO函数和C标准IO函数
+      :LOGBOOK:
+      CLOCK: [2020-08-03 Mon 09:30]--[2020-08-03 Mon 09:55] =>  0:25
+      :END:
+ 常见业务使用C标准函数，网络文件使用RIO
+
+**** DONE chapter11:网络编程
+     CLOSED: [2020-08-04 Tue 09:39] SCHEDULED: <2020-08-03 Mon 19:00>
+     :LOGBOOK:
+     CLOCK: [2020-08-03 Mon 20:36]--[2020-08-03 Mon 21:05] =>  0:29
+     CLOCK: [2020-08-03 Mon 20:02]--[2020-08-03 Mon 20:27] =>  0:25
+     CLOCK: [2020-08-03 Mon 19:27]--[2020-08-03 Mon 19:52] =>  0:25
+     CLOCK: [2020-08-03 Mon 18:57]--[2020-08-03 Mon 19:22] =>  0:25
+     :END:
+ [[file+emacs:~/Documents/Snippet/CPP/Network/echo/client.c][echo demo]]
+
+**** DONE chapter12:并发编程
+     CLOSED: [2020-08-04 Tue 21:56] DEADLINE: <2020-08-04 Tue 21:00>
+     :LOGBOOK:
+     CLOCK: [2020-08-04 Tue 09:47]--[2020-08-04 Tue 10:21] =>  0:34
+     :END:
+
+***** 进程
+***** IO多路复用
+***** 线程
+      :LOGBOOK:
+      CLOCK: [2020-08-04 Tue 15:31]--[2020-08-04 Tue 16:19] =>  0:48
+      :END:
+

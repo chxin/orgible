@@ -1221,6 +1221,8 @@
      return0;
  }
 
+** TODO 位运算
+ https://blog.csdn.net/deaidai/article/details/78167367?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.add_param_isCf
 * Networking
 ** DONE C++ Network Lib: asio
    CLOSED: [2020-04-15 Wed 16:04]
@@ -2014,3 +2016,32 @@
  : HELLO WORLD
 
   *ps:* cannot change const string
+** think about string
+   :LOGBOOK:
+   CLOCK: [2020-03-03 Tue 10:40]--[2020-03-03 Tue 10:45] =>  0:05
+   :END:
+ [2020-03-03 Tue 10:40]
+
+*** what is the memory usage?
+
+    is the subfunction memory allocated when running? or when compiling?
+      
+    the total memory equals to the sum of all functions? or the sum of the main and the max subfunction memories?
+
+*** what is the difference between string and char[]?
+
+    what is the time consumption of string method such as insert()?
+
+*** how to increase char[] length like vector<char>?
+** DONE thinking about recursive
+   CLOSED: [2020-07-02 Thu 18:49]
+   :PROPERTIES:
+   :ID:       B3B9ACA2-3E58-4986-829D-75226C2D3BF5
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-03-03 Tue 11:01]--[2020-03-03 Tue 11:03] =>  0:02
+   :END:
+ [2020-03-03 Tue 11:01]
+
+*** essentially a stack
+*** binary recursive

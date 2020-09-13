@@ -35,7 +35,6 @@
       (goto-char (point-min))
       (delete-trailing-whitespace)
       )))
-
 ;; ===== c and cpp file mode
 ;; === clang
 ;; Bind clang-format-region to C-M-tab in all modes:
