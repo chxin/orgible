@@ -2,6 +2,477 @@
   :PROPERTIES:
   :ID:       5A1160A6-B9CE-4E1B-9FA9-F846A3C918ED
   :END:
+** GUI
+*** DONE org mode 换行
+    CLOSED: [2021-02-26 Fri 14:03] SCHEDULED: <2021-02-26 Fri 12:30-13:00>
+    不仅是 org mode，所有 mode 在一行字数太多时，都不会自动换行显示或者自动截断，只能手动设置=SPC t l=。
+
+    在截断或者设置全局自动换行显示中选择一个吧。 =(set fill column)=可以实现一行最大字数
+
+    选择自动换行。
+
+** DONE spacemacs
+   CLOSED: [2020-12-27 Sun 21:50] DEADLINE: <2020-12-26 Sat 14:00>
+
+*** project
+
+ 1. SPC+p+p
+ 2. SPC+p+f: file in project
+ 3. SPC+p+t
+ 4. SPC+*
+ 5. SPC+/
+ 6. SPC+s+s
+ 7. SPC+j+i
+ 8. SPC+j+f
+ 9. SPC+j+l
+ 10. SPC+p+': open terminal
+ 11. SPC+p+.: project layout
+
+*** Dired
+
+    SPC+a+d:
+    S-c: copy
+    S-r: rename or move
+    S-d: delete
+    !: open with external apps
+
+*** Evil
+
+ 1. fd: return vi normal
+ 2. [ e= line up
+ 3. ] e= line down
+ 4. SPC+b+e erase content
+ 5. SPC+f+r recent open file
+ 6. SPC n +/-
+
+*** Search
+
+   SPC+s+g:
+   SPC+s+g+p:
+   SPC+/:
+   SPC+*:
+   SPC+s+g+b:
+
+*** Theme and Face
+
+    #+begin_src lisp
+      (setq theming-modifications
+            '((seti
+               (lsp-face-highlight-read: backgroud "#333333")
+               )))
+    #+end_src
+    the varialbe value of 'lsp-face-highlight-read' can be get from 'M-x describe-face'
+
+*** org
+**** DONE todo alert
+     CLOSED: [2020-12-21 Mon 16:00] DEADLINE: <2020-12-21 Mon 16:00>
+
+    refer to emach-china or previous init file for gtd
+
+    use appt package, the time to event is displayed at modeline.
+
+*** cpp
+*** python
+*** translate
+**** sdcv
+
+    the package on elpa is not the latest version which show ugly translate results.
+    copy the github file [[https://raw.githubusercontent.com/manateelazycat/sdcv/master/sdcv.el][sdcv.el]] to replace the target.
+
+**** insert translated
+**** enable english helper
+*** spacemacs layers
+
+    [[file:~/.spacemacs.d/layer/xinstool/packages.el][xinstool layer]]
+
+*** figure
+*** emacs 理解
+
+    https://manateelazycat.github.io
+ 1. Emacs 读取配置文件的地方有两个：
+    ~/.emacs
+    /usr/share/emacs/common/share/emacs/site-lisp/site-start.el ;; mac 无此目录
+ 2. Emacs 的工具协调
+
+*** elisp
+
+    - file-name-as-directory:
+    - mapconcat
+
+*** layout
+** calculator
+ 你知道[[http://www.gnu.org/software/emacs/calc.html][Emacs自带有一个计算器吗]]? 我的天,一个完整的计算器!听起来很不可意思,不是吗?
+
+ 事实上, 这可不仅仅是个简单的计算器而已, 这是一个[[http://en.wikipedia.org/wiki/Computer_algebra_system][计算机代数系统]]! 虽说官方只是称呼它为一个计算器,但这只是一种谦虚的说法,我想恐怕有很多人因此而忽视了它.
+ 我自己也是在通读 Emacs manual 时才发现它的,而且当时也差点略过了它.
+
+ 你有看过几年前 Will Wright 为孢子游戏所做的展示么? 玩家一开始只是个单细胞生物,后来发展出一个横跨星际的文明.
+ Will Wright 开始时只展示了一个显微镜下的细胞. 没人知道这个什么样的游戏,而随着尺度的增加,从细菌到动物,从动物到出现文明,从出现文件到实现太空旅行,在星际间旅行到星系间旅行,引起了观众一次次的强烈反响.
+ 就像它的广告语说的:"还没完呢!!!"
+
+ 随着我不断的深入 Emacs calc manual,我一次次的感叹于它的功能之强. 每一页说明都在告诉我:"还没完呢!!!".
+
+ 我这里仅仅对对其某些特征进行讲解. 要想获得一个全面的了解,你需要阅读 calc manual. manual 中甚至还有一些练习来展示一些陷阱和一些有趣的特征交互.
+
+ 按下 =C-x * c= 或 =M-x calc= 启动 calc. 会显示出两个新窗口(Emacs 意义下的窗口),一个是计算器,另一个显示操作历史.
+
+ 首先,这个计算器是基于栈操作的,它的基础用法是采用逆波兰表示法. 栈垂直向下生长. 输入数字然后回车就会将数字入栈. 输入数字后也可以直接输入运算符而无需每次都回车.
+ 由于减号(-)被用于表示减法运算符,因此使用下划线(_)来表示负数. 下面是一个例子,依次入栈 3, 4, 10:
+
+ #+BEGIN_EXAMPLE
+   3:  3
+   2:  4
+   1:  10
+       .
+ #+END_EXAMPLE
+
+ 10 位于栈顶(因此它的前面的编号为"1:"), 当我们输入 =*= 时,最顶部的两个元素会相乘:
+
+ #+BEGIN_EXAMPLE
+   2:  3
+   1:  40
+       .
+ #+END_EXAMPLE
+
+ calc 支持无限长度的整型,因此你可以使用超大的数而不会有精度丢失. 例如我们计算一下 2^200:
+
+ #+BEGIN_EXAMPLE
+   2:  2
+   1:  200
+       .
+ #+END_EXAMPLE
+
+ 按下 =^=,
+
+ #+BEGIN_EXAMPLE
+   1:  1606938044258990275541962092341162602522202993782792835301376
+       .
+ #+END_EXAMPLE
+
+ 还没完!!! Calc 支持复数,方法是将实部与虚部成对放入括号内,像这样 =(real, imaginary)=. 可以对复数进行任意运算,就跟其他数一样. 例如计算 ~-1 + 2i~ 减去 ~4 + 2i~,
+
+ #+BEGIN_EXAMPLE
+   2:  (-1, 2)
+   1:  (4, 2)
+       .
+ #+END_EXAMPLE
+
+ 按下 =-= 作减法,
+
+ #+BEGIN_EXAMPLE
+   1:  -5
+       .
+ #+END_EXAMPLE
+
+ 然后按下 =Q= 调用平方根函数计算平方根.
+
+ #+BEGIN_EXAMPLE
+   1:  (0., 2.2360679775)
+       .
+ #+END_EXAMPLE
+
+ 你还可以按下 =p= 来设置计算的精度. 默认精度为 12 位. 例如计算 ~1 / 7~:
+
+ #+BEGIN_EXAMPLE
+   1:  0.142857142857
+       .
+ #+END_EXAMPLE
+
+ 我们将精度调整为 50 位后,再计算一次:
+
+ #+BEGIN_EXAMPLE
+   2:  0.142857142857
+   1:  0.14285714285714285714285714285714285714285714285714
+       .
+ #+END_EXAMPLE
+
+ 数字能以各种计数法的方式来表示,例如定点计数法,科学计数法,工程计数法. 可以在不同计数法之间切换而不会丢失任何信息(数的存储与显示是独立的).
+
+ 还没完呢!!! 我们还可以用分数的形式表示有理数. 格式是 =分子:分母=.
+
+ #+BEGIN_EXAMPLE
+   3:  1:7
+   2:  3:13
+   1:  17:29
+       .
+ #+END_EXAMPLE
+
+ 它们的累积以最低层的形式来显示(And multiply them all together, which displays in the lowest form),
+
+ #+BEGIN_EXAMPLE
+   1:  51:2842
+       .
+ #+END_EXAMPLE
+
+ There is a mode for working in these automatically.
+
+ 还没完呢!!! 我们还能修改基数. 要输入一个其他基数的数字,只需要以基数和 =#= 为前缀即可. 例如我们是这样输入以 2 为积的 29 的:
+
+ #+BEGIN_EXAMPLE
+   2#11101
+ #+END_EXAMPLE
+
+ 可以通过 =d r= 修改显示的基数. 例如假设栈中的数字为 29(10 进制),则转换成以 4 为基数则是:
+
+ #+BEGIN_EXAMPLE
+   1:  4#131
+       .
+ #+END_EXAMPLE
+
+ 转换为 16 进制为:
+
+ #+BEGIN_EXAMPLE
+   1:  16#1D
+       .
+ #+END_EXAMPLE
+
+ 转换为 36 进制为:
+
+ #+BEGIN_EXAMPLE
+   1:  36#T
+       .
+ #+END_EXAMPLE
+
+ 还没完呢!!! 我们也可以直接输入代数表达式,方法是以单引号(')开头. 表达式中甚至还可以带符号.
+ 注意: 这些表达式不是以逆波兰表示法录入的.
+
+ #+BEGIN_EXAMPLE
+   1:  a^3 + a^2 b / c d - a / b
+       .
+ #+END_EXAMPLE
+
+ 按下 =d B= 可以进入"big"模式,在此模式下更易阅读:
+
+ #+BEGIN_EXAMPLE
+               2
+        3   b a    a
+   1:  a  + ---- - -
+            c d    b
+
+
+       .
+ #+END_EXAMPLE
+
+ 我们还可以为变量赋值来计算表达式. 例如使用 "evaluates-to" 运算符将 a 的值赋为 10 可以得到下列结果:
+
+ #+BEGIN_EXAMPLE
+             2
+        3   a  b   a             100 b   10
+   1:  a  + ---- - -  =>  1000 + ----- - --
+            c d    b              c d    b
+
+       .
+ #+END_EXAMPLE
+
+ 还没完呢!!! Calc 支持向量类型，可以用来表示向量，矩阵并进行线性代数运算. 方法是将各元素置入方括号内,[]
+
+ #+BEGIN_EXAMPLE
+     2:  [4, 1, 5]
+     1:  [ [ 1, 2, 3 ]
+           [ 4, 5, 6 ]
+           [ 6, 7, 8 ] ]
+         .
+ #+END_EXAMPLE
+
+ 然后计算该向量与矩阵的点积与叉积.
+
+ #+BEGIN_EXAMPLE
+   2:  [38, 48, 58]
+   1:  [ [ -14, -18, -22 ]
+         [ -19, -18, -17 ]
+         [ 15,  18,  21  ] ]
+       .
+ #+END_EXAMPLE
+
+ Calc 支持你能想到的任何矩阵与数组运算,包括 map 和 reduce(而且你还能定义自己的应用表达式)
+
+ 可以用 Calc 来求解线性方程. 基于 a 和 b 算出 x 和 y 的值.
+
+ #+BEGIN_EXAMPLE
+   x + a y = 6
+   x + b y = 10
+ #+END_EXAMPLE
+
+ 我们这么输入它(注意我们我们这里用了符号),
+
+ #+BEGIN_EXAMPLE
+   2:  [6, 10]
+   1:  [ [ 1, a ]
+         [ 1, b ] ]
+       .
+ #+END_EXAMPLE
+
+ 按下除法运算符
+
+ #+BEGIN_EXAMPLE
+             4 a     4
+   1:  [6 + -----, -----]
+            a - b  b - a
+
+       .
+ #+END_EXAMPLE
+
+ 还没完呢!!! 若安装了 gnuplot 的话,还能用 Calc 创建图形. We can give it two vectors, or an algebraic expression.
+ 只需要很少的几次按键,都能画出下面的 =sin(x)= 和 =x cos(x)= 的图形来.
+
+ [[http://nullprogram.com/img/emacs/calc-plot.png]]
+
+ 还没完呢!!! Calc 还支持一种叫做 HMS 的类型,该类型可以表示时间和角度. 例如可以表示像 2 小时 30 分 4 秒这类东西.
+
+ #+BEGIN_EXAMPLE
+   3:  2@ 30' 4"
+   2:  4@ 22' 13"
+   1:  1@ 2' 56"
+       .
+ #+END_EXAMPLE
+
+ 当然我们可以对其进行常见的计算. 让我们将这些时间都雷加起来:
+
+ #+BEGIN_EXAMPLE
+   1:  7@ 55' 13"
+       .
+ #+END_EXAMPLE
+
+ 我们可以将之与弧和度进行相互转换.
+
+ 还没完呢!!! Calc 本身也有时间类型,方法是将时间填入尖括号内,<>(需在代数模式下输入). 要输入时间真的很灵活. 若像输入当前时间,只需按下 =t N= 即可.
+
+ #+BEGIN_EXAMPLE
+   1:  <6:59:34pm Tue Jun 23, 2009>
+       .
+ #+END_EXAMPLE
+
+ 这时,输入的数字会作为天来看待,例如加 4 的结果是:
+
+ #+BEGIN_EXAMPLE
+   1:  <6:59:34pm Sat Jun 27, 2009>
+       .
+ #+END_EXAMPLE
+
+ 它还支持与前面说的 HMS 格式的值进行计算,例如减去 2@ 3' 15"的结果为:
+
+ #+BEGIN_EXAMPLE
+   1:  <4:56:32pm Sat Jun 27, 2009>
+       .
+ #+END_EXAMPLE
+
+ 还没完呢!!! Calc 还有一种模形式用于进行求模运算. 例如,输入 =17 mod 24=,
+
+ #+BEGIN_EXAMPLE
+   1:  17 mod 24
+       .
+ #+END_EXAMPLE
+
+ 加上 10,得到结果为
+
+ #+BEGIN_EXAMPLE
+   1:  3 mod 24
+       .
+ #+END_EXAMPLE
+
+ 模形式对于要计算 =n^p mode M= 这种形式的运算时,特别方便. 例如,要计算 =3^100000 mod 24=,一般的方法时先计算 =3^100000=,再取模. 由于 =3^100000= 是一个很大的数,因此计算这个中间步骤十分昂贵. 使用模形式能够不必实际地计算出 =3^100000= 的值来.
+
+ 还没完呢!!! Calc 还能进行单位转换. 我这会儿用的 Emacs 版本(22.3.1)支持 159 种不同的格式. 例如,我输入 65mph.
+
+ #+BEGIN_EXAMPLE
+   1:  65 mph
+       .
+ #+END_EXAMPLE
+
+ 按下 =u c= 将其单位转换为 ~米每秒(m/s)~
+
+ #+BEGIN_EXAMPLE
+   1:  29.0576 m / s
+       .
+ #+END_EXAMPLE
+
+ Calc 还支持不同单位进行混用. 例如我输入 3 立方米:
+
+ #+BEGIN_EXAMPLE
+          3
+   1:  3 m
+
+       .
+ #+END_EXAMPLE
+
+ 可以转换成加仑:
+
+ #+BEGIN_EXAMPLE
+   1:  792.516157074 gal
+       .
+ #+END_EXAMPLE
+
+ 我所在的实验室白天的时候连接不上互联网, 因此当我需要做各种转换时,Emacs 是不可缺少的.
+
+ 光速也是一种单位,我可以将 =1c= 转换为米每秒:
+
+ #+BEGIN_EXAMPLE
+   1:  299792458 m / s
+       .
+ #+END_EXAMPLE
+
+ 还没完呢!!! 就像我说过的, Calc 实现了一个计算机代数系统, 因此它能够进行符号运算. 还记得之前的那些代数表达式么? 我可以对它们进行运算. 让我们先输入一些表达式.
+
+ #+BEGIN_EXAMPLE
+   3:  ln(x)
+
+          2   a x
+   2:  a x  + --- + c
+               b
+
+   1:  y + c
+
+       .
+ #+END_EXAMPLE
+
+ 将最顶上两个表达式想乘,然后加上第三个表达式得到答案:
+
+ #+BEGIN_EXAMPLE
+                   2   a x
+   1:  ln(x) + (a x  + --- + c) (y + c)
+                        b
+
+       .
+ #+END_EXAMPLE
+
+ 按下 =a x= 对表达式进行扩展,然后按下 =a s= 简化表达式:
+
+ #+BEGIN_EXAMPLE
+                    2   a x y              2   a c x    2
+   1:  ln(x) + a y x  + ----- + c y + a c x  + ----- + c
+                          b                      b
+
+       .
+ #+END_EXAMPLE
+
+ 下面介绍 Calc 其中最酷的一项功能:微积分. 按下 =a d= 可以对 x 求微分:
+
+ #+BEGIN_EXAMPLE
+       1             a y             a c
+   1:  - + 2 a y x + --- + 2 a c x + ---
+       x              b               b
+
+       .
+ #+END_EXAMPLE
+
+ Or undo that and integrate it,
+
+ #+BEGIN_EXAMPLE
+                          3      2                  3        2
+                     a y x    a x  y           a c x    a c x       2
+   1:  x ln(x) - x + ------ + ------ + c x y + ------ + ------ + x c
+                       3       2 b               3       2 b
+
+       .
+ #+END_EXAMPLE
+
+ 太牛逼了! 一个文本编辑器居然可以做微积分!
+
+ 目前为止, 我已经介绍了大多数的常用功能. 要想说完所有的功能太累人了,我只是讲了点皮毛而已.
+
+ 很自然的, 我们也可以用 elisp 来扩展 Calc. Calc 还提供了一个宏 =defmath= 以方便我们进行扩展.
+
+ 我希望有一天,Calc 能够进行拉普拉斯和傅里叶变换.
 ** leetcode
 *** DONE [[https://github.com/kaiwk/leetcode.el][leetcode.el]]
     :LOGBOOK:
@@ -47,36 +518,29 @@ return Number(x.fid) === keyword || x.name === keyword || x.slug === keyword;
 
 the var 'spin' is used to blink message.
 change to 'console.log()'.
-** DONE org-brain learn to use
-   :LOGBOOK:
-   CLOCK: [2020-02-14 Fri 10:01]--[2020-02-14 Fri 10:02] =>  0:01
-   :END:
-*** install
-    [[https://github.com/Kungsgeten/org-brain][github page]]
-*** usage
- [[https://www.youtube.com/watch?v=3gwdXkIHxjA][youtube video: concept mapping using org-brain]]
-
- 1. entries
- ’org-brain-visualize’ prompts user for a name which is suggested to start with ’index’ as your top-level, and hang everything off ’index’.
- org-brain will then create ’index.org’ in your ’brain’ directory, and show you a visualization buffer.
-
- 2. add children
- There are two ways to add a child to an entry. 
- One way, with ’c’, creates a file as a child. The filename can’t contain spaces, which is annoying but CamelCase works well enough. So let’s say you create ’Projects’ this way.
- The other way is with ’h’ (presumably for ’h’eadline), which creates an org-mode headline in your index (or other parent) file. The headline can contain any text, but nevertheless I think you should create files instead of headlines for most purposes.
-
- 3. edit children
- So you can move the cursor to ’Projects’ and press enter, and then start entering a series of children for your Project node.
-
- 4. add resource
- Pressing ’l’ will allow you to add a resource, or link, to the active node. The resource has to be in URL format. Org link format will not work. This is quite strange and somewhat annoying. So a file link has to be entered like this:
-
- file:///path/to/file/filename
-
- The link will appear in a “Resources” section at the bottom of the visualization diagram, and clicking on it or pressing Enter on it will open the resource.
 ** DONE snippet in spacemacs
    [2020-03-02 Mon 17:52]
- the repo of snippets for [[https://github.com/AndreaCrotti/yasnippet-snippets][yasnippet]] can apply the "snippets" folder to [[~/.emacs.d/elpa/yasnippet-20191222.2206/snippets][target directory]] 
+ the repo of snippets for [[https://github.com/AndreaCrotti/yasnippet-snippets][yasnippet]] can apply the "snippets" folder to [[~/.emacs.d/elpa/yasnippet-20191222.2206/snippets][target directory]]
+*** customizable snippets
+**** 根据 mode 创建 snippets
+命令：yas-new-snippets
+设置文件名和触发名之后，写 snippets 规则，保存文件
+**** 语法规则
+1. Special Characters
+   - $0 → the position the cursor (after the snippte is inserted). You don't need to put a $0 if you don't need to.
+   - $n → a field, where the n is a integer starting with 1. (Example: $1, $2, etc.). Pressing tab will move cursor to these stops for user to fill in. Multiple occurrence of the same $n means typing in one field will automatically fill the other.
+   - ${n:default_text} → same as $n, but provides a default text.
+   - $& → means indent the line according to the mode's indentation rule.
+   - `…` → (backtick) is used to enclose elisp code. The lisp code will be evaluated in the same buffer the snippet is being expanded.
+**** 使用场景
+1. 重复使用的代码 reusable，没有必要生成为公共函数
+2. 生成格式字符，例如注释、笔记
+**** C++
+1. demonk: 用于牛客网的 C++demo 格式，可以直接从文件中用 cin 方式读取测试用例
+2. demo: 一般的 C++ demo 格式
+**** Org Mode
+1. papernotes： 用于文献笔记的格式，分为 5 个部分：背景、用途、方法、结论、评价
+
 ** DONE spacemacs configuration into org-mode
    CLOSED: [2020-07-02 Thu 18:51]
    :PROPERTIES:
@@ -126,353 +590,776 @@ change to 'console.log()'.
    #+end_example
 
 *** Bibtex
+    中文，需要加 =lang{chinese}=
 **** format
 
   https://wenku.baidu.com/view/0f2096643968011ca300916d.html
 
-  1. @article条目为期刊或杂志上的一篇文章。
-      不可少域author, title, journal, year.
-      可省略域volume, number, pages, month, note.
-  2. @book条目为有确定出版社的书籍。
-      不可少域author或editor, title, publisher, year.
-      可省略域volume或number, series, address, edition, month, note.
-  3. @booklet条目为印制的有封皮的作品，但没有出版社或赞助机构的名称。
-        不可少域title.
-      可省略域author, howpublished, address, month, year, note.
-  4. @conference与下面的@inproceedings相同。
-  5. @inbook条目为一本书的一部分(章，节或某些页)。
-      不可少域author或editor, title, chapter和/或pages, publisher,year.
-      可省略域volume或number, series, type, address, edition, month, note.
-  6. @incollection条目为一本书中有自己题目的一部分。
-      不可少域author, title, booktitle, publisher, year.
-      可省略域editor, volume或number, series, type, chapter, pages, address, edition, month, note.
-  7. @inproceedings条目为会议论文集中的一篇文章。
-      不可少域author, title, booktitle, year.
-      可省略域editor, volume或number, series, pages, address, month, organization, publisher, note.
-  8. @manual条目为科技文档。
-        不可少域title.
-      可省略域author, organization, address, edition, month, year, note.
-  9. @mastersthesis条目为硕士论文。
-      不可少域author, title, school, year.
-      可省略域type, address, month, note.
-  10. @misc条目为不属于其它任何类型的作品。
+  1. @article 条目为期刊或杂志上的一篇文章。
+      不可少域 author, title, journal, year.
+      可省略域 volume, number, pages, month, note.
+  2. @book 条目为有确定出版社的书籍。
+      不可少域 author 或 editor, title, publisher, year.
+      可省略域 volume 或 number, series, address, edition, month, note.
+  3. @booklet 条目为印制的有封皮的作品，但没有出版社或赞助机构的名称。
+        不可少域 title.
+      可省略域 author, howpublished, address, month, year, note.
+  4. @conference 与下面的@inproceedings 相同。
+  5. @inbook 条目为一本书的一部分(章，节或某些页)。
+      不可少域 author 或 editor, title, chapter 和/或 pages, publisher,year.
+      可省略域 volume 或 number, series, type, address, edition, month, note.
+  6. @incollection 条目为一本书中有自己题目的一部分。
+      不可少域 author, title, booktitle, publisher, year.
+      可省略域 editor, volume 或 number, series, type, chapter, pages, address, edition, month, note.
+  7. @inproceedings 条目为会议论文集中的一篇文章。
+      不可少域 author, title, booktitle, year.
+      可省略域 editor, volume 或 number, series, pages, address, month, organization, publisher, note.
+  8. @manual 条目为科技文档。
+        不可少域 title.
+      可省略域 author, organization, address, edition, month, year, note.
+  9. @mastersthesis 条目为硕士论文。
+      不可少域 author, title, school, year.
+      可省略域 type, address, month, note.
+  10. @misc 条目为不属于其它任何类型的作品。
        不可少域没有。
-         可省略域author, title, howpublished, month, year, note.
-  11. @phdthesis条目为博士论文。
-       不可少域author, title, school, year.
-       可省略域type, address, month, note.
-  12. @proceedings条目为会议论文集。
-       不可少域title, year.
-       可省略域editor,volume或number, series, address, month, organization, publisher, note.
-  13. @techreport条目为学校或其它研究机构印制的报告。
-       不可少域author, title, institution, year.
-       可省略域type, number, address, month, note.
-  14. @unpublished条目为有作者和标题的还未出版的作品。
-       不可少域author, title, note.
-       可省略域month, year.
-  15. 在每项条目中还可以有可省略域key和crossref.
+         可省略域 author, title, howpublished, month, year, note.
+  11. @phdthesis 条目为博士论文。
+       不可少域 author, title, school, year.
+       可省略域 type, address, month, note.
+  12. @proceedings 条目为会议论文集。
+       不可少域 title, year.
+       可省略域 editor,volume 或 number, series, address, month, organization, publisher, note.
+  13. @techreport 条目为学校或其它研究机构印制的报告。
+       不可少域 author, title, institution, year.
+       可省略域 type, number, address, month, note.
+  14. @unpublished 条目为有作者和标题的还未出版的作品。
+       不可少域 author, title, note.
+       可省略域 month, year.
+  15. 在每项条目中还可以有可省略域 key 和 crossref.
+*** track change
 
-** org mode authoring system
-   :PROPERTIES:
-   :ID:       A420F6B3-2900-4227-8B94-B0ECF447AEB4
-   :END:
-*** template
-**** latex
- Use =C-c C-e # latex= to insert latex options for org mode.
-**** beamer
- The default org have no beamer template, add option below
-#+begin_example
-#+startup: beamer
-#+end_example
+I have used the *changes* package in the past and I find it very useful. It has a key=value system so most of the things are customizable. You can define different authors and the changes are tracked depending on the id; here is a simple example (mostly from the manual).
 
-The heading level for beamer exported. H:3 is also OK
-#+begin_example
-#+OPTIONS: H:2
-#+BEAMER_HEADER: \AtBeginSection{\frame{\sectionpage}}
-#+end_example
+#+STARTUP: latexpreview
+# C-c C-x C-l
 
-The common configurations:
-#+begin_example
-#+TITLE:  Documents and presentations with org-mode
-#+AUTHOR: John Goerzen
-#+BEAMER_HEADER: \institute{The Changelog}
-#+PROPERTY: comments yes
-#+PROPERTY: header-args :exports both :eval never-export
-#+OPTIONS: H:2
-#+BEAMER_THEME: CambridgeUS
-#+BEAMER_COLOR_THEME: default
-#+end_example
+\begin{equation}
+\[a^2 = 1 \]
+\end{equation}
 
-The layout:
-#+begin_example
-#+BEAMER_INNER_THEME: default
-#+LaTeX_CLASS_OPTIONS: [aspectratio=169]
-#+BEAMER_HEADER: \definecolor{links}{HTML}{0000A0}
-#+BEAMER_HEADER: \hypersetup{colorlinks=,linkcolor=,urlcolor=links}
-#+BEAMER_HEADER: \setbeamertemplate{itemize items}[default]
-#+BEAMER_HEADER: \setbeamertemplate{enumerate items}[default]
-#+BEAMER_HEADER: \setbeamertemplate{items}[default]
-#+BEAMER_HEADER: \setbeamercolor*{local structure}{fg=darkred}
-#+BEAMER_HEADER: \setbeamercolor{section in toc}{fg=darkred}
-#+BEAMER_HEADER: \setlength{\parskip}{\smallskipamount}
-#+end_example
+\[a^2 = 1 \]
 
-the size ratio of beamer is set to 16:9 for "aspectratio=169"
-**** html
- The html template can add the css file as following
- #+begin_example
- #+EXPORT_FILE_NAME: ../posts/template.html
- #+TITLE: Article Title Goes Here
- #+SUBTITLE: Article Sub-Title
- #+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
- #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/css/org.css"/>
+$a^2 = 1$
 
- #+BEGIN_abstract
- Article abstract goes here.
- #+END_abstract
+\begin{document}
+\lipsum[1-7]
 
- # now prints out the previously disabled (toc:nil) table of contents.
- #+TOC: headlines 2
- Your content goes here.
+This is \added[id=per,remark={we need this}]{new} text.
+This is \added[id=per,remark={has to be in it}]{new} text.
+This is \deleted[id=per,remark=obsolete]{unnecessary}text.
+This is \replaced[id=per]{nice}{bad} text.
 
- # * Refrences                                                          :ignore:
-  
- # * Footnotes
+This is \added[remark={we need this}]{new} text.
+This is \added[remark={has to be in it}]{new} text.
+This is \deleted[remark=obsolete]{unnecessary}text.
+This is \replaced{nice}{bad} text.
 
- #+end_example
+\listofchanges
+\end{document}
 
-*** Chinese
- The org mode supports Chinese. Some exports files not. Like latex.
+# \documentclass{article}
 
-**** latex
- For latex only, the best practice is using ctexart class and UTF8 package and compiling with xelatex.
- Add the org options below:
- #+begin_example
- #+latex_class: ctexart
- #+latex_class_options: [UTF8]
- #+latex_header:
- #+latex_header_extra:
- #+description:
- #+keywords:
- #+subtitle:
- #+latex_compiler: xelatex
- #+date: \today
- #+end_example
+#+name: trace-change
+#+startup: inlineimages
+#+header: :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400
+#+header: :fit yes :noweb yes :headers '("\\usepackage{lipsum}""\\usepackage{changes}""\definechangesauthor[name={Per cusse}, color=orange]{per}")
+#+begin_src latex :exports results :file track-change.png :results raw
+\begin{document}
+% \lipsum[1-7]
 
- If latex engine is still not xelatex, set TeX-engine in the generated latex file.
- #  %%% Local Variables:
- , %%% coding: utf-8
- , %%% mode: latex
- , %%% TeX-engine: xetex
- , %%% End:
-+begin_src latex
+This is \added[id=per,remark={we need this}]{new} text.
+This is \added[id=per,remark={has to be in it}]{new} text.
+This is \deleted[id=per,remark=obsolete]{unnecessary}text.
+This is \replaced[id=per]{nice}{bad} text.
+
+This is \added[remark={we need this}]{new} text.
+This is \added[remark={has to be in it}]{new} text.
+This is \deleted[remark=obsolete]{unnecessary}text.
+This is \replaced{nice}{bad} text.
+
+
+\listofchanges
+\end{document}
+#+end_src
+
+#+RESULTS:
+[[file:track-change.png]]
+
+And the nice thing is that if you supply the final option to the package declaration that is \usepackage[final]{changes} it clears the traces of changes made by the authors and respecting the last changes.
+*** equations and symbols
+    在输入模式下， ` （在 ESC 下面的键）可以列出所有的符号
+*** latex skim sync
+in emacs latex, =, v= jump to skim corresponding position
+
+in skim, =CMD-Shift-Click= jump back to emacs
+*** emacs skill
+   | ~SPC m e~ or with LSP ~SPC m i e~ | insert LaTeX environment |
+   | ~SPC m f e~                       | fill LaTeX environment   |
+
+*** DONE hust latex template
+    CLOSED: [2021-02-27 Sat 22:39] SCHEDULED: <2021-02-27 Sat 20:30-22:30>
+    [[file:refile/projects.org::*latex][hust latex]] startup
+
+    [[/Users/xin/Documents/Ice/GP/hustthesis/][github repo]]
+
+    [[https://github.com/hust-latex/hustthesis/raw/master/hustthesis/hustthesis.pdf][Manual: hustthesis.pdf]]
+    [[https://github.com/hust-latex/hustthesis/raw/master/hustthesis/hustthesis-zh-example.pdf][Example: hustthesis-zh-example.pdf]]
+    [[https://github.com/hust-latex/hustthesis/raw/master/hustthesis/hustthesis-en-example.pdf][Example: hustthesis-en-example.pdf]]
+
+    #+begin_src latex
+    \documentclass{hustthesis}
+    \documentclass[format=draft,language=chinese,degree=master]{hustthesis}
+    #+end_src
+
+    切换字体
+    - 黑体 \hei{xxx}
+    - 楷体 \kai{xxx}
+    - 仿宋 \fangsong{xxx}
+** Spacemacs C++ Environment Setup
+   https://tuhdo.github.io/c-ide.html
+*** tags jump
+ 1. include head file in the project
+
+ create .clang_complete file in the project root directory. in .clang_complete, each line has a clang++ include flag, for instance: -I./lib
+
+ a shell script to generate .clang_complete
+ #+begin_src shell
+ dir=~/Documents/Ice/ice-detector
+ find ${dir} -name "*.h" -print | xargs -n 1 dirname | sort | uniq | awk '{print "-I"$0}' > ${dir}/.clang_complete
+ cat ${dir}/.clang_complete
  #+end_src
 
-**** beamer
- For latex beamer, the ctexart class no longer available.
- Alternately, specific the Chinese font and compile with pdflatex or xelatex.
- Add the org options below:
- #+begin_example
- #+TITLE:
- #+AUTHOR:
- #+EMAIL:
- #+DESCRIPTION:
- #+KEYWORDS:
- #+LANGUAGE:  en
- #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
- #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
- #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
- #+EXPORT_SELECT_TAGS: export
- #+EXPORT_EXCLUDE_TAGS: noexport
- #+LINK_UP:
- #+LINK_HOME:
- #+XSLT:
- #+startup: beamer
- #+LATEX_CLASS: beamer
- #+BEAMER_FRAME_LEVEL: 3
- #+LaTeX_CLASS_OPTIONS: [xcolor=svgnames,bigger,presentation]
- #+LATEX_HEADER:\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}\usecolortheme[named=FireBrick]{structure}\setbeamercovered{transparent}\setbeamertemplate{caption}[numbered]\setbeamertemplate{blocks}[rounded][shadow=true] \usetheme{Darmstadt} \usepackage{tikz}\usepackage{xeCJK}\usepackage{amsmath}\setmainfont{Times New Roman}\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Heiti Std}\setCJKsansfont{Adobe Heiti Std}\setCJKmonofont{Adobe Kaiti Std}\usepackage{verbatim}\institute{beamerinstitute} \graphicspath{{figures/}} \definecolor{lstbgcolor}{rgb}{0.9,0.9,0.9} \usepackage{listings} \usepackage{fancyvrb}\usepackage{xcolor}\lstset{escapeinside=`',frameround=ftft,language=C,breaklines=true,keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,backgroundcolor=\color{yellow!20},rulesepcolor=\color{red!20!green!20!blue!20}}
- #+latex_compiler: xelatex
- #+end_example
+ #+RESULTS:
+ | -I/Users/xin/Documents/Ice/ice-detector/CORE                 |
+ | -I/Users/xin/Documents/Ice/ice-detector/GD32/CMSIS           |
+ | -I/Users/xin/Documents/Ice/ice-detector/GD32/Library/Include |
+ | -I/Users/xin/Documents/Ice/ice-detector/GD32/User            |
+ | -I/Users/xin/Documents/Ice/ice-detector/GD32/driver          |
+ | -I/Users/xin/Documents/Ice/ice-detector/HARDWARE/fiber       |
+ | -I/Users/xin/Documents/Ice/ice-detector/STM32F10x_FWLib/inc  |
+ | -I/Users/xin/Documents/Ice/ice-detector/SYSTEM               |
+ | -I/Users/xin/Documents/Ice/ice-detector/USER                 |
 
- The level of subtree exported into beamer can be configured as the H:3 or BEAMER_FRAME_LEVEL:3.
+ a more easy to generate .clang_complete file is using [[https://github.com/xavierd/clang_complete/blob/master/bin/cc_args.py][cc_args.py]]
 
-*** export
- use =C-c C-e= and select desired format.
-** org mode [[/Users/xin/Documents/Garage/orgible][workspace]]
-*** DONE orgible repo configure
-    CLOSED: [2020-03-30 Mon 11:45] SCHEDULED: <2020-03-30 Mon 15:00-17:00>
-**** DONE org blog
-     CLOSED: [2020-03-30 Mon 11:30]
+ if configurations takes effect, the argument 'clang-complete-arguments' should show all the include path.
+ if not, refer to https://www.youtube.com/watch?v=OjbkCEkboA8 at 30min, set (syntax-checking :variables syntax-checking-enable-by-default nil)
 
-   示例站点：https://www.rosecoder.com/
-   文字教程：https://www.rosecoder.com/org-to-site-tutor.html
-   页面展示：https://www.rosecoder.com/org-to-site.html
-   论坛页面：https://emacs-china.org/t/org-mode-site-v0-0-1/11409
-   file: [[~/Documents/Garage/orgible/elisp/init-site.el][init-site.el]]
 
-   *finally abandon this!*
-***** Custom
-   head number: =num:nil= not show, =num:3= show 1.1.1 but no more
-   add specific css file 'org-index.css' for index.html
-**** DONE version control with git and nutstore
-     CLOSED: [2020-03-30 Mon 11:45]
-***** hierarchy
-      - inbox.org for all org capture
-      - refile/ folder to sort and collect finished notes
-        + todo.org: todo list
+ 2. go to definition
 
-        + job-hunting.org: information about job interview and code test
-        + software.org: software knowledge
-        + hardware.org: hardware knowledge
+ =gd=
 
-        + projects.org: project managemant
+ the better practice is go the definition in a new-opened window by =C-w gd=
 
-        + paper-notes.org: notes from Skim app
+ 3. jump to head file
 
-        + workflow.org: tool chains
+ - SPC m g a:	open matching file (e.g. switch between .cpp and .h)
+ - SPC m g A:	open matching file in another window (e.g. switch between .cpp and .h
+*** code formats
+ Smarter clang-format In Emacs
 
-        + topic.org: thinking and talking except work
+ I'm a big believer in using clang-format to automatically format C and C++ code. Typically this is done by adding a file called .clang-format to the root directory of a project. This file tells clang-format about how code in the project should be formatted. When clang-format is run, it will reformat source code according to the style you've specified. This is conceptually similar to gofmt in Go, or yapf in Python. I include a .clang-format file in all of my C/C++ projects.
 
-      - oxrign/ folder to store private message
-        + password
-        + workstation
-      - org-mode-blog/ folder for posting knowledge or interestings
+ I edit code using GNU Emacs, via Spacemacs. The C/C++ layer for Spacemacs has an option to automatically run clang-format on buffers when saving them. If you enable clang-format-on-save in the c-c++ layer, then whenever you save a C or C++ file Emacs will reformat the buffer using clang-format before actually persisting the buffer to disk.
 
-***** sync
-      nutstore sync orgible/ folder
+ I absolutely want this behavior for all of my personal projects, since it ensures that I don't check in improperly formatted code. But I typically don't want this behavior when hacking on third party C or C++ libraries. There are a lot of different styles for C/C++ coding, and most projects don't include .clang-format files. If you try to use clang-format on a file from one of these projects, you'll end up reformatting the entire file you're editing. Thus I find the default behavior in Spacemacs to be kind of braindead, since it's all or nothing. I suppose it would be OK if you were only hacking on personal (or work) projects, and never had to touch open source code. But what's the fun in that?
 
-      mobile app can use nutstore app or webdavs to get folder
+ I finally sat down this weekend and fixed this. The idea is to enable clang-format on buffers only when the project has a top level .clang-format file. That way my personal projects will all get formatted nicely, but I can also edit third party open source projects and not reformat the entire file when I'm making a small change.
 
-***** version control
-      - when capture, no vc
-      - when refile, vc
-      - when update blog, vc submodule org-mode-blog/
-      - when private, vc submodule oxrign/
-*** org mode video [[https://www.youtube.com/watch?v=PVsSOmUB7ic][Learn Emacs Org Mode: Spacemacs Intro Tutorial - YouTube]]
-    :LOGBOOK:
-    CLOCK: [2020-03-02 Mon 17:48]--[2020-03-02 Mon 17:52] =>  0:04
-    CLOCK: [2020-03-02 Mon 17:36]--[2020-03-02 Mon 17:47] =>  0:11
-    :END:
-  [2020-03-02 Mon 17:36]
+ This works using a function that reformats the current buffer, but only if a .clang-format file exists in the current Projectile project root:
 
-**** org capture and refile
+ (defun clang-format-buffer-smart ()
+   "Reformat buffer if .clang-format exists in the projectile root."
+   (when (f-exists? (expand-file-name ".clang-format" (projectile-project-root)))
+     (clang-format-buffer)))
+ I add this as a before-save-hook for C and C++ buffers:
 
-     - capture the line and the file
-     - refile to the todo list of tomorrow, show in agenda
+ (defun clang-format-buffer-smart-on-save ()
+   "Add auto-save hook for clang-format-buffer-smart."
+   (add-hook 'before-save-hook 'clang-format-buffer-smart nil t))
 
-**** insert snippet
+ (spacemacs/add-to-hooks 'clang-format-buffer-smart-on-save
+                         '(c-mode-hook c++-mode-hook))
+ In my actual Emacs configuration, this is implemented as a custom Spacemacs layer that extends the existing c-c++ layer. I'd like to contribute this code upstream, but there's a valid use case for the existing behavior, and the existing layer already has two different configuration options related to clang-format, so adding a third doesn't seem productive. Let me know if you find this useful.
+*** google style
+**** [[https://eklitzke.org/smarter-emacs-clang-format][emacs auto clang-format]]
+ The C/C++ layer for Spacemacs has an option to automatically run clang-format on buffers when saving them. If you enable clang-format-on-save in the c-c++ layer, then whenever you save a C or C++ file Emacs will reformat the buffer using clang-format before actually persisting the buffer to disk.
 
-     have no snippet in emacs.
+ Typically this is done by adding a file called .clang-format to the root directory of a project. This file tells clang-format about how code in the project should be formatted.
+**** google cpp guide
+ the [[./google-cpp-style.org][google cpp style outline]] is too long to read.
+ the summary is following:
 
-**** shortkeys
+*** Build and Run
+ 1. compile command which is bounded to =SPC C c=
 
-     - new sibling: C-Enter
-     - toggle global content: S-Tab
-     - toggle focus: Space w c c
-     - format: , x
-     - vi comment package: y s w ~
-     - paragraph selection: v a p
-     - org column: C-c C-x C-c
+**** the better way to compile is to use the helm
+ =SPC C C=
 
-**** agenda time last for 2 hours:
+ if the makefile is not located at the root dir of project, try to add the following configuration:
+ #+begin_src emacs-lisp
+ (setq-default helm-make-build-dir "build")
+ #+end_src
 
-     14:00 + 2
+ to specific the relative path of the makefile
 
-**** org mobile
+ 2. run
 
-     orgzly
+ in emacs shell, use =./main= command
 
-** DONE org notes
-   CLOSED: [2020-03-28 Sat 20:40]
-*** spacemacs org
-**** snippet
-***** insert
+*** GDB
+*** org mode c++
+**** Introduction
 
-  [SPC] i s #
+   Babel can evaluate C, C++, and D code.
 
-**** heading
+   As opposed to interpreted languages, which can be evaluated directly,
+   C, C++, and D code is first compiled to an executable which is then
+   run.
 
-  =, h i= insert heading
-  =, h s= insert subheading
-  = C [ENTER]= heading below with the same level
+   If a =main= method is not present in a code block then the entire
+   block is wrapped in a trivial =main= function call.
 
-**** node
+   Note: there used to be two separate library files, =ob-C.el= and
+   =ob-D.el=. They have been merged in a single =ob-C.el= file which
+   handle all three languages.
 
-  =m-up= move node up
-  =, n= narrow to subtree. no trigger narrow shortkeys, but =SPC n w= to widen and escape narrow.
-  =SPC w C= center content. same trigger
+   So, for example, the following simple code block can be evaluated and
+   the results of evaluation inserted into the buffer.
 
-**** format
+   : #+begin_src C++ :includes <stdio.h>
+   :   int a=1;
+   :   int b=1;
+   :   printf("%d\n", a+b);
+   : #+end_src
+   :
+   : #+results:
+   : : 2
 
-  select content first and then use
-  =, x b= for bold or anything else
+***** About C
+   C dates back in the 1970.
+   It was devised by Kernighan & Ritchie.
+   It was used to create the Unix kernel, and many of its utilities.
+   Today it is still the base of the Linux & Unix kernel.
 
-***** vi yank
+***** About C++
+   C++ was devised by Stroustrup in the 1980.
+   The purpose was to enhance C with object programming.
+   Among the features introduced by C++, there are:
+     - templates and the Standard Template Library,
+     - object programming, with class definition and inheritance,
+     - functions and operators overloading,
+     - exceptions.
 
-  =y s selection marker=
-  selection including =w= for word
-  marker including =*= for bold
+***** About D
+   D is a C++-like language made by Digital Mars.
+   It features:
+     - C++ syntax
+     - Built-in garbage collector
+     - Strong type system
+     - Meta-programming
+     - Seamless assembler support
+     - Usable as a scripting language
+     - C binary compatibility
 
-  #+begin_example
+**** Requirements and Setup
 
-  #+end_example
+   1- You must have the compilers available on your computer.
+      You may use only one of the three languages:
+      there is no requirement to have all three installed.
+      - C and C++ often come pre-installed.
+        Popular compilers are the GNU ones, called =gcc= and =g++=.
+        But others are usable as well.
+      - For D, look at http://dlang.org/ for downloading and instructions.
+        The compilers are called =dmd= and =rdmd=.
 
-**** vi selection
-***** around
+      Eventually, the compilers must be in the =PATH=.
 
-  =v a e= select around environment
-  =v a R= select around subtree. not work
-  =d a p= delete around paragraph
-  = a R :  align a subtree
+   2- Make any or all languages available to Babel.
+      Type:
+      : M-x customize-variable org-babel-load-languages
+      and add the C language (capital "C", which gives access to C, C++, D)
 
-**** iterm
+**** Org Mode Features for C, C++, D Source Code Blocks
+***** Header Arguments
 
-     1. one
-     2. two
-        - sub one
-        - sub two
-     3. [ ] three
+   - =:var VARIABLE=VALUE= ::
+     A global C, C++, or D variable named VARIABLE will be declared
+     and initialized with VALUE
 
-  continuous add new iterm below: =ESC o=
+     Possible types for VARIABLE may be:
+       : int,
+       : double,
+       : string or const char*,
+       : type[]    // type = int, double, string, const char*
+       : type[][]  // type = int, double, string, const char*
 
-**** gtd
-***** state
+     The later type, =type[][]=, is used for variables storing Org tables
 
-   =:set status
-  =C-c ,= set priority. same as =S up= or =, J=
-  =, P= set property
+     The =type[]= is used for lists or vectors declared in the header.
 
-***** timestamp
-  TIME+2 last 2 hours
-  <2020-03-18 Wed 12:00-14:00>
+   - =:cmdline= :: command line arguments to pass to the executable
+        compiled from the code block.
 
-  =S UP= change TIME
+   - =:flags= ::
+        flags to pass to the compiler.
 
-***** agenda
+   - =:main= :: can be set to "no" to inhibit wrapping of the code block
+        in a =main= function call.
 
-  =, a t= all the todos
-  =, a a= all the entries
+   - =:includes= ::
+        (C & C++ only)
+        accepts either a single string name, or a list of
+        names of files to =#include= in the execution of the code block.
 
-***** sort
+   - =:import= ::
+        (D only) An import statement will be declared in the D source
+        before the source code.
 
-  select and then =, ^= to sort according to option
+   - =:defines= ::
+        (C & C++ only) just like =:includes= but for =#defines= lines at the
+        top of the code.
 
-***** sparse tree
+   - =:namespaces= ::
+        (C++ only)
+        accepts either a single name, or a list of names of namespaces to use.
+        The final format will look like this: =using namespace name;=
 
-  =, \= and select state of the file
+   - =:libs= ::
+        (C & C++ only) useful for linking with a library, may be given
+        =-L/path/to/lib= and =-llibrary= instructions.
 
-***** clock
+***** Sessions
+      There is no support for sessions
 
-  go to last clock =C-c C-x C-j=
+**** Examples of Use
+***** Hello World in C
 
-**** spreadsheet
+   Here is Hello World!
 
-  org-columns =C-c C-x C-c=
+   #+name: c-hello
+   #+begin_src C :exports results
+     printf ("Hello World!\n");
+   #+end_src
 
-**** help
+   This source code block:
+   #+begin_example
+   #+begin_src C
+     printf ("Hello World!\n");
+   #+end_src
+   #+end_example
 
-  =C-h i= and select org mode
+   yields this result (type =C-c C-c= in the source block):
+   #+results: c-hello
+   Hello World!
+
+***** Hello World in C++
+
+   #+name: cpp-hello
+   #+begin_src C++ :includes <iostream>
+     std::cout<<"Hello World!\n";
+   #+end_src
+
+   This source code block:
+   #+begin_example
+   #+begin_src C++ :includes <iostream>
+     std::cout<<"Hello World!\n";
+   #+end_src
+   #+end_example
+
+   yields this result (type =C-c C-c= in the source block):
+   #+results: cpp-hello
+   Hello World!
+
+   Note that the =<iostream>= used to be automatically #included, but now
+   it must be specified through the =:includes= parameter.
+
+***** Hello World in D
+   Here is Hello World!
+
+   #+name: d-hello
+   #+begin_src D :exports results
+     writefln ("Hello World!");
+   #+end_src
+
+   This source code block:
+   #+begin_example
+   #+begin_src D
+     writefln ("Hello World!");
+   #+end_src
+   #+end_example
+
+   yields this result (type =C-c C-c= in the source block):
+   #+results: d-hello
+   Hello World!
+
+***** Note that:
+   - if no =main()= is declared, a trivial one is automatically provided,
+   - there is no directive like:
+     + =#include "stdio.h"= (in C)
+     + =import std.stdio;= (in D)
+     because those libraries are so common that they are always included.
+   - C++ needs to explicitely include either =stdio.h= or =<iostream>=
+
+***** Scalar variables
+   Variables may be declared outside the script.
+   They are automatically inserted at the top of the script.
+   Three types are supported, based on the look of the value:
+     - =string= or =const char*=
+     - =int=
+     - =double=
+
+   Example in C or C++:
+   #+begin_example
+   #+header: :var mystring="Sunday" :var myint=145 :var mydouble=3.14
+   #+BEGIN_SRC C
+     printf ("mystring %s\n", mystring);
+     printf ("myint    %d\n", myint);
+     printf ("mydouble %g\n", mydouble);
+   #+END_SRC
+   #+end_example
+
+   yields this result (type =C-c C-c=):
+
+   #+RESULTS:
+   | mystring | Sunday |
+   | myint    |    145 |
+   | mydouble |   3.14 |
+
+   Example in D:
+   #+begin_example
+   #+header: :var mystring="Sunday" :var myint=145 :var mydouble=3.14
+   #+BEGIN_SRC D
+     writefln ("mystring %s", mystring);
+     writefln ("myint    %d", myint);
+     writefln ("mydouble %g", mydouble);
+   #+END_SRC
+   #+end_example
+
+   yields this result (type =C-c C-c=):
+
+   #+RESULTS:
+   | mystring | Sunday |
+   | myint    |    145 |
+   | mydouble |   3.14 |
+
+   If you want to see the expanded source code, without compiling and running it,
+   just type =C-c C-v v=.
+
+***** Process an Org Mode Table
+
+****** How to handle a table
+   We take an Org mode table as input, process it, and output
+   a new Org mode table.
+
+   This table will be input in the script, and iterated row by row:
+
+   #+tblname: somedata
+   | nb    | sqr | noise |
+   |-------+-----+-------|
+   | zero  |   0 |  0.23 |
+   | one   |   1 |  1.31 |
+   | two   |   4 |  4.61 |
+   | three |   9 |  9.05 |
+   | four  |  16 | 16.55 |
+
+   The table is converted to a variable in the script:
+     : const char* somedata[5][3] = {...};  // in C & C++
+     : string      somedata[5][3] = [...];  // in D
+
+   The header, if any, is available to the script as well:
+     : const char* somedata_header[3] = { "nb", "sqr", "noise" };  // in C & C++
+     : string      somedata_header[3] = [ "nb", "sqr", "noise" ];  // in D
+
+   The dimensions of the table are available:
+     : int somedata_rows = 5;
+     : int somedata_cols = 3;
+
+   Additionnally, an accessor function retrives a cell using the column
+   name as found in the header:
+     : const char* cell = somedata_h(3,"noise"); // "9.05" in C & C++
+     : string      cell = somedata_h(3,"noise"); // "9.05" in D
+
+   Type =C-c C-v v= to look at the generate code without running it.
+
+   Note that table contents are (almost) always strings
+   (as opposed to integers or floating point numbers).
+   This allows to easily handle heterogeneous tables,
+   and tables with missing values.
+   To convert a string cell to a numeric value on the fly, use standard convertors:
+     : int    cell = atoi(somedata_h(4,"sqr"));        // integer conversion in C & C++
+     : double cell = atof(somedata_h(4,"noise"));      //  double conversion in C & C++
+     : int    cell = to!int(somedata_h(4,"sqr"));      // integer conversion in D
+     : double cell = to!double(somedata_h(4,"noise")); //  double conversion in D
+
+****** Example in C & C++
+
+   #+name: c-table
+   #+header: :exports results
+   #+begin_src C++ :var somedata=somedata :includes <stdlib.h> <stdio.h> <string.h>
+     int main()
+     {
+       for (int i=0; i<somedata_rows; i++) {
+         printf ("%2d %7s ", i, somedata_h(i,"nb"));
+         for (int j=1; j<somedata_cols; j++) {
+           const char* cell = somedata[i][j];
+           printf ("%5s %5g ", cell, 1000*atof(cell));
+         }
+         printf("\n");
+       }
+       return 0;
+     }
+   #+end_src
+
+   This code:
+
+   #+begin_example
+   #+header: :exports results
+   #+begin_src C++ :var somedata=somedata
+     #include "stdlib.h"
+     int main()
+     {
+       for (int i=0; i<somedata_rows; i++) {
+         printf ("%2d ", i);
+         for (int j=1; j<somedata_cols; j++) {
+           const char* cell = somedata[i][j];
+           printf ("%5s %5g ", cell, 1000*atof(cell));
+         }
+         printf("\n");
+       }
+       return 0;
+     }
+   #+end_src
+   #+end_example
+
+   yields this result:
+
+   #+RESULTS: c-table
+   | 0 | zero  |  0 |     0 |  0.23 |   230 |
+   | 1 | one   |  1 |  1000 |  1.31 |  1310 |
+   | 2 | two   |  4 |  4000 |  4.61 |  4610 |
+   | 3 | three |  9 |  9000 |  9.05 |  9050 |
+   | 4 | four  | 16 | 16000 | 16.55 | 16550 |
+
+****** Example in D
+
+   #+name: d-table
+   #+header: :exports results
+   #+begin_src D :var somedata=somedata
+     void main()
+     {
+       foreach (i, row; somedata) {
+         writef ("%2s %7s ", i, somedata_h(i,"nb"));
+         foreach (j, cell; row)
+           if (j) // skip 1st column
+             writef ("%5s %5s ", cell, 1000*to!double(cell));
+         writeln();
+       }
+     }
+   #+end_src
+
+   #+begin_example
+   #+begin_src D :results output :var somedata=somedata :var TT="321" :var QQ=3.14
+     void main()
+     {
+       foreach (i, row; somedata) {
+         writef ("%2s %7s ", i, somedata_h(i,"nb"));
+         foreach (j, cell; row)
+           if (j) // skip 1st column
+             writef ("%5s %5s ", cell, 1000*to!double(cell));
+         writeln();
+       }
+     }
+   #+end_src
+   #+end_example
+
+   yields this result:
+
+   #+results: d-table
+   | 0 | zero  |  0 |     0 |  0.23 |   230 |
+   | 1 | one   |  1 |  1000 |  1.31 |  1310 |
+   | 2 | two   |  4 |  4000 |  4.61 |  4610 |
+   | 3 | three |  9 |  9000 |  9.05 |  9050 |
+   | 4 | four  | 16 | 16000 | 16.55 | 16550 |
+
+
+****** Pure numeric table
+
+   This table is a pure numeric table.
+   | 3 | 3.3 |
+   | 4 | 4.1 |
+   | 5 | 5.9 |
+   | 6 | 6.5 |
+
+   In this special case, it is translated to a numeric table:
+   : double MyTable[4][2] = { {3,3.3}, {4,4.1}, {5,5.9}, {6,6.5} };
+
+   If there is a blank cell among numeric cells,
+   then the whole table falls back to the string case,
+   where the blank cell is translated to the empty string "".
+
+***** DONE Lists and vectors in the header
+      CLOSED: [2020-10-05 Mon 09:51]
+
+**** Shortcomings and known bugs
+***** C++ vs. cpp
+   After the =#+begin_src= block header, both =C++= and =cpp= are
+   accepted to specify C++ language.
+   However only =C++= works for generated code visualization
+   through =C-c C-v v=.
+
+***** Pure numeric + header  cast error
+   A type mismatch between strings  and double cause an error
+   when attempting to use the cell accessor with column name
+   when the table is pure numeric.
+
+***** Compilers customization
+   There is no customization of the compilers paths or names
+   through the standard Emacs customization facility.
+
+*** google test
+
+**** GTEST
+   google test is a cross-platform C++ test framework which supports Liunx、Mac OS X、Windows、Cygwin、Windows CE and Symbian.
+   It benefits the followings:
+   1. Tests should be independent and repeatable. It's a pain to debug a test that succeeds or fails as a result of other tests. googletest isolates the tests by running each of them on a different object. When a test fails, googletest allows you to run it in isolation for quick debugging.
+   2. Tests should be well organized and reflect the structure of the tested code. googletest groups related tests into test suites that can share data and subroutines. This common pattern is easy to recognize and makes tests easy to maintain. Such consistency is especially helpful when people switch projects and start to work on a new code base.
+   3. Tests should be portable and reusable. Google has a lot of code that is platform-neutral; its tests should also be platform-neutral. googletest works on different OSes, with different compilers, with or without exceptions, so googletest tests can work with a variety of configurations.
+   4. When tests fail, they should provide as much information about the problem as possible. googletest doesn't stop at the first test failure. Instead, it only stops the current test and continues with the next. You can also set up tests that report non-fatal failures after which the current test continues. Thus, you can detect and fix multiple bugs in a single run-edit-compile cycle.
+   5. The testing framework should liberate test writers from housekeeping chores and let them focus on the test content. googletest automatically keeps track of all tests defined, and doesn't require the user to enumerate them in order to run them.
+   6. Tests should be fast. With googletest, you can reuse shared resources across tests and pay for the set-up/tear-down only once, without making tests depend on each other.
+***** installation
+   #+begin_src shell
+   git clone https://github.com/google/googletest
+   cd googletest
+   mkdir build
+   cd build
+   cmake ..
+   make
+   make install
+   #+end_src
+
+***** demo
+   #+name: gtest_demo
+   #+begin_src C++ :includes <gtest/gtest.h> <iostream> :flags -std=c++11 -lgtest -lpthread :results verbatim
+     int add(int a, int b){
+          return a + b;
+     }
+
+     int sub(int a, int b){
+          return a - b;
+     }
+
+     // case1
+     TEST(testcase, c1){
+          EXPECT_EQ(3, add(1, 2));
+          ASSERT_EQ(12, add(2, 6));
+     }
+
+     // case2
+     TEST(test, c2){
+          EXPECT_EQ(-1, sub(1, 2));
+     }
+
+     int main(int argc, char ** argv) {
+          testing::InitGoogleTest(&argc, argv);
+          int flag = RUN_ALL_TESTS();
+          // the result of RUN_ALL_TESTS() is 0 is all test cases success. otherwise, it is 1
+          // according to experience in org mode, gtest main function output nothing when return 1 or return RUN_ALL_TESTS() if any failed test cases
+          // return 0 can always output the test case messages.
+
+          // return flag
+          return 0;
+     }
+   #+end_src
+
+   #+RESULTS: gtest_demo
+   #+begin_example
+   [==========] Running 2 tests from 2 test suites.
+   [----------] Global test environment set-up.
+   [----------] 1 test from testcase
+   [ RUN      ] testcase.c1
+   /var/folders/kx/y4dl93m51t7c2f3mq5q8npx00000gp/T/babel-20S745/C-src-53yRWv.cpp:20: Failure
+   Expected equality of these values:
+     12
+     add(2, 6)
+       Which is: 8
+   [  FAILED  ] testcase.c1 (0 ms)
+   [----------] 1 test from testcase (0 ms total)
+
+   [----------] 1 test from test
+   [ RUN      ] test.c2
+   [       OK ] test.c2 (0 ms)
+   [----------] 1 test from test (0 ms total)
+
+   [----------] Global test environment tear-down
+   [==========] 2 tests from 2 test suites ran. (0 ms total)
+   [  PASSED  ] 1 test.
+   [  FAILED  ] 1 test, listed below:
+   [  FAILED  ] testcase.c1
+
+    1 FAILED TEST
+   #+end_example
+
+***** compile
+****** makefile
+   #+begin_src makefile
+   g++ -lgtest -lpthread -std=c++11 ./demo.cpp
+   #+end_src
+
+****** cmake
+   #+begin_src cmake
+   cmake_minimum_required(VERSION 3.0)
+   set(CMAKE_CXX_STANDARD 11)
+
+   include_directories(/usr/local/include)
+   project(demo)
+
+   find_package(GTEST REQUIRED)
+
+   add_executable(${PROJECT_NAME} main.cpp)
+
+   target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES})
+   #+end_src
+
+***** usage
+****** assert & expect
+*** c++ lsp
+https://github.com/MaskRay/ccls/wiki/Project-Setup#ccls-file
+https://en.dlyang.me/adding-c-c++-code-auto-completion-to-an-stm32-project/
+https://skebanga.github.io/cpp-dev-in-spacemacs/
+** Verilog
+*** emacs configurations
+http://xemacs.sourceforge.net/Documentation/packages/html/prog-modes_31.html
+
+[[file:~/Documents/Garage/orgible/elisp/language.el][verilog related setting]]
+*** auto generate
+https://www.veripool.org/projects/verilog-mode/wiki/Verilog-mode_veritedium
+#+begin_src Verilog
+module example (/*AUTOARG*/);
+    input i;
+    output o;
+    /*AUTOINPUT*/
+    /*AUTOOUTPUT*/
+    /*AUTOREG*/
+    inst inst (/*AUTOINST*/);
+    always @ (/*AUTOSENSE*/) begin
+        o = i;
+    end
+endmodule
+#+end_src
+C-c C-a 根据 input 和 output 生命自动生成端口
 ** org agenda commands
 
  Commands in the Agenda Buffer
@@ -783,6 +1670,21 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
  x (org-agenda-exit)
  Exit agenda, remove the agenda buffer and all buffers loaded by Emacs for the compilation of the agenda. Buffers created by the user to visit Org files are not removed
 
+** org capture
+https://orgmode.org/manual/Template-expansion.html#Template-expansion
+** DONE Org Downloads
+   CLOSED: [2021-01-07 Thu 21:41] SCHEDULED: <2021-01-07 Thu 19:00-19:30>
+
+*** drag
+
+ 1. drag a figure to org mode
+ 2. the figure is moved to target folder and inserted to org file, with new prefix
+ (setq-default org-download-image-dir "~/Downloads")
+
+*** screenshot
+
+ (setq org-download-screenshot-method "screencapture -i %s")
+
 ** DONE org mode gtd
    CLOSED: [2020-07-02 Thu 18:51]
  http://doc.norang.ca/org-mode.html
@@ -947,6 +1849,1586 @@ the size ratio of beamer is set to 16:9 for "aspectratio=169"
  Combining this export with tag filters and C-u R can limit the report to exactly the tags that people are interested in.
 **** Note
  Notes are created with a NOTE tag already applied by the capture template so I'm free to refile the note anywhere. As long as the note is in a project file that contributes to my agenda (ie. in org-agenda-files) then I can find the note back easily with my notes agenda view by hitting the key combination F12 N. I'm free to limit the agenda view of notes using standard agenda tag filtering.
+** org mode [[/Users/xin/Documents/Garage/orgible][workspace]]
+*** 用法
+**** 标题
+
+   关于 org mode 标题的内容。
+
+   标题是由 ~*~ (星号) 进行声明。星号的数量决定了标题的尝试。通过 ~<TAB>~
+   键可以折叠和打开标题。当一行标题下有多行子标题的时候，可以通过多次按
+   ~<TAB>~ 键来打开相应的标题的层数。
+
+***** 子标题
+
+   子标题可以嵌套在其它标题之下，就像这个一样。这样是为了方便组织材料。
+
+**** "TODO" (~C-c C-t~)
+
+   TODO 是通过在开始通过 =TODO= 和 =DONE= 关键字来创建的。
+   当然，你也可以能过在标题上按 ~C-c C-t~ 快捷键。
+   这样可以在你的 org 文档中更好的管理你的工作任务。这可以帮助你更好的计
+   划和安排你的任务。
+
+***** =TODO= 循环
+
+   你可以对一个已经有了 =TODO= 标记的条目切换 =TODO= 状态。更方便的方法是
+   通过 ~C-c C-t t~ (t 标示 TODO) 进行更改。
+
+   #+BEGIN_QUOTE
+   无 -> TODO -> DONE -> 无 ... (~C-C C-t~)
+   #+END_QUOTE
+
+**** 列表
+
+   你可以通过 ~-~ (破折号) 创建点式列表(bullets:无序列表)，数字列表或者通过 ~#.~
+   (数字[.]) 创建一个清单。在没有具体内容的时候，你可以通过使用制表符来缩
+   近点式列表，但是制表符往往会让人更加迷惑，但是你可以通过在输入 ~-~ 或者
+   ~#.~ 之前利用 ~<TAB>~ 来解决这个问题。
+
+***** 有序列表
+
+   1. 条目 1
+   2. 条目 2
+      1. 子条目 1
+      2. 子条目 2
+         1. 子条目的子条目 1
+
+***** 无序列表
+   开头用 ~-~ , ~+~ 或者 ~*~ 。
+
+   - hello
+   - item 2
+   - item 3
+     - subitem 1
+     - sub
+       - subsub
+
+***** 描述列表
+   开头用 ~-~ , ~+~ 或者 ~*~ ，后面用 ~::~
+
+   #+BEGIN_SRC org
+   Matlab is a funnny language.
+    - Scope :: Scope doesn't work as expected, and messes everything up\\
+    when loops mix variables up in recursive function.
+    - Namespaces :: You wish.
+    - Header Files :: Nope.
+   #+END_SRC
+
+   导出如下：
+
+   Matlab is a funnny language.
+    - Scope :: Scope doesn't work as expected, and messes everything up\\
+    when loops mix variables up in recursive function.
+    - Namespaces :: You wish.
+    - Header Files :: Nope.
+
+**** 文本格式化
+
+   个别的字可以使用星号来展示成 *粗体* ，斜杠来展示成 /斜体/ ，用下划线来
+   表示 _着重线_ 。也可以用 ~波浪号~ 和 +删除线+ 。
+
+   #+BEGIN_EXAMPLE
+   *粗体* /斜体/ _着重号_ ~波浪号~ +删除线+
+   #+END_EXAMPLE
+
+**** 表格
+
+   表格是由 '~|~' (竖线) 为开头的一行。如果一行是由 '~|-~' (竖线、横线)
+   为开始，则是表格的水平分割线；可以使用 ~<TAB>~ 键对表格进行扩展。
+
+   | this | is    | a    | sample  | table       |
+   |------+-------+------+---------+-------------|
+   | move | form  | one  | col     | to          |
+   | the  | other | with | ~<TAB>~ | this column |
+
+    小贴士：
+        - ~<TAB>~ 重新排列表格的大小，而且会移动到下一列，如果已经到了一
+          行的结尾处，则会创建新的一行。
+        - ~C-c C-c~ 将重排列表的大小，但是不会移动到下一列，也不会创建新
+          的一行
+        - ~<RET>~ 移动到下一行。
+***** 表格格式化
+    在导出的时候，表格是没有边框的，下面的命令可以让紧接着的表格格式化。
+
+    #+CAPTION: 这个表格会显示出外框
+    #+ATTR_HTML: border="2" rules="all" frame="border"
+   | this | is    | a    | sample  | table       |
+   |------+-------+------+---------+-------------|
+   | move | form  | one  | col     | to          |
+   | the  | other | with | ~<TAB>~ | this column |
+
+**** 文字示例
+
+   文字示例是用来在导出 org 的时候格式化代码和小段文字的。即将内容放在
+   ~#+BEGIN_EXAMPLE~ 和 ~#+END_EXAMPLE~ 之间。
+
+***** 代码
+
+   Org-mode 可以非常方便的插入代码片段。方式如下
+
+   #+BEGIN_EXAMPLE
+   #+BEGIN_SRC [片段名称] [参数]
+   #+END_SRC
+   #+END_EXAMPLE
+
+   [片段名称] 可以为 org 文件中的代码提供额外的功能。这也可以非常方便的让
+   人知道这是什么语言。
+
+   例如：
+
+   #+BEGIN_SRC c -n
+   int main() {
+   return 0;
+   }
+   #+END_SRC
+
+****** 常用的参数和命令
+   参数：
+   - ~-n~ : 在代码前显示行号
+   - ~+n~ : 在代码前显示行号，从上一个代码片段继续往下排，即：上一个为 1
+     到 5，则这个从 6 开始继续往后排
+   - ~-r~ : 移除代码的标签
+
+   命令:
+   - ~C-c [']~ : 允许在本地进行代码段的编辑操作。这会打开一个新的 buffer
+     ，当需要退出时，再执行一次这个命令就可以了。
+   - ~C-c l~ : 在用 ~C-c '~ 编辑的时候，调用 ~org-store-link~ 。可以在正
+     在编辑的这行创建一个标签。可以利用 ~C-c C-l~ 进行跳转。
+
+***** 模板入门
+   我们在使用长标签进行输入的时候，会非常的繁琐。我们可以利用一些快捷方式
+   来创建一个片段的模板。在插入的时候，先输入一个 '<' 然后可以选择一个要
+   使用的模板缩写，然后按下 ~<TAB>~ 键。
+
+   模板选择器：
+   #+BEGIN_EXAMPLE
+   s	#+begin_src ... #+end_src
+   e	#+begin_example ... #+end_example
+   q	#+begin_quote ... #+end_quote
+   v	#+begin_verse ... #+end_verse
+   c	#+begin_center ... #+end_center
+   l	#+begin_latex ... #+end_latex
+   L	#+latex:
+   h	#+begin_html ... #+end_html
+   H	#+html:
+   a	#+begin_ascii ... #+end_ascii
+   A	#+ascii:
+   i	#+index: line
+   I	#+include: line
+   #+END_EXAMPLE
+
+**** 链接
+
+***** 文件链接
+
+   可以使用下面的方式创建一个文件链接
+
+   #+BEGIN_EXAMPLE
+   [[file:filename][name-of-link]]
+   #+END_EXAMPLE
+
+   这样可以在导出成 HTML 的链接模式。
+***** 文档内容链接
+   你可以创建一个链接用来在文档中跳转，通过这种方式跳转到其它的章节。第二
+   个参数可以创建一个其它的名称。
+   #+BEGIN_EXAMPLE
+   [[section-title]]
+   [[section-title][link-title]]
+   #+END_EXAMPLE
+
+**** 导出 (~C-c C-e~)
+
+   你可以导出所有任务支持的格式，利用 ~C-c C-e [option]~ 。
+
+   ~C-c C-e~ 可以在缓冲区中显示出所有支持导出的选项。一般来说都支持 text，
+   html, 和 Latex。你可以通过 Latex 生成 PDF 文档，但是需要在本地安装 Latex 编译环境。
+
+***** 导出选项 (~C-c C-e t~)
+
+   在导出 org 文档的时候，可以自动设计一些变量，也可以手工设置。可以用下面
+   的方式来修改参数：
+
+   #+BEGIN_EXAMPLE
+   #+VARIABLE-NAME: value
+   #+END_EXAMPLE
+
+   这个参数可以放在文档的任务位置，但是放在最上面比较好。
+
+   将这些模板粘贴在你的文档中，就可以设置他们了，然后用
+   (~org-insert-export-options-template~) 或者 ~C-c C-e t~ 。
+
+   下面这些可以打印出来[fn:1]
+
+   #+BEGIN_EXAMPLE
+   #+TITLE:       文档的题目(默认是文件的题目)
+   #+AUTHOR:      作者(默认为 user-full-name)
+   #+DATE:        日期或者是一个时间戳(利用 org-export-timestamp-format 设置)
+   #+EMAIL:       邮箱地址(默认为 user-mail-address)
+   #+DESCRIPTION: 页面描述，类似于 XHTML 的元标签(META tag)
+   #+KEYWORDS:    页面关键定，类似于 XHTML 的元标签
+   #+LANGUAGE:    HTML 的语言，例如 en (org-export-default-language)
+   #+TEXT:        在开头插入一些描述性的文本。(可能已经移除)
+   #+OPTIONS:     H:2 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t ...
+   #+BIND:        如果 org-export-allow-bind-keywords 是 non-nil，Emacs 的变量可以利用 BIND 关键字，改缓冲区的内容
+   #+HTML_LINK_HOME: 主页链接
+   #+HTML_LINK_UP: 上行链接
+   #+SELECT_TAGS:  默认为 :export: ，则会将所有有 :export: 的内容(子内容)进行导出
+   #+EXCLUDE_TAGS: 默认为 :noexport: ，不导出有 :noexport: 标记的内容，如果入口标记为 :noexport:，有 :export: 标签的内容也不进行导出
+   #+LINK:        每行指定一个链接的名称或者是简写
+   #+LATEX_HEADER: 可以增加一个额外的 Latex 标注，类似于 \usepackage{xyz}
+   #+END_EXAMPLE
+
+[fn:1] 这里的内容和 [[https://orgmode.org/org.html#Link-abbreviations][The Org Manual]] 进行了校对，有些已经无用的或者修改的，则进行了修改。
+
+
+   在你的文档中，你可以使用实际的变量代替描述，而且可以随意的改变这些变量。
+   下面提供这些变量的参考。
+
+   对导出 HTML 和 LaTeX 来说， ~#+OPTIONS~ 是一个非常有用的参数。
+
+   #+BEGIN_EXAMPLE
+   H:         控制导出的标题的级别
+   num:       控制是否输出段落的编号
+   toc:       控制是否输出目录，或者目录的级别(数字)
+   \n:        控制是否保留换行符
+   @:         控制是否输出 HTML 标签
+   ::         控制是否固定宽度
+   |:         控制是否包含表格
+   ^:         控制是否允许 Tex 的句法，如果设置为 ^:{} ，a_{b}会展示为下标，但是 a_b 则显示为 a_b
+   -:         控制特殊字符转换，t 的时候， \-/--/---/... 会转换成&sky,&ndash,&mdash,&hellip.
+   f:         控制是否包含脚标
+   todo:      控制是否包含 TODO 关键字
+   tasks:     控制包含的任务的类型，todo 移除 DONE 的内容，nil 移除所有相关内容，如果有多个关键字则保留所有关键字的内容
+   pri:       控制包含的优先级
+   tags:      控制包含的标签，not-in-toc: 控制是否包含于标题，nil 是不包含 tags
+   <:         控制是否包含时间戳，例如：截止时间
+   *:         控制是否启用强调文本(粗体、斜体、下划线)
+   TeX:       控制在纯文本中是否支持 TeX 宏
+   LaTeX:     控制是否支持 LaTex 版本，默认为自动
+   skip:      控制是否路过标题前的文档
+   author:    控制导出时是否显示作者
+   email:     控制导出时是否显示邮箱
+   creator:   控制导出时是否显示创建者
+   timestamp: 控制导出时是否显示创建时间
+   d:         控制导出时是否包含抽屉
+   #+END_EXAMPLE
+
+   变量可以设置为 ~nil~ 或者 ~t~ ，或者是其它的内容。
+
+   例如
+
+   #+BEGIN_EXAMPLE
+   #+OPTIONS:     H:2 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t ...
+   #+END_EXAMPLE
+
+****** 标题
+   一般使用非注释行作为标题。如果没有的话，ie 会把第一个标题做为文件的名
+   称。
+
+   标题也可以手工设置
+   #+BEGIN_EXAMPLE
+   #+TITLE: This is the title of the document
+   #+END_EXAMPLE
+
+****** 目录
+
+   一般情况下，会生成在第一个标题后，你也可以在单独的一行中插入
+   ~TABLE-OF-CONTENTS~ 并用方括号括起来。
+
+   比较常用的设置如下：
+
+   #+BEGIN_EXAMPLE
+   #+OPTIONS: toc:2          (only to two levels in TOC)
+   #+OPTIONS: toc:nil        (no TOC at all)
+   #+END_EXAMPLE
+***** 包含其它文件
+
+   你可以包含另外的 org 文档，这些文档在导出的时候，才会被显示。
+   这是使用一行命令完成的
+
+   #+BEGIN_EXAMPLE
+   #+INCLUDE: "file-path" [type] [src-language]
+   #+END_EXAMPLE
+
+   可以是
+   ~#+BEGIN_QUOTE~ / ~#+END_QUOTE~ 或者 ~#+BEGIN_EXAMPLE~ /
+   ~#+END_EXAMPLE~ 或者是 ~#+BEGIN_SRC~ / ~#+END_SRC~ 。
+
+   如果是 _SRC 的话，则语言种类可以是任何主要语言。
+***** HTML 导出
+****** 样式表
+
+   你可以用下面的方式引入一个 CSS 样式表
+
+   #+BEGIN_EXAMPLE
+   #+STYLE:    <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
+   #+END_EXAMPLE
+
+   你可以使用下面的变量来设置你的 CSS 样式，并在导出的时候使用他们[fn:2] ：
+
+   #+BEGIN_EXAMPLE
+   p.author            作者信息，包括邮箱
+   p.date              发矶时间
+   p.creator           创建时间，包括 org mode 的版本
+   .title              文档标题
+   .todo               TODO 关键字，非 DONE 状态
+   .done               DONE 关键字，所有被认为完成的状态
+   .WAITING            每个 TODO 状态，且显示成自己的状态名
+   .timestamp          时间戳
+   .timestamp-kwd      关联性的时间戳，比如 SCHEDULED
+   .timestamp-wrapper  关键字时间戳
+   .tag                各级标题的标签
+   ._HOME              将所有标签类导出，并将 '@' 替换为 '_'
+   .target             目标链接
+   .linenr             代码示例中的行号
+   .code-highlighted   高亮引用的代码行
+   div.outline-N       给不同 outline 级别标题加 div 标签
+   div.outline-text-N  给不同 outline 级别提供不同的 div 样式
+   .section-number-N   标题中的段数，每个级别都不同
+   div.figure          格式化引用图片
+   pre.src             格式化源码
+   pre.example         格式化 example 内容
+   p.verse             每行段落的样式
+   div.footnotes       脚注章节的标题
+   p.footnote          脚注段落的样式，包含脚注的样式
+   .footref            脚注的参考编号
+   .footnum            定义脚注的编号
+   #+END_EXAMPLE
+
+[fn:2] ~div.outline-N~ / ~div.outline-text-N~ 这两个不太懂，如果有了解
+的请帮忙修改。其它的有翻译错误的也请帮忙斧正。
+
+****** 站点导航
+
+****** 超链接
+
+   超链接和链接一样，而且会自动转换成 HTML 的超链接形势。见 [[链接]] 。
+**** 发布
+
+   发布功能是一个简单的导出渠道。当你有许多文件需要导出的时候，创建一个对
+   应的发布脚本是一个不错的方法。
+
+***** 发布脚本
+
+   如果需要应用项目发布功能，可以在项目的本地文件夹中创建一个发布脚本，并
+   附上说明。在我们的例子中，假设文件名为 ~org_publish.el~ 。
+
+   #+BEGIN_EXAMPLE
+   #+INCLUDE: org_publish.el src emacs-lisp
+   #+END_EXAMPLE
+
+
+
+
+   #+TITLE: 用Org-mode写作:如何导出部分内容
+   #+URL: http://www.clarkdonley.com/blog/2015-08-30-org-mode-and-writing-papers-selective-export-tips.html
+   #+AUTHOR: lujun9972
+   #+TAGS: org-mode
+   #+DATE: [2016-10-24 周一 20:04]
+   #+OPTIONS: ^:{}
+
+**** Selective Export in Org-Mode
+
+   使用 org-mode 写作的一个优势在于能够随意决定导出哪部分的内容.
+   比如我可以在 org 文件中保留下论文的大纲但是却并不导出到最终的 pdf 文件中去. 也可以在准备综合测试时将长篇笔记中的总结给导出来.
+
+   本文,我将告诉你两种防止内容被导出的方法: tags 与 drawers.
+   tags 与 drawers 两者的根本区别在于标签是作用于标题的(对章节与子章节中的全部内容生效),而 drawers 并不像标签那样作用域于标题.
+
+   这里尤其需要提一下的是注释. 以 =#= 开头的行,或 =#+BEGIN_COMMENT= 与 =#+END_COMMENT= 之间的内容都被认为是注释. [[http://orgmode.org/manual/Comment-lines.html][详情请参见Org-mode manual]].
+   不过我这里只对那些能够导出的部分感兴趣-只有那些内容才能导出到 pdf 文件中,也只能对那些内容添加 tag 和 drawer.
+
+**** Tags
+
+   Org-mode 允许你为标题分配标签. [[http://orgmode.org/manual/Tags.html][Org-mode的manual]] 详细地介绍了与标签相关的那些函数及其使用方法.
+   我们这里只需要知道如何如何设置 tag,导出时隐藏指定标签的相关内容以及在导出时不导出标签本身,三件事情就行了.
+
+***** Setting a Tag
+
+   插入标签最简单的方法就是按下 =C-c C-q=. 当然[[http://orgmode.org/manual/Setting-tags.html#Setting-tags][manual中也有其他更复杂的插入方式]].
+   Tags 不仅应用于标题本身,还应用于标题所包含的那些内容.
+   举个例子,假设我正在复习考试笔记,我将某个章节打上标签 =:summary:= 后,该章节下的所有子章节都隐式地基础了该标签.
+   若我在导出时排除了带 =:summary:= 标签的内容的话,则该章节及其子章节都会被排除出去.
+
+***** Hiding Tagged Content on Export
+
+   依然假设我正在复习考试笔记, 假设我的的考试笔记有两个不同的标签,分别为 =:summary:= 与 =:fullnotes:=, 其详细内容如下所示:
+
+   #+BEGIN_SRC org
+     ,* Article X by Philosopher Z
+     ,** Summary                                                          :summary:
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+     diam velit. Vestibulum pharetra mi eu nisl luctus, vitae condimentum
+     mauris volutpat.
+
+     ,** Full notes                                                     :fullnotes:
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a
+     diam velit. Vestibulum pharetra mi eu nisl luctus, vitae condimentum
+     mauris volutpat. Mauris aliquet eleifend erat, nec vestibulum neque
+     bibendum ac. In nec risus mauris. Nulla risus tortor, sodales vitae
+     ligula quis, dapibus aliquam magna. Fusce pharetra, tellus gravida
+     posuere tempor, orci enim ullamcorper metus, nec aliquam ipsum ex in
+     velit. Donec ante massa, consequat sed consequat at, porttitor quis
+     metus. Cras sit amet dui ac neque pulvinar rutrum id id tellus.
+   #+END_SRC
+
+   则,我只需要在 org 文件的头部加上 =#+EXCLUDE_TAGS: summary= 就能在导出时将带 =:summary:= 标签的内容排除出去,只留下 =:fullnotes:= 的内容.
+
+***** Hiding Tag Labels on Exported Content
+
+   你为标题加上标签后,会发现通过 =\(\rm\LaTeX{}\)= 导出的 pdf 文件中会有一个标题显示在标题的右边.
+   大多数的时候你都会想把这个标签在导出时给隐藏起来. 方法也很简单,只需要在 org 的头部加上 =#+OPTIONS: tags:nil= 就行了.
+
+***** Hiding Headers while Using Tags
+
+   假设你又这么一份文档:
+
+   #+BEGIN_SRC org
+     ,* Lorem Ipsum
+     ,** Summary                                                          :summary:
+
+     Vivamus libero nisi, maximus scelerisque felis ac, dapibus posuere
+     metus. In hac habitasse platea dictumst.
+
+     ,** Body text
+
+     Vivamus libero nisi, maximus scelerisque felis ac, dapibus posuere
+     metus. In hac habitasse platea dictumst.  Fusce aliquam nisi in lorem
+     pretium, vel congue lacus consectetur. Donec in ligula ligula. Etiam
+     rutrum tortor a euismod convallis. Nunc mattis laoreet mi, vitae
+     ullamcorper arcu. Quisque semper, velit in dictum viverra, augue mi
+     iaculis urna, non ultricies lacus mauris id neque.
+   #+END_SRC
+
+   那么你在将之导出成 pdf 文件时,可以通过 =#+EXCLUDE_TAGS: summary= 来将 summary 部分的内容排除掉. 不过随后你会发现导出内容中,在章节标题(“1. Lorem Ipsum”)后面紧接着一个子章节的标题(“1.1 Body text”).
+   这种样式一般都很难看:
+
+   [[http://www.clarkdonley.com/images/selective-export-1.png]]
+
+   但是呢,你也不能直接删掉 =** Body text= 这一行呀,因为这样你后面的内容会被当成 summary 而不被导出.
+
+   这时候就该 =:ignoreheading:= 标签大显神通了. 该标签允许你导出章节内容及其子章节,但却让章节本身隐藏起来.
+   在上面的例子中,你可以为 =**Body text= 子章节分配一个 =:ignoreheading:= 标签, 这样一来导出的 pdf 中, 本文 =Vivamus libero nisi…= 就紧跟在 =Lorem Ipsum= 标题之后了.
+
+   [[http://www.clarkdonley.com/images/selective-export-2.png]]
+
+   用后面将的 drawer 也能达到相同的想过.(甚至我觉得用 drawer 会更方便一些)
+
+**** Drawers
+
+***** What Drawers Are
+
+   [[http://orgmode.org/manual/Drawers.html][org-mode manual中关于drawers的内容]] 很值得一看. 里面说,drawer 一般用于存放那些你平时不想看到的相关信息. 里面还举了一个例子:
+
+   #+BEGIN_SRC org
+     ,** This is a headline Still outside the drawer
+        :DRAWERNAME:
+        This is inside the drawer.
+        :END:
+        After the drawer.
+   #+END_SRC
+
+***** When You Might Use Drawers in Writing
+
+   为什么我们不一直用 tags 呢? 这是因为 tags 是作用于整个章节上的(包括该章节下面的内容以及子章节),但是有时候我们不想隐藏整个章节的内容,这时 drawers 就很有用了.
+
+   #+BEGIN_SRC org
+     ,* Main Section
+     ,** Outline                                                        :outline:
+     1. Sed eget arcu nec ligula tristique pretium sit amet eget justo.
+        1. Cras lacinia at odio at tincidunt.
+        2. Maecenas vitae risus nec arcu pulvinar hendrerit.
+           1. Class aptent taciti sociosqu ad litora torquent per conubia
+              nostra, per inceptos himenaeos.
+     2. Quisque pellentesque placerat elementum.
+        1. Nam arcu felis, tempor id ex ac, sollicitudin tristique nisl.
+        2. Maecenas facilisis dui at neque vulputate rutrum.
+        3. Nam eleifend nunc accumsan lorem imperdiet vulputate.
+     3. Donec eu orci vel eros blandit tincidunt eu pulvinar leo.
+
+     ,** Body
+     Vivamus odio mauris, fermentum semper tempus id, scelerisque vel
+     metus. Aliquam risus lectus, lobortis ut risus eu, facilisis
+     consectetur diam. Sed euismod ullamcorper erat, at lacinia enim
+     lacinia eget. Nam sed justo dapibus, tempus ipsum et, sagittis
+     ex. Integer interdum consequat augue pellentesque fermentum. Integer
+     vehicula lorem sed purus vulputate, vitae cursus risus
+     eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   #+END_SRC
+
+   上面这段例子,用 drawer 来写就是这样的:
+
+   #+BEGIN_SRC org
+     ,* Main Section
+
+     :OUTLINE:
+     1. Sed eget arcu nec ligula tristique pretium sit amet eget justo.
+        1. Cras lacinia at odio at tincidunt.
+        2. Maecenas vitae risus nec arcu pulvinar hendrerit.
+           1. Class aptent taciti sociosqu ad litora torquent per conubia
+              nostra, per inceptos himenaeos.
+     2. Quisque pellentesque placerat elementum.
+        1. Nam arcu felis, tempor id ex ac, sollicitudin tristique nisl.
+        2. Maecenas facilisis dui at neque vulputate rutrum.
+        3. Nam eleifend nunc accumsan lorem imperdiet vulputate.
+     3. Donec eu orci vel eros blandit tincidunt eu pulvinar leo.
+     :END:
+
+     Vivamus odio mauris, fermentum semper tempus id, scelerisque vel
+     metus. Aliquam risus lectus, lobortis ut risus eu, facilisis
+     consectetur diam. Sed euismod ullamcorper erat, at lacinia enim
+     lacinia eget. Nam sed justo dapibus, tempus ipsum et, sagittis
+     ex. Integer interdum consequat augue pellentesque fermentum. Integer
+     vehicula lorem sed purus vulputate, vitae cursus risus
+     eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   #+END_SRC
+
+***** Inserting Drawers
+
+   插入 drawers 非常容易: 按下 =C-c C-x d= 就行了. [[http://orgmode.org/manual/Drawers.html][org-mode manual]]中有更多详细的细节,不过就目前来说我们只需要知道这点就行了.
+
+***** Hiding Drawers on Export
+
+   要在导出时隐藏所有的 drawers 的内容, 你可以在 org 文件的头部加上 =#+OPTIONS: d:nil=.
+
+   不过如果我紧紧想排除 =:OUTLINE:= drawer 的内容怎么办呢? 这时,我需要加上的是 =#+OPTIONS: d:(not)= 这一行. 这样一来除了 =:OUTLINE:= 之外的 drawer 内容都会导出来.
+   如果你想隐藏 =:OUTLINE:= 与 =:SUMMARY:= 这两个 drawers 的内容, 你需要加上的是 =#+OPTIONS: d: (not not "SUMMARY")= 这样一行内容.
+
+***** Cycling through Drawers like Headers
+
+   如果你使用 drawers 来存放章节总结之类的内容,那么你也许会希望能像章节头一样 cycle through 这些 drawer.
+   好在 [[http://stackoverflow.com/questions/19510984/section-summaries-in-org-mode][StackExchange上有两个用户折腾出了一个扩展]], 你只要把这段代码放入 =.emacs= 文件中(若你用的是 Aquamacs 那么放入 =Preferences.el= 中) 就能对 =:SUMMARY:= drawer 实现类似的功能了.
+   你也很容易就能将这段代码修改成对其他 drawer 生效. 不过就我来说,如果我希望 drawer 能像章节头一样 cycle through 的话,那我就这届用标题头就好了.
+
+   tags 和 drawers 的用法还有很多种,不过本文应该教会你了关于如何通过 tags 与 drawers 导出 org-mode 中部分内容的足够知识了.
+*** DONE orgible repo configure
+    CLOSED: [2020-03-30 Mon 11:45] SCHEDULED: <2020-03-30 Mon 15:00-17:00>
+**** DONE org blog
+     CLOSED: [2020-03-30 Mon 11:30]
+
+   示例站点：https://www.rosecoder.com/
+   文字教程：https://www.rosecoder.com/org-to-site-tutor.html
+   页面展示：https://www.rosecoder.com/org-to-site.html
+   论坛页面：https://emacs-china.org/t/org-mode-site-v0-0-1/11409
+   file: [[~/Documents/Garage/orgible/elisp/init-site.el][init-site.el]]
+
+   *finally abandon this!*
+***** Custom
+   head number: =num:nil= not show, =num:3= show 1.1.1 but no more
+   add specific css file 'org-index.css' for index.html
+**** DONE version control with git and nutstore
+     CLOSED: [2020-03-30 Mon 11:45]
+***** hierarchy
+      - inbox.org for all org capture
+      - refile/ folder to sort and collect finished notes
+        + todo.org: todo list
+
+        + job-hunting.org: information about job interview and code test
+        + software.org: software knowledge
+        + hardware.org: hardware knowledge
+
+        + projects.org: project managemant
+
+        + paper-notes.org: notes from Skim app
+
+        + workflow.org: tool chains
+
+        + topic.org: thinking and talking except work
+
+      - oxrign/ folder to store private message
+        + password
+        + workstation
+      - org-mode-blog/ folder for posting knowledge or interestings
+
+***** sync
+      nutstore sync orgible/ folder
+
+      mobile app can use nutstore app or webdavs to get folder
+
+***** version control
+      - when capture, no vc
+      - when refile, vc
+      - when update blog, vc submodule org-mode-blog/
+      - when private, vc submodule oxrign/
+*** org mode video [[https://www.youtube.com/watch?v=PVsSOmUB7ic][Learn Emacs Org Mode: Spacemacs Intro Tutorial - YouTube]]
+    :LOGBOOK:
+    CLOCK: [2020-03-02 Mon 17:48]--[2020-03-02 Mon 17:52] =>  0:04
+    CLOCK: [2020-03-02 Mon 17:36]--[2020-03-02 Mon 17:47] =>  0:11
+    :END:
+  [2020-03-02 Mon 17:36]
+
+**** org capture and refile
+
+     - capture the line and the file
+     - refile to the todo list of tomorrow, show in agenda
+
+**** insert snippet
+
+     have no snippet in emacs.
+
+**** shortkeys
+
+     - new sibling: C-Enter
+     - toggle global content: S-Tab
+     - toggle focus: Space w c c
+     - format: , x
+     - vi comment package: y s w ~
+     - paragraph selection: v a p
+     - org column: C-c C-x C-c
+
+**** agenda time last for 2 hours:
+
+     14:00 + 2
+
+**** org mobile
+
+     orgzly
+
+*** DONE org notes
+    CLOSED: [2020-03-28 Sat 20:40]
+**** spacemacs org
+***** snippet
+****** insert
+
+   [SPC] i s #
+
+***** heading
+
+   =, h i= insert heading
+   =, h s= insert subheading
+   = C [ENTER]= heading below with the same level
+
+***** node
+
+   =m-up= move node up
+   =, n= narrow to subtree. no trigger narrow shortkeys, but =SPC n w= to widen and escape narrow.
+   =SPC w C= center content. same trigger
+
+***** format
+
+   select content first and then use
+   =, x b= for bold or anything else
+
+****** vi yank
+
+   =y s selection marker=
+   selection including =w= for word
+   marker including =*= for bold
+
+   #+begin_example
+
+   #+end_example
+
+***** vi selection
+****** around
+
+   =v a e= select around environment
+   =v a R= select around subtree. not work
+   =d a p= delete around paragraph
+   = a R :  align a subtree
+
+***** iterm
+
+      1. one
+      2. two
+         - sub one
+         - sub two
+      3. [ ] three
+
+   continuous add new iterm below: =ESC o=
+
+***** gtd
+****** state
+
+    =:set status
+   =C-c ,= set priority. same as =S up= or =, J=
+   =, P= set property
+
+****** timestamp
+   TIME+2 last 2 hours
+   <2020-03-18 Wed 12:00-14:00>
+
+   =S UP= change TIME
+
+****** agenda
+
+   =, a t= all the todos
+   =, a a= all the entries
+
+****** sort
+
+   select and then =, ^= to sort according to option
+
+****** sparse tree
+
+   =, \= and select state of the file
+
+****** clock
+
+   go to last clock =C-c C-x C-j=
+
+***** spreadsheet
+
+   org-columns =C-c C-x C-c=
+
+***** help
+
+   =C-h i= and select org mode
+*** org mode keymap
+
+================================================================================
+Org-Mode Reference Card (for version 7.8.11)
+================================================================================
+
+
+
+================================================================================
+Getting Started
+================================================================================
+To read the on-line documentation try             M-x org-info
+
+================================================================================
+Visibility Cycling
+================================================================================
+
+rotate current subtree between states             TAB
+rotate entire buffer between states               S-TAB
+restore property-dependent startup visibility     C-u C-u TAB
+show the whole file, including drawers            C-u C-u C-u TAB
+reveal context around point                       C-c C-r
+
+================================================================================
+Motion
+================================================================================
+
+next/previous heading                             C-c C-n/p
+next/previous heading, same level                 C-c C-f/b
+backward to higher level heading                  C-c C-u
+jump to another place in document                 C-c C-j
+previous/next plain list item                     S-UP/DOWN\notetwo
+
+================================================================================
+Structure Editing
+================================================================================
+
+insert new heading/item at current level          M-RET
+insert new heading after subtree                  C-RET
+insert new TODO entry/checkbox item               M-S-RET
+insert TODO entry/ckbx after subtree              C-S-RET
+turn (head)line into item, cycle item type        C-c -
+turn item/line into headline                      C-c *
+promote/demote heading                            M-LEFT/RIGHT
+promote/demote current subtree                    M-S-LEFT/RIGHT
+move subtree/list item up/down                    M-S-UP/DOWN
+sort subtree/region/plain-list                    C-c ^
+clone a subtree                                   C-c C-x c
+copy visible text                                 C-c C-x v
+kill/copy subtree                                 C-c C-x C-w/M-w
+yank subtree                                      C-c C-x C-y or C-y
+narrow buffer to subtree / widen                  C-x n s/w
+
+================================================================================
+Capture - Refile - Archiving
+================================================================================
+capture a new item (C-u C-u = goto last)          C-c c \noteone
+refile subtree (C-u C-u = goto last)              C-c C-w
+archive subtree using the default command         C-c C-x C-a
+move subtree to archive file                      C-c C-x C-s
+toggle ARCHIVE tag / to ARCHIVE sibling           C-c C-x a/A
+force cycling of an ARCHIVEd tree                 C-TAB
+
+================================================================================
+Filtering and Sparse Trees
+================================================================================
+
+construct a sparse tree by various criteria       C-c /
+view TODO's in sparse tree                        C-c / t/T
+global TODO list in agenda mode                   C-c a t \noteone
+time sorted view of current org file              C-c a L
+
+================================================================================
+Tables
+================================================================================
+
+--------------------------------------------------------------------------------
+Creating a table
+--------------------------------------------------------------------------------
+
+just start typing, e.g.                           |Name|Phone|Age RET |- TAB
+convert region to table                           C-c |
+... separator at least 3 spaces                   C-3 C-c |
+
+--------------------------------------------------------------------------------
+Commands available inside tables
+--------------------------------------------------------------------------------
+
+The following commands work when the cursor is inside a table.
+Outside of tables, the same keys may have other functionality.
+
+--------------------------------------------------------------------------------
+Re-aligning and field motion
+--------------------------------------------------------------------------------
+
+re-align the table without moving the cursor      C-c C-c
+re-align the table, move to next field            TAB
+move to previous field                            S-TAB
+re-align the table, move to next row              RET
+move to beginning/end of field                    M-a/e
+
+--------------------------------------------------------------------------------
+Row and column editing
+--------------------------------------------------------------------------------
+
+move the current column left                      M-LEFT/RIGHT
+kill the current column                           M-S-LEFT
+insert new column to left of cursor position      M-S-RIGHT
+
+move the current row up/down                      M-UP/DOWN
+kill the current row or horizontal line           M-S-UP
+insert new row above the current row              M-S-DOWN
+insert hline below (C-u : above) current row      C-c -
+insert hline and move to line below it            C-c RET
+sort lines in region                              C-c ^
+
+--------------------------------------------------------------------------------
+Regions
+--------------------------------------------------------------------------------
+
+cut/copy/paste rectangular region                 C-c C-x C-w/M-w/C-y
+fill paragraph across selected cells              C-c C-q
+
+--------------------------------------------------------------------------------
+Miscellaneous
+--------------------------------------------------------------------------------
+
+to limit column width to N characters, use        ...| <N> |...
+edit the current field in a separate window       C-c `
+make current field fully visible                  C-u TAB
+export as tab-separated file                      M-x org-table-export
+import tab-separated file                         M-x org-table-import
+sum numbers in current column/rectangle           C-c +
+
+--------------------------------------------------------------------------------
+Tables created with the table.el package
+--------------------------------------------------------------------------------
+
+insert a new table.el table                       C-c ~
+recognize existing table.el table                 C-c C-c
+convert table (Org-mode <-> table.el)             C-c ~
+
+--------------------------------------------------------------------------------
+Spreadsheet
+--------------------------------------------------------------------------------
+
+Formulas typed in field are executed by TAB,
+RET and C-c C-c.  = introduces a column
+formula, := a field formula.
+
+Example: Add Col1 and Col2                        |=$1+$2      |
+... with printf format specification              |=$1+$2;%.2f|
+... with constants from constants.el              |=$1/$c/$cm |
+sum from 2nd to 3rd hline                         |:=vsum(@II..@III)|
+apply current column formula                      | = |
+
+set and eval column formula                       C-c =
+set and eval field formula                        C-u C-c =
+re-apply all stored equations to current line     C-c *
+re-apply all stored equations to entire table     C-u C-c *
+iterate table to stability                        C-u C-u C-c *
+rotate calculation mark through # * ! ^ _ $       C-#
+show line, column, formula reference              C-c ?
+toggle grid / debugger                            C-c }/{
+
+--------------------------------------------------------------------------------
+Formula Editor
+--------------------------------------------------------------------------------
+
+edit formulas in separate buffer                  C-c '
+exit and install new formulas                     C-c C-c
+exit, install, and apply new formulas             C-u C-c C-c
+abort                                             C-c C-q
+toggle reference style                            C-c C-r
+pretty-print Lisp formula                         TAB
+complete Lisp symbol                              M-TAB
+shift reference point                             S-cursor
+shift test line for column references             M-up/down
+scroll the window showing the table               M-S-up/down
+toggle table coordinate grid                      C-c }
+
+================================================================================
+Links
+================================================================================
+
+globally store link to the current location       C-c l \noteone
+insert a link (TAB completes stored links)        C-c C-l
+insert file link with file name completion        C-u C-c C-l
+edit (also hidden part of) link at point          C-c C-l
+
+open file links in emacs                          C-c C-o
+...force open in emacs/other window               C-u C-c C-o
+open link at point                                mouse-1/2
+...force open in emacs/other window               mouse-3
+record a position in mark ring                    C-c %
+jump back to last followed link(s)                C-c &
+find next link                                    C-c C-x C-n
+find previous link                                C-c C-x C-p
+edit code snippet of file at point                C-c '
+toggle inline display of linked images            C-c C-x C-v
+
+================================================================================
+Working with Code (Babel)
+================================================================================
+
+execute code block at point                       C-c C-c
+open results of code block at point               C-c C-o
+check code block at point for errors              C-c C-v c
+insert a header argument with completion          C-c C-v j
+view expanded body of code block at point         C-c C-v v
+view information about code block at point        C-c C-v I
+go to named code block                            C-c C-v g
+go to named result                                C-c C-v r
+go to the head of the current code block          C-c C-v u
+go to the next code block                         C-c C-v n
+go to the previous code block                     C-c C-v p
+demarcate a code block                            C-c C-v d
+execute the next key sequence in the code edit bu C-c C-v x
+execute all code blocks in current buffer         C-c C-v b
+execute all code blocks in current subtree        C-c C-v s
+tangle code blocks in current file                C-c C-v t
+tangle code blocks in supplied file               C-c C-v f
+ingest all code blocks in supplied file into the  C-c C-v i
+switch to the session of the current code block   C-c C-v z
+load the current code block into a session        C-c C-v l
+view sha1 hash of the current code block          C-c C-v a
+
+================================================================================
+Completion
+================================================================================
+
+In-buffer completion completes TODO keywords at headline start, TeX
+macros after `\', option keywords after `#-', TAGS
+after  `:', and dictionary words elsewhere.
+
+complete word at point                            M-TAB
+
+
+
+
+================================================================================
+TODO Items and Checkboxes
+================================================================================
+
+rotate the state of the current item              C-c C-t
+select next/previous state                        S-LEFT/RIGHT
+select next/previous set                          C-S-LEFT/RIGHT
+toggle ORDERED property                           C-c C-x o
+view TODO items in a sparse tree                  C-c C-v
+view 3rd TODO keyword's sparse tree               C-3 C-c C-v
+
+set the priority of the current item              C-c , [ABC]
+remove priority cookie from current item          C-c , SPC
+raise/lower priority of current item              S-UP/DOWN\notetwo
+
+insert new checkbox item in plain list            M-S-RET
+toggle checkbox(es) in region/entry/at point      C-c C-x C-b
+toggle checkbox at point                          C-c C-c
+update checkbox statistics (C-u : whole file)     C-c #
+
+================================================================================
+Tags
+================================================================================
+
+set tags for current heading                      C-c C-q
+realign tags in all headings                      C-u C-c C-q
+create sparse tree with matching tags             C-c \\
+globally (agenda) match tags at cursor            C-c C-o
+
+================================================================================
+Properties and Column View
+================================================================================
+
+set property/effort                               C-c C-x p/e
+special commands in property lines                C-c C-c
+next/previous allowed value                       S-left/right
+turn on column view                               C-c C-x C-c
+capture columns view in dynamic block             C-c C-x i
+
+quit column view                                  q
+show full value                                   v
+edit value                                        e
+next/previous allowed value                       n/p or S-left/right
+edit allowed values list                          a
+make column wider/narrower                        > / <
+move column left/right                            M-left/right
+add new column                                    M-S-right
+Delete current column                             M-S-left
+
+
+================================================================================
+Timestamps
+================================================================================
+
+prompt for date and insert timestamp              C-c .
+like C-c . but insert date and time format        C-u C-c .
+like C-c . but make stamp inactive                C-c !
+insert DEADLINE timestamp                         C-c C-d
+insert SCHEDULED timestamp                        C-c C-s
+create sparse tree with all deadlines due         C-c / d
+the time between 2 dates in a time range          C-c C-y
+change timestamp at cursor Â±1 day                S-RIGHT/LEFT\notetwo
+change year/month/day at cursor by Â±1            S-UP/DOWN\notetwo
+access the calendar for the current date          C-c >
+insert timestamp matching date in calendar        C-c <
+access agenda for current date                    C-c C-o
+select date while prompted                        mouse-1/RET
+toggle custom format display for dates/times      C-c C-x C-t
+
+
+--------------------------------------------------------------------------------
+Clocking time
+--------------------------------------------------------------------------------
+
+start clock on current item                       C-c C-x C-i
+stop/cancel clock on current item                 C-c C-x C-o/x
+display total subtree times                       C-c C-x C-d
+remove displayed times                            C-c C-c
+insert/update table with clock report             C-c C-x C-r
+
+================================================================================
+Agenda Views
+================================================================================
+
+add/move current file to front of agenda          C-c [
+remove current file from your agenda              C-c ]
+cycle through agenda file list                    C-'
+set/remove restriction lock                       C-c C-x </>
+
+compile agenda for the current week               C-c a a \noteone
+compile global TODO list                          C-c a t \noteone
+compile TODO list for specific keyword            C-c a T \noteone
+match tags, TODO kwds, properties                 C-c a m \noteone
+match only in TODO entries                        C-c a M \noteone
+find stuck projects                               C-c a # \noteone
+show timeline of current org file                 C-c a L \noteone
+configure custom commands                         C-c a C \noteone
+agenda for date at cursor                         C-c C-o
+
+--------------------------------------------------------------------------------
+Commands available in an agenda buffer
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+View Org file
+--------------------------------------------------------------------------------
+
+show original location of item                    SPC/mouse-3
+show and recenter window                          L
+goto original location in other window            TAB/mouse-2
+goto original location, delete other windows      RET
+show subtree in indirect buffer, ded.\ frame      C-c C-x b
+toggle follow-mode                                F
+
+--------------------------------------------------------------------------------
+Change display
+--------------------------------------------------------------------------------
+
+delete other windows                              o
+view mode dispatcher                              v
+switch to day/week/month/year/def view            d w vm vy vSP
+toggle diary entries / time grid / habits         D / G / K
+toggle entry text / clock report                  E / R
+toggle display of logbook entries                 l / v l/L/c
+toggle inclusion of archived trees/files          v a/A
+refresh agenda buffer with any changes            r / g
+filter with respect to a tag                      /
+save all org-mode buffers                         s
+display next/previous day,week,...                f / b
+goto today / some date (prompt)                   . / j
+
+--------------------------------------------------------------------------------
+Remote editing
+--------------------------------------------------------------------------------
+
+digit argument                                    0-9
+change state of current TODO item                 t
+kill item and source                              C-k
+archive default                                   $ / a
+refile the subtree                                C-c C-w
+set/show tags of current headline                 : / T
+set effort property (prefix=nth)                  e
+set / compute priority of current item            , / P
+raise/lower priority of current item              S-UP/DOWN\notetwo
+run an attachment command                         C-c C-a
+schedule/set deadline for this item               C-c C-s/d
+change timestamp one day earlier/later            S-LEFT/RIGHT\notetwo
+change timestamp to today                         >
+insert new entry into diary                       i
+start/stop/cancel the clock on current item       I / O / X
+jump to running clock entry                       J
+mark / unmark / execute bulk action               m / u / B
+
+--------------------------------------------------------------------------------
+Misc
+--------------------------------------------------------------------------------
+
+follow one or offer all links in current entry    C-c C-o
+
+--------------------------------------------------------------------------------
+Calendar commands
+--------------------------------------------------------------------------------
+
+find agenda cursor date in calendar               c
+compute agenda for calendar cursor date           c
+show phases of the moon                           M
+show sunrise/sunset times                         S
+show holidays                                     H
+convert date to other calendars                   C
+
+--------------------------------------------------------------------------------
+Quit and Exit
+--------------------------------------------------------------------------------
+
+quit agenda, remove agenda buffer                 q
+exit agenda, remove all agenda buffers            x
+
+================================================================================
+LaTeX and cdlatex-mode
+================================================================================
+
+preview LaTeX fragment                            C-c C-x C-l
+expand abbreviation (cdlatex-mode)                TAB
+insert/modify math symbol (cdlatex-mode)          ` / '
+insert citation using RefTeX                      C-c C-x [
+
+================================================================================
+Exporting and Publishing
+================================================================================
+
+Exporting creates files with extensions .txt and .html
+in the current directory.  Publishing puts the resulting file into
+some other place.
+
+export/publish dispatcher                         C-c C-e
+
+export visible part only                          C-c C-e v
+insert template of export options                 C-c C-e t
+toggle fixed width for entry or region            C-c :
+toggle pretty display of scripts, entities        C-c C-x {\tt\char`\}
+
+--------------------------------------------------------------------------------
+Comments: Text not being exported
+--------------------------------------------------------------------------------
+
+Lines starting with # and subtrees starting with COMMENT are
+never exported.
+
+toggle COMMENT keyword on entry                   C-c ;
+
+================================================================================
+Dynamic Blocks
+================================================================================
+
+update dynamic block at point                     C-c C-x C-u
+update all dynamic blocks                         C-u C-c C-x C-u
+
+================================================================================
+Notes
+================================================================================
+[1] This is only a suggestion for a binding of this command.  Choose
+your own key as shown under ACTIVATION.
+
+[2] Keybinding affected by org-support-shift-select and also
+ org-replace-disputed-keys.
+** DONE org-brain learn to use
+   :LOGBOOK:
+   CLOCK: [2020-02-14 Fri 10:01]--[2020-02-14 Fri 10:02] =>  0:01
+   :END:
+*** install
+    [[https://github.com/Kungsgeten/org-brain][github page]]
+*** usage
+ [[https://www.youtube.com/watch?v=3gwdXkIHxjA][youtube video: concept mapping using org-brain]]
+
+ 1. entries
+ ’org-brain-visualize’ prompts user for a name which is suggested to start with ’index’ as your top-level, and hang everything off ’index’.
+ org-brain will then create ’index.org’ in your ’brain’ directory, and show you a visualization buffer.
+
+ 2. add children
+ There are two ways to add a child to an entry.
+ One way, with ’c’, creates a file as a child. The filename can’t contain spaces, which is annoying but CamelCase works well enough. So let’s say you create ’Projects’ this way.
+ The other way is with ’h’ (presumably for ’h’eadline), which creates an org-mode headline in your index (or other parent) file. The headline can contain any text, but nevertheless I think you should create files instead of headlines for most purposes.
+
+ 3. edit children
+ So you can move the cursor to ’Projects’ and press enter, and then start entering a series of children for your Project node.
+
+ 4. add resource
+ Pressing ’l’ will allow you to add a resource, or link, to the active node. The resource has to be in URL format. Org link format will not work. This is quite strange and somewhat annoying. So a file link has to be entered like this:
+
+ file:///path/to/file/filename
+
+ The link will appear in a “Resources” section at the bottom of the visualization diagram, and clicking on it or pressing Enter on it will open the resource.
+** org mode authoring system
+   :PROPERTIES:
+   :ID:       A420F6B3-2900-4227-8B94-B0ECF447AEB4
+   :END:
+*** template
+**** latex
+     https://opensource.com/article/20/4/emacs-org-mode
+ Use =C-c C-e # latex= to insert latex options for org mode.
+**** beamer
+ The default org have no beamer template, add option below
+#+begin_example
+#+startup: beamer
+#+end_example
+
+The heading level for beamer exported. H:3 is also OK
+#+begin_example
+#+OPTIONS: H:2
+#+BEAMER_HEADER: \AtBeginSection{\frame{\sectionpage}}
+#+end_example
+
+The common configurations:
+#+begin_example
+#+TITLE:  Documents and presentations with org-mode
+#+AUTHOR: John Goerzen
+#+BEAMER_HEADER: \institute{The Changelog}
+#+PROPERTY: comments yes
+#+PROPERTY: header-args :exports both :eval never-export
+#+OPTIONS: H:2
+#+BEAMER_THEME: CambridgeUS
+#+BEAMER_COLOR_THEME: default
+#+end_example
+
+The layout:
+#+begin_example
+#+BEAMER_INNER_THEME: default
+#+LaTeX_CLASS_OPTIONS: [aspectratio=169]
+#+BEAMER_HEADER: \definecolor{links}{HTML}{0000A0}
+#+BEAMER_HEADER: \hypersetup{colorlinks=,linkcolor=,urlcolor=links}
+#+BEAMER_HEADER: \setbeamertemplate{itemize items}[default]
+#+BEAMER_HEADER: \setbeamertemplate{enumerate items}[default]
+#+BEAMER_HEADER: \setbeamertemplate{items}[default]
+#+BEAMER_HEADER: \setbeamercolor*{local structure}{fg=darkred}
+#+BEAMER_HEADER: \setbeamercolor{section in toc}{fg=darkred}
+#+BEAMER_HEADER: \setlength{\parskip}{\smallskipamount}
+#+end_example
+
+the size ratio of beamer is set to 16:9 for "aspectratio=169"
+**** html
+ The html template can add the css file as following
+ #+begin_example
+ #+EXPORT_FILE_NAME: ../posts/template.html
+ #+TITLE: Article Title Goes Here
+ #+SUBTITLE: Article Sub-Title
+ #+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
+ #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style/css/org.css"/>
+
+ #+BEGIN_abstract
+ Article abstract goes here.
+ #+END_abstract
+
+ # now prints out the previously disabled (toc:nil) table of contents.
+ #+TOC: headlines 2
+ Your content goes here.
+
+ # * Refrences                                                          :ignore:
+
+ # * Footnotes
+
+ #+end_example
+**** reveal
+https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs
+#+begin_example
+#+OPTIONS: num:nil toc:nil
+#+REVEAL_TRANS: None/Fade/Slide/Convex/Concave/Zoom
+#+REVEAL_THEME: Black/White/League/Sky/Beige/Simple/Serif/Blood/Night/Moon/Solarized
+#+Title: Title of Your Talk
+#+Author: Your Name
+#+Email: Your Email Address or Twitter Handle
+#+end_example
+*** Chinese
+ The org mode supports Chinese. Some exports files not. Like latex.
+
+**** latex
+ For latex only, the best practice is using ctexart class and UTF8 package and compiling with xelatex. to use ctexart, (add-to-list 'org-latex-classes)
+ Add the org options below:
+ #+begin_example
+ #+latex_class: ctexart
+ #+latex_class_options: [UTF8]
+ #+latex_header:
+ #+latex_header_extra:
+ #+description:
+ #+keywords:
+ #+subtitle:
+ #+latex_compiler: xelatex
+ #+date: \today
+ #+end_example
+
+latex_class_options: [UTF8,fontset=windows]. for windows
+
+ If latex engine is still not xelatex, set TeX-engine in the generated latex file.
+ !!! put the configurations at the end of file
+ #+begin_src latex
+,%%% Local Variables:
+,%%% eval: (setenv "LANG" "en_US.UTF-8")
+,%%% coding: utf-8
+,%%% mode: latex
+,%%% TeX-engine: luatex
+,%%% TeX-master: t
+,%%% TeX-command-extra-options: "-shell-escape"
+,%%% End:
+ #+end_src
+
+ if use luatex, =locale= problem can be solved with
+ %%% eval: (setenv "LANG" "en_US.UTF-8")
+
+**** beamer
+ For latex beamer, the ctexart class no longer available.
+ Alternately, specific the Chinese font and compile with pdflatex or xelatex.
+ Add the org options below:
+ #+begin_example
+ #+TITLE:
+ #+AUTHOR:
+ #+EMAIL:
+ #+DESCRIPTION:
+ #+KEYWORDS:
+ #+LANGUAGE:  en
+ #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+ #+EXPORT_SELECT_TAGS: export
+ #+EXPORT_EXCLUDE_TAGS: noexport
+ #+LINK_UP:
+ #+LINK_HOME:
+ #+XSLT:
+ #+startup: beamer
+ #+LATEX_CLASS: beamer
+ #+BEAMER_FRAME_LEVEL: 3
+ #+LaTeX_CLASS_OPTIONS: [xcolor=svgnames,bigger,presentation]
+ #+LATEX_HEADER:\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter}\usecolortheme[named=FireBrick]{structure}\setbeamercovered{transparent}\setbeamertemplate{caption}[numbered]\setbeamertemplate{blocks}[rounded][shadow=true] \usetheme{Darmstadt} \usepackage{tikz}\usepackage{xeCJK}\usepackage{amsmath}\setmainfont{Times New Roman}\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Heiti Std}\setCJKsansfont{Adobe Heiti Std}\setCJKmonofont{Adobe Kaiti Std}\usepackage{verbatim}\institute{beamerinstitute} \graphicspath{{figures/}} \definecolor{lstbgcolor}{rgb}{0.9,0.9,0.9} \usepackage{listings} \usepackage{fancyvrb}\usepackage{xcolor}\lstset{escapeinside=`',frameround=ftft,language=C,breaklines=true,keywordstyle=\color{blue!70},commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,backgroundcolor=\color{yellow!20},rulesepcolor=\color{red!20!green!20!blue!20}}
+ #+latex_compiler: xelatex
+ #+end_example
+
+ The level of subtree exported into beamer can be configured as the H:3 or BEAMER_FRAME_LEVEL:3.
+
+*** export
+ use =C-c C-e= and select desired format.
+*** cite and ref
+1. cite
+put the bib file under the directory.
+add \bibliographystyle{plain} \bibliography{references} to the end of org file.
+
+when cite: use \cite{bibID} or [[cite:bibID]].
+the second is better for org file with C-c C-l, then cite
+
+2. ref
+give equations, table, figure a =lable= value as #+label: fig:f1
+
+when ref: use \ref{lableID} or [[ref::lableID]]
+the second is better for org file with C-c C-l, then cref
+*** use cls
+把目录、摘要等内容，放在单独的 tex 文件中，在 org 文件中，直接 input{} 即可。
+
+org 文件中，主要还是放正文。
+*** figure side by side
+https://stackoverflow.com/questions/24326290/org-mode-side-by-side-figure-captions-for-latex-export/42170221
+| LinkToFigure1 | LinkToFigure2 |
+
+In the latex file, delete the \center{}
+
+** org ref
+*** 生成 bib
+ [[bibliography:~/Documents/Garage/orgible/references.bib]]
+ 1. 把 pdf 文件拖到 bibtex 文件模式，即可生成该文件的 bib，并下载 pdf 文件
+ 2. 论文最后的文献引用文字，复制，在 emacs 命令 crossref-add-bibtex-entry，即可生成 bibtex，并下载 pdf 文件
+ 3. 含有 doi 的网址，拖拽到 emacs，即可生成 bib 并下载 pdf
+ 4. 知道一个 doi，在 emacs 命令 doi-add-bibtex-entry
+*** bib 链接
+ emacs 命令 org-ref-helm-insert-cite-link
+*** 打开文件
+ 1. 在 bibtex 中添加
+   file={"/Users/xin/Documents/SLD/docs/references/CN/2019/13-结冰风洞中 SLD 模拟方法及其实验验证研究-2019.pdf"},
+   使用 org-ref-open-bib-pdf
+ 2. 在 cite 链接中，使 org-ref-open-pdf-at-point
+** org babel
+https://brantou.github.io/2017/04/01/babel-intro/
+** Emacs org mode plot
+*** introduction
+  the code included between src block can be compiled by
+  1. C-c C-c to run
+  2. C-c C-x C-v to toggle in-line image
+  3. C-c C-x C-l to toggle latex preview
+**** src block:
+  #+NAME:<name>
+  #+BEGIN_SRC <language> <switches> <header arguments>
+    <BODY>
+  #+END_SRC
+
+**** inline src block:
+  src_<language>[<header arguments>]{<body>}
+
+*** graphviz
+https://www.cnblogs.com/itzxy/p/7860165.html
+  #+name: graphviz_plot
+  #+begin_src dot :file ./graphviz-plot.png :cmdline -Kdot -Tpng
+  graph test{
+    a--b;
+    b--c;
+    c--d;
+    }
+  #+end_src
+
+  #+RESULTS: graphviz_plot
+  [[file:./graphviz-plot.png]]
+
+*** latex tikz
+  *NOTE* the output of src block is converted into org table format by default. use =:results raw= to directly output results
+
+  #+name: tikz_plot
+  #+STARTUP: inlineimages
+  #+header: :imagemagick yes :iminoptions -density 600 :imoutoptions -geometry 400
+  #+header: :fit yes :noweb yes :headers '("\\usepackage{tikz}")
+  #+begin_src latex :exports results :file ./tikz-plot.png :results raw
+      \begin{tikzpicture}
+        \draw[->] (-3,0) -- (-2,0) arc[radius=0.5cm,start angle=-180,end angle=0] (-1,0) -- (1,0) arc[radius=0.5cm,start angle=180,end angle=0] (2,0) -- (3,0);
+        \filldraw (-1.5,0) circle[radius=1mm];
+        \filldraw (1.5,0) circle[radius=1mm];
+      \end{tikzpicture}
+  #+end_src
+
+  #+RESULTS:
+
+*** gnuplot
+**** table data plot
+  #+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
+  #+tblname: table-data
+       | Sede      | Max cites | H-index |
+       |-----------+-----------+---------|
+       | Chile     |    257.72 |   21.39 |
+       | Leeds     |    165.77 |   19.68 |
+       | Sao Paolo |     71.00 |   11.50 |
+       | Stockholm |    134.19 |   14.33 |
+       | Morelia   |    257.56 |   17.67 |
+
+  #+begin_src gnuplot :var data=table-data :exports code :file table-data-plot.png
+  reset
+
+  set title "Double Y Plot"
+  set size ratio square
+  set key box linestyle -1
+
+  set xlabel "X"
+  set xtics nomirror rotate by -45
+
+  set ylabel "Y1"
+  set yrange [0:300]
+  set ytics 0,50,300
+
+  set y2label "Y2"
+  set y2range [0:30]
+  set y2tics 0,5,30
+
+  plot data u 2:xticlabels(1) axis x1y1 w lp lw 2 title 'x vs. y1', \
+       data u 3:xticlabels(1) axis x1y2 w p lw 1 title 'x vx. y2'
+  #+end_src
+
+  #+RESULTS:
+  [[file:table-data-plot.png]]
+
+**** function plot
+  #+name: gnuplot
+  #+begin_src gnuplot :exports code :file gnuplot.png
+  reset
+
+  set title "Putting it All Together"
+
+  set xlabel "X"
+  set xrange [-8:8]
+  set xtics -8,2,8
+
+
+  set ylabel "Y"
+  set yrange [-20:70]
+  set ytics -20,10,70
+
+  f(x) = x**2
+  g(x) = x**3
+  h(x) = 10*sqrt(abs(x))
+
+  plot f(x) w lp lw 1, g(x) w p lw 2, h(x) w l lw 3
+  #+end_src
+
+  #+RESULTS: gnuplot
+  [[file:gnuplot.png]]
+
+*** python matplotlib
+  #+name: matplotlib-plot
+  #+begin_src python :results file :var data="matplotlib-plot.png"
+  import matplotlib
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  # Data for plotting
+  t = np.arange(0.0, 2.0, 0.01)
+  s = 1 + np.sin(2 * np.pi * t)
+
+  fig, ax = plt.subplots()
+  ax.plot(t, s)
+
+  ax.set(xlabel='time (s)', ylabel='voltage (mV)',
+  title='About as simple as it gets, folks')
+  ax.grid()
+
+  fig.savefig(data)
+  # plt.show()
+  return(data)
+  #+end_src
+
+  #+RESULTS: matplotlib-plot
+  [[file:matplotlib-plot.png]]
+*** latex inline preview
+  # C-c C-x C-l
+**** equation
+  #+startup: latex_preview
+
+  \begin{equation}
+  \[a^2 = 1 \]
+  \end{equation}
+
+  \[a^2 = 1 \]
+
+  $a^2 = 1$
+
+**** tikzpicture
+  #+startup: tikz_preview
+  \begin{tikzpicture}
+    \draw (0,0) -- (0,1) -- (1,1) -- (0,0);
+  \end{tikzpicture}
+** org present
+modify the origin org present code to move into subheading.
+#+begin_src lisp
+  (defun org-present-top ()
+    "Jump to current top-level heading, should be safe outside a heading."
+    (unless (org-at-heading-p) (outline-previous-heading))
+    (let ((level (org-current-level)))
+      (when (and level (> level 1))
+     ;; (when (and level (> level org-present-level-depth))
+        (outline-up-heading (- level 1) t))))
+#+end_src
+
+** SIS mode
+*** DONE 理解不同 mode 的作用
+    CLOSED: [2021-02-26 Fri 14:03] DEADLINE: <2021-02-26 Fri 13:30>
+    - inline mode: 中文状态下输入空格，进入 english
+      问题是，退出 inline mode 还是英文。
+      但立刻移动光标，能够保持英文。
+      正确用法是，当不需要继续英文时，shift 就可以继续中文
+    - respect mode：ESC 和 M-x 进入英文
+    - cursor mode：中文光标为绿色
+    - context mode: 根据光标字符自动选择输入法 or
+*** DONE 不会自动为英文或者数字添加空格
+    CLOSED: [2021-02-28 Sun 12:38]
+    添加 pangu，这个包可以做到，not for sis
 * Tools
 ** manim
 *** Install
@@ -1071,3 +3553,197 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize su
 xattr -r ~/Library/QuickLook
 *** uninstall
 xattr -d -r com.apple.quarantine ~/Library/QuickLook
+** Mac Alt key bindings
+ Text System Defaults and Key Bindings
+ This document reveals some tips and tricks about various defaults you can use to customize the behavior of Cocoa’s text system. It also describes how to customize the key bindings supported by the text system.
+ Heavy-duty subclassers may alter some or all of the text system's functionality, rendering some or all of these features inactive.
+*** Key Bindings
+ The text system uses a generalized key-binding mechanism that is completely re-mappable by the user, although defining custom key bindings dynamically (that is, while the application is running) is not supported. Key bindings are specified in an dictionary file that must have an extension of .dict; the format of this file should be an XML property list, but the text system can also understand old-style (NeXT era) property lists. The standard key bindings are specified in /System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict. These standard bindings include a large number of Emacs-compatible control key bindings, all the various arrow key bindings, bindings for making field editors and some keyboard UI work, and backstop bindings for many function keys.
+ To customize bindings, you create a file named DefaultKeyBinding.dict in ~/Library/KeyBindings/ and specify bindings to augment or replace the standard bindings. You may use the standard bindings file as a template. It is recommended that you use the Property List Editor application to edit a bindings dictionary. You may use another application such as TextEdit or Xcode, but if you do you must ensure the encoding of the saved file is UTF8.
+ Key bindings are key-value pairs with the key being a string that specifies a physical key and the value identifying an action method to be invoked when the key is pressed. (Many of these action methods are declared by NSResponder.) You can compose physical-key strings using the following elements:
+	 •	The alphanumeric character that appears on a US keyboard. For example, "f" or ">". (As noted below, some special characters are reserved for modifier flags.)
+	 •	For a few keys, such as Escape, Tab, and backward Delete (BS), the octal number from the ASCII table that identifies the key. For example, the octal number identifying the Escape key (sometimes used as a modifier key) is \033.
+	 •	An enum constant assigned a unique Unicode value that is used to identify a function key. These constants are defined in NSEvent.h. Examples of these constants are NSF7FunctionKey, NSHomeFunctionKey, and NSHelpFunctionKey.
+	 •	One or more key modifiers, which must precede one of the other key-identifier elements. The following special characters are used for modifier flags:
+		 “^” for Control
+		 “~” for Option
+		 “$” for Shift
+		 “#” for numeric keypad
+	 •	For example, the following string would identify the 0 (zero) key on the numeric keypad when the Control key is pressed simultaneously: "^#0".
+ The text system supports the specification of multiple keystroke bindings through nested binding dictionaries. For instance, Escape could be bound to cancel: or it could be bound to a whole dictionary which would then contain bindings for the next keystroke after Escape.
+ The following sample binding files illustrate how you might customize bindings. The first one adds Option-key bindings for some common Emacs behavior. This might be useful where the Option key bindings are not standard. With these bindings it would be necessary to type “Control-Q, Option-f” in order to type a florin character instead of moving forward a word. This sample also explicitly binds Escape to complete:. (In OS X, this is the default so this override changes nothing.)
+ /* ~/Library/KeyBindings/DefaultKeyBinding.dict */
+ {
+     /* Additional Emacs bindings */
+     "~f" = "moveWordForward:";
+     "~b" = "moveWordBackward:";
+     "~<" = "moveToBeginningOfDocument:";
+     "~>" = "moveToEndOfDocument:";
+     "~v" = "pageUp:";
+     "~d" = "deleteWordForward:";
+     "~^h" = "deleteWordBackward:";
+     "~\010" = "deleteWordBackward:";  /* Option-backspace */
+     "~\177" = "deleteWordBackward:";  /* Option-delete */
+
+     /* Escape should really be complete: */
+     "\033" = "complete:";  /* Escape */
+ }
+
+ The following example shows how to have multi-keystroke bindings. It binds a number of Emacs meta bindings using Escape as the meta key instead of the Option modifier. So Escape followed by the "f" key means moveWordForward: here. This sample binds Escape-Escape to complete:. Note the nested dictionaries
+ /* ~/Library/KeyBindings/DefaultKeyBinding.dict */
+
+ {
+     /* Additional Emacs bindings */
+     "\033" = {
+         "\033" = "complete:";  /* ESC-ESC */
+         "f" = "moveWordForward:";  /* ESC-f */
+         "b" = "moveWordBackward:";  /* ESC-b */
+         "<" = "moveToBeginningOfDocument:";  /* ESC-< */
+         ">" = "moveToEndOfDocument:";  /* ESC-> */
+         "v" = "pageUp:";  /* ESC-v */
+         "d" = "deleteWordForward:";  /* ESC-d */
+         "^h" = "deleteWordBackward:";  /* ESC-Ctrl-H */
+         "\010" = "deleteWordBackward:";  /* ESC-backspace */
+         "\177" = "deleteWordBackward:";  /* ESC-delete */
+     };
+ }
+
+ Once you have completed specifying key bindings, you must save the file and relaunch the application for the bindings to take effect. With the right combination of key bindings and default settings, it should be possible to tailor the text system to your preferences.
+*** Standard Action Methods for Selecting and Editing
+ The NSResponder class declares method prototypes for a number of standard action methods, nearly all related to manipulating selections and editing text. These methods are typically invoked through doCommandBySelector: as a result of interpretation by the input manager. They fall into the following general groups:
+	 •	Selection movement and expansion
+	 •	Text insertion
+	 •	General deletion of elements
+	 •	Modifying selected text
+	 •	Scrolling a document
+ In most cases the intent of the action method is clear from its name. The individual method descriptions in this specification also provide detailed information about what such a method should normally do. However, a few general concepts apply to many of these methods, and are explained here.
+**** Selection Direction
+ Some methods refer to spatial directions; left, right, up, down. These are meant to be taken literally, especially in text. To accommodate writing systems with directionality different from Latin script, the terms forward, beginning, backward, and end are used.
+**** Selection and insertion point
+ Methods that refer to moving, deleting, or inserting imply that some elements in the responder are selected, or that there’s a zero-length selection at some location (the insertion point). These two things must always be treated consistently. For example, the insertText: method is defined as replacing the selection with the text provided. The moveForwardAndModifySelection: method extends or contracts a selection, even if the selection is merely an insertion point. When a selection is modified for the first time, it must always be extended. So a moveForward... message extends the selection from its end, while a moveBackward... message extends it from its beginning.
+**** Marks
+ A number of action methods for editing text imitate the Emacs concepts of point (the insertion point), and mark (an anchor for larger operations normally handled by selections in graphical interfaces). The setMark: method establishes the mark at the current selection, which then remains in effect until the mark is changed again. The selectToMark: method extends the selection to include the mark and all characters between the selection and the mark.
+**** The kill buffer
+ Also like Emacs, deletion methods affecting lines, paragraphs, and the mark implicitly place the deleted text into a buffer, separate from the pasteboard, from which you can later retrieve it. Methods such as deleteToBeginningOfLine: add text to this buffer, and yank: replaces the selection with the item in the kill buffer.
+*** Text System Defaults
+**** NSMnemonicsWorkInText
+  Allowed value: "YES" or "NO".
+  This default controls whether the text system accepts key events with the Option key down. The default value is NO. A value of YES means that any key event with the Option bit on will be passed up the responder chain to eventually be treated as a mnemonic instead of being accepted by the text as textual input or a key binding command. If this default is set to NO then the key events with the Option bit set will be passed through the text system's normal key input sequence. This will allow any key bindings involving Option to work (such as Emacs-style bindings like Option-f for word forward) and it allows typing of special international and Symbol font characters.
+**** NSRepeatCountBinding
+  Allowed value: Key-binding style string.
+  This default controls the numeric argument binding. The default is for numeric arguments not to be supported. If you provide a binding for this default you enable the feature. This allows you to repeat a keyboard command a given number of times. For instance “Control-U 10 Control-F” means move forward ten characters.
+**** NSQuotedKeystrokeBinding
+  Allowed value: Key-binding style string.
+  This default controls the quote binding. The default is for this to be “^q” (that's Control-Q). This is the binding that allows you to literally enter characters that would otherwise be interpreted as commands. For instance “Control-Q Control-F” would insert a Control-F character into the document instead of performing the command moveForward:.
+**** NSTextShowsInvisibleCharacters
+  Allowed value: "YES" or "NO".
+  The default controls whether a text object will by default show invisible characters like tab, space, and carriage return using some visible glyph. By default it is NO. It only controls the default setting for NSLayoutManager objects (which can be modified programmatically). In order for this to work, the rule book generating the glyphs must support the feature. Currently our rule books do not support this feature, so currently this default is not very useful.
+**** NSTextShowsControlCharacters
+  Allowed value: "YES" or "NO".
+  The default controls whether a text object will by default show control characters visibly (usually by representing Control-C as “^C” in the text). By default it is NO. It only controls the default setting for NSLayoutManager objects (which can be modified programmatically). In order for this to work, the rule book(s) generating the glyphs must support the feature. This feature carries a cost. It will increase the memory needed for documents that contain control characters by quite a lot. Use it with care.
+**** NSTextSelectionColor
+  Allowed value: Color object or specifier.
+  This default controls the background color of selected text. By default this is light gray. Defaults that accept colors accept them in one of three ways. Either as an archived NSColor object, or as three RGB components, or as a string that can be resolved to a factory selector on NSColor that will return the desired color (for example, “redColor”). Note that NSTextField objects and other controls that use field editors to edit their text control their own selection attributes to conform with the UI.
+**** NSMarkedTextAttribute and NSMarkedTextColor
+  Allowed value: Color object/specifier or "underline".
+  This default controls the way that marked text is displayed. The NSMarkedTextAttribute can be either “Background” or “Underline”. If it is “Background” then NSMarkedTextColor indicates the background color to use for marked text. If NSMarkedTextAttribute is “Underline”, NSMarkedTextColor indicates the foreground color to use for marked text (the marked text will be drawn in the indicated color and underlined). By default, marked text is drawn with a yellowish background color. Kit defaults that accept colors accept them in one of three ways. Either as an archived NSColor object, or as three RGB components, or as a string that can be resolved to a factory selector on NSColor that will return the desired color (for example, “redColor”). If the NSMarkedTextAttribute default contains a color instead of one of the strings “Background” or “Underline” then that color is used as the background color for marked text and the NSMarkedTextColor attribute is ignored.
+**** NSTextKillRingSize
+  Allowed value: Number string.
+  This default controls the size of the kill ring (as in Emacs Control-Y). The default value is 1 (not really a ring at all, just a single buffer). If you set this to a value larger than one, you also need to rebind Control-Y to yankAndSelect: instead of yank: for things to work properly (note that yankAndSelect: is not listed in any headers). See Key Bindings for more information about bindings.
+** EAGLE pcb: Designing Circuit Boards with EAGLE Making High-Quality PCBs at Low Cost
+*** term
+
+    - SPST: single pole single throw (switch)
+      . SPDT, SP3T ...
+    - MIC5205: voltage regulator
+
+*** command
+
+    - <cmd_name> <cmd_property> <cmd_property> ...: a command can have more than one actions once.
+      Note: the order of <cmd_property> is critical
+    - script ***.scr: execute a list of commands which are stored in a .scr file.
+      Note: each command end with ';'
+
+    - wild card: ? * []
+
+**** editor command
+
+     - use <library_name>, use -* <library_name> activate and deactivate the library
+     - add <part_name>@<library_name> <set_part_name> SMR<rotate_angle> (2.5 -1.5): [S] does not align text, [M] mirror according to y-axis
+     - move U3>NAME (-0.2mm 3.1in): default scale is the scale of grid
+     - rotate R90 U1 =R270 U2 =MR30 U3>NAME: [R] angle [M] mirror
+     - example.lbr: activate library;  use -* example: deactivate library
+     - name [<old_name>] <new_name>
+     - value <part_name> 10k <part_name> 10uF
+     - attribute <part_name> <attribute_name> 'attribute_value' [DELETE]
+     - smash <part_name>
+       Note: if want unsmash, keep the smash command active and shift click the part
+     - !net net_wire_width 10 auto_end_off 0 auto_junction_off 1 <net_name> (0 0) (1 1)
+     - bus <bus_name>:ACLK,RST,D[0..15] bus_wire_width 30 (0.5 1.5) (2.5 1.5)
+     - label: cannot set label content when label command is active. it display the label content automatically with NAME and VALUE
+     - frame 8 4 top left right (-3.0 -1.5) 3.0 1.5)
+
+**** board command
+
+     - grid on mil dots 0.5 5 alt mm 0.05
+       Note: set name for current grid: grid = name @. delete a name: grid = name
+     - layer 100 <new_layer_name> -101
+     - display NONE ALL TOP BOTTOM 1 2 3
+     - mirror U2: move element from top layer to bottom layer
+     - signal GND U1 PAD_A U2 PAD_A: create airwire
+     - ratsnest sig0 ! sig1 sig2
+       Note: if polygon is on, suggest "set polygon_ratsnest off" before ratsnest
+     - route <wire_width>
+     - ripup sig1 ! sig2 @ poly1 ! poly2
+     - via 'VCC' 16mil 1-16 (150mil 200mil)
+     - auto route_all ! route1 followme save <filename.ctl>
+
+**** library command
+
+     - open <library_name>
+     - edit circuit.sch circuit.brd name.sym name.pac name.dev
+     - write @new_circuit_name
+     - arc ccw <start_position> <arc_border_position> <end_position>
+     - rect R30 <first_position> <end_position>: create solid rectangle
+     - circle <center_position> <circle_border_position> <width>
+     - pin, pad, smd
+
+**** special commands
+
+     - change NAME VALUE: change all the components with NAME
+     - set ATTR VALUE
+
+**** EAGLE configuration script filename
+     eagle.scr in the root scr folder
+
+*** user language: UL
+**** file operation:
+
+     -
+
+** DONE zotero
+   CLOSED: [2021-01-26 Tue 10:04] SCHEDULED: <2021-01-25 Mon 12:30>
+
+   zotero://select/library/items/VRZE7HDI
+
+*** 拖拽 pdf 并自动添加元信息
+
+    只有英文有效
+
+*** 能够识别的网站
+
+    豆瓣
+    知网
+    维基百科
+
+*** DONE emacs latex zotero
+    CLOSED: [2021-03-07 Sun 20:36]
+  安装 zotero 插件: https://github.com/egh/zotxt/
+  emacs zotero plugin: https://github.com/egh/zotxt-emacs
+
+  [[zotero://select/items/1_PZ3IDNYU][桂康. “路面气象状态识别关键技术研究.” 博士, 华中科技大学, 2019. https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&dbname=CDFDLAST2020&filename=1019923736.nh&v=.]]
+
+  @geObliqueEndFace2019 easy cite from emacs not work
+  zotero://select/library/items/PZ3IDNYU copy cite from Zotero no work
+
+  生成 bibtex 的快捷键=Cmd+Shift+c=，GUI 位置是编辑-->拷贝在 bibtex

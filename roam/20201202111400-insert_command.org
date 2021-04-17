@@ -1,0 +1,4 @@
+#+title: insert-command
+#+roam_alias:
+
+add link to another file

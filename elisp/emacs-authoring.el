@@ -79,7 +79,9 @@
  "imghttps"
  :image-data-fun #'chxin/org-image-link)
 ;; set image size
-(setq org-image-actual-width (/ (display-pixel-width) 4))
+(if (image-type-available-p 'imagemagick)
+    (setq org-image-actual-width nil)
+  (setq org-image-actual-width (/ (display-pixel-width) 8)))
 ;; #+ATTR_ORG: :width 50
 ;; ===== reveal
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
@@ -170,6 +172,35 @@
 ;; = org mindmap using graphviz
 (require 'ox-org)
 (require 'org-mind-map)
+;; ===== org roam
+(setq org-roam-directory "~/Documents/Garage/orgible/roam")
+(setq org-roam-capture-templates
+      '(
+        ("d" "default" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_alias:\n\n")
+        ("r" "ref" plain (function org-roam-capture--get-point)
+         ""
+         :file-name "${slug}"
+         :head "#+title: ${title}\n#+roam_key: ${ref}\n"
+         :unnarrowed t)
+        ("g" "group")
+        ("ga" "Group A" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_alias:\n\n")
+        ("gb" "Group B" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_alias:\n\n")))
+(add-to-list 'org-roam-capture-ref-templates
+             '("a" "Annotation" plain (function org-roam-capture--get-point)
+               "%U ${body}\n"
+               :file-name "${slug}"
+               :head "#+title: ${title}\n#+roam_key: ${ref}\n#+roam_alias:\n"
+               :immediate-finish t
+               :unnarrowed t))
 ;; ===== mobile org
 ;; /davs:user:password@remote.host:/org/webdav/
 ;; (setq org-mobile-directory "/dav:chengxinhust\@163.com@dav.jianguoyun.com:/dav/orgible")
@@ -233,6 +264,7 @@ the entry of interest in the bibfile.  but does not check that."
         (if (file-exists-p pdf)
             (org-open-link-from-string (format "[[Skim://%s]]" pdf))
           )))))
+(add-hook 'pdf-view-mode-hook '(lambda () (linum-mode -1)))
 ;; set default app for org link
 ;; (setq org-file-apps
 ;;       '((auto-mode . emacs)
@@ -241,6 +273,9 @@ the entry of interest in the bibfile.  but does not check that."
 ;;         ("\\.pdf\\'" . default)
 ;;         ;; ("\\.pdf\\'" . "displayline 1 %s")
 ;;         ))
+;; === ebib
+(setq ebib-preload-bib-files '("references.bib"))
+(setq ebib-bib-search-dirs ' ("~/Documents/Garage/orgible"))
 ;; ===== org noter
 (setq org-noter-separate-notes-from-heading t
       org-noter-default-notes-file-names '("org-notes.org")

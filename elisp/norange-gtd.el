@@ -89,7 +89,7 @@
               ("r" "Respond" entry (file "~/Documents/Garage/orgible/inbox.org")
                 "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
               ("n" "Note" entry (file "~/Documents/Garage/orgible/inbox.org")
-                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+                "* %? :NOTE:\n%U\n%F\n%a\n" :clock-in t :clock-resume t)
               ("i" "Interrupt" entry (file+datetree "~/Documents/Garage/orgible/inbox.org")
                 "* %?\n%U\n" :clock-in t :clock-resume t)
               ("w" "Review" entry (file "~/Documents/Garage/orgible/inbox.org")
@@ -456,7 +456,7 @@ A prefix arg forces clock in of the default task."
 ; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
 ;; ===== archive
-(setq org-archive-location "~/org/datetree.org::datetree/* Finished Tasks")
+(setq org-archive-location "~/Documents/Garage/orgible/refile/archive.org::datetree/* Finished Tasks")
 ;; ===== org projectile
 (setq org-projectile-projects-file
       "~/Documents/Garage/orgible/refile/projects.org")
@@ -468,7 +468,6 @@ A prefix arg forces clock in of the default task."
 ;;          :capture-character "l") org-capture-templates)
 ;; )
 ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-
 
 ;; end
 (provide 'norange-gtd)

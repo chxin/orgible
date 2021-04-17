@@ -1,0 +1,239 @@
+#+FILETAGS: Inbox
+#+STARTUP: content
+
+* TODO Notes
+* NEXT Tasks
+   :PROPERTIES:
+   :ID:       EB155A82-92B2-4F25-A3C6-0304591AF2F9
+   :END:
+   :LOGBOOK:
+   CLOCK: [2020-09-07 Mon 14:39]--[2020-09-07 Mon 20:43] =>  6:04
+   CLOCK: [2020-09-07 Mon 10:08]--[2020-09-07 Mon 10:12] =>  0:04
+   CLOCK: [2020-07-17 周五 09:25]--[2020-07-17 周五 09:27] =>  0:02
+   CLOCK: [2020-07-16 周四 08:35]--[2020-07-16 周四 08:36] =>  0:01
+   CLOCK: [2020-07-15 周三 16:57]--[2020-07-15 周三 16:58] =>  0:01
+   :END:
+** DONE refile inbox.org
+   CLOSED: [2020-12-23 Wed 09:29] SCHEDULED: <2020-12-21 Mon 12:30-13:00>
+* 2020
+   :PROPERTIES:
+   :ID:       2DD17220-38CE-4242-AE15-CB4F17019192
+   :END:
+
+** 2020-07 July
+*** 2020-07-15 Wednesday
+**** 讨论 http 传输过程
+      :LOGBOOK:
+      CLOCK: [2020-07-15 周三 17:03]--[2020-07-15 周三 19:01] =>  1:58
+      :END:
+      代码问题
+    [2020-07-15 周三 17:03]
+
+*** 2020-07-16 Thursday
+**** Rest
+      :LOGBOOK:
+      CLOCK: [2020-07-16 周四 10:40]--[2020-07-16 周四 10:48] =>  0:08
+      :END:
+    [2020-07-16 周四 10:40]
+
+*** 2020-07-17 Friday
+**** rest
+      :LOGBOOK:
+      CLOCK: [2020-07-17 周五 10:33]--[2020-07-17 周五 10:53] =>  0:20
+      :END:
+    [2020-07-17 周五 10:33]
+
+** 2020-08 August
+*** 2020-08-03 Monday
+**** 311 gitlab 不能访问
+
+ DellHust 这个主机名不能访问，可能是由于没有联网。
+ 用 IP 地址 211.67.22.146 可以直接访问。
+      :LOGBOOK:
+      CLOCK: [2020-08-03 Mon 10:13]--[2020-08-03 Mon 10:27] =>  0:14
+      :END:
+    [2020-08-03 Mon 10:13]
+
+** 2020-09 September
+*** 2020-09-14 Monday
+** FINISHED Meeting
+    CLOSED: [2020-08-27 Thu 11:40]
+
+** 09
+
+* TODO Hust 311 team meeting
+   SCHEDULED: <2021-01-25 Mon 14:30 .+1w>
+   :PROPERTIES:
+   :STYLE:    habit
+   :REPEAT_TO_STATE: TODO
+   :LAST_REPEAT: [2021-01-18 Mon 20:04]
+   :END:
+   - State "DONE"       from "TODO"       [2021-01-18 Mon 20:04]
+   - State "DONE"       from "TODO"       [2021-01-11 Mon 17:09]
+   - State "DONE"       from "TODO"       [2021-01-05 Tue 21:04]
+   - State "DONE"       from "TODO"       [2020-12-29 Tue 09:13]
+   - State "DONE"       from "TODO"       [2020-12-21 Mon 15:38]
+   - State "DONE"       from "TODO"       [2020-09-07 Mon 11:25]
+
+** Slides
+    :LOGBOOK:
+    CLOCK: [2020-08-03 Mon 11:23]--[2020-08-03 Mon 11:30] =>  0:07
+    :END:
+    [[file:~/Documents/SLD/work-update/group-discussion.key][311-workupdate]]
+
+*** DONE slides for ice data processing
+    CLOSED: [2020-12-21 Mon 15:38] SCHEDULED: <2020-12-21 Mon 13:30-14:30>
+* DONE spacemacs
+  CLOSED: [2020-12-27 Sun 21:50] DEADLINE: <2020-12-26 Sat 14:00>
+** project
+1. SPC+p+p
+2. SPC+p+f: file in project
+3. SPC+p+t
+4. SPC+*
+5. SPC+/
+6. SPC+s+s
+7. SPC+j+i
+8. SPC+j+f
+9. SPC+j+l
+10. SPC+p+': open terminal
+11. SPC+p+.: project layout
+** Dired
+   SPC+a+d:
+   S-c: copy
+   S-r: rename or move
+   S-d: delete
+   !: open with external apps
+** Evil
+1. fd: return vi normal
+2. [ e= line up
+3. ] e= line down
+4. SPC+b+e erase content
+5. SPC+f+r recent open file
+6. SPC n +/-
+** Search
+  SPC+s+g:
+  SPC+s+g+p:
+  SPC+/:
+  SPC+*:
+  SPC+s+g+b:
+** Theme and Face
+   #+begin_src lisp
+     (setq theming-modifications
+           '((seti
+              (lsp-face-highlight-read: backgroud "#333333")
+              )))
+   #+end_src
+   the varialbe value of 'lsp-face-highlight-read' can be get from 'M-x describe-face'
+** org
+*** DONE todo alert
+   CLOSED: [2020-12-21 Mon 16:00] DEADLINE: <2020-12-21 Mon 16:00>
+   refer to emach-china or previous init file for gtd
+
+   use appt package, the time to event is displayed at modeline.
+
+** cpp
+** python
+** translate
+*** sdcv
+   the package on elpa is not the latest version which show ugly translate results.
+   copy the github file [[https://raw.githubusercontent.com/manateelazycat/sdcv/master/sdcv.el][sdcv.el]] to replace the target.
+*** insert translated
+*** enable english helper
+** spacemacs layers
+   [[file:~/.spacemacs.d/layer/xinstool/packages.el][xinstool layer]]
+** figure
+** emacs 理解
+   https://manateelazycat.github.io
+1. Emacs 读取配置文件的地方有两个：
+   ~/.emacs
+   /usr/share/emacs/common/share/emacs/site-lisp/site-start.el ;; mac 无此目录
+2. Emacs 的工具协调
+
+** elisp
+   - file-name-as-directory:
+   - mapconcat
+
+* DONE Org Downloads
+  CLOSED: [2021-01-07 Thu 21:41] SCHEDULED: <2021-01-07 Thu 19:00-19:30>
+** drag
+1. drag a figure to org mode
+2. the figure is moved to target folder and inserted to org file, with new prefix
+(setq-default org-download-image-dir "~/Downloads")
+** screenshot
+(setq org-download-screenshot-method "screencapture -i %s")
+* SVM
+  supported vector machine: 支持向量机， Vapnik于1964年提出。
+  一种用于小样本分类的方法
+** 线性模型
+*** 线性可分
+*** 线性不可分
+*** 特征
+    - 所有特征对判断结果的影响是差不多的
+    - 误差的影响最小
+*** 评估标准
+**** 性能指标
+最大化间隔(Margin)
+**** 概念的提出
+     1. 将平行线插到的向量叫做“支持向量”。正是由于分割线的选取只与支持向量有关，，SVM 才适用于小样本。
+     2. 训练数据和标签(x1, y1) ，其中x为向量，y为标签，y范围是[-1, +1]。
+     3. 超平面
+     4. 线性模型(w, b)
+        w是向量，b是常数，满足 $w^Tx+b=0$，将所有样本分为2类
+     5. 线性可分
+        若yi=+1，则w^Txi+b ≥ 0，若yi=-1，则w^Txi+b < 0。即，yi[w^Txi+b]≥0
+** SVM 优化
+   最小化||w||，限制条件:yi[w^Txi+b]≥1。
+
+   非线性：问题转变为：最小化$\frac{1}{2} ||w||^2+C\Sum_{i=1}^N\epsilon_i$ ，限制条件：$y_i[W^Tx_i+b]\ge 1-\epsilon_i, \epsilon_i \ge 0$
+
+** 非线性模型
+*** 高维映射
+    X是n维向量，在$\Phi(x)$ 作用下，转换为m维向量。通常转为无限维。
+    我们可以不知道无限维映射$\Phi(x)$ 的显式表达，我们只要知道一个核函数$K(x1,x2)=\Phi(x1)^T\Phi(x2)$ ，则最优化问题一样可解。
+**** 核函数
+     核函数需要满足交换性和半正定性
+     1. 高斯核：$K(x1,x2)=e^{-\frac{||x1-x2||^2}{2\delta^2}}$ ，
+     2. 多项式核：$K(x1,x2)=(x1^Tx2+1)^d$ ，
+
+*** 优化理论
+    书籍推荐："Convex Optimization" "Nonlinear Programming"
+    原问题：最小化f(w) ，限制条件：$g_i(w)\le 0 , h_i(w)=0$
+    对偶问题：定义 $L(w,a,b)=f(w)+\sum_{i=1}^ka_ig_i(w)+\sum_{i=1}^ub_ih_i(w)=f(w)+a^Tg(w)+b^Th(w)$,
+    最大化$\Theta(\alpha,\beta) = inf [ L(w,a,b) ]$ ， 限制条件：$\alpha _i\ge 0$
+    定理：如果w^* 是原问题的解，而a^*,b^* 是对偶问题的解，则有：$f(w^*)\ge \Theta(a^*,b^*)$ ，$\Theta(a^*,b^*)=inf[L(a^*,b^*)] \le L(w^*,a^*,b^*) = f(w^*)+\sum_{i=1}^ka^*_ig_i(w^*)+\sum_{i=1}^mb^*_ih_i \le f(w^*)$
+    原问题与对偶问题的间距：$G=f(w^*)-\Theta(a^*,b^*)\ge 0$
+    对于特定问题，可以证明G=0.
+    强对偶定理：若f(w)为凸函数，且g(w)=Aw+b h(w)=Cw+d ，则此优化问题的原问题与对偶问题间距为0，
+    即$f(w^*)=\Theta(a^*,b^*)$ 对任意i=1~k ，或者a^*_i=0 ，或者g^*_i(w^*)=0 $，这就是KKT问题。
+
+** SVM算法
+   1. 训练流程
+   2. 测试数据集
+
+* sis会自动重复上一次输入的字符
+  现在，我在sis mode，我发现，当complete mode 出现之后，就会出现错误：这个错误是这样的，当再次输入，会自动重复上次的字符。
+
+  我再来一次，试试complete mode，OK，开始英文complete 之后，没有错误，mode 之后，还是没有错误。
+
+  就会出现错误：这个错误是这样的common ，全拼是没有这个问题的。
+
+  我要再试一下全拼，complete mode ，还是没有错误。
+
+  现在是双拼，不知道怎样？
+
+  先来英文，complete mode, 英文输完了，还是没事，我要再试一中文，k!k!k!k!k!k!k!
+* sis bug
+Now, I am in English mode.
+现在，我在双拼中文模式。
+
+我打算测试一下，出现complete mode 提示之后，会不会出错。
+
+首先，中文：我打算测试一下，出现之后，会不会出错。
+
+xxmxzxlx
+
+xaxaxaxa
+
+xbxbxbxb
+xcxcxcxc
+xdxdxdxd

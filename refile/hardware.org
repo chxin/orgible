@@ -1,4 +1,6 @@
 * HDL
+** online verilog
+https://hdlbits.01xz.net/wiki/Problem_sets
 ** Verilog demo
 *** code demo and test bench demo
     [[file:~/Documents/Garage/template/hdl/verilog/README.org][demo]]
@@ -224,7 +226,8 @@
  - EEPROM接收指令，传回应答
  - EEPROM发送数据
 
-*** TODO pre code
+*** DONE pre code
+    CLOSED: [2020-10-05 Mon 09:41]
 
  第一个模块发送一个4bit的数据；第二个模块把4bit并行数据改为串行数据流，并用scl和sda数据线输出；第三个模块把串行的数据接收到，并4-16译码输出
  #+begin_src verilog
@@ -243,25 +246,30 @@ https://mp.weixin.qq.com/s?__biz=Mzg3OTAyNTQ4MA==&mid=2247483921&idx=1&sn=616575
 https://blog.csdn.net/qq_34070723/article/details/100731708#3.半整数分频
 *** 任意分频
 https://mp.weixin.qq.com/s?__biz=Mzg3OTAyNTQ4MA==&mid=2247483926&idx=1&sn=31a5cca8da317e6fb5bf4184bb392f46&chksm=cf0b8e31f87c0727f28a9365f0c7bce8e4c520a8b95c3ea508934d179b68f7b56217c24459e4&scene=21#wechat_redirect
-** TODO verilog端口连结规则
+** DONE verilog端口连结规则
+   CLOSED: [2020-10-05 Mon 09:43]
 *** 端口声明
  端口列表中的所有端口必须在模块中进行声明，verilog中的端口具有以下三种了类型：input、output、和inout。
  在verilog中，所有的端口隐含地声明为wire类型
  如果输出类型的端口需要保存数值，则必须将其显式的声明为reg数据类型。output reg out;
  不能将input和inout类型的端口声明为reg数据类型，因为reg类型的变量是用于保存数值的，而 *输入端口只反映与其相连的外部信号的变化，并不能保存这些信号的值* 。
 *** 输入端口
- 从模块内部来讲，输入端口必须为线网数据类型
- 从模块外部来看，输入端口可以连接到线网或者reg数据类型的变量。
+ 从模块内部来讲，输入端口必须为wire数据类型
+ 从模块外部来看，输入端口可以连接到wire或者reg数据类型的变量。
 *** 输出端口
- 从模块内部来讲，输出端口可以是线网或者reg数据类型
- 从模块外部来看， *输出必须连接到线网类型的变量* ，而不能连接到reg类型的变量。
+ 从模块内部来讲，输出端口可以是wire或者reg数据类型
+ 从模块外部来看， *输出必须连接到wire类型的变量* ，而不能连接到reg类型的变量。
 *** 输入/输出端口
  从模块内部来讲， *输入/输出端口必须为线网数据类型* 。
  从模块外部来看， *输入/输出端口也必须连接到线网类型的变量* 。
-** TODO 同步、异步FIFO
+** DONE 同步、异步FIFO
+   CLOSED: [2020-10-05 Mon 09:43]
  https://blog.csdn.net/Pieces_thinking/article/details/78026326
-
+ [[http://www.sunburst-design.com/papers/CummingsSNUG2002SJ_FIFO1.pdf][asynchronous-fifo-cummings]]
  由于异步FIFO的读写时钟不一样，（采用两级寄存器同步+格雷码->消除亚稳态）
+** DONE verilog random
+   CLOSED: [2020-10-05 Mon 09:47]
+http://blog.sina.com.cn/s/blog_679686370102woyz.html
 * FPGA
 ** DONE FPGA hardware
    CLOSED: [2020-07-30 周四 16:50] SCHEDULED: <2020-07-20 Mon 14:30>
@@ -293,10 +301,10 @@ https://mp.weixin.qq.com/s?__biz=Mzg3OTAyNTQ4MA==&mid=2247483926&idx=1&sn=31a5cc
 
  4. Slice
     FPGA的slice包含4个部分：
-    (1) 逻辑功能产生器，也就是查找表[[*LUT][LUT]]，1个slice里包含4个6输入的查找表（每个6输入查找表可以分为2个5输入查找表，输入数据和地址相同，2个输出独立连接到FF），可配置成DRAM和移位寄存器。
-    (2) 存储单元，也就是常说的触发器，1个slice里包含 *8个触发器。每4个触发器为一组* ，可配置成寄存器（D触发器或锁存器）。
-    (3) 多路复用器，也就是1位宽的数据选择器，数量非常多，足够使用。一般的4：1MUX，使用6输入查找表实现的，8：1MUX可通过2个6输入查找表和一个原有MUX实现。
-    (4) 进位逻辑，它与本列的上下slice的进位逻辑相连，实现数据运算时的进位操作。
+    1) 逻辑功能产生器，也就是查找表[[*LUT][LUT]]，1个slice里包含4个6输入的查找表（每个6输入查找表可以分为2个5输入查找表，输入数据和地址相同，2个输出独立连接到FF），可配置成DRAM和移位寄存器。
+    2) 存储单元，也就是常说的触发器，1个slice里包含 *8个触发器。每4个触发器为一组* ，可配置成寄存器（D触发器或锁存器）。
+    3) 多路复用器，也就是1位宽的数据选择器，数量非常多，足够使用。一般的4：1MUX，使用6输入查找表实现的，8：1MUX可通过2个6输入查找表和一个原有MUX实现。
+    4) 进位逻辑，它与本列的上下slice的进位逻辑相连，实现数据运算时的进位操作。
 
  这里有一个概念：verilog中 reg [7:0] r1是可以直接赋值，但是reg r2 [7:0] 不能直接赋值。因为reg [7:0] 是8个触发器，给定输入即可；但reg r2 [7:0] 是查找表，只能给LUT地址然后逐个赋值。
 
@@ -466,7 +474,8 @@ FPGA仅有三个2选1地MUX，其他需要用LUT实现。
 对于8输入3选择，分为两个4输入2选择并联，低4位和高4位用SEL低两位选择构成两个6-LUT，第一级的两个输出连接到MUX或者LUT用SEL高位选择。
 对于16输入4选择，分为4个4输入2选择（SLE低两位）并联，第一级的四个输出和SLE的高两位可以再用一个6-LUT。
 
-*** TODO 硬件利用率
+*** DONE 硬件利用率
+    CLOSED: [2020-10-05 Mon 09:48]
 
 FPGA相比较于ASIC，会有大量的资源浪费，例如6-LUT只用部分，SLICE中的硬件只用部分。
 1. 提高LUT利用率
@@ -544,7 +553,8 @@ FPGA相比较于ASIC，会有大量的资源浪费，例如6-LUT只用部分，S
 *** 状态机
 [[*状态机FSM][状态机设计]]
 FPGA状态机电路综合分析 http://blog.chinaaet.com/weiqi7777/p/40172
-*** NEXT 硬件算法
+*** DONE 硬件算法
+    CLOSED: [2020-10-05 Mon 09:39]
 参考 Book:FPGA原理与结构 第六章
 **** 流水线
 **** 并行计算和Flynn分类
@@ -1052,7 +1062,8 @@ data_out[cnt] <= data_in;
 
  可以参考book: altera IP核关于PCIe的部分
 
-*** TODO PCIe
+*** DONE PCIe
+    CLOSED: [2020-10-05 Mon 09:48]
 
  https://zhuanlan.zhihu.com/p/26172972
  https://zhuanlan.zhihu.com/p/26244141
@@ -1109,7 +1120,8 @@ data_out[cnt] <= data_in;
 
  总线：PCI 总线在系统中可以有多条，类似于树状结构进行扩展，每条 PCI 总线都可以连接多个 PCI 设备/桥
 
-****** TODO Switch与Bridge
+****** DONE Switch与Bridge
+       CLOSED: [2020-10-05 Mon 09:48]
 
  一个典型的结构是一个root port和一个endpoint直接组成一个点对点连接对，而Switch可以同时连接几个endpoint。一个root port和一个endpoint对就需要一个单独的PCI bus。而PCI是在同一个总线上的设备共享同一个bus number。
 
@@ -1125,7 +1137,8 @@ data_out[cnt] <= data_in;
  PCIe设备的拓扑结构，是以Root Complex为根节点的树形结构，Host对PCIe设备扫描是采用了深度优先算法，对每一个设备进行编址。这一过程的结果放置在配置空间中。
  从Root Complex出发，寻找设备和桥。发现桥后设置Bus，继续寻找；发现一个PCI设备子树，递归回到上一个Bus。
 
-*** TODO PCIe IP core
+*** DONE PCIe IP core
+    CLOSED: [2020-10-05 Mon 09:48]
 
  高性能互联协议，用于实现网络适配器、存储网络、嵌入式控制器、图形加速卡以及音视频等。
  提供基于包的串行点到点传输。
@@ -1165,7 +1178,8 @@ data_out[cnt] <= data_in;
 
  包含2个子层：MAC层和PHY层，MAC层负责链路控制和状态机、多通道切换功能，PHT层负责8B/10B解码，弹性缓存和串行化/解串行化
 
-*** TODO NVMe
+*** DONE NVMe
+    CLOSED: [2020-10-05 Mon 09:48]
 
  https://zhuanlan.zhihu.com/p/71932170 一篇文章讲清什么是NVMe
 
@@ -1187,7 +1201,8 @@ data_out[cnt] <= data_in;
  虽然PCIe和NVMe密切相关，但两个术语指的是略有不同的技术。可以将PCIe看作是系统的物理部分。当您将一个NVMe SSD插入服务器时，您需要通过一个PCIe插槽连接它。
  相比之下，NVMe是一种协议，是一组允许SSD使用PCIe总线的软硬件标准。可以这么说，NVMe是允许存储设备与服务器连接的语言，而PCIe是实际的物理连接。
 
-*** TODO PCIe & HTTP/IP
+*** DONE PCIe & HTTP/IP
+    CLOSED: [2020-10-05 Mon 09:48]
 
  HTTP/IP负责CPU到网卡，PCIe负责外设到CPU。
  PCIe没有IP层
@@ -1210,10 +1225,35 @@ data_out[cnt] <= data_in;
 *** 金融市场：高频交易
 *** 人工智能：深度学习
 *** 图像处理：
-** TODO 时钟
+** DONE 时钟
+   CLOSED: [2020-10-05 Mon 09:48]
  内部时钟不建议使用，一个是因为产生内部时钟的逻辑是有延时的，导致A_clk产生也会延时,Data与A_clk会有延时,就会有亚稳态的稳压;另外一个就是由触发器生成A_clk的驱动能力问题。
 
  https://www.cnblogs.com/IClearner/p/6440488.html
+*** 全局时钟
+**** 全局时钟不是延时最小，而是偏移最小
+为了保证到芯片的各个角落的延时尽量相等，时钟分配树首先到芯片的中间，然后向芯片的四周分布。
+所以，从时钟源端到所驱动的驱动器走过的路径比较长，延时比较大。
+但，到各个触发器的时钟输出端等长，保证时钟偏移很小。
+
+全局时钟网络具有很强的驱动能力，在芯片设计的时候就对时钟网络做了保护，防止内部信号对时钟信号质量有影响，这样可以保证时钟信号抖动小。
+**** 局部走线
+到达不同目的节点延时可能相差较大
+*** 锁相环
+消除时钟分布路径延时
+**** PLL
+（输入时钟，反馈时钟）--- 相位频率检测器PFD --- 电荷泵CP --- 环路或低通滤波器LPF（电压信号） --- 压控振荡器VCO --- 输出时钟CLK
+
+电荷泵比较输入时钟和反馈时钟，产生高电平或者低电平。
+LPF过滤输入时钟的高频抖动，抖动主要来自VCO本身以及电源噪声。同时转换为滞留电压信号
+
+**** DLL
+DLL是纯数字逻辑。
+
+（输入时钟，反馈时钟） --- 相位检测控制器 --- 延时单元MUX --- 输出时钟
+
+检测相位差，输出MUX的选通信号，选择不同长度的延时链
+
 *** 多时钟选择
  动态时钟源选择 https://www.cnblogs.com/yfwblog/p/4792708.html
  选择信号，在时钟的上升沿改变，并经过三次寄存器缓存。
@@ -1339,6 +1379,14 @@ data_out[cnt] <= data_in;
 
  业界普遍认为，GPU之所以在人工智能时代取得了非凡成功，很大程度上得益于 *对软件和算法工程师友好的编程语言和环境* 。
  与之相比，FPGA虽然也在不断扩展自己的应用范围，并在性能和功耗上相比GPU有着明显优势，其编程模型还是以硬件工程师进行RTL开发为主。FPGA的高层次综合是业界发展的必然趋势。相信随着HLS领域的难题不断被攻破，使用高层语言对FPGA进行高效编程也必然会实现，而这也将最终成为FPGA更广泛应用的最后一块拼图。
+** DONE Altera Advanced Synthesis Book
+[[Skim://Users/Xin/Documents/Cloud/OneDrive - hust.edu.cn/Document/Books/FPGA/Altera FPGA CPLD/cookbook/Advanced-Synthesis-cookbook.pdf][Book:cookbook]]
+[[file:~/Documents/Cloud/OneDrive - hust.edu.cn/Document/Books/FPGA/Altera FPGA CPLD/cookbook/README.org][workspace]]
+
+** FPGA EDA发展
+ - 主流通信市场的核心FPGA芯片供应商，
+ - 工业控制和汽车电子市场的主要SoC芯片供应商
+ - 通用人工智能计算芯片领域重要方案供应商
 * IC
 ** DONE 低功耗设计
    CLOSED: [2020-08-10 Mon 15:28]
@@ -1471,7 +1519,7 @@ DVFS（动态电压频率调整），多阈值电压技术，多电压技术。
 
  真值表可以唯一地表示逻辑运算，LUT就是一块存储空间，存储了真值表的所有结果，逻辑运算的输入信号作为存储地址，选择对应存储内容输出。
 
- 通过LUP实现逻辑运算，其原理就是编码/解码：将逻辑输入的所有可能编码（真值表），存放在SRAM中，对于任一逻辑输入，在SRAM中查找对应的解码值。其优秀之处，在于，输入直接作为地址信号，直接得到解码输出，效率很高。
+ 通过LUT实现逻辑运算，其原理就是编码/解码：将逻辑输入的所有可能编码（真值表），存放在SRAM中，对于任一逻辑输入，在SRAM中查找对应的解码值。其优秀之处，在于，输入直接作为地址信号，直接得到解码输出，效率很高。
 
 *** DONE 逻辑块
     CLOSED: [2020-08-04 Tue 09:38]
@@ -1485,3 +1533,19 @@ DVFS（动态电压频率调整），多阈值电压技术，多电压技术。
  可参见stratix-V-board.pdf
 
  常见的方法是，将一个大查找表分为多个小查找表，具有相同的输入，将输入变量相同但功能不同的函数，放在同一个查找表中。
+** serial bus
+*** 接口类型
+    PC与兼容计算机均具有RS-232C接口；
+    长距离（km）传输时，采用RS-485接口（二线差分平衡）；
+    通讯双方均可以主动发送数据，采用RS-422接口（四线差分平衡）；
+    RS-232C接口可以通过转换模块变成RS-485模块；
+    需要多个RS-485接口时，可以在PC上插上基于PCI总线板卡（MOXA卡）。
+*** 特点
+    - 所有通信设备共享一条物理通路
+    - 只规定了物理层的接口规范
+    - 串行通信的有效性不能保证
+*** 保证有效性方法
+    - 轮询或者中断
+    - 设置通信帧的起始、停止位
+    - 建立连接握手
+    - 实行对接受数据的确认、数据缓存以及错误检查

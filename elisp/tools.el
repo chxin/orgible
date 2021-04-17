@@ -2,7 +2,7 @@
 (setq auto-completion-enable-sort-by-usage t
       auto-completion-enable-snippets-in-popup t)
 (global-company-mode t)
-(setq company-global-modes (list "c-mode" "c++-mode" "BSDmakefile-mode" "makefile-mode" "Verilog-mode"))
+(setq company-global-modes (list 'c-mode 'c++-mode 'BSDmakefile-mode 'makefile-mode 'Verilog-mode))
 ;; ===== leetcode mode
 (setq-default leetcode-prefer-language "cpp")
 (setq-default leetcode-prefer-sql "mysql")
@@ -15,19 +15,27 @@
 (setq-default google-translate-listen-url "http://translate.google.cn/translate_tts")
 (setq-default google-translate-output-destination 'echo-area)
 (setq-default google-translate-pop-up-buffer-set-focus t)
+(setq-default go-translate-base-url "http://translate.google.cn")
+(setq-default go-translate-local-language "zh-CN")
+(setq-default go-translate-target-language "en")
 ;; ===== elfeed mode
+(require 'elfeed-org)
+(elfeed-org)
+;; (setq elfeed-enable-web-interface t)
 (setq rmh-elfeed-org-files (list
                             "~/Documents/Garage/orgible/elfeed.org"
                             ))
 ;; ===== email mu4e mode
 (setq mu4e-account-alist t
-      mu4e-enable-notifications t
-      mu4e-installation-path "/usr/local/Cellar/mu/1.2.0_1/share/emacs/site-lisp/mu/mu4e")
+      mu4e-enable-notifications t)
+(if (equal system-type 'gnu/linux)
+    (setq mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e")
+  (setq mu4e-installation-path "/usr/local/Cellar/mu/1.2.0_1/share/emacs/site-lisp/mu/mu4e"))
 (setq mu4e-attachment-dir "~/Downloads")
 (require 'org-mu4e)
 (require 'org-mime)
 (setq org-mu4e-convert-to-html t)
-;; html mail
+;; === html mail
 (defun my-htmlize-and-send ()
   "When in an org-mu4e-compose-org-mode message, htmlize and send it."
   (interactive)
@@ -139,9 +147,9 @@
 (setq mu4e-enable-notifications t)
 (with-eval-after-load 'mu4e-alert
   ;; enable desktop notifications
-  ;; (mu4e-alert-set-default-style 'notifications)) ; for linux
+  (mu4e-alert-set-default-style 'notifications)) ; for linux
   ;; (mu4e-alert-set-default-style 'libnotify))  ; alternative for linux
-  (mu4e-alert-set-default-style 'notifier))   ; for mac osx (through the terminal notifier app)
+  ;; (mu4e-alert-set-default-style 'notifier))   ; for mac osx (through the terminal notifier app)
 ;; (mu4e-alert-set-default-style 'growl))      ; alternative for mac osx
 (setq mu4e-enable-mode-line t)
 ;; ===== eww
@@ -191,6 +199,22 @@
   )
 (when (and (equal system-type 'darwin) (window-system))
   (add-hook 'after-init-hook (create-frame-font-mac)))
+(defun create-frame-font-linux ()  ;; linux emacs
+  (set-face-attribute
+   'default nil :font "Source Code Pro 15")
+  ;; Chinese Font
+  (dolist (charset '( han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "AR PL UKai CN" :size 30)))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'kana
+                    (font-spec :family "MS Mincho" :size 17))
+  (set-fontset-font (frame-parameter nil 'font)
+                    'hangul
+                    (font-spec :family "Ubuntu Mono" :size 17)))
+(when (and (equal system-type 'gnu/linux) (equal window-system 'x))
+  (add-hook 'after-init-hook (create-frame-font-linux)))
 (defun create-frame-font-w32 ()  ;; windows emacs
   (set-face-attribute
    'default nil :font "Courier New 10")
@@ -207,13 +231,14 @@
                     (font-spec :family "GulimChe" :size 17)))
 (when (and (equal system-type 'windows-nt) (window-system))
   (add-hook 'after-init-hook (create-frame-font-w32)))
-(defun  emacs-daemon-after-make-frame-hook(&optional f) ;emacsclient
+(defun  emacs-daemon-after-make-frame-hook(&optional f) ; emacsclient
   ;; (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
   ;; (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
   ;; (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
   (with-selected-frame f
     (when (window-system)
       (when (equal system-type 'darwin) (create-frame-font-mac))
+      (when (equal system-type 'gnu/linux) (create-frame-font-linux))
       (when (equal system-type 'windows-nt) (create-frame-font-w32))
       ;; (set-frame-position f 160 80)
       ;; (set-frame-size f 140 50)
@@ -242,6 +267,87 @@
 (setq yas-snippet-dirs
       '("~/Documents/Garage/orgible/snippets/"                 ;; personal snippets
         ))
+;; ===== buffer
+;; http://camdez.com/blog/2013/11/14/emacs-show-buffer-file-name/
+(defun chxin/show-and-copy-buffer-filename ()
+  "Show the full path to the current file in the minibuffer and copy to clipboard."
+  (interactive)
+  (let ((file-name (buffer-file-name)))
+    (if file-name
+        (progn
+          (message file-name)
+          (kill-new file-name))
+      (error "Buffer not visiting a file"))))
+;; ===== password
+(require 'ps-ccrypt "ps-ccrypt.el")
+(defun random-alphanum ()
+  (let* ((charset "abcdefghijklmnopqrstuvwxyz0123456789")
+         (x (random 36)))
+    (char-to-string (elt charset x))))
+(defun create-password ()
+  (let ((value ""))
+    (dotimes (number 16 value)
+      (setq value (concat value (random-alphanum))))))
+(defun get-or-create-password ()
+  (setq password (read-string "Password: "))
+  (if (string= password "")
+      (create-password)
+    password))
+(add-to-list 'org-capture-templates
+             '("s" "Passwords" entry (file "~/Documents/Garage/orgible/oxrign/passwords.org.cpt")
+               "* %U - %^{title} %^G\n\n  - NAME: %^{User Name}\n  - PASSWORDS: %(get-or-create-password)"
+               :empty-lines 1 :kill-buffer t))
+;; ===== Bill
+(defun get-year-and-month ()
+  (list (format-time-string "%Y") (format-time-string "%m")))
+(defun find-month-tree ()
+  (let* ((path (get-year-and-month))
+         (level 1)
+         end)
+    (unless (derived-mode-p 'org-mode)
+      (error "Target buffer \"%s\" should be in Org mode" (current-buffer)))
+    (goto-char (point-min))
+    (dolist (heading path)
+      (let ((re (format org-complex-heading-regexp-format
+                        (regexp-quote heading)))
+            (cnt 0))
+        (if (re-search-forward re end t)
+            (goto-char (point-at-bol))
+          (progn
+            (or (bolp) (insert "\n"))
+            (if (/= (point) (point-min)) (org-end-of-subtree t t))
+            (insert (make-string level ?*) " " heading "\n"))))
+      (setq level (1+ level))
+      (setq end (save-excursion (org-end-of-subtree t t))))
+    (org-end-of-subtree)))
+(add-to-list 'org-capture-templates
+             '("l" "Billing" plain
+               (file+function "~/Documents/Garage/orgible/inbox.org" find-month-tree)
+               " | %U | %^{Type} | %^{Detailed} | %^{money} |" :kill-buffer t))
+;; ===== smart input source
+;; add "sis" to dotspacemacs-additional-packages
+;; use "macism" to get the name of inut-method
+(if (equal system-type 'gnu/linux)
+    ;; (sis-ism-lazyman-config "1" "2" 'fcitx)
+    (sis-ism-lazyman-config nil "pyim" 'native)
+  (sis-ism-lazyman-config
+   "com.apple.keylayout.ABC"
+   "com.apple.inputmethod.SCIM.Shuangpin"))
+(sis-global-cursor-color-mode t)
+(sis-global-respect-mode t)
+(sis-global-follow-context-mode t)
+(sis-global-inline-mode t)
+;; === chinese input method
+;; (global-set-key (kbd "\C-\\") nil)
+;; (setenv "LC_CTYPE" "zh_CN.UTF-8")
+(require 'pyim-basedict)
+(pyim-basedict-enable)
+(setq pyim-default-scheme 'microsoft-shuangpin)
+(setq pyim-page-tooltip 'posframe)
+(setq pyim-page-length 5)
+(define-key pyim-mode-map "." 'pyim-page-next-page)
+(define-key pyim-mode-map "," 'pyim-page-previous-page)
+(pyim-isearch-mode 1)
 
 ;; end
 (provide 'tools)

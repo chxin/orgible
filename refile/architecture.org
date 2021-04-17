@@ -254,9 +254,8 @@
 
 ****** 但以太网已经这样规定了，使用ARP代价很小，没必要改变mac的机制
 
-                                                          
-
                                                    Made with   by the community
+
 * system of computer
 ** DONE 计算机系统
    CLOSED: [2020-08-26 Wed 21:34]

@@ -1,481 +1,6 @@
 #+STARTUP: content
 
-* SLD
-** DONE SLD Research
-   CLOSED: [2020-12-29 Tue 09:25]
-
-*** DONE terms
-    CLOSED: [2020-12-29 Tue 09:25]
-
-*** DONE reading list
-    CLOSED: [2020-12-29 Tue 09:25]
-
-**** CN
-
-  #+name: list and link
-  #+begin_src shell :results scalar
-  /Users/xin/Documents/SLD/docs/references/travel-dir.sh /Users/xin/Documents/SLD/docs/references/CN;
-  #+end_src
-
-  - 2010
-    1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2010/水滴撞击特性的重力影响分析.pdf][pdf file: 水滴撞击特性的重力影响分析.pdf]]
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2010/结冰条件下过冷水滴撞击特性及热平衡分析_闵现花.caj][pdf file: 结冰条件下过冷水滴撞击特性及热平衡分析_闵现花.caj]]
-  - 2011
-    1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2011/SLD破碎效应对冰型的影响研究.pdf][pdf file: SLD破碎效应对冰型的影响研究.pdf]]
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2011/SLD环境下的水滴破碎和模拟成冰.pdf][pdf file: SLD环境下的水滴破碎和模拟成冰.pdf]]
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2011/发动机整流支板大尺寸过冷水滴撞击特性.pdf][pdf file: 发动机整流支板大尺寸过冷水滴撞击特性.pdf]]
-  - 2012
-    1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2012/浅析过冷大水滴规章对防冰系统设计的影响_刘鹏.pdf][pdf file: 浅析过冷大水滴规章对防冰系统设计的影响_刘鹏.pdf]]
-  - 2013
-    1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/SLD碰撞结冰机理实验研究_李海星.caj][pdf file: SLD碰撞结冰机理实验研究_李海星.caj]]
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/面向SLD适航需求的大型客机翼型结冰安全性研究.pdf][pdf file: 面向SLD适航需求的大型客机翼型结冰安全性研究.pdf]]
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴飞溅特性数值分析_王超 (1).pdf][pdf file: 过冷大水滴飞溅特性数值分析_王超 (1).pdf]]
-    4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴情况下的积冰数值模拟_英文_白俊强.pdf][pdf file: 过冷大水滴情况下的积冰数值模拟_英文_白俊强.pdf]]
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/数值模拟机翼积冰及其气动特性分析_黄抒宇.caj][pdf file: 数值模拟机翼积冰及其气动特性分析_黄抒宇.caj]]
-    6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/大粒径过冷水滴结冰模拟破碎模型研究.pdf][pdf file: 大粒径过冷水滴结冰模拟破碎模型研究.pdf]]
-    7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/飞机过冷大水滴结冰探测器设计及试验_周灿.pdf][pdf file: 飞机过冷大水滴结冰探测器设计及试验_周灿.pdf]]
-    8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴结冰探测器数值仿真设计与实验_许一飞.caj][pdf file: 过冷大水滴结冰探测器数值仿真设计与实验_许一飞.caj]]
-    9. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴规章对结冰探测系统设计的影响_朱家乐.pdf][pdf file: 过冷大水滴规章对结冰探测系统设计的影响_朱家乐.pdf]]
-  - 2014
-    1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/SLD结冰数值模拟方法研究.pdf][pdf file: SLD结冰数值模拟方法研究.pdf]]
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/大型客机增升翼型SLD结冰模拟及气动特性分析.pdf][pdf file: 大型客机增升翼型SLD结冰模拟及气动特性分析.pdf]]
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/大粒径过冷水滴碰撞-结冰收集率分布经验模型.pdf][pdf file: 大粒径过冷水滴碰撞-结冰收集率分布经验模型.pdf]]
-    4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/过冷大水滴条件下机翼结冰数值仿真_吴佩佩.pdf][pdf file: 过冷大水滴条件下机翼结冰数值仿真_吴佩佩.pdf]]
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/过冷大水滴结冰探测器设计及试验研究_陈朝辉.caj][pdf file: 过冷大水滴结冰探测器设计及试验研究_陈朝辉.caj]]
-    6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/大粒径过冷水溢流结冰的翼型气动影响分析.pdf][pdf file: 大粒径过冷水溢流结冰的翼型气动影响分析.pdf]]
-    7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/二维翼型大尺寸过冷水滴撞击特性及冰形分析_杜晨慧.pdf][pdf file: 二维翼型大尺寸过冷水滴撞击特性及冰形分析_杜晨慧.pdf]]
-  - 2015
-    1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/过冷大水滴结冰探测方法研究_胡文月.caj][pdf file: 过冷大水滴结冰探测方法研究_胡文月.caj]]
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/一种图像式过冷大水滴结冰探测系统_胡文月.pdf][pdf file: 一种图像式过冷大水滴结冰探测系统_胡文月.pdf]]
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/飞机过冷大粒径水滴结冰冰型数值模拟_由立岩.pdf][pdf file: 飞机过冷大粒径水滴结冰冰型数值模拟_由立岩.pdf]]
-    4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/飞机异常结冰的过冷凝固机理及理论研究_孔维梁.caj][pdf file: 飞机异常结冰的过冷凝固机理及理论研究_孔维梁.caj]]
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/过冷大水滴动力学特性的温度影响实验研究_王桥.caj][pdf file: 过冷大水滴动力学特性的温度影响实验研究_王桥.caj]]
-    6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/数值模拟过冷水滴撞击翼型表面的收集特性_邵晓海.pdf][pdf file: 数值模拟过冷水滴撞击翼型表面的收集特性_邵晓海.pdf]]
-    7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/关于过冷大水滴的适航规章新趋势和影响解析_袁烨.pdf][pdf file: 关于过冷大水滴的适航规章新趋势和影响解析_袁烨.pdf]]
-    8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/一种过冷大水滴结冰探测器的设计方法及探测器.pdf][pdf file: 一种过冷大水滴结冰探测器的设计方法及探测器.pdf]]
-  - 2016
-    1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴结冰探测技术研究进展_张洪.pdf][pdf file: 过冷大水滴结冰探测技术研究进展_张洪.pdf]] cite:张洪过冷大水滴结冰探测技术研究进展2016
-      对探测器有一定归纳
-      可以按照论文中的分类方法进行分类：水滴轨迹，溢流，气动压力参数，电磁波远程探测，结冰条件 LWD、TWD
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E7%90%86%E8%AE%BA%E5%8F%8A%E9%80%82%E8%88%AA%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6_%E5%BC%A0%E8%BE%B0.pdf][pdf file: 大型飞机过冷大水滴结冰理论及适航安全研究_张辰.pdf]]
-      优秀的毕业论文！ 对 SLD 发展过程认识独到。 主要进行了结冰模拟和结冰后气动特性的仿真
-      note:
-
-      [[https://gitee.com/chengxinhust/graph-bed/raw/master/tqVtD9.png][requirements from 2000 to 2020]]
-
-      [[https://gitee.com/chengxinhust/graph-bed/raw/master/0xoGxK.png][research aspect]]
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/SLD结冰数值模拟方法研究现状及发展_周志宏.pdf][pdf file: SLD结冰数值模拟方法研究现状及发展_周志宏.pdf]]
-    4. [-] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/国外运输类飞机最新结冰适航规章差异初步研究与分析_丁媛媛.pdf][pdf file: 国外运输类飞机最新结冰适航规章差异初步研究与分析_丁媛媛.pdf]]
-     适航标准修订
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/SLD结冰对舵面翼型及多段翼型的气动影响分析.pdf][pdf file: SLD结冰对舵面翼型及多段翼型的气动影响分析.pdf]]
-    6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/一种过冷大水滴结冰探测器.pdf][pdf file: 一种过冷大水滴结冰探测器.pdf]]
-    7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/飞机结冰热力学行为研究综述_杜雁霞.pdf][pdf file: 飞机结冰热力学行为研究综述_杜雁霞.pdf]]
-    8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/光滑表面上过冷大水滴碰撞实验研究_赵献礼.pdf][pdf file: 光滑表面上过冷大水滴碰撞实验研究_赵献礼.pdf]]
-    9. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/翼型表面过冷大水滴的水滴收集系数求解_束珺.pdf][pdf file: 翼型表面过冷大水滴的水滴收集系数求解_束珺.pdf]]
-    10. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/发动机进气流量对前缘水滴撞击特性的影响_么虹.pdf][pdf file: 发动机进气流量对前缘水滴撞击特性的影响_么虹.pdf]]
-    11. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴动力学特性对结冰影响数值研究_桑为民.pdf][pdf file: 过冷大水滴动力学特性对结冰影响数值研究_桑为民.pdf]]
-    12. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/水滴撞击飞溅效应对过冷大水滴结冰影响研究_桑为民.pdf][pdf file: 水滴撞击飞溅效应对过冷大水滴结冰影响研究_桑为民.pdf]]
-    13. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴变形及阻力特性的温度影响实验研究_王桥.pdf][pdf file: 过冷大水滴变形及阻力特性的温度影响实验研究_王桥.pdf]]
-  - 2017
-    1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/SLD水滴碰撞过程粒径变化的机理及模型研究_尹金鸽.caj][pdf file: SLD水滴碰撞过程粒径变化的机理及模型研究_尹金鸽.caj]]
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/变形破碎特性对SLD结冰过程影响_桑为民.pdf][pdf file: 变形破碎特性对SLD结冰过程影响_桑为民.pdf]]
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/基于后流特性的SLD结冰探测数值研究_祁相莹.pdf][pdf file: 基于后流特性的SLD结冰探测数值研究_祁相莹.pdf]]
-    4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/过冷水滴碰撞过程的实验研究_尹金鸽.pdf][pdf file: 过冷水滴碰撞过程的实验研究_尹金鸽.pdf]]
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/考虑非平衡效应的过冷水滴凝固特性_肖光明.pdf][pdf file: 考虑非平衡效应的过冷水滴凝固特性_肖光明.pdf]]
-    6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/过冷大水滴规章对民机适航取证的影响_李艳.pdf][pdf file: 过冷大水滴规章对民机适航取证的影响_李艳.pdf]]
-    7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/结冰风洞过冷大水滴结冰条件模拟能力综述_符澄.pdf][pdf file: 结冰风洞过冷大水滴结冰条件模拟能力综述_符澄.pdf]]
-  - 2018
-    1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/过冷大水滴变形与破碎的影响因素_李维浩.pdf][pdf file: 过冷大水滴变形与破碎的影响因素_李维浩.pdf]]
-       2019：数值仿真技术总结
-    2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/过冷大水滴结冰过程中动力学行为的影响因素_易贤.pdf][pdf file: 过冷大水滴结冰过程中动力学行为的影响因素_易贤.pdf]]
-      找到这篇文章！
-    3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/运输类飞机结冰适航审定方法及SLD关键技术研究_丁媛媛.caj][pdf file: 运输类飞机结冰适航审定方法及SLD关键技术研究_丁媛媛.caj]]
-    4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/严酷结冰气象条件下临界冰形的确定方法.pdf][pdf file: 严酷结冰气象条件下临界冰形的确定方法.pdf]]
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/过冷大水滴相继撞壁对结冰影响的实验研究_徐弘.pdf][pdf file: 过冷大水滴相继撞壁对结冰影响的实验研究_徐弘.pdf]]
-  - 2019
-    1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/13-%E7%BB%93%E5%86%B0%E9%A3%8E%E6%B4%9E%E4%B8%ADSLD%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81%E7%A0%94%E7%A9%B6-2019.pdf][pdf file: 13-结冰风洞中SLD模拟方法及其实验验证研究-2019.pdf]] cite:符澄2019结冰风洞中SLD模拟方法及其实验验证研究
-    2. [-] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/12-%E6%B6%A1%E6%89%87%E5%8F%91%E5%8A%A8%E6%9C%BA%E7%9F%AD%E8%88%B1%E7%BB%93%E5%86%B0%E8%AF%95%E9%AA%8C%E7%9B%B8%E4%BC%BC%E6%96%B9%E6%B3%95-2019-9-%E4%B8%8A%E4%BA%A4.pdf][pdf file: 12-涡扇发动机短舱结冰试验相似方法-2019-9-上交.pdf]] cite:Yang2019涡扇发动机短舱结冰试验相似方法
-    3. [X] [[Skim:///Users/xin/Documents/SLd/docs/references/cn/2019/10-%E6%9C%BA%E7%BF%BC%E7%BB%93%E5%86%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%BF%87%E5%86%B7%E6%B0%B4%E6%BB%B4%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9%E7%9A%84%E6%95%B0%E5%80%BC%E7%A0%94%E7%A9%B6_%E5%90%B4%E4%BF%8A%E6%9D%B02019-3.pdf][pdf file: 10-机翼结冰过程中过冷水滴运动轨迹的数值研究_吴俊杰 2019-3.pdf]] cite:吴俊杰2019机翼结冰过程中过冷水滴运动轨迹的数值研究
-       Very good papers for droplet trajectory
-       模型简化：
-       水滴在空气中不断运动，因此过冷水滴的形态 不可能是绝对的圆球型，所以首先需要对物理过程进行简化假设:过冷水滴直径足够小，在空气中均匀分布，在运动过程中保持*球形不变*;空气流场不受过 冷水滴存在的影响;作用在水滴上的力只有*空气阻力、重力和浮力*;过冷水滴在空气中不断与空气进行 热交换;过冷水滴温度、密度等物理参数保持不变.
-    4. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/2019-%E8%80%83%E8%99%91%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%95%88%E5%BA%94%E7%9A%84SLD%E7%BB%93%E5%86%B0%E7%9B%B8%E4%BC%BC%E5%8F%82%E6%95%B0%E7%A0%94%E7%A9%B6-%E6%9D%8E%E7%BB%B4%E6%B5%A9-%E6%98%93%E8%B4%A4.pdf][pdf file: 6-考虑动力学效应的SLD结冰相似参数研究_李维浩.pdf]]
-       2018 : 介绍了模型计算方法
-       NA 方程流场计算方法--》拉格朗日水滴轨迹计算--》TAB 水滴破碎模型--》阻力参数修正--》FENSAP-ICE 破碎飞溅模型
-       软件设计过程
-       1. 流程计算。采用课题组开发的低俗流体计算软件，计算流场的速度、压力等分布；
-       2. 输入水滴初始的位置、直径等信息，读取之间已经获得的流场信息
-       3. 判断水滴所处网格位置，得到流场速度，使用一阶欧拉法迭代求水滴轨迹，并且每迭代一步都判断水滴是否撞击到物体表面或者飞出流场
-       4. 使用选定的破碎模型或飞溅模型，计算相关参数，如果判断式达到阈值，计算出破碎或者飞溅产生子水滴的速度大小及方向、平均直径、粒径分布和质量损失等参数
-       5. 重复步骤 3，获得子水滴的运动轨迹
-       6. 通过定义求的局部水收集率，并通过绘图软件拟合成连续曲线
-    5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/1-过冷大水滴条件下结冰相似准则-2019:5.pdf][pdf file: 1-过冷大水滴条件下结冰相似准则-2019:5.pdf]]
-    6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/14-飞机结冰相似准则研究进展-马军林-2019.pdf][pdf file: 14-飞机结冰相似准则研究进展-马军林-2019.pdf]]
-    7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/2-发动机短舱过冷大水滴结冰数值模拟-2019:1.pdf][pdf file: 2-发动机短舱过冷大水滴结冰数值模拟-2019:1.pdf]]
-    8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤.pdf][pdf file: 2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤.pdf]]
-    9. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/3-粗糙度对水滴飞溅特性的影响规律研究.pdf][pdf file: 3-粗糙度对水滴飞溅特性的影响规律研究.pdf]]
-    10. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/3-粗糙度对水滴飞溅特性的影响规律研究.webarchive][pdf file: 3-粗糙度对水滴飞溅特性的影响规律研究.webarchive]]
-    11. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/4-基于数字全息技术的大水滴飞溅粗糙度影响特性研究_马军林.caj][pdf file: 4-基于数字全息技术的大水滴飞溅粗糙度影响特性研究_马军林.caj]]
-    12. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/5-壁面润湿性影响SLD撞击传热规律的研究_孙明明.pdf][pdf file: 5-壁面润湿性影响SLD撞击传热规律的研究_孙明明.pdf]]
-    13. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/6-考虑动力学效应的SLD结冰相似参数研究_李维浩.caj][pdf file: 6-考虑动力学效应的SLD结冰相似参数研究_李维浩.caj]]
-    14. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/7-气动除冰类飞机结冰风洞实验试航审定技术-2019:4.pdf][pdf file: 7-气动除冰类飞机结冰风洞实验试航审定技术-2019:4.pdf]]
-    15. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/8-Ka波段毫米波云雷达多普勒谱降雪微物理特征分析-2019:4.pdf][pdf file: 8-Ka波段毫米波云雷达多普勒谱降雪微物理特征分析-2019:4.pdf]]
-    16. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/9-六角冰晶生长过程的相场模拟.pdf][pdf file: 9-六角冰晶生长过程的相场模拟.pdf]]
-    17. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/专利：一种过冷水滴结冰探测装置.pdf][pdf file: 专利：一种过冷水滴结冰探测装置.pdf]]
-
-**** EN
-
- - 2019
-   1) [X] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Refined In-Flight Icing Model and its Numerical Implementation.pdf][pdf file:  A Refined In-Flight Icing Model and its Numerical Implementation.pdf]]
-   2) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf][pdf file:  A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf]]
-   3) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf][pdf file:  Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf]]
-   4) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf][pdf file:  Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf]]
-   5) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf][pdf file:  Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf]]
-   6) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Influence of Freestream Temperature on Ice Accretion Roughness .pdf][pdf file:  Influence of Freestream Temperature on Ice Accretion Roughness .pdf]]
-   7) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Korean Utility Helicopter KUH-1 Icing Certification Program.pdf][pdf file:  Korean Utility Helicopter KUH-1 Icing Certification Program.pdf]]
-   8) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf][pdf file:  Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf]]
-   9) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf][pdf file:  Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf]]
-   10) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf][pdf file:  SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf]]
-   11) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf][pdf file:  Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf]]
-   12) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ The Cloud Detectability Conundrum.pdf][pdf file:  The Cloud Detectability Conundrum.pdf]]
-   13) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A 3D mesh deformation technique for irregular in-flight ice.pdf][pdf file: A 3D mesh deformation technique for irregular in-flight ice.pdf]]
-   14) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A Meteorological Supersite for Aviation and Cold Weather Applications.pdf][pdf file: A Meteorological Supersite for Aviation and Cold Weather Applications.pdf]]
-   15) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A multiphase SPH framework for supercooled large droplets dynamics.pdf][pdf file: A multiphase SPH framework for supercooled large droplets dynamics.pdf]]
-   16) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Aircraft Icing Study Using Integrated Observations and Model Data.pdf][pdf file: Aircraft Icing Study Using Integrated Observations and Model Data.pdf]]
-   17) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Correction An Extended Finite-Element Method for.pdf][pdf file: Correction An Extended Finite-Element Method for.pdf]]
-   18) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet Breakup Onset Modeling in Combination with.pdf][pdf file: Droplet Breakup Onset Modeling in Combination with.pdf]]
-   19) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet in the Shoulder Region of an Incoming Airfoil..pdf][pdf file: Droplet in the Shoulder Region of an Incoming Airfoil..pdf]]
-   20) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Effect of nucleation and icing evolution on run-back freezing.pdf][pdf file: Effect of nucleation and icing evolution on run-back freezing.pdf]]
-   21) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Frosty Weather The Regulatory History of Aircraft.pdf][pdf file: Frosty Weather The Regulatory History of Aircraft.pdf]]
-   22) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf][pdf file: ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf]]
-   23) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf][pdf file: Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf]]
-   24) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Impact freezing modes of supercooled droplets determined by both.pdf][pdf file: Impact freezing modes of supercooled droplets determined by both.pdf]]
-   25) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf][pdf file: Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf]]
-   26) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf][pdf file: Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf]]
-   27) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf][pdf file: Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf]]
-   28) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Model-Based Design of Complex Aeronautical.pdf][pdf file: Model-Based Design of Complex Aeronautical.pdf]]
-   29) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical Simulation of Supercooled Large Droplet Icing.pdf][pdf file: Numerical Simulation of Supercooled Large Droplet Icing.pdf]]
-   30) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf][pdf file: Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf]]
-   31) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical simulation of ice accretion in supercooled large droplet.pdf][pdf file: Numerical simulation of ice accretion in supercooled large droplet.pdf]]
-   32) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf][pdf file: On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf]]
-   33) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/README.org][pdf file: README.org]]
-   34) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf][pdf file: Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf]]
-   35) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Role of surrounding gas in the outcome of droplet splashing.pdf][pdf file: Role of surrounding gas in the outcome of droplet splashing.pdf]]
-   36) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf][pdf file: Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf]]
-   37) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Temperature measurement and state determination of supercooled.pdf][pdf file: Temperature measurement and state determination of supercooled.pdf]]
-   38) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf][pdf file: The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf]]
-
-*** DONE SLD sensor model summary
-    CLOSED: [2020-07-02 Thu 18:49]
-    :PROPERTIES:
-    :ID:       5876BFF9-635A-4FC5-ACB6-ED8B1801633A
-    :END:
-    :LOGBOOK:
-    CLOCK: [2020-03-13 Fri 22:16]--[2020-07-02 Thu 17:38] => 2659:22
-    :END:
-  [2020-03-13 Fri 22:16]
-  According to GK's instruments and my plan, make a survey about the existing SLD sensor of the *shape*, *principle*, *evaluation*, and *improvement* for our sensor.
-
-**** notes from papers
-     :PROPERTIES:
-     :ID:       84818A01-D64F-4D02-A7B8-8EF90317FC6F
-     :END:
-
-     [[~/Documents/Garage/orgible/refile/paper-notes.org][skim annotation notes]] is employed according to the workflow of skim & org-ref to take notes of papers.
-
-**** reports
-
-  - [[/Users/xin/Documents/SLD/docs/sld-sensor-structure-analysis.org][SLD structure report]]
-
-*** DONE SLD aerodynamic effect
-
- 可以参考仿真结果：[[/Users/xin/Documents/SLD/simulation/shangfei-simualtion/*.pptx][章工的ppt]]和[[/Users/xin/Documents/SLD/simulation/shangfei-simualtion/*.word][文档，查看运动规律]]
- 可以看实验室的论文：如何描述
- 可以看专利：原理解释
-
-**** 流场特性
-
-     遇到阻碍物时，在阻碍物的表面，压强速度逐渐变小；在边缘处，由于边界层效应，压强变小，速度增大。
-
-     在阻碍物周围，速度最大的轨迹线沿着阻碍物延申，最终与流场速度方向一致。在速度最大轨迹线的两侧，速度逐渐变化到和周围一致。
-
-     低压涡的存在，对流场分布没有任何影响。
-
-**** 运动
-***** 变形
-
- 1. 变形水滴导致阻力系数增加，从而影响水滴轨迹
-
-***** 破碎
-
- 1. 变形程度大发生破碎，改变水滴粒径和分布
-
-**** 撞击
-***** 飞溅
-**** Euler equation
-***** droplet conservation equations
-
- $\frac{\partial\alpha\rho}{\partial t} + \nabla\dot(\alpha\rho u) = 0$
- $\frac{\partial\alpha\rho u}{\partial t} + \nabla(\alpha\rho u\otimes u) = K\alpha\rho(u_a - u) + \alpha\rho F$
- $K = \frac{18u_{\alpha}f}{\rho d^2_p}$
- $f=\frac{C_DRe}{24}$
- $Re = \rho_{\alpha}|u_a - u|d_p}{u_a}$
- \begin{equations}
- $C_{D,Shpere}=\left\{
- \begin{aligned}
- \frac{24(1+0.15Re^{0.687})}{Re} & , & Re \leqslant 1000 \\
- 0.44      & , & Re \textgreater 1000
- \end{aligned}$
- \end{equations}
- $C_D = C_{D, Shpere} \times (1+2.632y)$
- $F = \left(1-\frac{\rho_a}{\rho_d}\left)\frac{\hat{g}}{F_r^2}$
-
-*** DONE paper material
-    CLOSED: [2020-07-01 Wed 12:25] DEADLINE: <2020-04-20 Mon 12:00>
-
- [[file:~/Documents/SLD/latex/preliminary-work/manuscript.tex][paper latex file]]
-
-**** 空难
-
- http://www.safehoo.com/Case/Case/Air/List_1.shtml
-
- 空难事故
-
-**** 模拟
-
- 1. Due to the highly complex nature of the involved physical processes comprising, e.g., compressible air flow over ice-covered surfaces, droplet transport and breakup, convective heat transfer, phase changes as well as the intricate dynamics of the runback water flow, today’s research is by no means final- ized or even close to being finalized
-
-**** 研究过程
-
- Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf
-
-*** DONE paper
-    CLOSED: [2020-08-16 Sun 11:28] DEADLINE: <2020-08-10 Mon 11:00>
-
- https://www.overleaf.com/project/5ea4101adceffc0001b8b74e
-
-**** DONE 修改论文
-     CLOSED: [2020-08-16 Sun 11:28]
-
-***** DONE 写论文原理部分
-      CLOSED: [2020-07-16 周四 19:38]
-
-  参考章工的文档
-
-****** 水滴轨迹
-
-   1. 流场的计算，根据 N-S 方程，可以得到压强、速度、密度、温度
-      构型确定之后，流场的分布也就确定了。
-      对于空气（没有质量的物体），其运动轨迹就是流场的轨迹
-   2. 根据拉格朗日法，求水滴的加速度、位置
-      水滴轨迹和水滴粒径相关，水滴越大，惯性越大，轨迹越不易受流场改变
-   3. 水收集率的计算
-      水滴收集率不考虑水滴的破碎，二次撞击，后流。
-   4. 结冰计算
-      对于霜冰而言，结冰数据和水滴收集率一致。
-      明冰的结冰厚度则和水滴收集率不同。
-      考虑明冰更加合理。
-
-***** DONE 修改论文实验部分
-      CLOSED: [2020-08-06 Thu 10:52] DEADLINE: <2020-08-04 Tue 11:30> SCHEDULED: <2020-08-04 Tue 10:30>
-      :LOGBOOK:
-      CLOCK: [2020-08-04 Tue 10:30]--[2020-08-04 Tue 11:41] =>  1:11
-      :END:
-
-***** DONE 修改全文
-      CLOSED: [2020-08-16 Sun 11:29]
-
-**** DONE 画图
-     CLOSED: [2020-08-10 Mon 09:08]
-     :LOGBOOK:
-     CLOCK: [2020-08-10 Mon 08:30]--[2020-08-10 Mon 09:08] =>  0:38
-     :END:
- 原始数据经过卡尔曼滤波之后，画图。
-
- 关于原始数据滤波之后，是否算作篡改数据，这事再讨论。
-
-**** DONE 选定期刊
-     CLOSED: [2020-08-04 Tue 09:25]
-
- Aerospace Science and Technology 属于 Elsevier
-
-**** DONE 冰厚问题
-     CLOSED: [2020-08-03 Mon 11:21] SCHEDULED: <2020-08-03 Mon 10:00>
-     :LOGBOOK:
-     CLOCK: [2020-08-03 Mon 10:57]--[2020-08-03 Mon 11:21] =>  0:24
-     CLOCK: [2020-08-03 Mon 10:02]--[2020-08-03 Mon 10:13] =>  0:11
-     :END:
- 究竟什么才是有用的数据？
- 不同时间的厚度 vs 最终的结冰厚度
- 结冰分布 vs 结冰厚度
-
- 不同时间的冰厚，也就是传感器输出，只是可以从侧面表述，结冰的分布范围
-
- 最终的冰厚，也就是图片识别的冰厚，可以和仿真进行比较。
-
- 经过讨论，混合光纤对冰厚敏感，可作为开关变量，单独的接受光纤，可作为冰厚探测
-
-***** 仿真冰厚计算
-
- FENSAP 结冰模型可以直接得到厚度，并展示结冰的冰层图片。
-
- 厚度曲线：模型的 XY 切面，在 Y 轴的不同位置上的冰层厚度
-
- 疑问：仿真同一个 Y 值，不同位置的厚度也是不同的
-
-***** 实验冰厚计算
-
- 根据拟合的冰厚电压曲线，实时测量电压值，从而得到厚度。
-
- 实验数据中，电压在 2s 之内到达最大值。
- 这样的数据有什么意义呢？
-
- 拍照图片识别的冰厚，是真实的冰厚，但其精度没有经过测量，所以只能做参考。
-
-***** 两者如何一致
-
- 位置分布和厚度两个方面
-
- 位置分布，比较第二个迎风面
-
- 厚度，图片识别的冰厚可以和仿真的冰厚进行比较。但是，传感器测得的冰厚，不能和仿真比较，因为量程受限。
-
-*** DONE Structure
-    CLOSED: [2020-12-29 Tue 09:24]
-
-**** dual-spindle
-***** circle
-
- - (0,0) r3: [(0+3, 0); (0, 0+3)]
- - (25, 14) r5.5: [(25+5.5, 14); (25, 14+5.5)]
- - (25, -14) r5.5: [(25+5.5, -14); (25, -14+5.5)]
- - (40, 20) r7: [(65+7, 20); (65, 20+7)]
- - (40, -20) r7: [(65+7, -20); (65, -20+7)]
- - (90, 16) r10: [(90+10, 16); (90, 16+10)]
- - (90, -16) r10: [(90+10. -16); (90, -16+10)]
- - (135, 0) r3: [(135+3, 0); (135, 0+3)]
-
-***** tangent
-
- #+CAPTION: ratio
- | radius1 | radius2 |         inner ratio |     external ratio |
- |     3.0 |     5.5 | 0.35294117647058826 | 2.8333333333333335 |
- |     5.5 |     7.0 |                0.44 |  2.272727272727273 |
- |     7.0 |    10.0 |  0.4117647058823529 | 2.4285714285714284 |
- |    10.0 |     3.0 |  0.7692307692307693 |                1.3 |
- #+TBLFM: @2$3..@5$3='(/ $1 (+ $1 $2));N::@2$4..@5$4='(/ (+ $1 $2) $1);N
-
-***** surface
-
-      use 2-4 curves: select model first to create suface1; then select all curves to create surface2; lastly, remove the surface1
-
-***** part
-
- - inlet:
- - outlet:
- - wall:
- - model:
- - bottom: create from surface
-
-**** mesh
-
- https://www.bilibili.com/video/av96436039
-
- https://jingyan.baidu.com/article/08b6a59198b3a414a80922be.html
-
- - 边界线在拉伸之后将形成不同的侧面，因此需对这些线分别命名，拉伸后形成的面的名字将继承这些线的名字，命名如下。注意，若此时不对线进行命名，那
-  么拉伸后顶面和所有的侧面将包含在同一个 PART 中，需要在或许 CFD 求解器中再分离。
- - 设置网格尺寸, 生成面网格
- - 拉伸成体网格。依次点击“Edit mesh”-“Extrude mesh”，弹出“Extrude mesh”的属性窗口。
-  1. Elements：指源网格，即前面已创建的面网格；
-  2. New volume part name：指即将生成的体网格名称，默认 fluid,可改。
-  3. New side part name：指侧面名字，默认 inherited，即边界线的名字。
-  4. New top part name：指拉伸后顶面的名字，自动给一个默认名可改。改为 top
-  5. Extrude mesh method：指拉伸方式，共四种：extrude by element normal、extrude along curve、extrude by vector、extrude by rotation。选择 extrude by element normal
-  6. Number of layers：指拉伸层数。设置 30
-  7. Reverse direction：可选项，指拉伸方向是否要反向。不需要
-  8. Spacing type：可选 fixed 或者 Fuction。选择固定距离
-  9. Spacing：指每层网格厚度。设为 1mm，30 层
-  10. Delete original elements：可选项，指是否删除源网格。不选，因为原网格需要作为下表面
-
-*** CANCELLED Grid :CANCELLED:
-    CLOSED: [2020-08-04 Tue 09:27]
-    - State "CANCELLED"  from "TODO"       [2020-08-04 Tue 09:27] \\
-      尝试了太多次，网格质量很差。
-      商飞章工画网格，仿真结果和我们预一致，暂定使用他们的网格
- https://www.bilibili.com/video/BV1w741177BW?p=1
-
-*** HOLD Simulation :HOLD:
-    - State "HOLD"       from "TODO"       [2020-08-04 Tue 09:29] \\
-      原始的双梭形结构已经仿真过了，仿真结果与预期一致，本阶段工作告一段落。
-      等新构型设计了，再继续开始仿真工作
-
-**** conditions
-
- | Configuration                    |                          5 |
- | Characteristic Length (m)        |                      0.141 |
- | Altitude (m)                     |                       1000 |
- | Angle of Attack (degree)         |                          0 |
- | Air velocity (m/s)               |                        100 |
- | Temperature (Celsius)            |                        -10 |
- | Medium Volume Diameter (Microns) |                  20 or 100 |
- | Liquid Water Content (g/m3)      |                        0.7 |
- | Droplet distribution             | Monodisperse or Langmuir D |
- | Icing time (mins)                |                         30 |
-
-**** configuration
-***** character length
-
- The Characteristic length setting has no impact on the flow, but it will change the scale of the average residual which is reported in non-dimensional form.
- A large characteristic length will make the average residual appear smaller.
- It is a good practice to choose a characteristic length that matches the scale of the computational domain.
- In this case, 0.05m is the diameter of the piccolo tube.
-
- - [X] 0.141
- the length of sensor, not include the flow field.
- the result is wrong, no image
- - [ ] 0.4
- the length of flow field, that is all the length of model.
-
-***** prism layer
-
- how to set?
- what functions?
-
-*** DONE Hardware
-    CLOSED: [2020-12-29 Tue 09:24]
-
-**** 锁定放大器
-
- https://blog.csdn.net/kvdz_taobao_com/article/details/103508319
-
-*** DONE Experimental Data Process
-    CLOSED: [2020-07-02 Thu 18:49]
-    :LOGBOOK:
-    CLOCK: [2020-04-04 Sat 15:19]--[2020-04-04 Sat 16:49] =>  1:30
-    :END:
-  [2020-04-04 Sat 15:19]
-
-**** tools
-
-  My desired tools should include three parts: the sensors to produce data; the data_inbox to collect data from all accessed sensors and send data to next; the database to store or process or remind.
-
-  The sensor works as developers want. The sensor can send data at any time at any place.
-
-  The data_inbox can receive multi data, and send to next one by one. Users can get real-time data.
-
-  The database can plot the data with fitted curve. Remind users to process the data within a day with notifications. Store or remove the data or beautify the output with commands according to users.
-
-**** workflow
-***** describe data
-      :PROPERTIES:
-      :ID:       E42496B0-D2FA-4F06-B719-3AC5554CF73E
-      :END:
-
- http://gitee.com/chengxinhust/graph-bed/raw/master/oMsYXV.jpg
-
-** paper reading
-* LevelSensor
+* Level Sensor
 ** 答辩用
 
    熊孩子开始读研了？
@@ -566,7 +91,8 @@
 **** DONE read 181 experiment data
      CLOSED: [2020-12-22 Tue 20:43] SCHEDULED: <2020-12-21 Mon 10:40-12:00>
 
-**** TODO judge start and finish time
+**** DONE judge start and finish time
+     CLOSED: [2021-02-28 Sun 16:06]
 ***** state machine
 
 #+name: ice_status_FSM_plot
@@ -665,894 +191,609 @@
  [[bibentry:guangyuan2004][光源选用]]
  [[/Users/xin/Documents/Papers/二维圆柱结冰的冰风洞试验研究及水滴撞击特性计算_陈金瓶.caj][二维圆珠结冰的冰风洞实验研究及水滴撞击特性计算]]
 
-** TODO conclusion
-*** NEXT 摘要
-    :LOGBOOK:
-    CLOCK: [2021-02-24 Wed 09:32]--[2021-02-24 Wed 09:42] =>  0:10
-    :END:
+** SLD
+*** DONE SLD Research
+    CLOSED: [2020-12-29 Tue 09:25]
 
-   论文名称：光纤式飞机结冰探测
+**** DONE terms
+     CLOSED: [2020-12-29 Tue 09:25]
 
-   结冰条件（温度、液态水含量、水滴粒径、风速），结冰（空隙率、结冰速率），光纤传感器（电压变化、温度变化、电压冰厚曲线）
+**** DONE reading list
+     CLOSED: [2020-12-29 Tue 09:25]
 
-   种类更多的冰型（传感器数据处理的主要问题是：对应的电压温度-时间曲线，不能够自动分辨冰型），是由人为控制实验条件实现的，冰型的传感器数据可以认为已经在记录时和冰型对应了。
-   通过 svr 变为 *电压-冰厚曲线* ，再区分这些曲线的不同，证明冰型不同。
+***** CN
 
-   冰型和试验条件的联系也不讨论，那么，冰型的区分，就要基于光纤特性（不能基于空隙率，因为不可测），目前考虑的是透光率（外界光直射时接受光的比例）。
+   #+name: list and link
+   #+begin_src shell :results scalar
+   /Users/xin/Documents/SLD/docs/references/travel-dir.sh /Users/xin/Documents/SLD/docs/references/CN;
+   #+end_src
 
-   因此，本文的重心就是识别冰型。
-*** DONE 绪论
-    CLOSED: [2021-02-27 Sat 14:40]
-**** 研究背景
-     :LOGBOOK:
-     CLOCK: [2021-02-24 Wed 09:42]--[2021-02-24 Wed 10:26] =>  0:44
+   - 2010
+     1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2010/水滴撞击特性的重力影响分析.pdf][pdf file: 水滴撞击特性的重力影响分析.pdf]]
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2010/结冰条件下过冷水滴撞击特性及热平衡分析_闵现花.caj][pdf file: 结冰条件下过冷水滴撞击特性及热平衡分析_闵现花.caj]]
+   - 2011
+     1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2011/SLD破碎效应对冰型的影响研究.pdf][pdf file: SLD破碎效应对冰型的影响研究.pdf]]
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2011/SLD环境下的水滴破碎和模拟成冰.pdf][pdf file: SLD环境下的水滴破碎和模拟成冰.pdf]]
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2011/发动机整流支板大尺寸过冷水滴撞击特性.pdf][pdf file: 发动机整流支板大尺寸过冷水滴撞击特性.pdf]]
+   - 2012
+     1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2012/浅析过冷大水滴规章对防冰系统设计的影响_刘鹏.pdf][pdf file: 浅析过冷大水滴规章对防冰系统设计的影响_刘鹏.pdf]]
+   - 2013
+     1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/SLD碰撞结冰机理实验研究_李海星.caj][pdf file: SLD碰撞结冰机理实验研究_李海星.caj]]
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/面向SLD适航需求的大型客机翼型结冰安全性研究.pdf][pdf file: 面向SLD适航需求的大型客机翼型结冰安全性研究.pdf]]
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴飞溅特性数值分析_王超 (1).pdf][pdf file: 过冷大水滴飞溅特性数值分析_王超 (1).pdf]]
+     4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴情况下的积冰数值模拟_英文_白俊强.pdf][pdf file: 过冷大水滴情况下的积冰数值模拟_英文_白俊强.pdf]]
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/数值模拟机翼积冰及其气动特性分析_黄抒宇.caj][pdf file: 数值模拟机翼积冰及其气动特性分析_黄抒宇.caj]]
+     6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/大粒径过冷水滴结冰模拟破碎模型研究.pdf][pdf file: 大粒径过冷水滴结冰模拟破碎模型研究.pdf]]
+     7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/飞机过冷大水滴结冰探测器设计及试验_周灿.pdf][pdf file: 飞机过冷大水滴结冰探测器设计及试验_周灿.pdf]]
+     8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴结冰探测器数值仿真设计与实验_许一飞.caj][pdf file: 过冷大水滴结冰探测器数值仿真设计与实验_许一飞.caj]]
+     9. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2013/过冷大水滴规章对结冰探测系统设计的影响_朱家乐.pdf][pdf file: 过冷大水滴规章对结冰探测系统设计的影响_朱家乐.pdf]]
+   - 2014
+     1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/SLD结冰数值模拟方法研究.pdf][pdf file: SLD结冰数值模拟方法研究.pdf]]
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/大型客机增升翼型SLD结冰模拟及气动特性分析.pdf][pdf file: 大型客机增升翼型SLD结冰模拟及气动特性分析.pdf]]
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/大粒径过冷水滴碰撞-结冰收集率分布经验模型.pdf][pdf file: 大粒径过冷水滴碰撞-结冰收集率分布经验模型.pdf]]
+     4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/过冷大水滴条件下机翼结冰数值仿真_吴佩佩.pdf][pdf file: 过冷大水滴条件下机翼结冰数值仿真_吴佩佩.pdf]]
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/过冷大水滴结冰探测器设计及试验研究_陈朝辉.caj][pdf file: 过冷大水滴结冰探测器设计及试验研究_陈朝辉.caj]]
+     6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/大粒径过冷水溢流结冰的翼型气动影响分析.pdf][pdf file: 大粒径过冷水溢流结冰的翼型气动影响分析.pdf]]
+     7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2014/二维翼型大尺寸过冷水滴撞击特性及冰形分析_杜晨慧.pdf][pdf file: 二维翼型大尺寸过冷水滴撞击特性及冰形分析_杜晨慧.pdf]]
+   - 2015
+     1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/过冷大水滴结冰探测方法研究_胡文月.caj][pdf file: 过冷大水滴结冰探测方法研究_胡文月.caj]]
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/一种图像式过冷大水滴结冰探测系统_胡文月.pdf][pdf file: 一种图像式过冷大水滴结冰探测系统_胡文月.pdf]]
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/飞机过冷大粒径水滴结冰冰型数值模拟_由立岩.pdf][pdf file: 飞机过冷大粒径水滴结冰冰型数值模拟_由立岩.pdf]]
+     4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/飞机异常结冰的过冷凝固机理及理论研究_孔维梁.caj][pdf file: 飞机异常结冰的过冷凝固机理及理论研究_孔维梁.caj]]
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/过冷大水滴动力学特性的温度影响实验研究_王桥.caj][pdf file: 过冷大水滴动力学特性的温度影响实验研究_王桥.caj]]
+     6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/数值模拟过冷水滴撞击翼型表面的收集特性_邵晓海.pdf][pdf file: 数值模拟过冷水滴撞击翼型表面的收集特性_邵晓海.pdf]]
+     7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/关于过冷大水滴的适航规章新趋势和影响解析_袁烨.pdf][pdf file: 关于过冷大水滴的适航规章新趋势和影响解析_袁烨.pdf]]
+     8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2015/一种过冷大水滴结冰探测器的设计方法及探测器.pdf][pdf file: 一种过冷大水滴结冰探测器的设计方法及探测器.pdf]]
+   - 2016
+     1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴结冰探测技术研究进展_张洪.pdf][pdf file: 过冷大水滴结冰探测技术研究进展_张洪.pdf]] cite:张洪过冷大水滴结冰探测技术研究进展2016
+       对探测器有一定归纳
+       可以按照论文中的分类方法进行分类：水滴轨迹，溢流，气动压力参数，电磁波远程探测，结冰条件 LWD、TWD
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E8%BF%87%E5%86%B7%E5%A4%A7%E6%B0%B4%E6%BB%B4%E7%BB%93%E5%86%B0%E7%90%86%E8%AE%BA%E5%8F%8A%E9%80%82%E8%88%AA%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6_%E5%BC%A0%E8%BE%B0.pdf][pdf file: 大型飞机过冷大水滴结冰理论及适航安全研究_张辰.pdf]]
+       优秀的毕业论文！ 对 SLD 发展过程认识独到。 主要进行了结冰模拟和结冰后气动特性的仿真
+       note:
+
+       [[https://gitee.com/chengxinhust/graph-bed/raw/master/tqVtD9.png][requirements from 2000 to 2020]]
+
+       [[https://gitee.com/chengxinhust/graph-bed/raw/master/0xoGxK.png][research aspect]]
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/SLD结冰数值模拟方法研究现状及发展_周志宏.pdf][pdf file: SLD结冰数值模拟方法研究现状及发展_周志宏.pdf]]
+     4. [-] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/国外运输类飞机最新结冰适航规章差异初步研究与分析_丁媛媛.pdf][pdf file: 国外运输类飞机最新结冰适航规章差异初步研究与分析_丁媛媛.pdf]]
+      适航标准修订
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/SLD结冰对舵面翼型及多段翼型的气动影响分析.pdf][pdf file: SLD结冰对舵面翼型及多段翼型的气动影响分析.pdf]]
+     6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/一种过冷大水滴结冰探测器.pdf][pdf file: 一种过冷大水滴结冰探测器.pdf]]
+     7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/飞机结冰热力学行为研究综述_杜雁霞.pdf][pdf file: 飞机结冰热力学行为研究综述_杜雁霞.pdf]]
+     8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/光滑表面上过冷大水滴碰撞实验研究_赵献礼.pdf][pdf file: 光滑表面上过冷大水滴碰撞实验研究_赵献礼.pdf]]
+     9. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/翼型表面过冷大水滴的水滴收集系数求解_束珺.pdf][pdf file: 翼型表面过冷大水滴的水滴收集系数求解_束珺.pdf]]
+     10. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/发动机进气流量对前缘水滴撞击特性的影响_么虹.pdf][pdf file: 发动机进气流量对前缘水滴撞击特性的影响_么虹.pdf]]
+     11. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴动力学特性对结冰影响数值研究_桑为民.pdf][pdf file: 过冷大水滴动力学特性对结冰影响数值研究_桑为民.pdf]]
+     12. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/水滴撞击飞溅效应对过冷大水滴结冰影响研究_桑为民.pdf][pdf file: 水滴撞击飞溅效应对过冷大水滴结冰影响研究_桑为民.pdf]]
+     13. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴变形及阻力特性的温度影响实验研究_王桥.pdf][pdf file: 过冷大水滴变形及阻力特性的温度影响实验研究_王桥.pdf]]
+   - 2017
+     1. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/SLD水滴碰撞过程粒径变化的机理及模型研究_尹金鸽.caj][pdf file: SLD水滴碰撞过程粒径变化的机理及模型研究_尹金鸽.caj]]
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/变形破碎特性对SLD结冰过程影响_桑为民.pdf][pdf file: 变形破碎特性对SLD结冰过程影响_桑为民.pdf]]
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/基于后流特性的SLD结冰探测数值研究_祁相莹.pdf][pdf file: 基于后流特性的SLD结冰探测数值研究_祁相莹.pdf]]
+     4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/过冷水滴碰撞过程的实验研究_尹金鸽.pdf][pdf file: 过冷水滴碰撞过程的实验研究_尹金鸽.pdf]]
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/考虑非平衡效应的过冷水滴凝固特性_肖光明.pdf][pdf file: 考虑非平衡效应的过冷水滴凝固特性_肖光明.pdf]]
+     6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/过冷大水滴规章对民机适航取证的影响_李艳.pdf][pdf file: 过冷大水滴规章对民机适航取证的影响_李艳.pdf]]
+     7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2017/结冰风洞过冷大水滴结冰条件模拟能力综述_符澄.pdf][pdf file: 结冰风洞过冷大水滴结冰条件模拟能力综述_符澄.pdf]]
+   - 2018
+     1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/过冷大水滴变形与破碎的影响因素_李维浩.pdf][pdf file: 过冷大水滴变形与破碎的影响因素_李维浩.pdf]]
+        2019：数值仿真技术总结
+     2. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/过冷大水滴结冰过程中动力学行为的影响因素_易贤.pdf][pdf file: 过冷大水滴结冰过程中动力学行为的影响因素_易贤.pdf]]
+       找到这篇文章！
+     3. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/运输类飞机结冰适航审定方法及SLD关键技术研究_丁媛媛.caj][pdf file: 运输类飞机结冰适航审定方法及SLD关键技术研究_丁媛媛.caj]]
+     4. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/严酷结冰气象条件下临界冰形的确定方法.pdf][pdf file: 严酷结冰气象条件下临界冰形的确定方法.pdf]]
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2018/过冷大水滴相继撞壁对结冰影响的实验研究_徐弘.pdf][pdf file: 过冷大水滴相继撞壁对结冰影响的实验研究_徐弘.pdf]]
+   - 2019
+     1. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/13-%E7%BB%93%E5%86%B0%E9%A3%8E%E6%B4%9E%E4%B8%ADSLD%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81%E7%A0%94%E7%A9%B6-2019.pdf][pdf file: 13-结冰风洞中SLD模拟方法及其实验验证研究-2019.pdf]] cite:符澄2019结冰风洞中SLD模拟方法及其实验验证研究
+     2. [-] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/12-%E6%B6%A1%E6%89%87%E5%8F%91%E5%8A%A8%E6%9C%BA%E7%9F%AD%E8%88%B1%E7%BB%93%E5%86%B0%E8%AF%95%E9%AA%8C%E7%9B%B8%E4%BC%BC%E6%96%B9%E6%B3%95-2019-9-%E4%B8%8A%E4%BA%A4.pdf][pdf file: 12-涡扇发动机短舱结冰试验相似方法-2019-9-上交.pdf]] cite:Yang2019涡扇发动机短舱结冰试验相似方法
+     3. [X] [[Skim:///Users/xin/Documents/SLd/docs/references/cn/2019/10-%E6%9C%BA%E7%BF%BC%E7%BB%93%E5%86%B0%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%BF%87%E5%86%B7%E6%B0%B4%E6%BB%B4%E8%BF%90%E5%8A%A8%E8%BD%A8%E8%BF%B9%E7%9A%84%E6%95%B0%E5%80%BC%E7%A0%94%E7%A9%B6_%E5%90%B4%E4%BF%8A%E6%9D%B02019-3.pdf][pdf file: 10-机翼结冰过程中过冷水滴运动轨迹的数值研究_吴俊杰 2019-3.pdf]] cite:吴俊杰2019机翼结冰过程中过冷水滴运动轨迹的数值研究
+        Very good papers for droplet trajectory
+        模型简化：
+        水滴在空气中不断运动，因此过冷水滴的形态 不可能是绝对的圆球型，所以首先需要对物理过程进行简化假设:过冷水滴直径足够小，在空气中均匀分布，在运动过程中保持*球形不变*;空气流场不受过 冷水滴存在的影响;作用在水滴上的力只有*空气阻力、重力和浮力*;过冷水滴在空气中不断与空气进行 热交换;过冷水滴温度、密度等物理参数保持不变.
+     4. [X] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/2019-%E8%80%83%E8%99%91%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%95%88%E5%BA%94%E7%9A%84SLD%E7%BB%93%E5%86%B0%E7%9B%B8%E4%BC%BC%E5%8F%82%E6%95%B0%E7%A0%94%E7%A9%B6-%E6%9D%8E%E7%BB%B4%E6%B5%A9-%E6%98%93%E8%B4%A4.pdf][pdf file: 6-考虑动力学效应的SLD结冰相似参数研究_李维浩.pdf]]
+        2018 : 介绍了模型计算方法
+        NA 方程流场计算方法--》拉格朗日水滴轨迹计算--》TAB 水滴破碎模型--》阻力参数修正--》FENSAP-ICE 破碎飞溅模型
+        软件设计过程
+        1. 流程计算。采用课题组开发的低俗流体计算软件，计算流场的速度、压力等分布；
+        2. 输入水滴初始的位置、直径等信息，读取之间已经获得的流场信息
+        3. 判断水滴所处网格位置，得到流场速度，使用一阶欧拉法迭代求水滴轨迹，并且每迭代一步都判断水滴是否撞击到物体表面或者飞出流场
+        4. 使用选定的破碎模型或飞溅模型，计算相关参数，如果判断式达到阈值，计算出破碎或者飞溅产生子水滴的速度大小及方向、平均直径、粒径分布和质量损失等参数
+        5. 重复步骤 3，获得子水滴的运动轨迹
+        6. 通过定义求的局部水收集率，并通过绘图软件拟合成连续曲线
+     5. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/1-过冷大水滴条件下结冰相似准则-2019:5.pdf][pdf file: 1-过冷大水滴条件下结冰相似准则-2019:5.pdf]]
+     6. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/14-飞机结冰相似准则研究进展-马军林-2019.pdf][pdf file: 14-飞机结冰相似准则研究进展-马军林-2019.pdf]]
+     7. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/2-发动机短舱过冷大水滴结冰数值模拟-2019:1.pdf][pdf file: 2-发动机短舱过冷大水滴结冰数值模拟-2019:1.pdf]]
+     8. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤.pdf][pdf file: 2019-考虑动力学效应的SLD结冰相似参数研究-李维浩-易贤.pdf]]
+     9. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/3-粗糙度对水滴飞溅特性的影响规律研究.pdf][pdf file: 3-粗糙度对水滴飞溅特性的影响规律研究.pdf]]
+     10. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/3-粗糙度对水滴飞溅特性的影响规律研究.webarchive][pdf file: 3-粗糙度对水滴飞溅特性的影响规律研究.webarchive]]
+     11. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/4-基于数字全息技术的大水滴飞溅粗糙度影响特性研究_马军林.caj][pdf file: 4-基于数字全息技术的大水滴飞溅粗糙度影响特性研究_马军林.caj]]
+     12. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/5-壁面润湿性影响SLD撞击传热规律的研究_孙明明.pdf][pdf file: 5-壁面润湿性影响SLD撞击传热规律的研究_孙明明.pdf]]
+     13. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/6-考虑动力学效应的SLD结冰相似参数研究_李维浩.caj][pdf file: 6-考虑动力学效应的SLD结冰相似参数研究_李维浩.caj]]
+     14. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/7-气动除冰类飞机结冰风洞实验试航审定技术-2019:4.pdf][pdf file: 7-气动除冰类飞机结冰风洞实验试航审定技术-2019:4.pdf]]
+     15. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/8-Ka波段毫米波云雷达多普勒谱降雪微物理特征分析-2019:4.pdf][pdf file: 8-Ka波段毫米波云雷达多普勒谱降雪微物理特征分析-2019:4.pdf]]
+     16. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/2019/9-六角冰晶生长过程的相场模拟.pdf][pdf file: 9-六角冰晶生长过程的相场模拟.pdf]]
+     17. [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/CN/专利：一种过冷水滴结冰探测装置.pdf][pdf file: 专利：一种过冷水滴结冰探测装置.pdf]]
+
+***** EN
+
+  - 2019
+    1) [X] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Refined In-Flight Icing Model and its Numerical Implementation.pdf][pdf file:  A Refined In-Flight Icing Model and its Numerical Implementation.pdf]]
+    2) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf][pdf file:  A Study of Droplet Breakup in the Vicinity of an Airfoil.pdf]]
+    3) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf][pdf file:  Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel.pdf]]
+    4) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf][pdf file:  Facing the Challenges of Supercooled Large Droplet Icing Results of a Flight Test Based Joint DLR-Embraer Research Project.pdf]]
+    5) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf][pdf file:  Frosty Weather The Regulatory History of Aircraft Operations in Freezing Conditions.pdf]]
+    6) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Influence of Freestream Temperature on Ice Accretion Roughness .pdf][pdf file:  Influence of Freestream Temperature on Ice Accretion Roughness .pdf]]
+    7) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Korean Utility Helicopter KUH-1 Icing Certification Program.pdf][pdf file:  Korean Utility Helicopter KUH-1 Icing Certification Program.pdf]]
+    8) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf][pdf file:  Multi-Shot Icing Simulations with Automatic Re-Meshing.pdf]]
+    9) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf][pdf file:  Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet.pdf]]
+    10) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf][pdf file:  SLD and Ice Crystal Discrimination with the Optical Ice Detector.pdf]]
+    11) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf][pdf file:  Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code.pdf]]
+    12) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ The Cloud Detectability Conundrum.pdf][pdf file:  The Cloud Detectability Conundrum.pdf]]
+    13) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A 3D mesh deformation technique for irregular in-flight ice.pdf][pdf file: A 3D mesh deformation technique for irregular in-flight ice.pdf]]
+    14) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A Meteorological Supersite for Aviation and Cold Weather Applications.pdf][pdf file: A Meteorological Supersite for Aviation and Cold Weather Applications.pdf]]
+    15) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/A multiphase SPH framework for supercooled large droplets dynamics.pdf][pdf file: A multiphase SPH framework for supercooled large droplets dynamics.pdf]]
+    16) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Aircraft Icing Study Using Integrated Observations and Model Data.pdf][pdf file: Aircraft Icing Study Using Integrated Observations and Model Data.pdf]]
+    17) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Correction An Extended Finite-Element Method for.pdf][pdf file: Correction An Extended Finite-Element Method for.pdf]]
+    18) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet Breakup Onset Modeling in Combination with.pdf][pdf file: Droplet Breakup Onset Modeling in Combination with.pdf]]
+    19) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Droplet in the Shoulder Region of an Incoming Airfoil..pdf][pdf file: Droplet in the Shoulder Region of an Incoming Airfoil..pdf]]
+    20) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Effect of nucleation and icing evolution on run-back freezing.pdf][pdf file: Effect of nucleation and icing evolution on run-back freezing.pdf]]
+    21) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Frosty Weather The Regulatory History of Aircraft.pdf][pdf file: Frosty Weather The Regulatory History of Aircraft.pdf]]
+    22) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf][pdf file: ICE ACCRETION ON SMALL UNMANNED AIRCRAFT.pdf]]
+    23) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf][pdf file: Ice accretion and aerodynamic effects on a multi-element airfoil under.pdf]]
+    24) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Impact freezing modes of supercooled droplets determined by both.pdf][pdf file: Impact freezing modes of supercooled droplets determined by both.pdf]]
+    25) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf][pdf file: Keys to Differentiating between Small-and Large-Drop Icing Conditions in Continental Clouds.pdf]]
+    26) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf][pdf file: Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC's Altitude Icing Wind Tunnel.pdf]]
+    27) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf][pdf file: Modal Analysis of 3-D iced-airfoil aerodynamics based.pdf]]
+    28) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Model-Based Design of Complex Aeronautical.pdf][pdf file: Model-Based Design of Complex Aeronautical.pdf]]
+    29) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical Simulation of Supercooled Large Droplet Icing.pdf][pdf file: Numerical Simulation of Supercooled Large Droplet Icing.pdf]]
+    30) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf][pdf file: Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment.pdf]]
+    31) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Numerical simulation of ice accretion in supercooled large droplet.pdf][pdf file: Numerical simulation of ice accretion in supercooled large droplet.pdf]]
+    32) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf][pdf file: On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model.pdf]]
+    33) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/README.org][pdf file: README.org]]
+    34) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf][pdf file: Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf]]
+    35) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Role of surrounding gas in the outcome of droplet splashing.pdf][pdf file: Role of surrounding gas in the outcome of droplet splashing.pdf]]
+    36) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf][pdf file: Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns.pdf]]
+    37) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/Temperature measurement and state determination of supercooled.pdf][pdf file: Temperature measurement and state determination of supercooled.pdf]]
+    38) [ ] [[Skim:///Users/xin/Documents/SLD/docs/references/EN/2019/The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf][pdf file: The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel.pdf]]
+
+**** DONE SLD sensor model summary
+     CLOSED: [2020-07-02 Thu 18:49]
+     :PROPERTIES:
+     :ID:       5876BFF9-635A-4FC5-ACB6-ED8B1801633A
      :END:
-
-    工程背景+学术背景+学术问题+经济型研究
-    - 在什么环境下有了这么个研究点：工程背景（飞机安全），学术背景（光纤结冰探测提高精度）
-    - 为什么要研究这个问题：为什么做这项研究，是时代发展至此，需要考虑这个问题，还是 *以前存在未解决的问题*
-    - 符合文章结构：飞机结冰危险---冰的光学性质研究取得进展---光纤探测稳定---新的问题是冰型影响光强---对冰进行更细分类并测量冰厚
-    - 设定目前问题的结构：是什么 1，结冰怎么产生的 2，为什么要检测 3，怎么避免 4
-***** TODO Q&A
-      1. 解决结冰安全，该章节提出的方法是：探测是否结冰和测量冰厚。这和研究冰型更多分类有什么关系？
-         在 4 小节，说明还需要得知了导致结冰的原因（气象条件的严重程度），才能更好判断条件是否严重到需要立即采取应对措施，还是不严重就除冰就可以。
-         冰型研究可以帮助测量冰厚，也可以和结冰速率对应不同的气象条件，是研究中间一个重要的突破点。
-
-         这个还是要写完第一章，再看看邹建红的章节重点是什么，再改，现在不着急改。
-***** 飞机结冰 1
-
-      Icing is a well known phenomenon in aviation occurring in aircraft flying through moist freezing air.
-      The ice accretes forward from the leading edge of the wing and can disrupt the airflow resulting in partial or total loss of lift.
-
-      飞机结冰是指飞机在穿越云层过程中表面附着过冷水滴并聚集冰层的现象。由于高空气象条件复杂，飞机表面温度或者水滴温度低于零度时，水滴附着在机翼上会迅速凝结成冰。
-      由于水的含量只占大气总质量的 0.25%，99.5%以汽态形式存在，飞机遇到过冷水滴的次数不多，驾驶员缺少对飞机结冰的危害性认识和防除冰措施，飞机表面结冰事故屡次发生，
-      其危险程度之高，与重大异常自然现象，例如闪电、湍流、雷暴，被航空界认定为严重威胁飞机飞行安全的[[https://www.sohu.com/a/169062734_281927][六大杀手]]（[[https://www.sohu.com/a/169062734_281927][闪电、湍流、雷暴、结冰]]）。
-
-      需要在这里介绍冰型和结冰位置吗？ 还是放在 飞行事故 章节吧，这两个因素的影响不同。
-
-***** 复杂结冰条件是什么 2
-
-      The shape and location of the accreted ice depends on both meteorological and aircraft-specific factors,including outside air temperature, liquid water content, droplet size, airspeed, the shape of the accreting surface (including èap conéguration, etc.), and ice protection devices such as heated surfaces or pneumatic boots
-      飞机结冰量的大小，结冰的范围以及冰形状，主要取决于四个方面因素。
-      一是飞行气象条件， 如风速、云层温度、液态水含量、水滴粒径、和云层范围等；
-      二是飞机的外形，特别是机翼前缘的几何形状；
-      三是飞机的飞行状态，如飞行速度、飞行高度、飞行姿态（主要是飞行迎角） 等；
-      四是飞机的防除冰装置，例如加热装置和防冰涂层表面。
-
-
-      通常结冰探测研究的复杂结冰条件，不考虑飞机设计相关的因素二三四的影响，认为是常规机型正常飞行，主要研究飞机飞行时遇到的气象条件导致的结冰能够有效检测。
-
-      此外，当飞机航行时遇到恶劣气象条件发生结冰时，都采用规避风险的方式，及时上升、下降或掉头，躲避云层。
-      因此，检测飞机是否结冰以及测量结冰厚度，就能为驾驶员进行安全飞行决策提供支持。
-***** 飞行事故 3
-      飞机结冰发生在飞机穿越云层时和在地面上等待起飞时。
-      飞机表面易发生两种类型的结冰：机翼前缘结角状冰、距机翼前缘 0.6m 处结冰脊，这些冰层改变了飞机外形进一步影响气动特性造成飞机失控。
-
-      由于尚未出现成熟的结冰探测装置，飞机结冰会对其飞行安全造成严重威胁，是许多飞机坠毁的原因，包括一些大型客机，但这种现象更多地发生在短途班机和小型飞机上。美国国家运输安全委员会的一份研究报告显示，每年都会发生数十起由结冰导致的小型飞机事故。
-      报告还显示，从 1982 年到 2000 年，与飞行途中机 翼结冰有关的事故共导致 819 人死亡，其中大部分事故发生在 10 月至 3 月期间。 [[https://www.sohu.com/a/169062734_281927]]
-
-      在 2011 年之前：
-
- 1994 年 10 月 31 日，西蒙斯航空公司 4184 航班于当地时间约下午 4 点在适合结冰的气象条件下飞行了大约三十分钟，突然在大约 10000 英尺的高空翻滚之后迅速坠下，机上 68 人顷刻死去。
- 2004 年 11 月 21 日，加拿大庞巴迪宇航集团提供的 CBJ 系列民用支线喷气飞机 CRJ-200 在途径内蒙古时不幸坠毁。
- 2010 年 25 日， 包头“11.21”空难的两个黑匣子终于被打捞出水面。
- 对于这次空难的原因，据专家分析，最大的可能性是由于内蒙古冬天天气十分寒冷，在机场停放了一个夜晚后飞机的表面结了一层薄冰所致。
- 2006 年 6 月 3 日，一加中国空军的军用运输机在执行任务的过程中途径安徽某地不幸坠毁，致使机组人员（包括专家队伍和试验人员）全部遇难。据“美国航空战略网”报道，该飞机正是中国进入试验阶段的“运八平衡木”预警机。三个月后的军方调查结果显示：飞机失事的直接原因是多次 *跨越结冰云区* 导致飞机在空中结冰。
-
- 美国航空局分析，飞机结冰导致失事发生近 30 起，美 TSB 的研究表明：1982 年至 2000 年期间，与飞机结冰有关的事故造成大约 819 人死见飞机结冰后果十分严重，因此飞机结冰被航空界认定为影响飞机飞行的六大气象因素之一。
- 据不完全统计，1975 年到 1980 年仅仅 6 年的时间内，美国就因为飞机结冰造成 178 起事故；而 1999 年到 2009 年的十年间国内外因为飞机结冰造成飞行事故 68 起，死亡 300 多人。可以说即使是美国这样的大国也深受其害，例如 1985 年美国陆军 101 师 248 名官兵就因飞机结冰坠毁而全部遇难。
-
- 冰层改变了飞机外形进一步影响气动特性造成飞机失控
- 从空气动力学角度分析飞机结冰影响，可以从以下三个方面分析：
- 如果是飞机机翼结冰的话，对飞机的气动外形会产生较大的影响，在飞行阻力增加的同时飞机的升力会下降；
- 如果襟翼、舵面或者平尾结冰的话，会影响飞机的操控，甚至会直接造成飞机失速；
- 采用活塞或者涡桨式发动机的飞机更容易受到结冰问题的影响，螺旋桨会因为结冰而导致飞机突发滚转进入螺旋状态，导致飞行事故。
- 据美国大学大气研究联合会（UCAR）说，当机翼上出现结冰现象时，可能导致速度和高度同时下降，引发灾难性的坠机事件。
-
-***** 应对飞机结冰
-
-      为了应对飞机结冰造成的危害，有预防结冰、防止结冰、除冰三种措施：
-      预防结冰通过提前检测温度、云层等结冰因素，避免飞机进入结冰环境，一旦进入立即逃离；
-      防止结冰是飞机进入了结冰环境的应对措施，在飞机表面加涂层，表面加热等方式破坏结冰环境；
-      除冰措施通过机械震动、加热、应力等方式对已经结冰的飞机表面进行除冰。
-
-      鉴于结冰发生在机体表面，直接探测相对困难; 而且低成本、小型飞行器未安装结冰探测器，因此 符合文章结构：一般通过探测引起结冰的气象条件来间接判断潜在结冰区
-
-      以上技术并不成熟，也尚未得到广泛应用。其中，检测特定区域是否有冰层以及测量冰层厚度是判断飞机是否安全最直接有效的手段，也是防除冰措施能够正确执行的前提，具有重要意义。
-      另一方面，检测飞机结冰气象环境也非常重要，可以得知飞机结冰是严重环境造成的快速结冰，还是常规低温环境造成的缓慢结冰，这些信息可以在结冰告警时，采取紧急返航措施，还是采取保守的除冰措施。
-
-**** DONE 结冰类型与外观
-     CLOSED: [2021-02-24 Wed 19:10]
      :LOGBOOK:
-     CLOCK: [2021-02-24 Wed 10:41]--[2021-02-24 Wed 11:54] =>  1:13
+     CLOCK: [2020-03-13 Fri 22:16]--[2020-07-02 Thu 17:38] => 2659:22
      :END:
+   [2020-03-13 Fri 22:16]
+   According to GK's instruments and my plan, make a survey about the existing SLD sensor of the *shape*, *principle*, *evaluation*, and *improvement* for our sensor.
 
-      将 5 种气象条件归纳到 SLD 的包线中，并作为后续讨论结冰条件的约定。
+***** notes from papers
+      :PROPERTIES:
+      :ID:       84818A01-D64F-4D02-A7B8-8EF90317FC6F
+      :END:
 
-      note: 过冷水滴不能放在开头
-***** 结冰类型分类
-      目前飞机结冰类型只分为三类：
-      当水滴在和飞机表面碰撞时，能够立即释放潜热并在碰撞位置结冰的，称为凇冰。冰层累积的过程中，冰晶松散且冰晶之间有大量空气，导致冰层密度较小且不透明。
-      不能立即结冰的，水滴会后流并逐渐释放潜热结冰，由于结冰较慢，气泡很小或完全被挤压排出，结冰致密且透明的明冰。
-      在明冰和凇冰之间的结冰状态，是混合冰。
+      [[~/Documents/Garage/orgible/refile/paper-notes.org][skim annotation notes]] is employed according to the workflow of skim & org-ref to take notes of papers.
 
-      三种冰型的外观如图所示。
+***** reports
 
-      羽毛状的凇冰，光滑有角状突起的明冰，光滑但不透明的混合冰。
+   - [[/Users/xin/Documents/SLD/docs/sld-sensor-structure-analysis.org][SLD structure report]]
 
-      影响释放潜热的因素有：温度、风速、水滴粒径和液态水含量。（不同积冰参数对结冰的影响只考虑了温度，predicting glaze or rime ice growth on airfoils 则分析更为全面）
+**** DONE SLD aerodynamic effect
 
-***** 结冰类型影响因素
-      由上文可知，飞机结冰是由于飞机穿越云层遇到过冷水滴。云层环境的多样性会生成不同类型的结冰。
+  可以参考仿真结果：[[/Users/xin/Documents/SLD/simulation/shangfei-simualtion/*.pptx][章工的ppt]]和[[/Users/xin/Documents/SLD/simulation/shangfei-simualtion/*.word][文档，查看运动规律]]
+  可以看实验室的论文：如何描述
+  可以看专利：原理解释
 
-      云约覆盖地球表面的 67%,按云内的温度和云粒子的相态特性，可将大气中的云进一步划分为由液态水滴组成的水云、由冰晶粒子组成的冰云等[2]。由于云粒子的形状、尺度、不同海拔高度处的分布特征等在空间上和时间上都是复杂多变的，且在大多数情况下，真实云的微物理性质依旧是未知的。
-      根据最近数年美国国家运输安全委员会的调查，云层中存在低于零度仍保持液态的水滴，称为过冷水滴，其水滴粒径从几微米到几百微米。其形成有“暖雨”和“冻雨”两种（华科胡文月硕士论文）。
-      粒径低于 50um 的过冷水滴，称为过冷小水滴，大于 50um 的则是过冷大水滴。
+***** 流场特性
 
-      小水滴更容易释放潜热，形成凇冰，过冷大水滴由于潜热更大，更容易形成凇冰。
-      (水滴粒径对冰型的影响，有一篇论文，但找不到了。找到了，是 predicting glaze or rime ice growth on airfoils。)
+      遇到阻碍物时，在阻碍物的表面，压强速度逐渐变小；在边缘处，由于边界层效应，压强变小，速度增大。
 
-      水滴粒径和其它气象因素是相关而非独立的，通常较大的水滴粒径有较大的温度和较大的液态水含量，美国国家航空航天局曾在大量飞行试验的前提下，对 LWC MVD 和温度等参量进行量化，形成飞机的结冰包线，并作为飞机结冰安全防护系统设计和验证的技术规范，并定义在“附录 C”和“附录 O”中。
+      在阻碍物周围，速度最大的轨迹线沿着阻碍物延申，最终与流场速度方向一致。在速度最大轨迹线的两侧，速度逐渐变化到和周围一致。
 
-      结冰包线的具体数据如图所示。
+      低压涡的存在，对流场分布没有任何影响。
 
-      本文进行分析的结冰因素，都是结冰包线的一个子集。
+***** 运动
+****** 变形
 
-***** 环境与结冰的关系
-      结冰的过程，通常可以描述为，具有某种空隙率的冰层逐层叠加，这个过程主要用层空隙率和冰增长速率两个可量化的指标表示。
+  1. 变形水滴导致阻力系数增加，从而影响水滴轨迹
 
-      影响结冰过程的结冰环境，根据结冰包线的描述，包括了温度、速度、LWC、水滴粒径，根据一些试验的结论，大概可以区分绝对的明冰和凇冰所对应的环境。
-      但是，混合冰是一个模糊的分类，包括了大多数飞机结冰的冰型，覆盖了极大范围的气象条件。
+****** 破碎
 
-      因此混合冰应该更详细的分类，就可以对气象条件进行更加细致的分类，更能帮助研究者认识到某种气象条件对于结冰的具体作用，帮助判断条件对结冰的影响和飞行安全的危害程度。
+  1. 变形程度大发生破碎，改变水滴粒径和分布
 
-**** 国内外研究现状
-     :LOGBOOK:
-     CLOCK: [2021-02-24 Wed 19:11]--[2021-02-24 Wed 20:57] =>  1:46
-     :END:
-     国外需要分开写?当需要突出国内的研究落后于国外，可以。但不强制这样
+***** 撞击
+****** 飞溅
+***** Euler equation
+****** droplet conservation equations
 
-     文献对比，结果放表格
-     各项研究的进展与问题
-     过于发散，关注于自己的问题
+  $\frac{\partial\alpha\rho}{\partial t} + \nabla\dot(\alpha\rho u) = 0$
+  $\frac{\partial\alpha\rho u}{\partial t} + \nabla(\alpha\rho u\otimes u) = K\alpha\rho(u_a - u) + \alpha\rho F$
+  $K = \frac{18u_{\alpha}f}{\rho d^2_p}$
+  $f=\frac{C_DRe}{24}$
+  $Re = \rho_{\alpha}|u_a - u|d_p}{u_a}$
+  \begin{equations}
+  $C_{D,Shpere}=\left\{
+  \begin{aligned}
+  \frac{24(1+0.15Re^{0.687})}{Re} & , & Re \leqslant 1000 \\
+  0.44      & , & Re \textgreater 1000
+  \end{aligned}$
+  \end{equations}
+  $C_D = C_{D, Shpere} \times (1+2.632y)$
+  $F = \left(1-\frac{\rho_a}{\rho_d}\left)\frac{\hat{g}}{F_r^2}$
 
-     结冰仿真简略写，冰风洞在试验部分写，冰的微观结构在原理部分写，主要写结冰探测和光纤探测
-****** 结冰仿真
-       研究结冰位置
+**** DONE paper material
+     CLOSED: [2020-07-01 Wed 12:25] DEADLINE: <2020-04-20 Mon 12:00>
 
-       可以加光学仿真的进展
+  [[file:~/Documents/SLD/latex/preliminary-work/manuscript.tex][paper latex file]]
 
-       用数值计算的方法，预测飞机结冰，是目前研究飞机飞行安全的重要方法之一。
-       尽管水滴的运动和结冰过程极其复杂，但使用拉格朗日法分析单个水滴的运动，或者使用欧拉法分析两相流的运动，都可以通过 N－S 方程进行求解，进而得到水滴的飞行轨迹和碰撞点。
-       结冰过程也可以通过能量转换方程进行描述。
-       通过有限元法，使得复杂问题得以求解。
+***** 空难
 
-       目前，已有 ONERA 和 NASA LEWICE 以及 FENSAP－ICE 等结冰仿真软件，能够进行常见的结冰仿真，但仍然有部分研究者，根据实际的结冰过程，建立对应的模型完善数值计算过程，其中卓有成效的模型包括水滴破碎、变形、碰撞、飞溅、扩散、后流模型。
+  http://www.safehoo.com/Case/Case/Air/List_1.shtml
 
-       结冰仿真的发展，不仅对结冰过程和结冰结果的认识更加深刻，在经济性方面，也减少了大量实际试验的昂贵费用和时间成本，更能指导冰风洞、飞机设计和结冰探测领域的发展。
-       但是仿真模型需要经过大量试验的验证，不完备的模型的仿真结果甚至会误导相关研究。
-****** 冰风洞
-       仿真或设计的正确性验证
+  空难事故
 
-       参考“飞机结冰试航与冰风洞试验方法”
-       冰风洞是进行飞机结冰研究的最基础的试验装备。冰风洞能够模拟飞机飞行环境，通过缩比准则，使得试验的飞机的环境条件等同于实际飞行中的飞机，以获得实际飞行状况下的数据。
-       西方国家对冰风洞的研究始于 20 世纪 40 年代，美国可提供结冰试验技术研究的风洞就有几十座。其中最著名的 NASA－Lewis 大型风洞，一些知名大学，如南加州大学、俄亥俄理工学院等均有从事航空结冰专业实验室。
+***** 模拟
 
-       国内的冰风洞研究起步较晚，1999 年武汉仪表厂建立了国内第一座仪表冰风洞，之后才有沈阳冰风洞的逐步落地，但其体积和功能仍落后于国外。
+  1. Due to the highly complex nature of the involved physical processes comprising, e.g., compressible air flow over ice-covered surfaces, droplet transport and breakup, convective heat transfer, phase changes as well as the intricate dynamics of the runback water flow, today’s research is by no means final- ized or even close to being finalized
 
-****** 冰的宏观与微观结构
-       冰的探测，取决于冰的宏观和微观结构。传感器的响应，通常是针对于特定的物理性质而设计的，因此，了解冰的宏观和微观结构，有利于结冰探测。
+***** 研究过程
 
-       自然界中，冰有非常丰富的物质形态，实际已经发现的冰相已达 15 种。
+  Review of computational methods for aerodynamic analysis of iced lifting surfaces.pdf
 
-       冰相 1h，是最常见的冰晶体，例如冬天的雪花、南极的冰川等。其晶体结构是六角的，氧原子规则排列在六角形晶格上，氢原子的排列则是无序的，但表面悬挂 OH 键判憋是有序的。“冰表面结构及其物理特性的新探索”分析了冰表面序参量，研究表明，表面对水分子的束缚作用弱，因此水分子更容易形成空位，分子吸附也更容易发生。
+**** DONE paper
+     CLOSED: [2020-08-16 Sun 11:28] DEADLINE: <2020-08-10 Mon 11:00>
 
-       冰的经典体视学描述尚存在较大难度，中国四川空气动力研究所“动态结冰空隙结构三维建模方法”使用金相显微镜在低温环境下观察冰层切片，统计了冰层中冰晶和气泡位置分布规律和孔径大小及数量，建立了冰的三维空隙模型。
+  https://www.overleaf.com/project/5ea4101adceffc0001b8b74e
 
-       以上研究，基本上都认为冰是冰晶和气泡组成，可认为是具有一定空隙率的多孔介质。
-****** 结冰条件探测
+***** DONE 修改论文
+      CLOSED: [2020-08-16 Sun 11:28]
 
-      结冰探测技术在过去的 30 年中几乎没有发展，这是由于之前主要是通过间接监测大气环境来确定是否存在结冰条件，而不是直接探测飞机表面的冰厚。
+****** DONE 写论文原理部分
+       CLOSED: [2020-07-16 周四 19:38]
 
-      探测云层的间接测量的方式主要包括：无线 电探空仪、天气雷达、机载探测技术和卫星技术。
-      国内无线电探空仪每天两次提供高度达 到或超过 30 km 范围内的温度、湿度、压力和风的数据，但是未能直接提供结冰相关信息。系留探空仪也曾利用专门传感器研究飞机[3] 在云中结冰条件 ，但是设备复杂，且测量高度受到限；
+   参考章工的文档
 
-      常见结冰直接探测方式及其优缺点如下表所示：
-      |----------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------+---+--------+-------------------------------------+-------------------------------------------------------------------+----------------------------|
-      | 机械法         | 谐振式 障碍式 压差式                                                                                 | 美国 Rosemount 公司的 Rosemount87 系列磁致伸缩式结冰传感器 瑞典 Vibro-Meter 公司的 EW134 型平膜结冰传感器 | 最小检出冰厚为 0.49mm  对洁净冰的测量精度可达 0.05 mm    |   |        |                                     |                                                                   | *      *                   |
-      | 电学法         | 电容从式 电导式 导纳式                                                                               | 美国 Innovative Dynamics 公司的电容式传感器                                                               | 测冰厚度范围为 0.5mm ～ 1.5mm                       严重 |   | 热学法 | 电流脉冲式 平衡电桥式 温差式 热流式 | 美国 Eaton 公司的热流式传感器采用表面型结冰探测方法，处于研究阶段 | 。                飞机表面 |
-      | 光学法         | 式 红外阻断角度分析飞机结冰式 ，红外能量反射式 光纤式                                                | 英国研究开发出一种光纤式结冰传感器 美国奥兰多 FMC 航空器件公司研制出摄像式结冰探测系统                    | 最小检出冰厚为 0.1mm 最小检出冰厚为 0.2mm                |   |        |                                     |                                                                   |                            |
-      | 波导法         | *超声脉冲回波式 微波谐振式 声板波式 声可以从一下三个方面分析：表面波式                                | 微波式结冰传感器在空中加油飞机 Cesna Cruader 上试飞成功                                                   | 冰厚测量范围达到 25 mm                                   |   |        |                                     |                                                                   |                            |
-      | 神经网络法     | 附加有结冰管理系统的神经网络法                                                                       | 美国近期提出了一种基于神经网络的结冰探测方法，处于理论研究阶段                                            |                                                          |   |        |                                     |                                                                   |                            |c
-      |                |                                                                                                      |                                                                                                           |                                                          |   |        |                                     |                                                                   |                            |
-      |                |                                                                                                      |                                                                                                           |                                                          |   |        |                                     |                                                                   |                            |
-      |----------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------+---+--------+-------------------------------------+-------------------------------------------------------------------+----------------------------|
-      | 结冰传感器类型 | 优点                                                                                                 | 缺点                                                                                                      |                                                          |   |        |                                     |                                                                   |                            |
-      | 磁致伸缩式     | 工作可靠，强度高，性能稳定，能给出结冰速率信号                                                       | 自身需要加热，不便于齐平保形安装，最小检出冰层厚度灵敏度不高                                              |                                                          |   |        |                                     |                                                                   |                            |*
-      | 平膜式         | 体积小，可齐平安装，抗环境干扰能力强，测量精度高，能区分冰或其他附着物                               | 需要进行温度补偿和激励信号，超过一定范围容易谐振，测量范围有限                                            |                                                          |   |        |                                     |                                                                   |                            |
-      | 光纤式         | 尺寸小，灵敏度高，测量范围宽，可齐平安装，抗干扰能力强，信号远传  对水，灰尘，油污，背景光等干扰敏感 |                                                                                                           |                                                          |   |        |                                     |                                                                   |                            |
-      | 红外摄像式     | 灵敏度高，能从防冰液，除冰液及雨水中区分冰，还能监测防冰液是否失效                                   | 信号处理及结冰判别较复杂，成本高                                                                          |                                                          |   |        |                                     |                                                                   |                            |
-      |----------------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------+---+--------+-------------------------------------+-------------------------------------------------------------------+----------------------------|
+******* 水滴轨迹
 
-****** 光纤结冰
-      The optical characteristics of ice accreted in dynamic conditions are very different  from those of natural fic and depend on aerofoil shape, temperature, air speed, liquid water content LWC, and mean volume diameter MVD of the droplets.
+    1. 流场的计算，根据 N-S 方程，可以得到压强、速度、密度、温度
+       构型确定之后，流场的分布也就确定了。
+       对于空气（没有质量的物体），其运动轨迹就是流场的轨迹
+    2. 根据拉格朗日法，求水滴的加速度、位置
+       水滴轨迹和水滴粒径相关，水滴越大，惯性越大，轨迹越不易受流场改变
+    3. 水收集率的计算
+       水滴收集率不考虑水滴的破碎，二次撞击，后流。
+    4. 结冰计算
+       对于霜冰而言，结冰数据和水滴收集率一致。
+       明冰的结冰厚度则和水滴收集率不同。
+       考虑明冰更加合理。
 
-      光纤较其他光学元件有相当多的优点:光纤的直径可以非常小而不影响接收光线的条件;光线可以方便的分离与合并光束相当于个独立的传系统用光纤组成,系统时可以设计缩短光程,同时由光纤的柔曲性可以使系统的尺寸更小,更轻结构,更紧凑,更灵活
-
-      此外，基于目前相关科研人员对冰的认识，多空隙的结构也更加适合用来调制光学特性，诸如折射、反射、散射等，都和介质内的空隙相关。
-      当前，几何光学的快速发展和光学仿真的普及，也为设计光纤传感器提供了设计基础。
-
-**** 研究目的及意义
-     :LOGBOOK:
-     CLOCK: [2021-02-24 Wed 21:30]--[2021-02-24 Wed 21:55] =>  0:25
-     :END:
-***** 目的：研究光纤在结冰测量的潜力（稳定性）
-      光纤式结冰传感器是一个极有历史的课题。但之前传感器的研究重点，是探测特定位置是否结冰，或者探测表面冰型。
-      其在冰厚测量还没有较大的突破，主要原因是，不同冰型的光调制能力不同，接收光强不仅与厚度相关，冰型也是影响因素，致使其光纤和冰厚没有特定的对应关系，难以标定实现高精度冰厚测量。
-
-      在实际设计过程中，在冰型一定情况下，光纤的接收光强与冰厚关系稳定，冰型小范围波动时，光强与冰厚的关系认可通过拟合的方式进行高精度测量。
-      在常规的明冰、凇冰、混合冰的分类下，可对冰型进行更合理的更多分类，实现在某些类型中的精确测量。
-
-***** 冰型识别对结冰条件的意义
-      常规进行冰型的分类，是基于其透明程度，但只是用定性的描述。用光纤传感器，可以根据接收光强与入射光强的比例，定量描述冰的透光度，并完善冰型分类。
-      由于结冰条件与冰型有对应关系，光纤传感器对冰型进行的更详尽的光学分类，有利于对应更多的结冰条件，更精准判断外部结冰条件对飞行安全的危害。
-***** 冰厚测量并报警
-      光纤传感器已经在冰层报警方面工作良好，但在实际航行中，更加有效的数据是冰厚和结冰速率。本文在进行了大量冰风洞试验的基础下，有足够的数据来进行数据处理并优化结冰，能够实现在冰风洞特定工况下，实现冰厚测量，并在冰厚超过 0.5mm 并结冰速率较大时报警。
-**** 研究内容
-***** 结冰建模
-      本文基于冰的多空隙结构的认识，建立了冰的空隙模型，从几何光学的角度出发，分析冰晶与空隙的光学反射、散射、折射等现象，定性描述了接收光强的变化；
-      根据菲涅耳公式，建立光线在不同界面出的光强模型，并给出了总接收光强的定量描述。
-      最后通过仿真的方式，建立冰的多空隙模型和光纤的光线传输模型，证明以上定性和定量描述的正确性。
-
-***** SVR 冰厚测量
-      基于光纤传感器良好的性能，我们进行了大量且昂贵的冰风洞试验，获取了足够的数据来进行更多的数据处理。
-      在相似工况下，数十组数据进行支持向量回归处理，使得处理结果很好拟合数据变化，实现了小误差测量。
-
-      时序的冰厚，也可以计算得到结冰速率，反应结冰快慢。
-***** 结冰速率
-      不写
-***** SVM 冰型-结冰条件识别
-
-      特征的选取
-      结冰条件的分类
-
-      在计算准确冰厚的前提下，获得冰厚电压曲线，不同冰型的曲线有较明显的差异，可通过支持向量机处理。从而对应不同的冰型。
-***** 更细分的结冰分类 --> 结冰条件
-      根据冰风洞得到的冰型，结冰条件特性对应关系，根据冰型和结冰速率，得到结冰条件，实现飞行安全预判
-*** DONE 光纤式结冰探测原理及研究
-    CLOSED: [2021-02-27 Sat 14:40]
-    加上光纤探头的设计部分
-**** 引言
-     :LOGBOOK:
-     CLOCK: [2021-02-25 Thu 10:20]--[2021-02-25 Thu 10:45] =>  0:25
-     :END:
-     光纤式结冰传感器通常基于冰层的光学调制特性，接收并测量调制光的变化，对应冰层的变化。
-     入射到冰层中的光，在冰的多空隙作用下发生散射、反射、折射等现象，其光强、相位、波长都会发生变化。
-     本文采用的是光强式光纤结冰探测，发射光纤和结冰光纤在冰层的同侧，具有结构简单、性能稳定、设计灵活、价格低廉、灵敏度高的优点，反射光强信号稳定且一致性高，测量反射光强的变化，可以计算得到冰厚的变化。
-
-     为了深入理解光在冰中的物理行为及发射接收光线的传输行为，建立了光纤的几何光学传输模型和冰的光学调制模型，从菲涅尔公式出发，得到光在光纤－冰层界面、冰层－气泡界面、冰层－空气界面处的能反射进入接收光纤的光强，在接收面积分即可得到传感器探测得到的反射光强。
-     为了验证该模型的有效性，使用 COMSOL 有限元仿真工具，对光纤式结冰传感器进行了几何光学的仿真，结果表明，仿真的反射光强随冰厚的冰厚趋势，和模型的结论基本一致，证明了模型的有效型。
-     以上两个模型，可以帮助相关科研工作者省去不必要的试验，并能直观地根据仿真结果指导传感器地设计和验证。
-
-**** 光纤探测技术与原理
-     非功能型光纤，发射和接收
-
-     http://www.baidu.com/link?url=bI5Au93RA83Di_W_9UphPHYvlma27rv9OYiNSYf-X8v9wqr2IemKWGKV1PGqBSaq_Wm8f7fxI1KTukF48K5vtHwBYCehn00F-D2zZZPp97e&wd=&eqid=e31480c600032016000000036037164b
-     光纤传感器由光源、入射光纤、出射光纤、光调制器、光探测器以及解调制器组成。
-     其基本原理是将光源的光经入射光纤送入调制区，光在调制区内与外界被测参数相互作用，使入射光的某些光学性质(如强度、波长、频率、相位、偏正态等)发生变化而成为被调制的信号光，再经出射光纤送入光探测器、解调器而获得被测参数。
-
-     光纤传感器按结构类型可分两大类：一类是功能型（传感型）传感器；另一类是非功能性（传光型）传感器。
-
-     功能型光纤传感器利用对外界信息具有敏感能力和检测能力的光纤(或特殊光纤)作为传感元件，对光纤内传输的光进行调制，使传输的光的强度、相位、频率或偏振态等特性发生变化，再通过被调制过的信号进行解调，从而得出被测信号。
-     光纤在其中不仅是导光媒质，而且也是敏感元件，多采用多模光纤。
-
-     非功能型传感器是利用其它敏感元件感受被测量的变化，光纤仅作为信息的传输介质，常采用单模光纤。光纤在其中仅起导光作用，光照在光纤型敏感元件上被测量调制。
-
-     本文中使用的光纤是非功能型的光纤传感器，仅用作传输发射光线和接收光线。
-***** 光纤传输特性
-      描述光线：角度和能量
-
-      常见光线通常由三部分组成：折射率较大的纤芯、折射率较小的包层、和不透光的保护层。
-      能在光纤中传输的光线都限制在纤芯中传播，在纤芯－包层界面发生全内反射。根据斯涅耳折射定律，
-      $n_1\cos\theta_i=n_2\sin\theta_t，$
-      全内反射时$\theta_t＝90^\circ$，入射光线的入射角$\cos\theta_i \ge \frac{n2}{n1}$。
-      光源的发光角度 $\sin\theta_m \eq n1\sin\theta_i \eq n1\sqrt{1-\cos\theta_i^2}，$
-      可以得到，$\theta_m \ge \arcsin(\sqrt{n1^2-n2^2})$
-
-
-      因此，进入发射光纤的光，应来自发光角度较小的光源，保证大部分光线能够有效传输。
-****** 折射率虚部
+****** DONE 修改论文实验部分
+       CLOSED: [2020-08-06 Thu 10:52] DEADLINE: <2020-08-04 Tue 11:30> SCHEDULED: <2020-08-04 Tue 10:30>
        :LOGBOOK:
-       CLOCK: [2021-02-25 Thu 12:33]--[2021-02-25 Thu 12:58] =>  0:25
-       CLOCK: [2021-02-25 Thu 15:10]--[2021-02-25 Thu 17:35] =>  2:25
+       CLOCK: [2020-08-04 Tue 10:30]--[2020-08-04 Tue 11:41] =>  1:11
        :END:
 
-     光在传输的过程中，光强会逐渐衰减；在不同物质的界面处，根据入射角度和折射率的不同，反射和透射的光强也会发生突变。
+****** DONE 修改全文
+       CLOSED: [2020-08-16 Sun 11:29]
 
-     不同介质的折射率可以描述为：$n=\frac{c}{v}=\sqrt{u_r\eplison_4}$。
-
-     复折射率可以表示为$n=n_r+in_i$，假设一单色平面波，真空中电场表示为 $E(t,x)=Ae^{-i(wt-kx)}$ ，
-     当进入介质中时，波矢 k 变成 nk，此时， $E(t,x)=Ae^{-n_ikx}e^{-i(wt-n_rkx)}$ ，其中$n_i$ 引入了一个指数衰减因子。
-     虚部对应的物理意义就是振幅随传播衰减，也就是介质会对波有吸收。
-
-     比尔朗伯定律描述了光在均匀非散射吸光物质中被吸收的程度，与物质浓度、物质厚度有关。
-
-     桂博博士论文42页。
-     在界面处，菲涅尔方程详细地描述了，折射光和透射光占入射光的比例。
-     当光入射到不同介质的界面处时，光可以分解为两束正交偏振光的组合，其中S偏振光是电场垂直于入射平面磁场在入射平面内的光分量，而P偏振光是正交于S偏振光的光分量。
-     其中，反射光的比例可以描述为：$$ ,
-     透射光的比例可以描述为：$$ ,这分别对应于电矢量反射率和折射率。
-
-     目前常见的光强探测的有效值是光功率而非光强或光电矢量。
-     光功率是光强I与有效面积S的向量点积。$W=I\cdot S$，反射光和透射光的光功率可以描述为：
-
-     通过光纤的传输方程和光功率方程，可以准确描述任一光线在传输过程的位置和能量大小。
-
-***** 光纤耦合原理
-      龚英的毕业论文
-
-      入射光在冰层中，发生一系列的反射、散射和折射，最终返回接收光纤的光线在方向和位置上具有很大的不确定性，因此，有效探测反射光是光纤传感器的重要设计内容。
-
-      光纤耦合原理描述了并列放置的两根光纤内光强互相影响的现象，可用于优化接收光纤。
-      当反射回光纤的光线的角度大于光纤的孔径角，光线会从光纤纤芯内部泄漏出来成为传导模，在所有的接收光纤和发射光纤内部传输。
-      因此，发射光纤也可作为接收光纤用于传输反射光，这样扩大了有效的接收面积，并可以减少接收光纤的数量。
-      所有反射光被接收光纤另一端安装的光电二极管探测。
-**** 冰的光电特性
-     :LOGBOOK:
-     CLOCK: [2021-02-25 Thu 20:56]--[2021-02-25 Thu 21:02] =>  0:06
-     CLOCK: [2021-02-25 Thu 20:18]--[2021-02-25 Thu 20:43] =>  0:25
-     CLOCK: [2021-02-25 Thu 19:39]--[2021-02-25 Thu 20:04] =>  0:25
-     CLOCK: [2021-02-25 Thu 19:08]--[2021-02-25 Thu 19:33] =>  0:25
-     :END:
-     入射进入冰层的光，在冰晶中沿直线传播，光强逐渐衰减。在不同物质的界面处，光会发生散射、透射、折射、反射等一些列行为，光的传播方向和光强大小会发生突变。
-     自然界的冰和飞机航行过程结的冰，内部结构复杂，在之前的研究中，把冰简化为折射率为1.3的纯净物进行分析，这样的化简过于极端，忽略了冰内部复杂的物质组成和形体结构。
-
-     本文根据目前对冰表面结构和三维空隙结构的最新研究，重新对冰进行几何建模，加入了随机分布的空隙和杂质颗粒，并对冰表面进行了粗糙处理。
-     冰层更复杂的内部结构，光电特性也更加丰富。
-***** 孔隙率
-      对冰进行光电特性分析，首先要了解冰的内部物理结构。
-      当前冰物理的最新研究进展，已经在第一章节国内外研究现状进行描述，可以总结为多空隙随机分布的三维结构和更容易吸附气体的活跃表面。
-      因此，本文将冰总结为具有一定孔隙率的传光介质，内部可能夹杂不规则裂缝和杂质颗粒。孔隙率是表征气体空隙体积占物体总体积的比例。
-
-      孔隙率也是用来表征不同冰型的重要参数。孔隙率越小，越接近明冰。
-      根据飞机结冰的过程，当来流速度越低, 结晶中的气泡相对越大, 数量越少, 孔隙率也越小; 反之气泡相对越小, 数量越多, 孔隙率也越大。
-      来流温度越低, 晶体粒度越大, 结晶中的气泡相对较多, 孔隙率也越大, 在表观上越不透明;反之晶粒度越小, 气泡相对较少, 因而冰型的孔隙率越小, 在表观上也更为透明。
-
-      孔隙率有多种计算方式，可以直接通过重量计算，更精确的方法，可以通过电镜观察冰层，统计气体空隙计算分形维数得到，在光电方面，也可以通过透光度定量描述。
-      孔隙率的量化表示，也可以对冰型分类进行量化表示。
-***** 光强调制原理
-      冰型调制定性（量）描述
-
-      到达接收光纤的光，可以分为以下三类：光纤-冰层界面的反射光L1；冰层内部的散射光L2；冰层-空气界面的反射散射光L3。
-      实际测量的光功率，是以上三者之和。
-
-***** 纯冰和明冰淞冰的光传输方程
-      当光纤传感器探测端面没有结冰发生时，光纤和冰层中光的传播路径如图所示：
-
-      返回光纤的光都来自L1。因为大部分光在界面处直射进入空气，L1的值很小。因此也保证了传感器的零点工作电压很小。
-
-      当光纤传感器的探测端面结成明冰时，光纤和冰层中光的传播路径如图所示：
-
-      由于明冰的折射率大于空气，L1的值比无冰条件小。在冰与光纤界面折射进入冰层的光，在冰层中继续传播。
-      由于明冰孔隙率低而很少散射，L2的值很小，直至在冰与空气界面发生反射的光会后向传播，并再次进入冰层并进入接收光纤。
-      当冰层很薄时，入射光纤发出的光经过冰层表面的反射可以进入接收光纤，如图所示。这时L3逐渐增加
-      当冰层逐渐增长，反射光形成的光斑逐渐偏移，直至完全移出接收光纤的视场。L3在到达最大值之后逐步减小。
-      由于冰层很厚，冰层内部散射光逐渐累计，L2小幅度增长。
-      因此，随着冰厚的增加，接收光强将先增加，然后一直减小，稳定到一个略大于零点光强的值。
-
-      当光纤传感器的探测端面结成淞冰时，光纤和冰层中光的传播路径如图所示：
-
-      由于淞冰与探测端面之间存在许多由空气填充的间隙，故在发射光纤表面反射的光强几乎与无冰时相等，L1较小。
-      淞冰孔隙率大，含有大量气泡、杂质和裂缝，故传输在淞冰中的光容易发生散射和反射，可以将冰看作是散射体，随着冰厚的增加，散射体散射能力增强，L2快速增加L2快速增长。
-      冰厚较薄时，来自冰与空气界面的反射光L3也会耦合进接收光纤。此时总的接收光强增长快速。
-      当冰厚超过1cm之后，几乎没有光可以达到空气界面，L3变得很小。总的接收光强主要来自L2，增长速度略有下降,直至所有的光被有效散射，L2到达最大值。
-
-      当结冰类型是混合冰时，光的传播路径变得复杂，L1、L2、和L3都有贡献。
-      当混合冰接近明冰时，光强较小，光强随冰厚变化和明冰类似。
-      随着孔隙率的增加，光强增速变快，在冰厚较大时也逐渐没有下降的趋势，直至和淞冰的变化相似。
-      关于混合冰的详细讨论，在第四章对混合冰进行分类之后，会有更加详细的介绍。
-
-      不同冰型下的光强示意图如下图所示：
-***** 表面粗糙度
+***** DONE 画图
+      CLOSED: [2020-08-10 Mon 09:08]
       :LOGBOOK:
-      CLOCK: [2021-02-25 Thu 21:52]--[2021-02-25 Thu 22:17] =>  0:25
+      CLOCK: [2020-08-10 Mon 08:30]--[2020-08-10 Mon 09:08] =>  0:38
       :END:
-      反射和漫反射的光传输方程
+  原始数据经过卡尔曼滤波之后，画图。
 
-      不同介质的界面如果是平滑的，光强和光传播方向可以按照菲涅尔方程定量计算得到。
-      但从实际飞机航行过程中拍照的图片看，冰层表面非常不规则。
-      在冰层生长的过程中，如果是光滑的明冰，表面会有不规则的角状突起，如果是淞冰，表面呈羽毛状。具体形状如下图所示。
+  关于原始数据滤波之后，是否算作篡改数据，这事再讨论。
 
-      由于冰层表面不规则，光到达界面处，折射和反射没有一致性，凹凸不平的表面导致光的入射角不同，因此可认为光在表面发生漫反射，向各个方向无规则反射。
-      反射光强的计算则更加复杂，因为漫反射的反射光强是和表面粗糙度相关，冰层表面的不规则形状没有明确定义的不规则度。
-      在本文中，把冰层表面看作是由正弦曲线组成的，表面的粗糙度是正弦曲线的长度。
-      这样既可以定量表示冰层表面的不规则凹凸，也可以通过有限元法，计算处反射光的方向和强度。
+***** DONE 选定期刊
+      CLOSED: [2020-08-04 Tue 09:25]
 
-**** 光纤结冰探测原理
-     在前面的章节中，已经定性地表示了接收光强在不同冰型下随冰厚的变化趋势，为了能够定量表示接收光强，本节用公式详细描述了光在冰层中可能发生的行为，并建立模型表示冰层对光的调制作用。
-***** 反射模型
-      在表面粗糙度一节中，已经对不同介质的界面进行了分析了定义，光在不同界面处的反射，其计算方法和菲涅尔方程一样。
+  Aerospace Science and Technology 属于 Elsevier
 
-      一束光以角度$\theta_i$ 从光纤进入冰层时，将发生多次折射和反射，但其光强随折射次数级光程的增加而迅速衰减，因此，模型中仅针对在每一个界面处的第一次折射进行分析。
-      在不考虑散射及吸收的情况下，入射光将在三个界面发生反射，如下图所示，最终返回接收光纤的光由光纤-冰层界面反射光和光纤-冰层界面透射且冰层-空气界面反射且冰层-光纤界面折射光组成。
-
-      在不考虑散射及吸收的情况下，接收光功率$P=P_i*(\frac{R_{s1}+R_{p1}}{2}+\frac{T_{s1}+T_{p1}}{2}\frac{R_{s2}+R_{p2}}{2}\frac{T_{s3}+T_{p3}}{2})$。
-      默认S光和P光具有相同的光强，则接收光功率$P=P_i*(R_1+T_1R_2T_3)$。
-      在实际情况中，冰层的吸收和散射作用也是不可忽略的因素。
-***** 损耗模型
-      根据冰在传播过程中指数衰减的规律，光在冰层中传播的光程应该有一个衰减因子，则接收光功率$P=P_i*(R_1+T_1R_2T_3e^{-ax})$。其中$x=\frac{2h}{\cos\theta_t}$。h为冰层厚度。
-***** 散射模型
-      散射对反向光的增强可以类比于投影在界面上的曲面的反射
-
-      水膜中含有气泡与固态颗粒，会对光造成散射。
-      光的散射可分为弹性散射与非弹性散射，非弹性散射现象包括拉曼散射和布里渊散射，会改变光的频率，但其强度相对弹性散射而言非常弱，可以忽略不计。
-      弹性散射则包含瑞利散射及米氏散射。一般在散射微粒尺寸远小于入射光波长时考虑瑞利散射现象，而在散射微粒尺寸与入射光波长相当时考虑米氏散射现象。
-      当散射微粒尺寸远大于入射光波长时则应当依据夫琅和费衍射定理或几何光学进行分析。
-
-
-      在飞机结冰的情况下，冰层中的气泡与固态颗粒尺寸较大，已经超出瑞利散射的对象范畴。
-      因此，引入基于几何光学的散射函数来进行分析。一般入射光的波长在 0.1-10μm 级别，当散射微粒的尺寸与之处于相近的数量级时，也可用米氏散射理论。
-
-      单个气泡的光学特性如图所示。
-
-      入射角度为$\theta_i$的光线，到达气泡时，根据光的全反射规律，只有两侧边缘部分的光能被反射，其余部分光穿透到达下一个气泡。
-      因此一个直径为R的气泡的有效散射面积为。。。
-      考虑到气泡的随机分布，每个气泡能够不被前面气泡阻挡并有光纤到达的概率为50%，同时，不同位置的气泡反射的光传播路程不同，光强也不同，则离传感器端面较远的气泡，其反射光强应该加一个衰减系数。
-      为了归一化表示，后面的气泡的散射作用，可看作是映射到传感器端面的反射面，但有效散射面积需加一个衰减系数。
-      则孔隙率为A的冰层的有效的散射面积为。。。
-***** 冰层光传输模型
-      根据以上三个模型，光程上任一位置的光功率可以表示为$P(x)=P_ie^{-Q_S\pi r^2Kx}$。
-
-**** 光纤结冰模型仿真
-     :LOGBOOK:
-     CLOCK: [2021-02-26 Fri 11:17]--[2021-02-26 Fri 11:42] =>  0:25
-     CLOCK: [2021-02-26 Fri 10:47]--[2021-02-26 Fri 11:12] =>  0:25
-     CLOCK: [2021-02-26 Fri 10:13]--[2021-02-26 Fri 10:38] =>  0:25
-     :END:
-     验证公式正确性
-     不同冰型的曲线变化趋势
-
-     为了验证以上光纤结冰模型的正确性，使用商业软件 COMSOL 的几何光学仿真模块，对光纤结冰传感器进行了光路分析和光强仿真计算。
-     使用 COMSOL 建模工具，建立和光纤混合二维模型和多空隙冰层模型，通过改变冰层厚度和空隙率得到冰层的光学调制曲线，通过改变光纤的排布，证明接收光纤的有效性。
-
-***** 建立模型
-      COMSOL 软件自带几何建模工具，可以对对象进行二维或三维建模，并划分网格。
-
-      本文建立了光纤和冰层的二维几何模型，因为对象几何形状是规整的立方体，三维模型仅是二维模型在Z轴方向的拉伸，极大增加了运算量，也不能提升模型的作用，因此使用二维模型即可。二维模型可以看作是对象在Z轴中心位置的切片。
-
-      在对光纤进行建模时，为了和实际情况保持一致，共添加了三种传光组件和一种不传光壁：折射率为1.63的纤芯、折射率为1.51的薄层、折射率为1.47的胶层、和具有漫反射和吸收作用的传感器壁。
-      四种组件按照实际情况均匀排布，如下图所示。实际的光纤截面在高清摄像机下的图片如图所示，两者基本一直。
-      为了能够准确模拟光纤的排布情况，模型中一共设置了30根光纤，上面的20根光纤是发射光纤和接收光纤交替分布，下面的10根光纤是接收光纤。
-      光纤的右侧端面，发射光纤安装光源，接收光纤安装光电探测器。
-      光纤的左侧端面，设置为平端面。
-
-      在对冰层进行建模时，把冰层简化为多空隙的折射率为1.3的传光介质，气泡空隙的折射率为1，将冰层表面简化为正线规则表面。模型如下图所示。
-      尤其是对空隙分布进行了简化，在相关研究中，冰中的空隙大小和位置都是围绕某一中心值随机分布，当孔隙率较大时，空隙大小平均值较大，空隙平均间距更小；反之，空隙大小更小而间距更大。
-      在几何建模过程中，在空隙率相同的冰层中，空隙大小和空隙间距都简化为相等的值，即空隙均匀而非随机分布。
-      常见冰层表面非常不规则，简化为正弦表面，可以保证能够覆盖所有的光线入射角范围，但缺少了光强变化的随机性，以后可以改进。
-
-      将模型加入几何光学数值计算场中，设置了光源发射面和光强探测面，光源发射面设置光源的发光角度为5度，在光纤的数值孔径之内，发出 940nm 的红外光，光线均匀分布。
-      光强探测面在接收光纤的末端，可以探测到达该测量面的光功率。
-      为了方便研究不同冰型和冰厚的光学调制作用，将冰层孔隙率和冰厚参数化，方便 COMSOL 软件进行参数扫描，自动在计算过程中设置递增的孔隙率和冰厚。
-      孔隙率是通过设置气泡大小和间距，在孔隙率较小时，优先改变间距，在孔隙率较大时，优先改变气泡大小。
-      冰厚是通过改变冰层表面位置。
-      还有一个可以手动修改的参数是冰层表面正弦曲线的大小，但基于目前的相关研究，这个参数尚未和冰型或孔隙率建立准确的关系，因此不能根据孔隙率设置，需要手动修改。
-***** 冰型的光强冰厚仿真
-      因为明冰和混合冰的光强冰厚曲线，已有多位研究者的数据可以参考，因此，首先，用设置较小的孔隙率xxx为明冰较大的孔隙率xxx为淞冰，进行 COMSOL 几何光学仿真，验证模型的正确性。
-      设置空隙率的参数扫描为两个，[xx,xx]，设置冰厚从0.5到5，得到的两路接收光纤的光强冰厚分布图如下所示。
-      明冰的电压值较小，最大值低于2，曲线先增后降，第二路接收光纤的变化滞后于第一路。
-      淞冰的电压值明显大于明冰，两路曲线上升到最大值后保持稳定。
-      以上数据和实验数据基本一致，证明模型搭建正确。
-
-      为了研究不同程度的混合冰光学调制作用，设置孔隙率在明冰和淞冰之间，以0.1递增，在每个孔隙率，设置冰厚从0.5到5，得到的两路接收光纤的光强冰厚分布图如下所示。
-      从图中可以看出，随着孔隙率的增加，电压的增长速率，电压峰值，电压拐点。
-**** 本章小结
-     本章从几何光学基本理论出发，建立了光纤的几何光学传输模型和冰的光学调制模型，从理论角度解释了冰层的光强调制作用，并使用 COMSOL 商业数值计算软件进行了几何光学仿真，证明了理论的正确性，并研究了不同程度的混合冰的光强调制作用。
-
-     光纤的几何光学传输模型依托于斯涅尔折射公式和菲涅尔方程，可以计算得到任何位置的光传输角度和光强，并对光源发光角度提出了相关要求。
-     冰层的光学调制模型，由光有效折射反射模型、光吸收衰减模型、和光散射模型三部分组成，详尽分析了光在冰层中可能发生的光学行为，并给出了光强的相关计算公式，在模型中忽略了光传输角度的影响，但在接收端，对所有角度的光进行了不严格的积分，得到了总的接收光强。
-
-     为了验证理论模型的正确性，按照传感器的相关设计，建立了光纤和冰层的二维模型，对明冰、淞冰、和混合冰进行了仿真，得到了不同冰型的电压冰厚曲线，和理论曲线进行了对照，其中混合冰的数据可以帮助我们更深入了解不同程度的混合冰的光调制作用，为对混合冰进行分类提供了基础
-
-     从理论模型和仿真计算的曲线可以得知，当冰型一定且已知时，光强的变化可以唯一得到冰厚的变化，当冰型未知时，可以根据光强变化趋势预测冰型，在预测的冰型模型中，通过支持向量回归的方式计算电压得到冰厚。
-
-*** DONE 结冰探测系统设计与实验
-    CLOSED: [2021-02-27 Sat 14:40]
-**** 引言
-     :LOGBOOK:
-     CLOCK: [2021-02-26 Fri 14:33]--[2021-02-26 Fri 14:58] =>  0:25
-     :END:
-     应武汉航空仪器仪表厂的项目要求，需要检测飞机机翼迎风面在遭遇结冰环境时的飞行安全性，本课题组设计了光纤结冰传感器，用于判断机翼迎风面是否结冰、测量结冰厚度和结冰速率。
-     以上三个信息上传至飞机控制中心，可以判断当前飞机结冰严重程度，并及时作出反应。
-
-     该光纤式结冰探测器，光纤探头与机翼齐平保形安装，不影响飞机机翼的空气动力学外形。
-     传感器主要有三部分组成：光源、光纤探头、和光电信号检测及智能处理模块。
-     光源和光纤探头的设计，保证了有效光信号能够被有效的调制和检测，光电检测电路采用了模拟和数字滤波的方式，保证了采样的电压数据的实时性和稳定性。
-     两路电压数据和温度数据通过标定系统，能够输出冰厚信息。
-
-     该传感器的可行性已经通过了在实验室的冰箱中进行的原理性验证实验，电压信息能够及时准确地反应冰厚变化。
-     更进一步的，该传感器已经在181小型冰风洞中进行了近百次的冰风洞实验，其结冰条件更接近飞机真实的飞行条件，并通过标定的方法，使得传感器在4中经典工况下，能够实时高精度检测检测冰厚，
-     在停水后，预测结冰厚度与真实结冰厚度的误差不超过0.5mm，完全满足当前飞机结冰探测的需求。
-**** 系统总体设计方案
-     :LOGBOOK:
-     CLOCK: [2021-02-26 Fri 15:10]--[2021-02-26 Fri 15:36] =>  0:26
-     :END:
-     光纤式结冰探测器主要由三部分组成：电源、光纤探头、光电信号检测及智能处理模块。
-     电源：为发光管和电路提供6V和±12V直流电；
-     光纤探头：将发光管发出的光传导至探测敏感面，并接收经过冰调制后的光强信号；
-     光电信号检测及智能处理模块：准确测量光强信号并根据测量值计算冰厚信息，同时与结冰探测控制盒进行通信。
-     光纤式结冰探测器框图见181技术方案图2。
-
-**** 传感器设计
-     :LOGBOOK:
-     CLOCK: [2021-02-26 Fri 17:01]--[2021-02-26 Fri 17:26] =>  0:25
-     CLOCK: [2021-02-26 Fri 16:32]--[2021-02-26 Fri 16:57] =>  0:25
-     CLOCK: [2021-02-26 Fri 15:58]--[2021-02-26 Fri 16:23] =>  0:25
-     :END:
-     光纤传感器能够有效对光信号进行调制和探测，其各个组成部分的功能框图如181技术方案图5所示。
-***** 系统机械设计
-****** 安装在机翼的齐平保形结构
-       光纤式结冰探测器外形是房顶形的壳体和圆柱形的探头，顶端有弧度的探测端面和飞机机翼齐平保形。
-       为保证机械强度，壳体采用铝合金材料，保证不会变形挤压内部器件，探头采用高性能尼龙，并固定在机翼凹槽中，避免发生切应力和碰撞。
-       光纤探头为矩形，分布在圆柱的中心，分为三束光纤。
-       光纤探头如图4所示。区域1和2为发射光纤接收光纤均匀混合，区域3为接收光纤。
-       光纤探头安装在机翼前缘,水滴捕获系数高达 0. 85，如图4所示沿弦向排布，光纤矩形排布的设计在增大探测面积的同时，保证探测到冰层的均匀性。
-
-       光纤式结冰探测器外廓直径尺寸不大于90mm×130mm。探头应与飞机蒙皮保形，探头的外形尺寸如下图6所示。飞机机翼壳体的形状如图所示。
-****** 光纤探头的设计
-       光纤放置在传感器圆柱形外壳内部立方体形状的腔体中，分为三束。
-       探测端的光纤分为两个区域，每个区域中的光纤丝混合排列。
-       但在发射和接收端，仍是三束光纤独立引出，分别连接光源、和两个光电探测其，如图所示。
-
-       光纤在立方体腔体中排布好之后，向腔体间注入胶水，固定光纤并保持光纤和腔体壁之间无空隙和位移。
-
-       待胶水固定以后，打磨探测面，使之与机翼表面有相同的弧度，并抛光光纤表面。
-***** 系统电路设计
-      锁定放大 vs 数字平均
-
-      系统电路共包括四部分：光源驱动电路，光电转换电路，滤波放大电路，模拟数字转换电路。
-      与常规光电驱动与检测电路不同，为了去除背景光的干扰，光源驱动部分采用方波载波调制方式，用1KHz方波激励光源光强信号，在接收端对信号进行1KHz带通滤波，有效滤除背景光的干扰的同时放大有效信号，滤波后的电压信号，进行方波解调，经ADC转为数字信号。
-****** 光源
-      系统对光源的要求包括稳定性、发光波长和发光角度。
-      为避免环境光的干扰，发光波长应选择红外波段。
-      常见的光源有LED二极管和三极管。
-      本传感器选择的是Honeywell 公司生产的型号为 SE5455 的 GaAs 红外发光二极管。
-      SE5455 工作在近红外波段，峰值波长为 940nm，避免了可见光的干扰；最大工作电流可达 100mA，输出光功率为几毫瓦，满足发射光功率的要求；
-      响应速度快，适合调制工作；工作温度范围较宽（-55℃~+125℃），满足工作环境温度要求。
-
-      光源驱动电路如图所示，控制端接入方波信号，连接到三极管的栅极，构成开关电路，控制 LED 供电电路的通断。
-      当输入端信号是高电平3.3V时，三极管导通，供电电路采用电流供电，此时LED驱动电流经过计算是xx mA，是最大电流的一半。
-      这样的驱动电流合适。
-****** 光电探测
-      系统对光电探测器要求的是微弱光强探测能力。
-      常见的光电探测其有光敏二极管和三极管。
-      本电路中选用的光敏三极管是 Honeywell 公司生产的 Si 光敏三极管 SD5443，它 与前文所述 SE5455 是光谱匹配的。
-      SD5443 具有扩展的基极控制端，使用方便；灵 敏度高，当入射光强度为 5mW/cm 2 时光电流至少为 8mA（V CE =5V）。
-
-      在光敏三极管的实际安装使用中，一个需特别注意的问题是：SE5455 的外壳与其集电极是电气连接的。
-      光电转换电路是以光敏三极管为核心、配合若干电阻设计而成的。图 3.4 中， R1 和 RW1 构成分压电阻，R7 和 RW2 构成分压电阻，可以稳定光敏三极管的基极 电压。R5 和 R8 对基极分压电阻的热噪声和 1/f 噪声起到衰减作用。R6 和 R13 为射极偏置电阻，能够稳定静态工作点，改善放大电路的动态性能。
-
-      光敏三极管将光信号转换为电流信号，为了信号传输和探测的需要，电流经过高精度电阻转为电压信号。
-      图为直接测量的电压信号，信号不稳定且噪声较大。此输出信号的检测实质上可归结为缓变微弱信号检测的工程技术问题。
-****** 滤波放大
-      冰层反射会接收光纤的光强微弱，光电转换电路得到的电压值较小且有噪声干扰，需要经过滤波放大处理。
-      针对于微弱信号处理，有锁定放大电路和数字滤波器电路两种选择。
-      锁定放大电路本课题组之前应用过，虽然能满足信号检测的要求，但存在着电路复杂、可靠性较低、调试难度高、成本高等不足。
-
-      模拟数字滤波的方式，结构简单，能够实现高速滤波。
-      模拟滤波部分主要是滤除环境光带来的直流电压、50Hz和100Hz的公频干扰、和电路高频噪声。因此需要设计1KHz的模拟带通滤波器。
-      滤波器的设计在 Multisim 的帮助下完成，电路图和输入输出波形如图所示。
-      第一级高通滤波，截至频率是100Hz，基本滤除了直流电压和公频干扰，并将方波移动到0V对称。
-      第二级低通滤波，截至频率是2KHz，去除电路噪声。
-
-      在传感器实际设计过程中，采用 TI 公司生产的精密仪表放大器 INA2331 为核心。
-      INA2331 有较好的交、直流外特性，低功耗设计（单电源+2.7V—5.5V 供电），高增益准确度（G=5 时，0.02%，2ppm/℃），高共模抑制比（直流时为 94dB，45kHz 时 仍有 50dB），轨到轨输出（最大输出电压仅比电源电压小 0.02V），宽工作温度范围（-55℃—+125℃），低静态电流（每通道最大为 490uA，关断时降为 0.01uA），灵活可选封装（单片 MSOP-8 和双片 TSSOP-14 封装），较符合本电路需求。
-
-      电压放大是通过调节仪表放大器的反馈电压实现的。
-      总的电压增益可以表示为。。。
-
-      从输出波形中可以看到，方波信号有畸变，这是因为1KHz方波的高次谐波部分被滤掉。这个问题在数字滤波部分被解决，主要方案是在方波的中心或固定相位点采样，即可保证每次采样时刻的电压不变。
-
-****** ADC转化电路
-       因为不同冰型的电压差距大，系统对ADC的要求是精度高，较大的输入电压范围，采样速度大于4倍激励方波频率。
-
-       传感器采用的是AD7367，是一款2通道的14位、高速、低功耗、单双极性转换的高精度串行逐次逼近型ADC，采样速率最高可达1MS/s。
-       在连续采样的情况下，完成一次转换的时间，包括数据读取不会超过1us。AD7367还具有可编程选择模拟输入电压范围的功能，具有三种不同的输入范围：+-10v、+-5v以及0~10v。
-
-       ADC7367 可以同时采集两路电压数据，转换后的14位数据，存放在缓冲区，可用微控制器通过SPI 读出。
-***** 系统软件设计
-      SVM 在下位机的实现？
-
-      使用微控制器内部定时器，产生1KHz的方波，驱动电压，经过数us光信号传输，光电探测器将接收到的光信号转为电压信号，此时电压信号为有畸变的方波信号。
-      为了得到稳定的输出电压值，控制ADC在方波的中心采样并转换电压为数字信号，对1000次采样得到的电压值进行数字平均滤波，即可消除随机误差。
-
-      数字平均滤波的理论基础是：
-      方波长产生的时时刻为 T, 2T, 4T...，则方波低电平的中间时刻为 3T /4，7T /4，11T /4...，此时结冰传感器不工作， 差分放大器输出电压为背景干扰与零点电压之和，该电压值一般大于 0 V;
-      方波高电平的中间时刻为 T/4，5T/4，9T/4...，此时结冰传感器工作，差分放大器输出电压为有效电压 ve ( t) 、背景 干扰、零点电压与随机噪声四者之和。
-
-      上式表示将差分放大器在驱动方波高、低电平期间的输出电压的差值进行 50 次累积后求得的平均值，实现了定点式数 字取样积分的算法和微弱光信号检测的目的。
-      同一方波的高电平电压减低电平电压，即可去除背景干扰和零点电压，随机噪声可以通过多次数据取平均的方式去除。
-      它既消除了背景干扰和零点电压等缓变非周期信号对测量的影响，又通过各 个周期内随机噪声的相互抵消提高了测量的精度。
-      由于定点式取样积分器的 *信噪改善比与平均次数的平方根成正比* ，因此，若测量精度不够，则还应增大平均次数; 但是平均次数不宜过大，以免测量时间过长。
-
-      这是桂博的描述，可以参考邹建红硕士论文P34，可以考虑更完备些。
-**** 结冰探测原理验证实验
-     飞机结冰环境定义在结冰包线中，主要包括低于0度的环境温度、水滴粒径MVD、液态水含量、风速100m/s。为了能够在传感器表面结冰，过冷水滴也是必要条件。在实验室的高低温箱中模拟了结冰环境，在结冰结束时记录冰厚，得到电压冰厚曲线。
-***** 结冰探测平台搭建
+***** DONE 冰厚问题
+      CLOSED: [2020-08-03 Mon 11:21] SCHEDULED: <2020-08-03 Mon 10:00>
       :LOGBOOK:
-      CLOCK: [2021-02-26 Fri 20:46]--[2021-02-26 Fri 21:54] =>  1:08
+      CLOCK: [2020-08-03 Mon 10:57]--[2020-08-03 Mon 11:21] =>  0:24
+      CLOCK: [2020-08-03 Mon 10:02]--[2020-08-03 Mon 10:13] =>  0:11
       :END:
+  究竟什么才是有用的数据？
+  不同时间的厚度 vs 最终的结冰厚度
+  结冰分布 vs 结冰厚度
 
-      介绍器材的原理和性能。
+  不同时间的冰厚，也就是传感器输出，只是可以从侧面表述，结冰的分布范围
 
-      结冰模拟平台，主要包括高低温箱、喷枪、空气压缩机、和DINO数码显微镜。
-      这些器材都固定在冰柜中，不可移动，以减少手动操作影响一致性。
+  最终的冰厚，也就是图片识别的冰厚，可以和仿真进行比较。
 
-      为了在实验室中模拟云层结冰环境，在冰柜中使用高低温箱创造了低温环境，最低温度可达-30度。
-      传感器用支架夹持竖直放置在高低温箱中。
-      高低温试验箱由热电制冷片、温度传感器、温度调节器和开关电源等组成。
-      热电制冷片是其中的核心部件，它由四个以珀尔帖效应工作的半导体制冷片构成。 热电制冷片工作时，温度传感器 PT100 测量高低温试验箱内温度，温度调节器根据温度测量值与设定值之差采用 PID 控制规律调节半导体制冷片的工作状态，使高低温试验箱内温度接近设定值。
+  经过讨论，混合光纤对冰厚敏感，可作为开关变量，单独的接受光纤，可作为冰厚探测
 
-      水雾由喷枪产生，喷枪的气压由空气压缩机控制，最高可达8个大气压，在喷枪阀门打开时，气体沿喷枪管道向外高速喷出。
-      喷枪管道连接蓄水罐，水罐阀门由喷枪阀门一起控制，放置在蓄水罐中的冰水混合物，在高速流动的气体带动下，水和气体一起呈雾状射出。
-      控制空气压缩机的气压可控制水滴粒径和风速，控制蓄水罐阀门可控制液态水含量。
+****** 仿真冰厚计算
 
-      冰厚测量使用图像处理的方式进行，拍照工具是台湾安鹏公司生产的DINO数码显微镜。
-      DINO是一个具有很大放大倍数的摄像机，将DINO靠近冰层，调整焦距至冰面清晰，将拍照的图片传送到计算机，测量图片冰层的厚度，除以放大倍数即可得到实际冰厚。
-      放大倍数是通过固定在传感器上的标准1mm样件在图片中大小计算出来的。该放大倍数的精度高，因此计算得到的冰厚误差很小。
-      但，照片不同景深的物体放大倍数不同，当标准样件和冰层不在同一景深时，会使冰厚测量误差变大。
+  FENSAP 结冰模型可以直接得到厚度，并展示结冰的冰层图片。
 
-      当开始喷水时，按下喷枪阀门，来自管道的水经过喷头呈雾状喷出。
-      水雾中的水滴在低温环境中进一步降温形成过冷水滴，当接触到光纤传感器端面时快速冻结。这和云层飞机结冰一致。
-      当停止喷水时，使用DINO数码显微镜测量冰厚。
+  厚度曲线：模型的 XY 切面，在 Y 轴的不同位置上的冰层厚度
 
-      该系统和飞机实际情况的主要差别是，阀门打开5秒后应关闭5秒，保证水滴在充分释放潜热结冰之后，再次喷水结冰。
-      为了得到不同水滴粒径的水滴，更精确的方法是使用不同的喷头。
-***** 不同温度下电压冰厚曲线
-      :LOGBOOK:
-      CLOCK: [2021-02-26 Fri 21:56]--[2021-02-26 Fri 22:14] =>  0:18
-      :END:
+  疑问：仿真同一个 Y 值，不同位置的厚度也是不同的
 
-      高低温箱的温度设定在-8度，-18度和-28度时，对光纤结冰传感器探测面喷水，得到两路输出电压随时间变化的曲线如图所示。
+****** 实验冰厚计算
 
-      根据DINO拍摄的图片显示，随着温度的降低，结冰从明冰向混合冰过渡，最终为淞冰。
-      当温度为-8℃时，冰型为明冰，呈透明状，甚至可以透过冰层看见光纤束端面。当温度为-28℃时，冰型为淞冰，冰表面粗糙，不透明，冰体松脆，容易脱落。当温度为-15℃时，冰型为混合冰，冰的颜色类似白瓷，表面凹凸不平，难以脱落。
+  根据拟合的冰厚电压曲线，实时测量电压值，从而得到厚度。
 
-      三条电压-冰厚曲线的起始电压不完全相等， 这主要有两个原因：（1）在高低温试验箱不断降温以达到所设定温度的过程中，箱内会产生水汽，部分微小水滴附着在光纤束探测端面对传感器输出电压有一定影响；
-      （2）温度不同时，单斜端面光纤结冰传感器的发光管的发光强度会发生不同程度的 变化，接收管的光电转换效率也发生不同程度的改变，这些都会影响传感器输出初 始电压的大小。
+  实验数据中，电压在 2s 之内到达最大值。
+  这样的数据有什么意义呢？
 
-      曲线的变化趋势，与第二章中的理论模型的变化趋势一致，也证明了传感器能够识别冰型，不同的冰厚有不同的响应，传感器设计正确。
-***** 不同液态水含量下电压冰厚曲线
-      调节风速和水量，可以调节水雾的液态水含量和水滴粒径。
-      下图显示了逐渐增加液态水含量和水滴粒径，电压时间曲线的变化过程。
-      可以看出，电压增长速度变大，对应与冰层增长变快，并且冰型曲线越来越接近明冰。
-      以上说明，较大的液态水含量和水滴粒径更容易产生明冰。
+  拍照图片识别的冰厚，是真实的冰厚，但其精度没有经过测量，所以只能做参考。
 
-**** 冰风洞实验
+****** 两者如何一致
+
+  位置分布和厚度两个方面
+
+  位置分布，比较第二个迎风面
+
+  厚度，图片识别的冰厚可以和仿真的冰厚进行比较。但是，传感器测得的冰厚，不能和仿真比较，因为量程受限。
+
+**** DONE Structure
+     CLOSED: [2020-12-29 Tue 09:24]
+
+***** dual-spindle
+****** circle
+
+  - (0,0) r3: [(0+3, 0); (0, 0+3)]
+  - (25, 14) r5.5: [(25+5.5, 14); (25, 14+5.5)]
+  - (25, -14) r5.5: [(25+5.5, -14); (25, -14+5.5)]
+  - (40, 20) r7: [(65+7, 20); (65, 20+7)]
+  - (40, -20) r7: [(65+7, -20); (65, -20+7)]
+  - (90, 16) r10: [(90+10, 16); (90, 16+10)]
+  - (90, -16) r10: [(90+10. -16); (90, -16+10)]
+  - (135, 0) r3: [(135+3, 0); (135, 0+3)]
+
+****** tangent
+
+  #+CAPTION: ratio
+  | radius1 | radius2 |         inner ratio |     external ratio |
+  |     3.0 |     5.5 | 0.35294117647058826 | 2.8333333333333335 |
+  |     5.5 |     7.0 |                0.44 |  2.272727272727273 |
+  |     7.0 |    10.0 |  0.4117647058823529 | 2.4285714285714284 |
+  |    10.0 |     3.0 |  0.7692307692307693 |                1.3 |
+  #+TBLFM: @2$3..@5$3='(/ $1 (+ $1 $2));N::@2$4..@5$4='(/ (+ $1 $2) $1);N
+
+****** surface
+
+       use 2-4 curves: select model first to create suface1; then select all curves to create surface2; lastly, remove the surface1
+
+****** part
+
+  - inlet:
+  - outlet:
+  - wall:
+  - model:
+  - bottom: create from surface
+
+***** mesh
+
+  https://www.bilibili.com/video/av96436039
+
+  https://jingyan.baidu.com/article/08b6a59198b3a414a80922be.html
+
+  - 边界线在拉伸之后将形成不同的侧面，因此需对这些线分别命名，拉伸后形成的面的名字将继承这些线的名字，命名如下。注意，若此时不对线进行命名，那
+   么拉伸后顶面和所有的侧面将包含在同一个 PART 中，需要在或许 CFD 求解器中再分离。
+  - 设置网格尺寸, 生成面网格
+  - 拉伸成体网格。依次点击“Edit mesh”-“Extrude mesh”，弹出“Extrude mesh”的属性窗口。
+   1. Elements：指源网格，即前面已创建的面网格；
+   2. New volume part name：指即将生成的体网格名称，默认 fluid,可改。
+   3. New side part name：指侧面名字，默认 inherited，即边界线的名字。
+   4. New top part name：指拉伸后顶面的名字，自动给一个默认名可改。改为 top
+   5. Extrude mesh method：指拉伸方式，共四种：extrude by element normal、extrude along curve、extrude by vector、extrude by rotation。选择 extrude by element normal
+   6. Number of layers：指拉伸层数。设置 30
+   7. Reverse direction：可选项，指拉伸方向是否要反向。不需要
+   8. Spacing type：可选 fixed 或者 Fuction。选择固定距离
+   9. Spacing：指每层网格厚度。设为 1mm，30 层
+   10. Delete original elements：可选项，指是否删除源网格。不选，因为原网格需要作为下表面
+
+**** CANCELLED Grid                                               :CANCELLED:
+     CLOSED: [2020-08-04 Tue 09:27]
+     - State "CANCELLED"  from "TODO"       [2020-08-04 Tue 09:27] \\
+       尝试了太多次，网格质量很差。
+       商飞章工画网格，仿真结果和我们预一致，暂定使用他们的网格
+  https://www.bilibili.com/video/BV1w741177BW?p=1
+
+**** HOLD Simulation                                                   :HOLD:
+     - State "HOLD"       from "TODO"       [2020-08-04 Tue 09:29] \\
+       原始的双梭形结构已经仿真过了，仿真结果与预期一致，本阶段工作告一段落。
+       等新构型设计了，再继续开始仿真工作
+
+***** conditions
+
+  | Configuration                    |                          5 |
+  | Characteristic Length (m)        |                      0.141 |
+  | Altitude (m)                     |                       1000 |
+  | Angle of Attack (degree)         |                          0 |
+  | Air velocity (m/s)               |                        100 |
+  | Temperature (Celsius)            |                        -10 |
+  | Medium Volume Diameter (Microns) |                  20 or 100 |
+  | Liquid Water Content (g/m3)      |                        0.7 |
+  | Droplet distribution             | Monodisperse or Langmuir D |
+  | Icing time (mins)                |                         30 |
+
+***** configuration
+****** character length
+
+  The Characteristic length setting has no impact on the flow, but it will change the scale of the average residual which is reported in non-dimensional form.
+  A large characteristic length will make the average residual appear smaller.
+  It is a good practice to choose a characteristic length that matches the scale of the computational domain.
+  In this case, 0.05m is the diameter of the piccolo tube.
+
+  - [X] 0.141
+  the length of sensor, not include the flow field.
+  the result is wrong, no image
+  - [ ] 0.4
+  the length of flow field, that is all the length of model.
+
+****** prism layer
+
+  how to set?
+  what functions?
+
+**** DONE Hardware
+     CLOSED: [2020-12-29 Tue 09:24]
+
+***** 锁定放大器
+
+  https://blog.csdn.net/kvdz_taobao_com/article/details/103508319
+
+**** DONE Experimental Data Process
+     CLOSED: [2020-07-02 Thu 18:49]
      :LOGBOOK:
-     CLOCK: [2021-02-27 Sat 11:04]--[2021-02-27 Sat 11:29] =>  0:25
-     CLOCK: [2021-02-27 Sat 10:30]--[2021-02-27 Sat 10:55] =>  0:25
+     CLOCK: [2020-04-04 Sat 15:19]--[2020-04-04 Sat 16:49] =>  1:30
      :END:
+   [2020-04-04 Sat 15:19]
 
-***** 冰风洞装置原理和优势
-      冰风洞是研究飞机迎风表面在飞行时的结冰问题及其防除冰方法的特种风洞。
+***** tools
 
-      参考开题报告
-      中航工业武汉航空仪表有限责任公司于1999年3月建成了国内首座也是目前唯一一座闭口回流式亚音速仪表冰风洞\cite{xingyuming:2011fdj}，实验段口径180mm×280mm，实验段气流速度达205米/秒，气流温度最低至$-35^{\circ}C$，液态水含量0.2~3g/m3，能够承担四大类仪表及相关系统的冰风洞实验，并获得国防科学技术奖一等奖。该风洞主要用来进行了全静压受感器冰风洞实验技术研究。
-      风力机和制冷机提供冰风洞必须的风速和温度。
-      冰风洞稳定段前装有大容量的冷却器，稳定段中设有可控制的喷雾装置，以便模拟真实飞行时遇到的结冰云雾条件。
-      风洞风扇前设置防护网，防止冰块打伤风扇叶片。
-      冰风洞轮廓图如图所示。
+   My desired tools should include three parts: the sensors to produce data; the data_inbox to collect data from all accessed sensors and send data to next; the database to store or process or remind.
 
-      经过试验段的气流首先经过第一扩散段，降低试验段中高速气流的速度以降低风洞中非试验段中的能量损失。
-      气流由于摩擦、拐弯、分离等原因，在风洞内循环一周后会产生能量损失，造成一定的压力降低，而动力段的功能就是在试验段获得期望的气流速度。
-      再经过后过渡段和第二扩散段后，气流在冷凝段后通过换热器降温，使风洞具有模拟结冰低温。
-      再经过第三第四拐角，气流在通过4次90°拐弯后完成循环，形成了一个回路。
-      冰风洞的喷雾装置安装在稳定段，根据不同试验的需要，控制喷雾的粒径和时间。
-      冰风洞试验段实拍图如图3.6所示。
+   The sensor works as developers want. The sensor can send data at any time at any place.
 
-      衡量冰风洞的主要参数是温度、液态水含量、水滴直径三个。这些是按照 FAR25 附录 C 来确定的。温度范围 0~-30,冰云水含量 0.2~3g/m3,冰粒子直径 5~50um 不等，风速跨度较广，如低速、亚音速、跨音速、超音速风洞。
+   The data_inbox can receive multi data, and send to next one by one. Users can get real-time data.
 
-      冰风洞试验具有安全性高、成本低廉、可模拟的结冰条件范围广、结冰参数控制精确、试验重复性好等优点,是防冰性能验证的最佳途径。
-      但每次冰风洞实验成本，对于传感器研制而言是昂贵的。冰风洞开始运行之后，每分钟600元，平均每天的实验成本在20万。
-      因此，当前光纤式结冰传感器基本没有冰风洞实验数据，本文是第一次介绍相关数据的，这也是本课题组的贡献。
-***** 四（二）种结冰条件
-      验证光纤式结冰传感器安装在飞机上面对实际工况的稳定性，进行了此次冰风洞试验，
-      采集的试验数据同时可以用来对冰厚计算模型进行进一步的修正。
+   The database can plot the data with fitted curve. Remind users to process the data within a day with notifications. Store or remove the data or beautify the output with commands according to users.
 
-      根据实际飞机机翼参数制作的缩比机翼模型如图所示，机翼安装在风洞实验段，气流从右侧零攻角喷向机翼。
-      在机翼迎风面顶端弦向布置两个小孔，安装传感器探头。
+***** workflow
+****** describe data
+       :PROPERTIES:
+       :ID:       E42496B0-D2FA-4F06-B719-3AC5554CF73E
+       :END:
 
-      冰风洞进行结冰实验的流程是，降温，吹风，吹水，停止，测量冰厚。
+  http://gitee.com/chengxinhust/graph-bed/raw/master/oMsYXV.jpg
 
-      本次冰风洞试验条件主要有四种典型结冰条件，LWC为0.2
+*** paper reading
 
-      | 试验工况                               | 喷水时间s                 | 试验次数 |
-      |----------------------------------------+---------------------------+----------|
-      | 静温-10、总温-1、粒径40μm、风速140m/s  | 25/42/60/70/95/80/120/153 |        8 |
-      | 静温-10、总温-5、粒径20μm、风速100m/s  | 120/300                   |        5 |
-      | 静温-20、总温-10、粒径20μm、风速140m/s | 15/18/20/25/26/38         |        7 |
-      | 静温-20、总温-10、粒径20μm、风速140m/s |                           |          |
-
-      冰风洞冰厚测量是通过三维扫描建模的方式进行的，使用激光扫描仪扫描整个机翼的形状，对比结冰前和结冰后的三维模型差别，即可得到机翼每个位置的冰厚。
-
-      分析一波工况的选择和变化趋势。
-***** 电压冰厚曲线
-      这里，必须能够证明可以进行冰厚测量，冰型探测
-
-      在冰风洞中对四种典型结冰条件进行了实验，得到的电压数据。
-      同种实验条件的数据具有相似的变化趋势和电压大小，但数值并不完全一致，这主要是冰风洞的实验条件并不能达到完全一致，导致冰型发生变化。
-      但数值差距很小，因此可以认为冰型缓慢变化，对应的电压变化趋势也是缓变的。
-
-      不同实验条件的电压曲线差异明显，用数据的方差除以均值的方式来表征实验数据的离散程度，可以看出，随着温度降低，粒径降低，离散程度增加，冰型越来越接近淞冰。
-
-      因此，可以得出结论，同一种工况下，电压曲线稳定，从喷水开始到喷水结束电压都有响应，可以灵敏反应冰厚的变化，可以在标定之后用于测量冰厚。
-      不同的工况，电压变化趋势差异明显，可以有效区分不同冰型，进一步预测结冰条件。
-**** 误差分析与优化
-     :LOGBOOK:
-     CLOCK: [2021-02-27 Sat 11:34]--[2021-02-27 Sat 12:29] =>  0:55
-     :END:
-***** 系统标定实验
-      冰厚怎么标定？线性插值与实际不符，尤其是没有实际值
-
-      根据冰风洞的实验数据，对传感器响应进行标定的工作，主要是根据两路电压信息，根据公式计算得到冰厚。
-
-      因此标定实验共有三个物理量，电压1，电压2，和冰厚，
-      由于没有实时冰厚测量，真实的冰厚信息只有在最后停水阶段测量得到的一组。
-      基于经验，我们可以认为冰厚线性匀速增长，因此设定开始喷水时冰厚为0，喷水阶段的冰厚是起始冰厚到最终冰厚的线性插值。
-
-      结冰过程中得到的一系列三维点，可以通过拟合工具，得到三维的拟合公式。
-      最后拟合结果的可视化如图所示。
-
-      拟合过程采用多项式拟合，电压1三阶电压2两阶。
-
-      观察三维点在三维空间的分布情况，可以看出，实验数据仅包括了几个聚类，拟合曲面大部分仍没有真实的数据。
-      根据数据的分布情况，可以认为不同冰型对应的电压数据在三维域空间中是缓变的，因此，该拟合公式，具有一定的泛化能力，即，当出现没有实验数据的冰型时，如果该冰型与某种已经拟合的冰型相差不大，仍是可以得到较准确的结果。
-
-      因此，标定实验应该尽可能多地加入更多的实验数据。
-
-      同时，我们分析了，仅有两路电压数据是否足够得到冰厚信息？
-      其实，只有一路信息就够了，但由于明冰电压曲线是钟形曲线，不单调，一个电压值可能对应多个冰厚，无法标定。但在三维域中，可以看到曲线是单调的，这就极大方便了拟合过程。
-      同时，第二路电压可以在冰厚较大时仍有比较明显的反应，扩大量程。
-***** 结冰条件的正确率
-      光纤式结冰传感器的精度，是喷水停止时，传感器预测的冰厚，和三维建模得到的冰厚的比较。
-
-      在冰风洞实验中，拟合后的传感器精度如图所示。
-
-      当前结冰测量的传感器精度要求是0.5mm，可以认为，传感器完全满足相关要求。
-**** 本章小结
-     本章介绍了传感器的设计要点，包括传感器的机械、电路、软件设计，实现了传感器能够得到稳定的光强信息的目标。
-     在实验室搭建了结冰平台，用高低温箱、喷枪、空气压缩机等模拟了飞机的结冰环境，将传感器固定在高低温箱中，过冷水雾以高速碰撞传感器探测面，冰层快速增长冻结，得到的电压时间曲线和之前的实验数据一致，通过了传感器原理验证实验。
-     为进一步验证传感器的冰厚测量能力，在武汉冰风洞中进行了四种典型结冰条件的结冰实验，经过标定后的电压可以准确测量冰厚，同时，根据电压变化趋势和电压最大值可以判断冰型，并进一步推测结冰环境。
-
-     但，传感器不能在任意结冰条件下测量冰厚，因为不同冰型的电压拟合公式不同，采用的三维曲面拟合方法，仍然有大量的空白区域没有经过真实数据的标定。
-     考虑到冰型的渐变和曲面拟合的泛化能力，在明冰和淞冰之间，找到几种典型的混合冰，用来表示某一类冰型的电压特性，即可完善拟合公式，而非需要在所有的环境中得到标定数据。
-     怎么选择典型混合并及其分类，将在下一章中进行。
-*** TODO 结冰实验数据处理
-**** 引言
-     :LOGBOOK:
-     CLOCK: [2021-02-27 Sat 14:45]--[2021-02-27 Sat 15:10] =>  0:25
-     :END:
-     对于光纤式结冰传感器，不同的冰型会有不同的电压冰厚曲线，因此，传感器固有的冰型敏感特性的给传感器的标定和精度提升带来了巨大困难。
-     前面的工作，都只讨论了几种常见结冰条件下传感器的性能，在飞机实际航行中遇到的情况中，只是极小的一部分。
-     拟合公式在遇到没有标定的冰型，给出的冰厚值与实际可能想去甚远，因此，该传感器目前仅用在实验阶段，无法搭载在飞机上。
-
-     光纤式飞机结冰探测的问题，从现象上可以描述为，飞机航行的环境中一种可以导致飞机结冰的环境，该环境包含很多可能的条件和较大的范围，被定义在飞机结冰包线中。当飞机遭遇了结冰环境，在特定位置，某种冰型的冰层以某种速率开始逐层增加。当用光纤传感器探测时，光电信号会随冰层厚度和冰型而变化。
-     我们把光纤式飞机结冰探测的问题，
-     用数学的方式归纳，可以表述为：
-     有三个不同的域，分别是表示结冰条件的气象域，表示结冰过程的结冰域，和表示传感器数据的光电域。
-     气象域中有四个变量：温度、水滴粒径、液态水含量、风速。这四个变量可能的值分布情况和相关程度，如飞机包线图所示。
-     结冰域中有两个变量：结冰速率和孔隙率。这两个变量的可能取值，应该是二维平面的某个或者某几个圈。
-     光电域中有两个变量：电压1和电压2。这两个变量的可能取值是无数条曲线。
-
-     在冰风洞实验中，我们仅仅是在气象域中选取了4个点，从结冰包线来看，能够代表部分经典的结冰条件，得到了结冰域中的4个点，在光电域中，由于重复了多次实验，得到了30条曲线。
-     因此，该光纤式结冰传感器在实际的工作中，其检测能力有限，主要原因是冰风洞实验代价昂贵，进行实验的结冰条件过少。
-
-     为了提高传感器的适应能力，我们对电压数据进行了进一步的分析，改变传统数据拟合的方式，使用 SVR 对电压冰厚数据进行了回归，实现了极小的误差；
-     对于不同实验条件下的数据，采用 SVM 的方式进行分类，在每一个小的气象域中进行分析，对应到不同程度的混合冰分类，在该区域中电压变化具有一致性，可以实现更准确的结冰条件预测。
-**** 数据后处理
-     :LOGBOOK:
-     CLOCK: [2021-02-27 Sat 17:05]--[2021-02-27 Sat 17:35] =>  0:30
-     :END:
-***** SVR 电压冰厚拟合
-      最小二乘法数据点拟合提供了一种高效可计算的方法来估计过程的状态，并使估计均方差最小，它利用前一时刻的估计值和现时刻的观测值来更新对状态变量的估计，求出现时刻的估计值，它更适合于实时处理和计算机运算。
-      但在系统建模过程中，由于模型简化、噪声统计特性不准确、实际系统的参数发生变动等诸多因素的存在，使得系统模型往往存在一定的不确定性。因此，数据拟合对于模型不确定性的鲁棒性很差，导致状态估计不准，甚至出现发散。
-
-      支持向量机回归模型在小样本情况下仍具有较快的收敛速度和计算精度，且解收敛于全局最优，克服了实际应用中样本不足的缺陷以及神经网络的过学习、局部极小值和泛化能力差的问题，使结果更接近于真实值。
-      同时，在时间序列预测中，支持向量机与反映趋势变化的点紧密相关，因而支持向量机能较好的跟踪时间序列的发展趋势，即便在较长区间预测中仍可保证具有相当的精度。
-      缺点是计算时间较长，实时性较差。
-
-      对冰风洞实验的数据进行 SVR 训练，随机选取部分数据作为测试集，测试结果从对平均绝对误差(Mean Absolute Error，MAE)、均方误差(Mean Square
-Error，MSE)、平均绝对百分比误差(Mean Absolute Percentage Error，MAPE)、均方百分比误差(Mean Square Percentage Error，MSP)四种预测性能指标，与最小二乘法进行了比较。如下图所示
-
-***** SVM 结冰条件判断
-      SVR 对已经分类的数据有很好的拟合效果，但对所有的实验数据进行 SVR 之后，拟合效果变差，如图所示。
-      这是由于数据过于离散，且不同冰型的数据的无法有效区分。解决方法可以是训练更加复杂的网络，或者对冰型分类之后再训练。
-      由于更加复杂的网络，在嵌入式系统上的无法达到相关的算力，我们选择对冰型数据分类。
-
-      为了对冰型进行更合理的分类，本文不再采用之前的明冰、混合冰、和淞冰等根据透明程度的分类，根据实验条件和电压曲线，将所有在实验过程中出现的冰型，分为10类。
-      分类首先是根据实验条件，将邻近气象域中的结冰数据都先分为一个大类，一共有6个分类，然后在同一类中，将电压变化趋势有明显差异的再细分。
-      电压变化趋势标准主要是：是否先升后降、电压1和电压2趋势是否相同、是否先上升后稳定、两路电压峰值大小。
-
-      对已经手工分类的数据，进行 SVM 学习。测试的结果如下图所示，能够对测试集进行正确分类。
-
-      由于 SVR 的方式不是针对所有的冰型，因此，把所有的实验数据，进行 SVM 分类之后，再进行 SVR 拟合，这样拟合的结果，能够实现完全自动的更高精度的结冰测量。
-**** 不同程度混合冰分类
-     上一节，已经将混合冰分为10类，并且分类之后的数据，进行SVR能够得到更加效果。
-     但是，这种分类不具有一致性，只能在该型号的光纤式传感器上应用。
-     因此，我们讨论，将结冰进行更加细致分类，能否推进结冰探测的相关研究。
-
-     从数学的角度出发，将结冰域分割为更多的小区域，就可以建立结冰子区域到气象域更加简洁直观的映射关系，同时，光电域的数据也会有更加明显的聚类。
-     因此，进行不同程度的混合并分类是非常有必要的。
-
-     综合之前的研究，我们提出，根据透光度，即，用光源直射冰层，另一端的光电探测器的光强与光源光强的比值，作为分类的可量化指标。
-     从透光度0%到100%，分为10个子类，每10%为一个子类，成为n号混合冰。
-
-     根据这样的分类，我们对电压数据进行了重新分类，并再次用SVM和SVR进行训练，结果取得了和手动分类接近的精度，如图所示。
-**** 本章小结
-     为了扩展传感器的泛化能力，能够对没有标定的结冰情况也能正常检测，采用了新的数据处理方式。
-     SVR 对已经分类的数据，具有很好的拟合能力，但所有数据一起处理，会导致精度变差。
-     对所有数据进行手工分类之后，SVR 可以实现高精度测量，之后进一步讨论对不同结冰程度分类的重要性与意义，可以建立结冰域与光电域和气象域之间的映射，提出并验证了新的混合冰细化分类方法。
-     最终，实现了自动分类并高精度测量冰厚的光纤式飞机结冰传感器。
-*** 总结与展望
+** Ice detector
+*** DONE 接收光纤原理解释
+    CLOSED: [2021-03-28 Sun 16:52]
+    1. 光纤分布的解释
+    2. 光纤耦合
+*** DONE 根据反射模型能得到明冰曲线吗
+    CLOSED: [2021-03-20 Sat 16:07]
     :LOGBOOK:
-    CLOCK: [2021-02-27 Sat 19:07]--[2021-02-27 Sat 19:42] =>  0:35
+    CLOCK: [2021-03-03 Wed 10:12]--[2021-03-03 Wed 16:51] =>  6:39
+    CLOCK: [2021-03-03 Wed 09:32]--[2021-03-03 Wed 09:57] =>  0:25
+    CLOCK: [2021-03-02 Tue 19:34]--[2021-03-02 Tue 19:59] =>  0:25
     :END:
-**** 总结
-***** 全文工作总结
-      飞机结冰严重危害飞机安全。
-      飞机结冰探测是飞机安全领域一个重要研究难题，且是飞机试航审定中不可缺少的环节。
-      本文提出了一种结构简单、测量稳定的光纤式结冰探测传感器，巧妙地将光纤传光理论和冰的物理性质结合起来，实验室的原理性验证实验保证了传感器的正常工作和稳定性，冰风洞实验证明了传感器在典型结冰环境中具有良好的精度和灵敏度。
-      为了深入了解结冰过程的光学行为，建立光纤的光传输模型和冰层的光调制模型，基于斯涅尔折射定律和菲涅尔方程，对光的折射、衰减和散射等行为进行了量化分析，得到不同冰型和冰厚对反射光强的调制能力。
-      并通过 COMSOL 几何光学仿真，得到了不同冰型的电压冰厚曲线，与理论曲线基本一致，证明了理论的正确性。
-      冰风洞实验的数据用 SVR 的方式进行拟合，相比较于传统的最小二乘法，可以实现更好的拟合效果和更高的精度。
-      本文提出了一种更加细化的混合冰分类方法，对所有数据进行了SVM分类之后再使用SVR拟合，可以达到最好的效果。
-      并提出了新的冰型分类原则。
-***** 本文工作主要创新点
-      冰风洞实验
-      SVR数据处理
-      混合冰分类
-***** 研究中发现的问题
-      光纤式结冰传感器，其固有的冰型敏感，导致不同冰型的冰厚电压曲线不同，增加了冰厚测量的难度，降低了冰厚测量稳定性。
-      但冰型测量在飞机飞行中也是非常有价值的信息，可以提供结冰气象条件信息，帮助飞行决策系统作出更加符合情况的决策。
+    现在只讨论两个反射面之和，还不能。
+    因为是总光强，没有考虑能够接收的光强。
 
-      多维信息融合的方式进行冰厚测量，虽然可以提高系统测量的精度，但不仅在拟合过程增加了难度，计算过程也需要更多的算力，常见的嵌入式系统很难胜任大量的计算工作，并且运算时间大大增加，无法保证测量的及时准确性，在军用飞机等高实时性系统上反而得不偿失。
+    所以变成，光功率（单位面积的光强）在接受面的积分。
 
-      光强调制型传感器容易受探测器表面的油污灰尘干扰，造成零点电压的漂移。
-      在实际工作环境中，无法保证探测面的清洁，这对光纤式传感器是极大的考验。
-**** 展望
-     本论文虽然在光纤式结冰冰型检测技术方面做出了具有较强创新性的研究，然而在纤结冰传感器的理论、设计和试验等方面仍有许多后续工作需要开展， 这些工作至少包括以下几点：
+    冰厚和圆直径的关系：$r=a/2+2h/cos\theta$
 
-     一是结合冰风洞实验数据，建立更准确的光纤结冰传感器和冰层的光学物理模型，为定量分析传感器的输入输出特性提供理论指导。
-     本文分析了光纤结冰传感器检测冰型的基本工作原理，仅仅给出了不同冰型下的传感器特性曲线的特征，对主要的折射、衰减和散射等行为进行了量化分析，
-     由于明冰、淞冰和混合冰的分类方法是很粗略的，因此为了定量探测冰型，需要优化模型中的简化和部分假设，建立更完善的光纤结冰传感器的数学物理模型，计算推导冰型、冰厚与传感器输出信号及变化率的映射关系，并通过结冰试验验证或修正。
+**** 光功率是直线，实际是有发光角度的
+**** 计算两圆相交面积
+     :LOGBOOK:
+     :END:
+     https://blog.csdn.net/aaakkk_1996/article/details/81746858
+     #+begin_src C
+#include<cmath>
+#include <cstdio>
 
-     二是本文设计开发斜端面光纤结冰传感器中采用的红外 LED（SE5455）和光敏三极管（SE5443）在军用温度范围内的温度稳定性偏低，对传感器特性造成会较大 的影响。
-     即使未能遭遇过冷大水滴，传感器长时间处于低温环境也可能具有变化的输出信号，这可以由红外 LED 和光敏三极管的光电或电光转换效率的变化引起。
-     因此，后续工作应该设法在所要求的温度范围内稳定红外 LED 的发光功率和光敏三极管的灵敏度，或采取一定的温度补偿措施。
+using namespace std;
 
-     三是本文在结冰试验中利用数码显微镜离线测量结冰厚度，从方法来说是简单有效的，但是也有诸多弊端。
-     例如：①存在较大的人为误差、随机误差；②每次测 量前需打开高低温试验箱窗口，造成箱内温度的波动和结冰状态的变化；
-     ③工作效率较低，冰厚数据偏少；4仅能观测到边缘位置冰厚，无法准确测量冰层凸起或凹陷的情况。
-     因此，可以考虑利用特殊的机械装置固定数码显微镜，利用计算机控制它，连续地或定时地在线测量冰厚，避免上述弊端。
+#define pi acos(-1.0)
 
-     四是补充完成更多结冰条件下冰风洞光纤结冰传感器的加工研制和试验研究工作。
+typedef struct node
+{
+  int x;
+  int y;
+}point;
 
-*** 致谢
-    在论文即将完稿时，回眸研究生学习和工作中的点点滴滴，感慨自己在专业领域进步的同时，也收获许多学习和生活中的感悟。
-    在将近三年的研究生求学经历中，我充分认识到了科研活动的一般过程和方法，基本掌握了在所属领域独立开展创造性科学研究和技术开发工作的专业本领。
-    既品尝过刻苦努力之后成功的喜悦，也体验过因天真和松懈而导致失败的痛苦，而吸取失败的惨痛教训其实也是一种进步。在此，有太多感谢的话要说。
+double AREA(point a, double r1, point b, double r2)
+{
+  double d = sqrt((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
+  if (d >= r1+r2)
+    return 0;
+  if (r1>r2)
+  {
+    double tmp = r1;
+    r1 = r2;
+    r2 = tmp;
+  }
+  if(r2 - r1 >= d)
+    return pi*r1*r1;
+  double ang1=acos((r1*r1+d*d-r2*r2)/(2*r1*d));
+  double ang2=acos((r2*r2+d*d-r1*r1)/(2*r2*d));
+  return ang1*r1*r1 + ang2*r2*r2 - r1*d*sin(ang1);
+}
 
-    首先，要衷心地感谢我的导师葛俊锋副教授。葛老师在科研项目和学术论文中给了我许多具体有益的指导，他积极乐观的工作态度和循循善诱的指导方法让我深受教益。除了“传道授业解惑”，他还在生活和个人未来发展等方面给了我很多的关心和帮助。
+int main()
+{
+  int distance = 5;
+  int r2 = 2;
 
-    其次，要深深感谢在实验室朝夕相处的叶林教授和桂康博士后。
-    叶老师的批判性思维方式和文质彬彬的待人接物风范，让我耳熏目染。
-    桂康博士后严谨的治学态度、刻苦的工作精神、精益求精的科研作风和灵活多变的实际工作能力，都给了我很大的有益影响。
+  point a, b;
+  a.x=2, a.y=2;
+  b.x=2 + distance, b.y=2;
 
-    再次，要感谢一起负责结冰项目的任宏宇、李洪宇、周浩和刘进一同学，一起在实验室研究结冰理论，研制传感器，一起讨论方案，互相争论，一起在冰风洞做实验的日子是那么难忘，感恩这个艰辛且快乐的项目我们一起前行。
-    也要感谢在同一实验室学习的陈诗柄、陈前焱、崔慧英、张凯、毛俊伟、陈彬、王永阳和王丽等同学，实验室大家庭让我感受到了集体的温暖，在与他们谈理想、谈人生的过程中，我学习到了同龄人的优秀品质，逐渐对自己的未来有了更清醒的认识和定位。
-    要感谢实验室的范博龙、肖汀、和戴卫中三位工程师，在传感器设计和制造以及实验阶段，提出建设性意见，弥补我们在工程实践中的不足。
+  for(double r = 3; r <= distance + r2 + 0; r = r + 0.5) {
+    double result = AREA(a, r, b, 2);
+    printf("%lf,%lf\n", r, result);
+  }
+  return 0;
+}
+     #+end_src
 
-    最后，还要特别感谢我的父母，感谢你们二十多年来为支持我的学业而付出的艰辛和作出的牺牲。
+     #+RESULTS:
 
-在临近毕业之际，怀着一颗感恩的心，祝福所有指导、帮助和支持我学业的人 一生平安幸福。
+*** DONE 画示意图
+    CLOSED: [2021-03-20 Sat 16:07]
+    :LOGBOOK:
+    CLOCK: [2021-03-02 Tue 21:04]--[2021-03-02 Tue 22:53] =>  1:49
+    :END:
+    太浪费时间了，先找类似的放上去，之后再改
+
+*** DONE SVM
+    CLOSED: [2021-03-28 Sun 16:52]
+    SVR 需要使用线性插值的点吗？可以直接用最后一组吗？
+
+    SVM 的特征是什么？根据曲线的什么来分类？
+    实时曲线的特征向量
+
+*** DONE 文献阅读
+    CLOSED: [2021-03-20 Sat 16:08]
+**** DONE 卫星探测结冰区域
+     CLOSED: [2021-03-22 Mon 08:57] SCHEDULED: <2021-03-08 Mon 12:50-13:50>
+     [[zotero://select/items/1_LZ3BEFJC][赵阳, 符养, 赵增亮, 孙学金, 韩志刚, and 姚志刚. “卫星资料统计全球飞机积冰潜势分布特征.” 热带气象学报 34, no. 01 (2018): 102–14.]]
+*** DONE 章节引言的作用和写法
+    CLOSED: [2021-03-20 Sat 16:08]
+    先介绍为什么要写这一章节（和前一章的关系，解决了什么问题，对正文的作用）
+    在介绍这一章的主要内容，
+    最后分小节概括介绍。
+
+    作用：呈现章节结构，吸引读者阅读
+*** DONE 传感器滤波波形
+    CLOSED: [2021-03-28 Sun 16:52] SCHEDULED: <2021-04-01 Thu>
+
+*** 不同冰型，理论模型的光强曲线，应该不同的冰厚到达最大值
+    孔隙率越大，到达最大光强的冰厚应该越小
+
+    * TODO 毕业论文
+** Graduation Paper
+   CLOSED: [2021-03-28 Sun 16:54]
+*** DONE 毕业论文目录及提纲
+    CLOSED: [2021-01-26 Tue 10:04] SCHEDULED: <2021-01-25 Mon 10:00-12:00>
+
+**** DONE 桂博讨论
+     CLOSED: [2021-01-25 Mon 13:28]
+
+*** DONE 主要内容梳理 [[./refile/projects.org][org]]
+    CLOSED: [2021-03-22 Mon 08:59] DEADLINE: <2021-03-05 Fri>
+**** DONE 写草稿
+     CLOSED: [2021-02-27 Sat 20:20]
+**** DONE 自审，以盲审的角度
+     CLOSED: [2021-03-22 Mon 08:59] DEADLINE: <2021-03-01 Mon 17:00>
+     [[/Users/xin/Documents/Ice/GP/draft.org][draft.org]]
+***** 写修改意见
+**** DONE 修改结构
+     CLOSED: [2021-03-22 Mon 09:01]
+*** DONE 正式内容整理 latex
+    CLOSED: [2021-03-22 Mon 09:00] DEADLINE: <2021-03-08 Mon>
+*** DONE 修改
+    CLOSED: [2021-03-22 Mon 09:00] SCHEDULED: <2021-03-09 Tue 12:00>

@@ -6,7 +6,7 @@
    [2020-02-14 Fri 10:07]
 
    repo: https://github.com/google/googletest.git
-  
+
 *** the process about handling main parameter need a second reading
 *** other part cannot understand
 * Coding Philosophy
@@ -162,9 +162,9 @@
 
          cmake .. -DCMAKE_BUILD_TYPE=Release
 
-         - Release - Adds the `-O3 -DNDEBUG` flags to the compiler # -O3 最高级别的优化，-DNDEBUG屏蔽断言
+         - Release - Adds the `-O3 -DNDEBUG` flags to the compiler # -O3 最高级别的优化，-DNDEBUG 屏蔽断言
          - Debug - Adds the `-g` flag # -g 添加调试信息
-         - MinSizeRel - Adds `-Os -DNDEBUG` # -Os 2.5级优化，比2级多了代码压缩
+         - MinSizeRel - Adds `-Os -DNDEBUG` # -Os 2.5 级优化，比 2 级多了代码压缩
          - RelWithDebInfo - Adds `-O2 -g -DNDEBUG` flags
 
            set default build type
@@ -257,26 +257,26 @@
 
 *** header file should and should not
 **** should not
-     原则：尽量把能放到源文件cpp的代码都放到源文件里,头文件中应该只能有public APIs.其他所有的属于implementation detail的东西都应当放在源文件里面。一个项目的递交经常是public APIs + compiled library （for linking）。
+     原则：尽量把能放到源文件 cpp 的代码都放到源文件里,头文件中应该只能有 public APIs.其他所有的属于 implementation detail 的东西都应当放在源文件里面。一个项目的递交经常是 public APIs + compiled library （for linking）。
 ***** using namespace std;
 
       cause unexpected name conflict
 
       类的定义
 ***** includes
-      如果放在头文件，即使include的那个文件没有变动，也会被重新编译。
-      比如class A里有class B的成员，计算A的内存布局需要用到B的内存布局信息，所以就需要在定义class A前include B。
-      而如果只是有一个B*， 即指向B的指针（引用同理），由于指针大小是确定的，所以不需要B的内存布局，也不需要include B。
-      这时候只要向前声明一个 class B就可以了。而如果代码里使用了B的方法，那编译器也需要能在此之前看到该方法的定义，所以也需要include。
+      如果放在头文件，即使 include 的那个文件没有变动，也会被重新编译。
+      比如 class A 里有 class B 的成员，计算 A 的内存布局需要用到 B 的内存布局信息，所以就需要在定义 class A 前 include B。
+      而如果只是有一个 B*， 即指向 B 的指针（引用同理），由于指针大小是确定的，所以不需要 B 的内存布局，也不需要 include B。
+      这时候只要向前声明一个 class B 就可以了。而如果代码里使用了 B 的方法，那编译器也需要能在此之前看到该方法的定义，所以也需要 include。
 
 **** should
      原则：接口文件放在头文件中
 ***** 声明
-      extern变量的声明、函数的声明
+      extern 变量的声明、函数的声明
 ***** 定义
-      类的定义、枚举的定义、const int的定义、inline函数的定义
+      类的定义、枚举的定义、const int 的定义、inline 函数的定义
 
-      头文件中可以写const对象的定义。因为全局的const对象默认是没有extern的声明的，所以它只在当前文件中有效。把这样的对象写进头文件中，即使它被包含到其他多个.cpp文件中，这个对象也都只在包含它的那个文件中有效，对其他文件来说是不可见的，所以便不会导致多重定义。同时，因为这些.cpp文件中的该对象都是从一个头文件中包含进去的，这样也就保证了这些.cpp文件中的这个const对象的值是相同的，可谓一举两得。同理，static对象的定义也可以放进头文件。
+      头文件中可以写 const 对象的定义。因为全局的 const 对象默认是没有 extern 的声明的，所以它只在当前文件中有效。把这样的对象写进头文件中，即使它被包含到其他多个.cpp 文件中，这个对象也都只在包含它的那个文件中有效，对其他文件来说是不可见的，所以便不会导致多重定义。同时，因为这些.cpp 文件中的该对象都是从一个头文件中包含进去的，这样也就保证了这些.cpp 文件中的这个 const 对象的值是相同的，可谓一举两得。同理，static 对象的定义也可以放进头文件。
 ***** 依赖
       头文件的依赖一定要写清楚
 
@@ -288,7 +288,7 @@
      静态库对函数库的链接是放在编译时期完成的。
      动态库在程序运行是才被载入
 
-     一个静态库可以简单看成是一组目标文件（.o/.obj文件）的集合，即很多目标文件经过压缩打包后形成的一个文件
+     一个静态库可以简单看成是一组目标文件（.o/.obj 文件）的集合，即很多目标文件经过压缩打包后形成的一个文件
      空间浪费是静态库的一个问题。
 *** mix c and c++
  What do I need to know when mixing C and C++ code?
@@ -679,6 +679,22 @@
  Naturally you can write bad code in any language; C++ doesn’t guarantee any particular level of quality, reusability, abstraction, or any other measure of “goodness.”
 
  C++ doesn’t try to make it impossible for bad programmers to write bad programs; it enables reasonable developers to create superior software
+** 对于编程的宏观理解
+*** 泛型与 OOP
+**** 共同点
+ 能处理在编写程序时不知道类型的情况
+**** 不同点
+ - OOP 在程序运行时确定类型并赋值
+ - 泛型在程序编译时确定类型并赋值
+*** 强类型与弱类型
+*** 函数形参的限定符
+**** const 不改变形参的值
+**** &引用 不额外形参空间的开销
+**** const & 可以用于不能拷贝的类型;处理大对象时速度更快
+
+** 生成代码注释
+ 只注释那些设计不好但是又不得不这么做的
+ RTL 级的代码就是对 RTL 级最好的注释，真正有意义的注释应该是行为级的
 * Algorithm
 ** DONE Duplicate Operations Algorithm
    CLOSED: [2020-03-29 Sun 21:30]
@@ -692,8 +708,8 @@
     CLOCK: [2020-03-05 Thu 09:46]--[2020-03-05 Thu 09:49] =>  0:03
     :END:
     [2020-03-05 Thu 09:46]
-    使用递归：每次固定操作可以减少问题的n（可能是一个多维n^m的问题）
-    递归函数：如何表示n，递归操作，终止条件
+    使用递归：每次固定操作可以减少问题的 n（可能是一个多维 n^m 的问题）
+    递归函数：如何表示 n，递归操作，终止条件
 
     [[https://mp.weixin.qq.com/s/mJ_jZZoak7uhItNgnfmZvQ][递归及其优化参考文章]]
 
@@ -702,7 +718,7 @@
  2. 寻找递归结束条件: 当参数为啥时，递归结束，之后直接把结果返回.请注意，根据参数值能够直接知道函数的结果是什么，才可以作为结束条件。
 
    关于递归结束条件是否够严谨问题:结束条件不够严谨，导致出现死循环。也就是说，当我们在第二步找出了一个递归结束条件的时候，可以把结束条件写进代码，然后进行第三步，但是请注意，当第三步找出等价函数之后，还得再返回去第二步，根据第三步函数的调用关系，会不会出现一些漏掉的结束条件。例如：f(n-2)这个函数的调用，有可能出现 f(0) 的情况，导致死循环，所以我们把它补上。
- 3. 不断缩小参数的范围：通过找出函数的等价关系式，例如f(n) = n * f(n - 1)
+ 3. 不断缩小参数的范围：通过找出函数的等价关系式，例如 f(n) = n * f(n - 1)
 **** example
 ***** 斐波那契数列
  #+begin_src C++
@@ -768,14 +784,14 @@
 ***** 考虑是否重复计算
  如果你使用递归的时候不进行优化，是有非常非常非常多的子问题被重复计算的。一般我们可以把我们计算的结果保证起来，例如把 f(4) 的计算结果保证起来，当再次要计算 f(4) 的时候，我们先判断一下，之前是否计算过，如果计算过，直接把 f(4) 的结果取出来就可以了，没有计算过的话，再递归计算。
 
- 可以用数组或者 HashMap 保存，把 n 作为我们的数组下标，f(n) 作为值，例如 arr[n] = f(n)。f(n) 还没有计算过的时候，我们让arr[n] 等于一个特殊值，例如 arr[n] = -1。 当我们要判断的时候，如果 arr[n] = -1，则证明 f(n) 没有计算过，否则， f(n) 就已经计算过了，且 f(n) = arr[n]。直接把值取出来就行了。
+ 可以用数组或者 HashMap 保存，把 n 作为我们的数组下标，f(n) 作为值，例如 arr[n] = f(n)。f(n) 还没有计算过的时候，我们让 arr[n] 等于一个特殊值，例如 arr[n] = -1。 当我们要判断的时候，如果 arr[n] = -1，则证明 f(n) 没有计算过，否则， f(n) 就已经计算过了，且 f(n) = arr[n]。直接把值取出来就行了。
 ***** 考虑是否可以自底向上
 
  对于递归的问题，我们一般都是从上往下递归的，直到递归到最底，再一层一层着把值返回。
  不过，有时候当 n 比较大的时候，可能栈空间会不够用。
 
- /备注：/ 我常用的，例如：example2，从开始n = 0开始分析(所有可能的情况，只跳一个台阶，只跳两个台阶，都分别递归），这样递归深度不会少。这样的优化的方法又该如何进行呢？
- 我使用递归的思路是：固定的操作，每次操作之后，问题的n减小了。在每次操作，也就是一个递归func中，对每个固定子操作执行并再次跳用递归
+ /备注：/ 我常用的，例如：example2，从开始 n = 0 开始分析(所有可能的情况，只跳一个台阶，只跳两个台阶，都分别递归），这样递归深度不会少。这样的优化的方法又该如何进行呢？
+ 我使用递归的思路是：固定的操作，每次操作之后，问题的 n 减小了。在每次操作，也就是一个递归 func 中，对每个固定子操作执行并再次跳用递归
 
 **** recursive vs Loop for cumulative(累加）
  递归中，重复操作太多了，可以通过数组记录结果的方法，减少重复。
@@ -808,8 +824,8 @@
  - 定义 dp[i] 的含义为：跳上一个 i 级的台阶总共有 dp[i] 种跳法
  - dp[n] 一定会和 dp[n-1], dp[n-2]....存在某种关系的。但是关系怎么找？
  - 蛙到达第 n 级的台阶有两种方式: 一种是从第 n-1 级跳上来, 一种是从第 n-2 级跳上来, 由于我们是要算所有可能的跳法的，所以有 dp[n] = dp[n-1] + dp[n-2]。
- - 初始条件： n - 1 >= 0 , n - 2 >= 0， 得出n >= 2 时才可用公式，所以dp[0], dp[1]就是初值
- - 但是，dp[2]应该2， 不是dp[0] + dp[1]的和。。。。这就是对于dp[i]的定义的问题了，这里，i表示台阶阶数，从1开始比较合适
+ - 初始条件： n - 1 >= 0 , n - 2 >= 0， 得出 n >= 2 时才可用公式，所以 dp[0], dp[1]就是初值
+ - 但是，dp[2]应该 2， 不是 dp[0] + dp[1]的和。。。。这就是对于 dp[i]的定义的问题了，这里，i表示台阶阶数，从 1 开始比较合适
 **** 跳棋问题
  #+begin_src C++
    int main(void) {
@@ -885,8 +901,8 @@
  #+end_src
 *** 缺陷
 **** 查找值有重复
-     例如， 1 2 2 2 3，查找2，得到索引值是2。
-     但是，索引值1和3都是对的，分别对应于左边界和右边界。如何应对这种需求呢
+     例如， 1 2 2 2 3，查找 2，得到索引值是 2。
+     但是，索引值 1 和 3 都是对的，分别对应于左边界和右边界。如何应对这种需求呢
 
      左边界二分查找
  #+begin_src C++
@@ -944,7 +960,7 @@
 
 *** 希尔排序
 
- 二分gap，从gap位置向后遍历，对以gap等间距的稀疏数组，插入排序
+ 二分 gap，从 gap 位置向后遍历，对以 gap 等间距的稀疏数组，插入排序
 
 *** 简单排序
 
@@ -969,7 +985,7 @@
 
 *** 基数排序
 
- 用数组或map记录所有元素的个数，在从大到小，依次输出
+ 用数组或 map 记录所有元素的个数，在从大到小，依次输出
 
 ** DONE Dynamic Programming
    CLOSED: [2020-07-01 Wed 12:24] DEADLINE: <2020-04-16 Thu 18:00>
@@ -996,7 +1012,7 @@
  }BTNode;
 
 
- void creatBinTree(char*s,BinTree *&root)  //创建二叉树，s为形如A(B,C(D,E))形式的字符串
+ void creatBinTree(char*s,BinTree *&root)  //创建二叉树，s为形如 A(B,C(D,E))形式的字符串
  {
      int i;
      bool isRight=false;
@@ -1221,8 +1237,73 @@
      return0;
  }
 
-** TODO 位运算
+** DONE 位运算
+   CLOSED: [2020-10-05 Mon 09:50]
  https://blog.csdn.net/deaidai/article/details/78167367?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.add_param_isCf&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.add_param_isCf
+** DONE SVM
+   CLOSED: [2021-03-20 Sat 16:27]
+
+   supported vector machine: 支持向量机， Vapnik 于 1964 年提出。
+   一种用于小样本分类的方法
+
+*** 线性模型
+**** 线性可分
+**** 线性不可分
+**** 特征
+
+     - 所有特征对判断结果的影响是差不多的
+     - 误差的影响最小
+
+**** 评估标准
+***** 性能指标
+
+ 最大化间隔(Margin)
+
+***** 概念的提出
+
+      1. 将平行线插到的向量叫做“支持向量”。正是由于分割线的选取只与支持向量有关，，SVM 才适用于小样本。
+      2. 训练数据和标签(x1, y1) ，其中 x 为向量，y为标签，y范围是[-1, +1]。
+      3. 超平面
+      4. 线性模型(w, b)
+         w 是向量，b是常数，满足 $w^Tx+b=0$，将所有样本分为 2 类
+      5. 线性可分
+         若 yi=+1，则 w^Txi+b ≥ 0，若 yi=-1，则 w^Txi+b < 0。即，yi[w^Txi+b]≥0
+
+*** SVM 优化
+
+    最小化||w||，限制条件:yi[w^Txi+b]≥1。
+
+    非线性：问题转变为：最小化$\frac{1}{2} ||w||^2+C\Sum_{i=1}^N\epsilon_i$ ，限制条件：$y_i[W^Tx_i+b]\ge 1-\epsilon_i, \epsilon_i \ge 0$
+
+*** 非线性模型
+**** 高维映射
+
+     X 是 n 维向量，在$\Phi(x)$ 作用下，转换为 m 维向量。通常转为无限维。
+     我们可以不知道无限维映射$\Phi(x)$ 的显式表达，我们只要知道一个核函数$K(x1,x2)=\Phi(x1)^T\Phi(x2)$ ，则最优化问题一样可解。
+
+***** 核函数
+
+      核函数需要满足交换性和半正定性
+      1. 高斯核：$K(x1,x2)=e^{-\frac{||x1-x2||^2}{2\delta^2}}$ ，
+      2. 多项式核：$K(x1,x2)=(x1^Tx2+1)^d$ ，
+
+**** 优化理论
+
+     书籍推荐："Convex Optimization" "Nonlinear Programming"
+     原问题：最小化 f(w) ，限制条件：$g_i(w)\le 0 , h_i(w)=0$
+     对偶问题：定义 $L(w,a,b)=f(w)+\sum_{i=1}^ka_ig_i(w)+\sum_{i=1}^ub_ih_i(w)=f(w)+a^Tg(w)+b^Th(w)$,
+     最大化$\Theta(\alpha,\beta) = inf [ L(w,a,b) ]$ ， 限制条件：$\alpha _i\ge 0$
+     定理：如果 w^* 是原问题的解，而 a^*,b^* 是对偶问题的解，则有：$f(w^*)\ge \Theta(a^*,b^*)$ ，$\Theta(a^*,b^*)=inf[L(a^*,b^*)] \le L(w^*,a^*,b^*) = f(w^*)+\sum_{i=1}^ka^*_ig_i(w^*)+\sum_{i=1}^mb^*_ih_i \le f(w^*)$
+     原问题与对偶问题的间距：$G=f(w^*)-\Theta(a^*,b^*)\ge 0$
+     对于特定问题，可以证明 G=0.
+     强对偶定理：若 f(w)为凸函数，且 g(w)=Aw+b h(w)=Cw+d ，则此优化问题的原问题与对偶问题间距为 0，
+     即$f(w^*)=\Theta(a^*,b^*)$ 对任意 i=1~k ，或者 a^*_i=0 ，或者 g^*_i(w^*)=0 $，这就是 KKT 问题。
+
+*** SVM 算法
+
+    1. 训练流程
+    2. 测试数据集
+
 * Networking
 ** DONE C++ Network Lib: asio
    CLOSED: [2020-04-15 Wed 16:04]
@@ -1230,7 +1311,7 @@
    CLOCK: [2020-04-10 Fri 15:51]--[2020-07-02 Thu 17:38] => 1993:47
    :END:
 
- resource: 
+ resource:
  - [[http://think-async.com/Asio/asio-1.16.0/doc/][HTML documentation (non-Boost)]]
 
  Asio is a *cross-platform* C++ library for network and *low-level I/O programming* that provides developers with a *consistent asynchronous* model using a modern C++ approach
@@ -1723,7 +1804,7 @@
 
  在一个邮局通信系统中，邮局收到一份邮件之后，先存储下来，然后把相同目的地的邮件一起转发到下一个目的地，这个过程就是存储转发过程，分组交换也使用了存储转发过程。
 
- 最大传输单元MTU：数据链路层1500B，
+ 最大传输单元 MTU：数据链路层 1500B，
 
 **** 存储转发与直通转发
 
@@ -1775,7 +1856,7 @@
  - 时分复用、统计时分复用
 
  - 码分复用
- 码片互相正交C1 * C2 = 0
+ 码片互相正交 C1 * C2 = 0
    1. 发送端根据码片进行扩频：1扩为码片，0扩为码片的反码
    2. 信道上各信号叠加 (C1 + C2)
    3. 接收端与码片相乘，分离信号 (C1+C2)*C1 = C1*C1 + C2*C1 = C1 + 0
@@ -1794,7 +1875,7 @@
 
 **** 信道
  - 广播信道（总线型）：检测碰撞，用[[CSMA/CD][CSMA/CD协议]]，避免碰撞，用信道复用
- - 点对点信道：不会碰撞，用PPP协议
+ - 点对点信道：不会碰撞，用 PPP 协议
 
 **** CSMA/CD
  <<CSMA/CD>>
@@ -1805,7 +1886,7 @@
 
  争用期：端到端的传播时延为 τ，最先发送的站点最多经过 2τ 就可以知道是否发生了碰撞，称 2τ 为 争用期。只有经过争用期之后还没有检测到碰撞，才能肯定这次发送不会发生碰撞。
 
- 最短帧长度64B：传输延时要大于争用期
+ 最短帧长度 64B：传输延时要大于争用期
 
  当发生碰撞时，站点要停止发送，等待一段时间再发送。这个时间采用 截断二进制指数退避算法 来确定。从离散的整数集合 {0, 1, .., (2k-1)} 中随机取出一个数，记作 r，然后取 r 倍的争用期作为重传等待时间
 
@@ -1816,7 +1897,7 @@
  - 交换机：存储转发
  交换机是一种链路层设备，它不会发生碰撞，能根据 MAC 地址进行存储转发
 
- 交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址到接口的映射。如果没有MAC地址信息，就广播
+ 交换机具有自学习能力，学习的是交换表的内容，交换表中存储着 MAC 地址到接口的映射。如果没有 MAC 地址信息，就广播
 
 **** 局域网与以太网
 
@@ -1824,26 +1905,26 @@
 
  以太网有集线器以太网和交换机以太网
 
-**** MAC地址
+**** MAC 地址
  一台主机拥有多少个网络适配器就有多少个 MAC 地址，6B（32bit）
 
- 怎么根据IP地址确定mac地址并在交换机中寻找对应端口呢？
+ 怎么根据 IP 地址确定 mac 地址并在交换机中寻找对应端口呢？
 
- 目的mac地址：<<target-mac>>
- 在实际的通信过程中，首先对目的IP地址进行判断，如果属于同一个网络（即IP地址前缀相同），就直接将其发送，而在这时就要使用物理地址，一般在计算机中都有一张IP地址到MAC地址的映射表。如果在表中有相应的IP地址到MAC地址的映射，则取出MAC地址，并将其填加在IP包的头部，然后将其转发出去，如果在表中没有响应的表项，则源站发出ARP广播，以获取对方的MAC地址，得到MAC地址后再将数据包发送出去。
+ 目的 mac 地址：<<target-mac>>
+ 在实际的通信过程中，首先对目的 IP 地址进行判断，如果属于同一个网络（即 IP 地址前缀相同），就直接将其发送，而在这时就要使用物理地址，一般在计算机中都有一张 IP 地址到 MAC 地址的映射表。如果在表中有相应的 IP 地址到 MAC 地址的映射，则取出 MAC 地址，并将其填加在 IP 包的头部，然后将其转发出去，如果在表中没有响应的表项，则源站发出 ARP 广播，以获取对方的 MAC 地址，得到 MAC 地址后再将数据包发送出去。
 
- mac地址与端口：交换机来做
+ mac 地址与端口：交换机来做
 
 *** 网络层
  网络层是整个互联网的核心，因此应当让网络层尽可能简单。网络层向上只提供简单灵活的、无连接的、尽最大努力交互的数据报服务。
  使用 IP 协议，可以把异构的物理网络连接起来，使得在网络层看起来好像是一个统一的网络
 
-**** ICMP报文
+**** ICMP 报文
  ICMP 报文分为差错报告报文和询问报文。
  - 差错报文：终点不可达， 时间超过， 参数问题， 改变路由
- - 询问报文：echo请求或回答， 时间戳请求或回答
+ - 询问报文：echo 请求或回答， 时间戳请求或回答
 
-**** ARP协议
+**** ARP 协议
  ARP 实现由 IP 地址得到 MAC 地址。每个主机都有一个 ARP 高速缓存，里面有本局域网上的各主机和路由器的 IP 地址到 MAC 地址的映射表。
 
  如果主机 A 知道主机 B 的 IP 地址，但是 ARP 高速缓存中没有该 IP 地址到 MAC 地址的映射，此时主机 A 通过广播的方式发送 ARP 请求分组，主机 B 收到该请求后会发送 ARP 响应分组给主机 A 告知其 MAC 地址，随后主机 A 向其高速缓存中写入主机 B 的 IP 地址到 MAC 地址的映射。
@@ -1979,6 +2060,2276 @@
  在这种情况下，只是丢失个别报文段，而不是网络拥塞，因此执行快恢复，令 ssthresh = cwnd / 2 ，cwnd = ssthresh，注意到此时直接进入拥塞避免。
 
  慢开始和快恢复的快慢指的是 cwnd 的设定值，而不是 cwnd 的增长速率。慢开始 cwnd 设定为 1，而快恢复 cwnd 设定为 ssthresh。
+** network of computer
+*** DONE 计算机网络
+    CLOSED: [2020-08-26 Wed 21:34]
+
+**** DONE 应用层
+     CLOSED: [2020-08-26 Wed 21:34]
+
+***** DONE DNS
+      CLOSED: [2020-08-18 Tue 10:21]
+      :LOGBOOK:
+      CLOCK: [2020-08-18 Tue 10:05]--[2020-08-18 Tue 10:21] =>  0:16
+      :END:
+
+****** 架构
+
+  大量的 DNS 服务器以层次结构组织起来
+  - 根服务器
+    13 个
+  - 顶级域服务器
+    负责顶级域名：com, org, net, edu, gov, uk
+  - 权威服务器
+  - 本地服务器
+    不属于 DNS 服务器的层次结构中
+
+****** 用户角度分析功能
+
+  应用程序将 URL 转换为域名，调用 DNS 客户端，使用 UDP 数据包经 53 端口发送 DNS 查询报文；
+  收到一个 DNS 回答报文，传递到 DNS 应用程序，得到 IP。
+
+****** 系统角度分析功能
+
+  1. 应用程序根据域名，先检查本地的 hosts 文件是否保存网址映射关系，如果有，就先调用该 IP，完成域名解析
+  2. DNS 客户端查找 DNS 解析器缓存
+  3. 与 TCP/IP 参数中设置首选的 DNS 服务器通信，发送查询报文
+  4. DNS 服务器查询本地配置区资源，该解析具有权威性
+  5. DNS 服务器查询缓存
+  6. 如果未用转发模式，DNS 服务器将请求报文发到 13 台根服务器，接受一个顶级域服务器的 IP，再发送报文到顶级域服务器，接受下一个 IP，如此循环
+  7. 如果使用转发模式，DNS 服务器将请求转发到上一级 DNS 服务器，逐步向上传递，最后的结果返回本地服务器，再返回本地客户端，传递给应用程序
+
+***** DONE P2P
+      CLOSED: [2020-08-18 Tue 11:10]
+      :LOGBOOK:
+      CLOCK: [2020-08-18 Tue 10:37]--[2020-08-18 Tue 11:09] =>  0:32
+      :END:
+      激励机制：一报还一报。
+      追踪器标记是否在洪流中；
+      选择部分对等方建立并行 TCP 链接，询问对等方的块列表；
+      请求最稀缺的块，优先发送最高速率的邻居
+
+***** socket 编程
+      :LOGBOOK:
+      CLOCK: [2020-08-18 Tue 11:13]--[2020-08-18 Tue 11:29] =>  0:16
+      :END:
+  UDP 服务器不用监听通道，收到就处理。
+
+****** TCP
+
+  服务器：创建 socket，绑定端口，监听，接受连结，接收并处理数据，发送数据，关闭 socket
+
+****** UDP
+
+  服务器：创建 socket，绑定端口，接受并数据，发送数据，关闭 socket
+
+***** http 解析报文
+
+  #+begin_src C
+  /* 解析请求行 */
+	  int parse_start_line(int sockfd, char *recv_buf, req_pack *rp)
+	  {
+		  char *p = recv_buf;
+		  char *ch = p;
+		  int i = 0;
+		  enum parts { method, url, ver } req_part = method;
+		  char *method_str;
+		  char *url_str;
+		  char *ver_str;
+		  int k = 0;
+
+		  if (*ch < 'A' || *ch > 'Z') {
+			  return -1;
+		  }
+
+		  while (*ch != CR) {
+			  if (*ch != BLANK) {
+				  k++;
+			  } else if (req_part == method) {
+				  method_str = (char *)malloc(k * sizeof(char *));
+				  memset(method_str, 0, sizeof(char *));
+				  strncpy(method_str, recv_buf, k);
+				  k = 0;
+				  req_part = url;
+			  } else if (req_part == url) {
+				  url_str = (char *)malloc(k * sizeof(char *));
+				  memset(url_str, 0, sizeof(char *));
+				  strncpy(url_str, recv_buf + strlen(method_str) + 1, k);
+				  k = 0;
+				  req_part = ver;
+			  }
+			  ch++;
+			  i++;
+		  }
+
+		  if (req_part == url) {
+			  if (k != 0) {
+				  url_str = (char *)malloc(k * sizeof(char));
+				  memset(url_str, 0, sizeof(char));
+				  strncpy(url_str, recv_buf + strlen(method_str) + 1, k);
+				  k = 0;
+			  } else {
+				  return -1;
+			  }
+		  }
+
+		  if (k == 0) {
+			  ver_str = (char *)malloc(8 * sizeof(char));
+			  memset(ver_str, 0, sizeof(char));
+			  strcpy(ver_str, "HTTP/1.1");
+		  } else {
+			  ver_str = (char *)malloc(k * sizeof(char));
+			  memset(ver_str, 0, sizeof(char));
+			  strncpy(ver_str,
+					  recv_buf + strlen(method_str) + strlen(url_str) + 2, k);
+		  }
+
+		  rp->method = method_str;
+		  rp->url = url_str;
+		  rp->version = ver_str;
+
+		  return (i + 2);
+	  }
+
+	  /* 解析首部字段 */
+	  int parse_header(int sockfd, char *recv_buf, header headers[])
+	  {
+		  char *p = recv_buf;
+		  char *ch = p;
+		  int i = 0;
+		  int k = 0;
+		  int v = 0;
+		  int h_i = 0;
+		  bool is_newline = false;
+		  char *key_str;
+		  char *value_str;
+		  header *tmp_header = (header *)malloc(sizeof(header *));
+		  memset(tmp_header, 0, sizeof(header));
+
+		  while (1) {
+			  if (*ch == CR && *(ch + 1) == LF) {
+				  break;
+			  }
+			  while (*ch != COLON) {
+				  ch++;
+				  i++;
+				  k++;
+			  }
+			  if (*ch == COLON) {
+				  key_str = (char *)malloc(k * sizeof(char *));
+				  memset(key_str, 0, sizeof(char *));
+				  strncpy(key_str, recv_buf + i - k, k);
+				  k = 0;
+				  ch++;
+				  i++;
+			  }
+			  while (*ch != CR) {
+				  ch++;
+				  i++;
+				  v++;
+			  }
+			  if (*ch == CR) {
+				  value_str = (char *)malloc(v * sizeof(char *));
+				  memset(value_str, 0, sizeof(char *));
+				  strncpy(value_str, recv_buf + i - v, v);
+				  v = 0;
+				  i++;
+				  ch++;
+			  }
+			  i++;
+			  ch++;
+			  headers[h_i].key = key_str;
+
+			  h_i++;
+		  }
+
+		  return (i + 2);
+	  }
+  #+end_src
+
+**** DONE 传输层
+     CLOSED: [2020-08-26 Wed 21:34]
+
+***** 复用
+
+  根据端口的不同，将传输层报文发送到不同的进程中
+
+***** 可靠传输
+****** 差错控制
+
+  校验码
+
+****** 可靠数据传输
+
+  编号、确认、重传
+
+****** 流量控制
+
+  滑窗
+
+****** 拥塞控制
+
+  慢启动，快增长
+
+**** DONE Web Request Process
+     CLOSED: [2020-08-26 Wed 21:34]
+
+  一名学生 Bob 将他的计算机与学校的以太网交换机相连，下载 Web 页面
+
+***** DHCP
+
+  假设 DHCP 服务器运行在路由器中。
+  1. Bob 的计算机的操作系统应用层生成一个 DHCP 请求报文 UDP，在传输层添加目的端口号 67 和源端口号 68，在网络层添加 IP 目的地址 255.255.255.255（广播）和 IP 源地址 0.0.0.0（此时 Bob 还没有 IP），在数据链路层添加目的 MAC 地址 FF:FF:FF:FF:FF:FF（广播）和源 MAC 地址，在物理层以比特流的方式发送到物理链路中，发送给交换机。
+  2. 交换机在所有出端口广播该帧，由于 DHCP 服务器和 Bob 主机不在同一局域网，只有发往路由器的端口才会响应。
+  3. 路由器提取以太网帧中的 IP 数据报，该数据报的广播 IP 目的地址，表明了这个数据报应该在高层协议处理。运行在该路由器的 DHCP 服务器接收请求，发送 DHCP ACK 报文 UDP，在网络层添加目的和源 IP 地址（这两个 IP 都没用），在数据链路层添加目的（Bob 主机 Mac）和源 MAC 地址（路由器的端口 MAC）。
+  4. 在第一次 Bob 主机发送 DHCP 请求时，交换机自学习了 Bob 的 mac 地址和交换机端口，所以 DHCP ACK 可以被送回给 Bob 主机。
+  5. Bob 主机根据 DHCP ACK 报文，经物理层、数据链路层、网络层、传输层，在应用层设置自己的 IP 和 DNS 服务器 IP，在 IP 转发表中设置默认网关地址（交换机地址）
+
+***** DNS 和 ARP
+
+  Bob 在浏览器中键入 www.google.com，发起 HTTP get 请求。
+  1. Bob 的 Web 浏览器生成一个 TCP 套接字，为了得到 IP，首先生成一个 DNS 查询报文，传输层设置目的端口号，网络层设置目的 IP 地址（DHCP ACK 中有）和源目的地址。
+  2. 在数据链路层需要设置目的 MAC 地址。根据目的 DNS 的 ip，使用 arp 查询报文，在数据链路层设置广播目的 mac 地址（FF:FF:FF:FF:FF:FF），在当前局域网中广播该以太网帧，在网关路由器中，根据 ARP 报文的目的 IP 地址，返回 MAC 地址。Bob 主机收到 ARP 回答报文，设置 DNS 报文的目的 MAC 地址。
+  3. 在物理层发送 DNS 报文，网关路由器根据目的 IP 地址，根据域内协议和域间协议向上转发，直至 DNS 服务器。
+  4. DNS 服务器根据 www.google.com 查询 DNS 源记录，生成返回 Bob 主机的 DNS 回答报文
+  5. Bob 的主机根据 www.google.com 的 IP 地址，生成 TCP 套接字，准备与服务器交互
+
+***** TCP 和 HTTP
+
+  1. TCP 三次握手：生成 TCP SYN 报文段，谷歌服务器生成 TCP 套接字，返回 TCP 报文段
+  2. web 浏览器将 URL 转化为 HTTP GET 报文，向 www.google.com 发送 HTTP GET 报文，服务器生成一个 HTTP 响应报文，Web 页面放在响应体中
+
+**** DONE 链路层
+     CLOSED: [2020-08-26 Wed 21:34]
+
+***** DONE MAC 地址
+      CLOSED: [2020-08-26 Wed 21:33]
+
+****** 为什么需要 MAC 地址
+******* 因为 TCP/IP 协议没有规定数据链路层的实现
+
+    网卡有了 MAC 地址，可以不依赖于任何网络层协议，可以直接用来组局域网，可以独立判断一个以太帧是否接收（依据 MAC 地址匹配），这样大大简化了网卡的实现。
+
+******* 从 mac 固定，IP 不固定这个角度看，mac 固定地址也不是必要的
+
+    在整个互联网的体系中，数据的传递都是根据 IP 地址，在路由器中传递，数据链路层只是封装发送。只有在主机不是直接连接路由器时，即主机在局域网中，才根据 mac 地址进行交换机转发（改变交换机的 mac 地址为分配的地址即可），或者通过广播的方式在以太网中发送接收（这样更是只有一个分配的标号的就行，不用固定）。
+
+******* 但以太网已经这样规定了，使用 ARP 代价很小，没必要改变 mac 的机制
+
+
+
+                                                    Made with   by the community
+* embedded
+[[https://www.youtube.com/watch?v=BXYiXkwog4Q][ARM Development with GCC and Make (1) - YouTube]]
+** DONE MicorHard
+   CLOSED: [2020-12-21 Mon 12:46]
+*** 建立一个属于自己的 AVR 的 RTOS
+
+    http://www.elecfans.com/emb/danpianji/200604173670.html
+   2006 年 04 月 17 日
+
+**** 序
+
+      自从 03 年以来，对单片机的 RTOS 的学习和应用的热潮可谓一浪高过一浪.03 年，在离开校园前的，非典的那几个月，在华师的后门那里
+  买了本邵贝贝的《UCOSII》，通读了几次，没有实验器材，也不了了之。
+      在 21IC 上，大家都可以看到杨屹写的关于 UCOSII 在 51 上的移植，于是掀起了 51 上的 RTOS 的热潮。
+      再后来，陈明计先生推出的 small rots，展示了一个用在 51 上的微内核，足以在 52 上进行任务调度。
+      前段时间，在 ouravr 上面开有专门关于 AVR 的 Rtos 的专栏，并且不少的兄弟把自己的作品拿出来，着实开了不少眼界。这时，我重新回
+  顾了使用单片机的经历，觉得很有必要，从根本上对单片机的 RTOS 的知识进行整理，于是，我开始了编写一个用在 AVR 单片机的 RTOS。
+      当时，我所有的知识和资源有：
+      Proteus6.7        可以用来模拟仿真 avr 系列的单片机
+      WinAVR v2.0.5.48  基于 GCC AVR 的编译环境，好处在于可以在 C 语言中插入 asm 的语句
+      mega8  1K 的 ram 有 8K 的 rom,是开发 8 位的 RTOS 的一个理想的器件，并且我对它也比较熟悉。
+
+      写 UCOS 的 Jean J.Labrosse 在他的书上有这样一句话，“渐渐地，我自然会想到，写个实时内核直有那么难吗？不就是不断地保存，恢
+  复 CPU 的那些寄存器嘛。”
+      好了，当这一切准备好后，我们就可以开始我们的 Rtos for mega8 的实验之旅了。
+      本文列出的例子，全部完整可用。只需要一个文件就可以编译了。我相信，只要适当可用，最简单的就是最好的，这样可以排除一些不
+  必要的干扰，让大家专注到每一个过程的学习。
+
+**** 函数的运行
+
+      在一般的单片机系统中，是以前后台的方式(大循环+中断)来处理数据和作出反应的。
+      例子如下:
+      makefile 的设定:运行 WinAvr 中的 Mfile，设定如下
+      MCU Type: mega8
+      OpTImizaTIon level: s
+      Debug format :AVR-COFF
+      C/C++ source file: 选译要编译的 C 文件
+  #+begin_src C
+  #include <avr/io.h>
+  void fun1(void)
+  {
+    unsigned char i=0;
+    while(1)
+    {
+      PORTB=i++;
+      PORTC=0x01<<(i%8);
+    }
+  }
+
+  int main(void)
+  {
+    fun1();
+  }
+  #+end_src
+
+      首先，提出一个问题：如果要调用一个函数，真是只能以上面的方式进行吗？
+      相信学习过 C 语言的各位会回答，No!我们还有一种方式，就是“用函数指针变量调用函数”，如果大家都和我一样，当初的教科书是谭
+  浩强先生的《C 程序设计》的话，请找回书的第 9.5 节。
+
+      例子：用函数指针变量调用函数
+  #+begin_src C
+  #include <avr/io.h>
+  void fun1(void)
+  {
+    unsigned char i=0;
+    while(1)
+    {
+      PORTB=i++;
+      PORTC=0x01<<(i%8);
+    }
+  }
+  void (*pfun)();  //指向函数的指针
+
+  int main(void)
+  {
+
+    pfun=fun1;    //
+    (*pfun)();    //运行指针所指向的函数
+  }
+  #+end_src
+
+       第二种，是“把指向函数的指针变量作函数参数”
+  #+begin_src
+  #include <avr/io.h>
+  void fun1(void)
+  {
+    unsigned char i=0;
+    while(1)
+    {
+      PORTB=i++;
+      PORTC=0x01<<(i%8);
+    }
+  }
+
+  void RunFun(void (*pfun)())  //获得了要传递的函数的地址
+  {
+    (*pfun)();                 //在RunFun中，运行指针所指向的函数
+  }
+
+  int main(void)
+  {
+     RunFun(fun1);            //将函数的指针作为变量传递
+
+  }
+  #+end_src
+
+      看到上面的两种方式，很多人可能会说，“这的确不错”，但是这样与我们想要的 RTOS，有什么关系呢？各位请细心向下看。
+
+      以下是 GCC 对上面的代码的编译的情况：
+      对 main()中的 RunFun(fun1); 的编译如下
+    ldi r24,lo8(pm(fun1))
+    ldi r25,hi8(pm(fun1))
+    rcall RunFun
+
+  对 void RunFun(void (*pfun)())的编译如下
+                  /*void RunFun(void (*pfun)())*/
+                 /*(*pfun)();*/
+  .LM6:
+    movw r30,r24
+    icall
+    ret
+
+      在调用 void RunFun(void (*pfun)())的时候，的确可以把 fun1 的地址通过 r24 和 r25 传递给 RunFun()。但是，RTOS 如何才能有效地利用
+  函数的地址呢？
+
+**** 人工堆栈
+
+  在单片机的指令集中，一类指令是专门与堆栈和 PC 指针打道的，它们是
+      rcall   相对调用子程序指令
+      icall   间接调用子程序指令
+      ret     子程序返回指令
+      reTI    中断返回指令
+
+      对于 ret 和 reTI，它们都可以将堆栈栈顶的两个字节被弹出来送入程序计数器 PC 中，一般用来从子程序或中断中退出。其中 reti 还可以
+  在退出中断时，重开全局中断使能。
+      有了这个基础，就可以建立我们的人工堆栈了。
+      例：
+  #+begin_src C
+  #include <avr/io.h>
+  void fun1(void)
+  {
+    unsigned char i=0;
+    while(1)
+    {
+      PORTB=i++;
+      PORTC=0x01<<(i%8);
+    }
+  }
+
+  unsigned char Stack[100]; //建立一个100字节的人工堆栈
+
+  void RunFunInNewStack(void (*pfun)(),unsigned char *pStack)
+  {
+    *pStack--=(unsigned int)pfun>>8;    //将函数的地址高位压入堆栈，
+    *pStack--=(unsigned int)pfun;        //将函数的地址低位压入堆栈，
+    SP=pStack;                            //将堆栈指针指向人工堆栈的栈顶
+    __asm__ __volatile__("RET nt");    //返回并开中断,开始运行fun1()
+
+  }
+
+  int main(void)
+  {
+     RunFunInNewStack(fun1,&Stack[99]);
+  }
+  #+end_src
+       RunFunInNewStack(),将指向函数的指针的值保存到一个 unsigned  char 的数组 Stack 中，作为人工堆栈。并且将栈顶的数值传递组堆
+  栈指针 SP,因此当用"ret"返回时，从 SP 中恢复到 PC 中的值，就变为了指向 fun1()的地址，开始运行 fun1().
+
+      上面例子中在 RunFunInNewStack()的最后一句嵌入了汇编代码 "ret",实际上是可以去除的。因为在 RunFunInNewStack()返回时，编译
+  器已经会加上"ret"。我特意写出来，是为了让大家看到用"ret"作为返回后运行 fun1()的过程。
+
+  *** GCC 中对寄存器的分配与使用
+
+  在很多用于 AVR 的 RTOS 中，都会有任务调度时，插入以下的语句：
+
+      入栈：
+      __asm__ __volatile__("PUSH R0  nt");
+      __asm__ __volatile__("PUSH R1  nt");
+      ......
+      __asm__ __volatile__("PUSH R31 nt");
+
+      出栈
+      __asm__ __volatile__("POP  R31 nt");
+      ......
+      __asm__ __volatile__("POP  R1  nt");
+      __asm__ __volatile__("POP  R0  nt");
+
+      通常大家都会认为，在任务调度开始时，当然要将所有的通用寄存器都保存，并且还应该保存程序状态寄存器 SREG。然后再根据相反的
+  次序，将新任务的寄存器的内容恢复。
+
+      但是，事实真的是这样吗？如果大家看过陈明计先生写的 small rots51,就会发现，它所保存的通用寄存器不过是 4 组通用寄存器中的 1
+  组。
+
+      在 Win AVR 中的帮助文件 avr-libc Manual 中的 Related Pages 中的 Frequently Asked Questions,其实有一个问题是"What registers
+  are used by the C compiler?"  回答了编译器所需要占用的寄存器。一般情况下，编译器会先用到以下寄存器
+      1. Call-used registers (r18-r27, r30-r31): 调用函数时作为参数传递，也就是用得最多的寄存器。
+
+      2. Call-saved registers (r2-r17, r28-r29): 调用函数时作为结果传递,当中的 r28 和 r29 可能会被作为指向堆栈上的变量的指针。
+
+      3. Fixed registers (r0, r1): 固定作用。r0 用于存放临时数据，r1 用于存放 0。
+
+
+      还有另一个问题是"How to permanently bind a variable to a register?",是将变量绑定到通用寄存器的方法。而且我发现，如果将
+  某个寄存器定义为变量，编译器就会不将该寄存器分配作其它用途。这对 RTOS 是很重要的。
+
+      在"Inline Asm"中的"C Names Used in Assembler Code"明确表示,如果将太多的通用寄存器定义为变量，刚在编译的过程中，被定义
+  的变量依然可能被编译器占用。
+
+      大家可以比较以下两个例子，看看编译器产生的代码：(在*.lst 文件中)
+
+  第一个例子：没有定义通用寄存器为变量
+  #+begin_src C
+  #include <avr/io.h>
+
+  unsigned char add(unsigned char b,unsigned char c,unsigned char d)
+  {
+     return b+c*d;
+  }
+
+  int main(void)
+  {
+    unsigned char a=0;
+    while(1)
+    {
+      a++;
+      PORTB=add(a,a,a);
+    }
+  }
+  #+end_src
+
+     在本例中，"add(a,a,a);"被编译如下:
+     mov r20,r28
+     mov r22,r28
+     mov r24,r28
+     rcall add
+
+  第二个例子：定义通用寄存器为变量
+  #+begin_src C
+  #include <avr/io.h>
+
+  unsigned char add(unsigned char b,unsigned char c,unsigned char d)
+  {
+     return b+c*d;
+  }
+
+  register unsigned char a asm("r20");  //将r20定义为 变量a
+
+  int main(void)
+  {
+
+      while(1)
+      {
+        a++;
+          PORTB=add(a,a,a);
+      }
+  }
+  #+end_src
+
+      在本例中，"add(a,a,a);"被编译如下:
+      mov r22,r20
+      mov r24,r20
+      rcall add
+
+      当然，在上面两个例子中，有部份代码被编译器优化了。
+
+      通过反复测试，发现编译器一般使用如下寄存器:
+      第 1 类寄存器，第 2 类寄存器的 r28,r29,第 3 类寄存器
+
+      如在中断函数中有调用基它函数，刚会在进入中断后，固定地将第 1 类寄存器和第 3 类寄存器入栈，在退出中断又将它们出栈。
+
+**** 只有延时服务的协作式的内核
+
+     Cooperative Multitasking
+
+     前后台系统，协作式内核系统，与占先式内核系统，有什么不同呢？
+
+     记得在 21IC 上看过这样的比喻,“你(小工)在用厕所，经理在外面排第一，老板在外面排第二。如果是前后台，不管是谁，都必须按排队
+  的次序使用厕所；如果是协作式，那么可以等你用完厕所，老板就要比经理先进入；如果是占先式，只要有更高级的人在外面等，那么厕所
+  里无论是谁，都要第一时间让出来，让最高级别的人先用。”
+  #+begin_src C
+  #include <avr/io.h>
+  #include <avr/Interrupt.h>
+  #include <avr/signal.h>
+  unsigned char Stack[200];
+
+  register unsigned char OSRdyTbl          asm("r2");    //任务运行就绪表
+  register unsigned char OSTaskRunningPrio asm("r3");    //正在运行的任务
+
+  #define OS_TASKS 3                    //设定运行任务的数量
+  struct TaskCtrBlock           //任务控制块
+  {
+    unsigned int OSTaskStackTop;  //保存任务的堆栈顶
+    unsigned int OSWaitTick;      //任务延时时钟
+  } TCB[OS_TASKS+1];
+
+  //防止被编译器占用
+  register unsigned char tempR4  asm("r4");
+  register unsigned char tempR5  asm("r5");
+  register unsigned char tempR6  asm("r6");
+  register unsigned char tempR7  asm("r7");
+  register unsigned char tempR8  asm("r8");
+  register unsigned char tempR9  asm("r9");
+  register unsigned char tempR10 asm("r10");
+  register unsigned char tempR11 asm("r11");
+  register unsigned char tempR12 asm("r12");
+  register unsigned char tempR13 asm("r13");
+  register unsigned char tempR14 asm("r14");
+  register unsigned char tempR15 asm("r15");
+  register unsigned char tempR16 asm("r16");
+  register unsigned char tempR16 asm("r17");
+
+  //建立任务
+  void OSTaskCreate(void (*Task)(void),unsigned char *Stack,unsigned char TaskID)
+  {
+    unsigned char i;
+    *Stack--=(unsigned int)Task>>8;    //将任务的地址高位压入堆栈，
+    *Stack--=(unsigned int)Task;         //将任务的地址低位压入堆栈，
+
+    *Stack--=0x00;                     //R1 __zero_reg__
+    *Stack--=0x00;                     //R0 __tmp_reg__
+    *Stack--=0x80;                                        //SREG 在任务中，开启全局中断
+    for(i=0;i<14;i++)    //在 avr-libc 中的 FAQ中的 What registers are used by the C compiler?
+      *Stack--=i;                    //描述了寄存器的作用
+      TCB[TaskID].OSTaskStackTop=(unsigned int)Stack;    //将人工堆栈的栈顶，保存到堆栈的数组中
+      OSRdyTbl|=0x01<<TaskID;      //任务就绪表已经准备好
+  }
+
+  //开始任务调度,从最低优先级的任务的开始
+  void OSStartTask()
+  {
+    OSTaskRunningPrio=OS_TASKS;
+    SP=TCB[OS_TASKS].OSTaskStackTop+17;
+    __asm__ __volatile__(    "reti"       "nt"  );
+  }
+
+  //进行任务调度
+  void OSSched(void)
+  {
+     //  根据中断时保存寄存器的次序入栈，模拟一次中断后，入栈的情况
+    __asm__ __volatile__("PUSH __zero_reg__         nt");  //R1
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");  //R0
+    __asm__ __volatile__("IN   __tmp_reg__,__SREG__ nt");  //保存状态寄存器SREG
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");
+    __asm__ __volatile__("CLR  __zero_reg__         nt");  //R0重新清零
+    __asm__ __volatile__("PUSH R18                  nt");
+    __asm__ __volatile__("PUSH R19                  nt");
+    __asm__ __volatile__("PUSH R20                  nt");
+    __asm__ __volatile__("PUSH R21                  nt");
+    __asm__ __volatile__("PUSH R22                  nt");
+    __asm__ __volatile__("PUSH R23                  nt");
+    __asm__ __volatile__("PUSH R24                  nt");
+    __asm__ __volatile__("PUSH R25                  nt");
+    __asm__ __volatile__("PUSH R26                  nt");
+    __asm__ __volatile__("PUSH R27                  nt");
+    __asm__ __volatile__("PUSH R30                  nt");
+    __asm__ __volatile__("PUSH R31                  nt");
+    __asm__ __volatile__("PUSH R28                  nt");  //R28与R29用于建立在堆栈上的指针
+    __asm__ __volatile__("PUSH R29                  nt");  //入栈完成
+
+    TCB[OSTaskRunningPrio].OSTaskStackTop=SP;           //将正在运行的任务的堆栈底保存
+
+
+    unsigned char OSNextTaskID;                             //在现有堆栈上开设新的空间
+    for (OSNextTaskID = 0;                                  //进行任务调度
+      OSNextTaskID < OS_TASKS && !(OSRdyTbl & (0x01<<OSNextTaskID));
+      OSNextTaskID++);
+      OSTaskRunningPrio = OSNextTaskID ;
+
+    cli();  //保护堆栈转换
+    SP=TCB[OSTaskRunningPrio].OSTaskStackTop;
+    sei();
+
+      //根据中断时的出栈次序
+    __asm__ __volatile__("POP  R29                  nt");
+    __asm__ __volatile__("POP  R28                  nt");
+    __asm__ __volatile__("POP  R31                  nt");
+    __asm__ __volatile__("POP  R30                  nt");
+    __asm__ __volatile__("POP  R27                  nt");
+    __asm__ __volatile__("POP  R26                  nt");
+    __asm__ __volatile__("POP  R25                  nt");
+    __asm__ __volatile__("POP  R24                  nt");
+    __asm__ __volatile__("POP  R23                  nt");
+    __asm__ __volatile__("POP  R22                  nt");
+    __asm__ __volatile__("POP  R21                  nt");
+    __asm__ __volatile__("POP  R20                  nt");
+    __asm__ __volatile__("POP  R19                  nt");
+    __asm__ __volatile__("POP  R18                  nt");
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //SERG 出栈并恢复
+    __asm__ __volatile__("OUT  __SREG__,__tmp_reg__ nt");      //
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //R0 出栈
+    __asm__ __volatile__("POP  __zero_reg__         nt");      //R1 出栈
+    //中断时出栈完成
+  }
+
+  void OSTimeDly(unsigned int ticks)
+  {
+    if(ticks)                             //当延时有效
+    {
+      OSRdyTbl &= ~(0x01<<OSTaskRunningPrio);
+      TCB[OSTaskRunningPrio].OSWaitTick=ticks;
+      OSSched();                          //从新调度
+    }
+  }
+
+  void TCN0Init(void)    // 计时器0
+  {
+    TCCR0 = 0;
+    TCCR0 |= (1<<CS02);  // 256预分频
+    TIMSK |= (1<<TOIE0); // T0溢出中断允许
+    TCNT0 = 100;         // 置计数起始值
+
+  }
+
+  SIGNAL(SIG_OVERFLOW0)
+  {
+    unsigned char i;
+    for(i=0;i<OS_TASKS;i++)       //任务时钟
+    {
+      if(TCB[i].OSWaitTick)
+      {
+        TCB[i].OSWaitTick--;
+        if(TCB[i].OSWaitTick==0)     //当任务时钟到时,必须是由定时器减时的才行
+        {
+          OSRdyTbl |= (0x01<<i);     //使任务在就绪表中置位
+        }
+      }
+    }
+    TCNT0=100;
+  }
+
+  void Task0()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTB=j++;
+      OSTimeDly(2);
+    }
+  }
+
+  void Task1()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTC=j++;
+      OSTimeDly(4);
+    }
+  }
+
+  void Task2()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTD=j++;
+      OSTimeDly(8);
+    }
+  }
+
+  void TaskScheduler()
+  {
+    while(1)
+    {
+       OSSched();      //反复进行调度
+    }
+  }
+
+  int main(void)
+  {
+    TCN0Init();
+    OSRdyTbl=0;
+    OSTaskRunningPrio=0;
+    OSTaskCreate(Task0,&Stack[49],0);
+    OSTaskCreate(Task1,&Stack[99],1);
+    OSTaskCreate(Task2,&Stack[149],2);
+    OSTaskCreate(TaskScheduler,&Stack[199],OS_TASKS);
+    OSStartTask();
+  }
+  #+end_src
+
+     在上面的例子中，一切变得很简单，三个正在运行的主任务，都通过延时服务，主动放弃对 CPU 的控制权。
+     在时间中断中，对各个任务的的延时进行计时，如果某个任务的延时结束，将任务重新在就绪表中置位。
+     最低级的系统任务 TaskScheduler()，在三个主任务在放弃对 CPU 的控制权后开始不断地进行调度。如果某个任务在就绪表中置位，通过
+  调度，进入最高级别的任务中继续运行。
+
+**** 完善的协作式的内核
+
+    现在为上面的协作式内核添加一些 OS 中所必须的服务：
+     1  挂起和重新运行任务
+     2  信号量(在必要时候，可以扩展成邮箱和信息队列)
+     3  延时
+
+  #+begin_src C
+  #include <avr/io.h>
+  #include <avr/Interrupt.h>
+  #include <avr/signal.h>
+  unsigned char Stack[400];
+
+  register unsigned char OSRdyTbl          asm("r2");    //任务运行就绪表
+  register unsigned char OSTaskRunningPrio asm("r3");    //正在运行的任务
+
+  #define OS_TASKS 3                    //设定运行任务的数量
+  struct TaskCtrBlock
+  {
+    unsigned int OSTaskStackTop;  //保存任务的堆栈顶
+    unsigned int OSWaitTick;      //任务延时时钟
+  } TCB[OS_TASKS+1];
+
+  //防止被编译器占用
+  register unsigned char tempR4  asm("r4");
+  register unsigned char tempR5  asm("r5");
+  register unsigned char tempR6  asm("r6");
+  register unsigned char tempR7  asm("r7");
+  register unsigned char tempR8  asm("r8");
+  register unsigned char tempR9  asm("r9");
+  register unsigned char tempR10 asm("r10");
+  register unsigned char tempR11 asm("r11");
+  register unsigned char tempR12 asm("r12");
+  register unsigned char tempR13 asm("r13");
+  register unsigned char tempR14 asm("r14");
+  register unsigned char tempR15 asm("r15");
+  register unsigned char tempR16 asm("r16");
+  register unsigned char tempR16 asm("r17");
+
+  //建立任务
+  void OSTaskCreate(void (*Task)(void),unsigned char *Stack,unsigned char TaskID)
+  {
+    unsigned char i;
+    *Stack--=(unsigned int)Task>>8;    //将任务的地址高位压入堆栈，
+    *Stack--=(unsigned int)Task;         //将任务的地址低位压入堆栈，
+
+    *Stack--=0x00;                     //R1 __zero_reg__
+    *Stack--=0x00;                     //R0 __tmp_reg__
+    *Stack--=0x80;
+
+  //SREG 在任务中，开启全局中断
+    for(i=0;i<14;i++)    //在 avr-libc 中的 FAQ中的 What registers are used by the C compiler?
+      *Stack--=i;                    //描述了寄存器的作用
+    TCB[TaskID].OSTaskStackTop=(unsigned int)Stack;    //将人工堆栈的栈顶，保存到堆栈的数组中
+    OSRdyTbl|=0x01<<TaskID;      //任务就绪表已经准备好
+  }
+
+  //开始任务调度,从最低优先级的任务的开始
+  void OSStartTask()
+  {
+    OSTaskRunningPrio=OS_TASKS;
+    SP=TCB[OS_TASKS].OSTaskStackTop+17;
+    __asm__ __volatile__(    "reti"       "nt"  );
+  }
+
+  //进行任务调度
+  void OSSched(void)
+  {
+     //  根据中断时保存寄存器的次序入栈，模拟一次中断后，入栈的情况
+    __asm__ __volatile__("PUSH __zero_reg__         nt");  //R1
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");  //R0
+    __asm__ __volatile__("IN   __tmp_reg__,__SREG__ nt");  //保存状态寄存器SREG
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");
+    __asm__ __volatile__("CLR  __zero_reg__         nt");  //R0重新清零
+    __asm__ __volatile__("PUSH R18                  nt");
+    __asm__ __volatile__("PUSH R19                  nt");
+    __asm__ __volatile__("PUSH R20                  nt");
+    __asm__ __volatile__("PUSH R21                  nt");
+    __asm__ __volatile__("PUSH R22                  nt");
+    __asm__ __volatile__("PUSH R23                  nt");
+    __asm__ __volatile__("PUSH R24                  nt");
+    __asm__ __volatile__("PUSH R25                  nt");
+    __asm__ __volatile__("PUSH R26                  nt");
+    __asm__ __volatile__("PUSH R27                  nt");
+    __asm__ __volatile__("PUSH R30                  nt");
+    __asm__ __volatile__("PUSH R31                  nt");
+    __asm__ __volatile__("PUSH R28                  nt");  //R28与R29用于建立在堆栈上的指针
+    __asm__ __volatile__("PUSH R29                  nt");  //入栈完成
+
+    TCB[OSTaskRunningPrio].OSTaskStackTop=SP;           //将正在运行的任务的堆栈底保存
+
+    unsigned char OSNextTaskID;                             //在现有堆栈上开设新的空间
+    for (OSNextTaskID = 0;                                  //进行任务调度
+      OSNextTaskID < OS_TASKS && !(OSRdyTbl & (0x01<<OSNextTaskID));
+      OSNextTaskID++);
+      OSTaskRunningPrio = OSNextTaskID ;
+
+    cli();  //保护堆栈转换
+    SP=TCB[OSTaskRunningPrio].OSTaskStackTop;
+    sei();
+
+      //根据中断时的出栈次序
+    __asm__ __volatile__("POP  R29                  nt");
+    __asm__ __volatile__("POP  R28                  nt");
+    __asm__ __volatile__("POP  R31                  nt");
+    __asm__ __volatile__("POP  R30                  nt");
+    __asm__ __volatile__("POP  R27                  nt");
+    __asm__ __volatile__("POP  R26                  nt");
+    __asm__ __volatile__("POP  R25                  nt");
+    __asm__ __volatile__("POP  R24                  nt");
+    __asm__ __volatile__("POP  R23                  nt");
+    __asm__ __volatile__("POP  R22                  nt");
+    __asm__ __volatile__("POP  R21                  nt");
+    __asm__ __volatile__("POP  R20                  nt");
+    __asm__ __volatile__("POP  R19                  nt");
+    __asm__ __volatile__("POP  R18                  nt");
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //SERG 出栈并恢复
+    __asm__ __volatile__("OUT  __SREG__,__tmp_reg__ nt");      //
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //R0 出栈
+    __asm__ __volatile__("POP  __zero_reg__         nt");      //R1 出栈
+    //中断时出栈完成
+  }
+
+  ////////////////////////////////////////////任务处理
+  //挂起任务
+  void OSTaskSuspend(unsigned char prio)
+  {
+    TCB[prio].OSWaitTick=0;
+    OSRdyTbl &= ~(0x01<<prio); //从任务就绪表上去除标志位
+    if(OSTaskRunningPrio==prio)  //当要挂起的任务为当前任务
+      OSSched();               //从新调度
+  }
+
+  //恢复任务 可以让被OSTaskSuspend或 OSTimeDly暂停的任务恢复
+  void OSTaskResume(unsigned char prio)
+  {
+    OSRdyTbl |= 0x01<<prio;    //从任务就绪表上重置标志位
+      TCB[prio].OSWaitTick=0;        //将时间计时设为0,到时
+    if(OSTaskRunningPrio>prio)   //当要当前任务的优先级低于重置位的任务的优先级
+      OSSched();               //从新调度              //从新调度
+  }
+
+  // 任务延时
+  void OSTimeDly(unsigned int ticks)
+  {
+    if(ticks)                             //当延时有效
+    {
+      OSRdyTbl &= ~(0x01<<OSTaskRunningPrio);
+      TCB[OSTaskRunningPrio].OSWaitTick=ticks;
+      OSSched();                          //从新调度
+    }
+  }
+
+  //信号量
+  struct SemBlk
+  {
+    unsigned char OSEventType;     //型号 0,信号量独占型；1信号量共享型
+    unsigned char OSEventState;    //状态 0,不可用;1,可用
+    unsigned char OSTaskPendTbl;   //等待信号量的任务列表
+  } Sem[10];
+
+  //初始化信号量
+  void OSSemCreat(unsigned char Index,unsigned char Type)
+  {
+    Sem[Index].OSEventType=Type;  //型号 0,信号量独占型；1信号量共享型
+    Sem[Index].OSTaskPendTbl=0;
+    Sem[Index].OSEventState=0;
+  }
+
+  //任务等待信号量,挂起
+  unsigned char OSTaskSemPend(unsigned char Index,unsigned int Timeout)
+  {
+
+    //unsigned char i=0;
+    if(Sem[Index].OSEventState)               //信号量有效
+    {
+      if(Sem[Index].OSEventType==0)          //如果为独占型
+      Sem[Index].OSEventState = 0x00;       //信号量被独占，不可用
+    }
+    else
+    {                                         //加入信号的任务等待表
+      Sem[Index].OSTaskPendTbl |= 0x01<<OSTaskRunningPrio;
+      OSRdyTbl &= ~(0x01<<OSTaskRunningPrio);  //从任务就绪表中去除
+      TCB[OSTaskRunningPrio].OSWaitTick=Timeout;    //如延时为0，刚无限等待
+      OSSched();   //从新调度
+      if(TCB[OSTaskRunningPrio].OSWaitTick==0) return 0;
+    }
+    return 1;
+  }
+
+  //发送一个信号量，可以从任务或中断发送
+  void OSSemPost(unsigned char Index)
+  {
+  if(Sem[Index].OSEventType)                //当要求的信号量是共享型
+    {
+      Sem[Index].OSEventState=0x01;           //使信号量有效
+      OSRdyTbl |=Sem [Index].OSTaskPendTbl;   //使在等待该信号的所有任务就绪
+      Sem[Index].OSTaskPendTbl=0;             //清空所有等待该信号的等待任务
+    }
+    else                                       //当要求的信号量为独占型
+    {
+      unsigned char i;
+      for (i = 0; i < OS_TASKS && !(Sem[Index].OSTaskPendTbl & (0x01<<i));  i++);
+      if(i < OS_TASKS)                       //如果有任务需要
+      {
+        Sem[Index].OSTaskPendTbl &= ~(0x01<<i); //从等待表中去除
+        OSRdyTbl |= 0x01<<i;                     //任务就绪
+      }
+      else
+      {
+        Sem[Index].OSEventState =1;        //使信号量有效
+      }
+    }
+  }
+
+  //从任务发送一个信号量，并进行调度
+  void OSTaskSemPost(unsigned char Index)
+  {
+    OSSemPost(Index);
+    OSSched();
+  }
+
+  //清除一个信号量,只对共享型的有用。
+  //对于独占型的信号量，在任务占用后，就交得不可以用了。
+
+  void OSSemClean(unsigned char Index)
+  {
+    Sem[Index].OSEventState =0;          //要求的信号量无效
+  }
+
+  void TCN0Init(void)    // 计时器0
+  {
+    TCCR0 = 0;
+    TCCR0 |= (1<<CS02);  // 256预分频
+    TIMSK |= (1<<TOIE0); // T0溢出中断允许
+    TCNT0 = 100;         // 置计数起始值
+
+  }
+
+  SIGNAL(SIG_OVERFLOW0)
+  {
+    unsigned char i;
+    for(i=0;i<OS_TASKS;i++)       //任务时钟
+    {
+      if(TCB[i].OSWaitTick)
+      {
+        TCB[i].OSWaitTick--;
+        if(TCB[i].OSWaitTick==0)     //当任务时钟到时,必须是由定时器减时的才行
+        {
+          OSRdyTbl |= (0x01<<i);     //使任务在就绪表中置位
+        }
+      }
+    }
+    TCNT0=100;
+  }
+
+  void Task0()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTB=j++;
+      OSTaskSuspend(1);    //挂起任务1
+      OSTaskSemPost(0);
+      OSTimeDly(50);
+      OSTaskResume(1);     //恢复任务1
+      OSSemClean(0);
+      OSTimeDly(50);
+    }
+  }
+
+  void Task1()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTC=j++;
+      OSTimeDly(5);
+    }
+  }
+
+  void Task2()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+        OSTaskSemPend(0,10);
+      PORTD=j++;
+      OSTimeDly(5);
+    }
+  }
+
+  void TaskScheduler()
+  {
+    while(1)
+    {
+       OSSched();      //反复进行调度
+    }
+  }
+
+  int main(void)
+  {
+    TCN0Init();
+    OSRdyTbl=0;
+    OSSemCreat(0,1);  //将信号量设为共享型
+    OSTaskCreate(Task0,&Stack[99],0);
+    OSTaskCreate(Task1,&Stack[199],1);
+    OSTaskCreate(Task2,&Stack[299],2);
+    OSTaskCreate(TaskScheduler,&Stack[399],OS_TASKS);
+    OSStartTask();
+  }
+  #+end_src
+
+**** 时间片轮番调度法的内核
+
+     Round-Robin Sheduling
+
+      时间片轮调法是非常有趣的。本篇中的例子，建立了 3 个任务，任务没有优先级，在时间中断的调度下，每个任务都轮流运行相同的时
+  间。如果在内核中没有加入其它服务，感觉上就好像是有三个大循环在同时运行。
+
+      本例只是提供了一个用时间中断进行调度的内核，大家可以根据自己的需要，添加相应的服务。
+      要注意到:
+      1,由于在时间中断内调用了任务切换函数，因为在进入中断时，已经将一系列的寄存器入栈。
+      2,在中断内进行调度，是直接通过"RJMP Int_OSSched"进入任务切换和调度的，这是 GCC AVR 的一个特点，为用 C 编写内核提供了极大的
+  方便。
+      3,在阅读代码的同时，请对照阅读编译器产生的 *.lst 文件，会对你理解例子有很大的帮助。
+  #+begin_src C
+  #include <avr/io.h>
+  #include <avr/Interrupt.h>
+  #include <avr/signal.h>
+  unsigned char Stack[400];
+
+  register unsigned char OSRdyTbl          asm("r2");    //任务运行就绪表
+  register unsigned char OSTaskRunningPrio asm("r3");    //正在运行的任务
+
+  #define OS_TASKS 3                    //设定运行任务的数量
+  struct TaskCtrBlock
+  {
+    unsigned int OSTaskStackTop;  //保存任务的堆栈顶
+    unsigned int OSWaitTick;      //任务延时时钟
+  } TCB[OS_TASKS+1];
+
+  //防止被编译器占用
+  register unsigned char tempR4  asm("r4");
+  register unsigned char tempR5  asm("r5");
+  register unsigned char tempR6  asm("r6");
+  register unsigned char tempR7  asm("r7");
+  register unsigned char tempR8  asm("r8");
+  register unsigned char tempR9  asm("r9");
+  register unsigned char tempR10 asm("r10");
+  register unsigned char tempR11 asm("r11");
+  register unsigned char tempR12 asm("r12");
+  register unsigned char tempR13 asm("r13");
+  register unsigned char tempR14 asm("r14");
+  register unsigned char tempR15 asm("r15");
+  register unsigned char tempR16 asm("r16");
+  register unsigned char tempR16 asm("r17");
+
+  //建立任务
+  void OSTaskCreate(void (*Task)(void),unsigned char *Stack,unsigned char TaskID)
+  {
+    unsigned char i;
+    *Stack--=(unsigned int)Task>>8;    //将任务的地址高位压入堆栈，
+    *Stack--=(unsigned int)Task;         //将任务的地址低位压入堆栈，
+
+    *Stack--=0x00;                     //R1 __zero_reg__
+    *Stack--=0x00;                     //R0 __tmp_reg__
+    *Stack--=0x80;
+
+  //SREG 在任务中，开启全局中断
+    for(i=0;i<14;i++)    //在 avr-libc 中的 FAQ中的 What registers are used by the C compiler?
+      *Stack--=i;                    //描述了寄存器的作用
+    TCB[TaskID].OSTaskStackTop=(unsigned int)Stack;    //将人工堆栈的栈顶，保存到堆栈的数组中
+    OSRdyTbl|=0x01<<TaskID;      //任务就绪表已经准备好
+  }
+
+  //开始任务调度,从最低优先级的任务的开始
+  void OSStartTask()
+  {
+    OSTaskRunningPrio=OS_TASKS;
+    SP=TCB[OS_TASKS].OSTaskStackTop+17;
+    __asm__ __volatile__(    "reti"       "nt"  );
+  }
+
+  //进行任务调度
+  void OSSched(void)
+  {
+     //  根据中断时保存寄存器的次序入栈，模拟一次中断后，入栈的情况
+    __asm__ __volatile__("PUSH __zero_reg__         nt");  //R1
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");  //R0
+    __asm__ __volatile__("IN   __tmp_reg__,__SREG__ nt");  //保存状态寄存器SREG
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");
+    __asm__ __volatile__("CLR  __zero_reg__         nt");  //R0重新清零
+    __asm__ __volatile__("PUSH R18                  nt");
+    __asm__ __volatile__("PUSH R19                  nt");
+    __asm__ __volatile__("PUSH R20                  nt");
+    __asm__ __volatile__("PUSH R21                  nt");
+    __asm__ __volatile__("PUSH R22                  nt");
+    __asm__ __volatile__("PUSH R23                  nt");
+    __asm__ __volatile__("PUSH R24                  nt");
+    __asm__ __volatile__("PUSH R25                  nt");
+    __asm__ __volatile__("PUSH R26                  nt");
+    __asm__ __volatile__("PUSH R27                  nt");
+    __asm__ __volatile__("PUSH R30                  nt");
+    __asm__ __volatile__("PUSH R31                  nt");
+
+    __asm__ __volatile__("Int_OSSched:              nt");  //当中断要求调度，直接进入这里
+    __asm__ __volatile__("PUSH R28                  nt");  //R28与R29用于建立在堆栈上的指针
+    __asm__ __volatile__("PUSH R29                  nt");  //入栈完成
+
+    TCB[OSTaskRunningPrio].OSTaskStackTop=SP;           //将正在运行的任务的堆栈底保存
+
+    if(++OSTaskRunningPrio>=OS_TASKS) //轮流运行各个任务，没有优先级
+        OSTaskRunningPrio=0;
+
+    //cli();  //保护堆栈转换
+    SP=TCB[OSTaskRunningPrio].OSTaskStackTop;
+    //sei();
+
+      //根据中断时的出栈次序
+    __asm__ __volatile__("POP  R29                  nt");
+    __asm__ __volatile__("POP  R28                  nt");
+    __asm__ __volatile__("POP  R31                  nt");
+    __asm__ __volatile__("POP  R30                  nt");
+    __asm__ __volatile__("POP  R27                  nt");
+    __asm__ __volatile__("POP  R26                  nt");
+    __asm__ __volatile__("POP  R25                  nt");
+    __asm__ __volatile__("POP  R24                  nt");
+    __asm__ __volatile__("POP  R23                  nt");
+    __asm__ __volatile__("POP  R22                  nt");
+    __asm__ __volatile__("POP  R21                  nt");
+    __asm__ __volatile__("POP  R20                  nt");
+    __asm__ __volatile__("POP  R19                  nt");
+    __asm__ __volatile__("POP  R18                  nt");
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //SERG 出栈并恢复
+    __asm__ __volatile__("OUT  __SREG__,__tmp_reg__ nt");      //
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //R0 出栈
+    __asm__ __volatile__("POP  __zero_reg__         nt");      //R1 出栈
+    __asm__ __volatile__("RETI                      nt");     //返回并开中断
+    //中断时出栈完成
+  }
+
+  void IntSwitch(void)
+  {
+    __asm__ __volatile__("POP  R31                  nt");  //去除因调用子程序而入栈的PC
+    __asm__ __volatile__("POP  R31                  nt");
+    __asm__ __volatile__("RJMP Int_OSSched          nt");  //重新调度
+  }
+
+  void TCN0Init(void)    // 计时器0
+  {
+    TCCR0 = 0;
+    TCCR0 |= (1<<CS02);  // 256预分频
+    TIMSK |= (1<<TOIE0); // T0溢出中断允许
+    TCNT0 = 100;         // 置计数起始值
+  }
+
+  SIGNAL(SIG_OVERFLOW0)
+  {
+    TCNT0=100;
+    IntSwitch();        //任务调度
+  }
+
+  void Task0()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTB=j++;
+      //OSTimeDly(50);
+    }
+  }
+
+  void Task1()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTC=j++;
+      //OSTimeDly(5);
+    }
+  }
+
+  void Task2()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTD=j++;
+      //OSTimeDly(5);
+    }
+  }
+
+  void TaskScheduler()
+  {
+    while(1)
+    {
+       OSSched();      //反复进行调度
+    }
+  }
+
+  int main(void)
+  {
+    TCN0Init();
+    OSRdyTbl=0;
+    OSTaskCreate(Task0,&Stack[99],0);
+    OSTaskCreate(Task1,&Stack[199],1);
+    OSTaskCreate(Task2,&Stack[299],2);
+    OSTaskCreate(TaskScheduler,&Stack[399],OS_TASKS);
+    OSStartTask();
+  }
+  #+end_src
+
+**** 占先式内核(只带延时服务)
+
+  Preemptive Multitasking
+      当大家理解时间片轮番调度法的任务调度方式后，占先式的内核的原理，已经伸手可及了。
+      先想想，占先式内核是在什么地方实现任务调度的呢？对了，它在可以在任务中进行调度，这个在协作式的内核中已经做到了；同时，
+  它也可以在中断结束后进行调度，这个问题，已经在时间片轮番调度法中已经做到了。
+
+      由于中断是可以嵌套的，只有当各层嵌套中要求调度，并且中断嵌套返回到最初进入的中断的那一层时，才能进行任务调度。
+  #+begin_src C
+  #include <avr/io.h>
+  #include <avr/Interrupt.h>
+  #include <avr/signal.h>
+  unsigned char Stack[400];
+
+  register unsigned char OSRdyTbl          asm("r2");    //任务运行就绪表
+  register unsigned char OSTaskRunningPrio asm("r3");    //正在运行的任务
+  register unsigned char IntNum            asm("r4");  //中断嵌套计数器
+  //只有当中断嵌套数为0，并且有中断要求时，才能在退出中断时，进行任务调度
+  register unsigned char OSCoreState       asm("r16"); // 系统核心标志位 ,R16 编译器没有使用
+  //只有大于R15的寄存器才能直接赋值 例LDI R16,0x01
+  //0x01 正在任务 切换  0x02 有中断要求切换
+
+  #define OS_TASKS 3                    //设定运行任务的数量
+  struct TaskCtrBlock
+  {
+    unsigned int OSTaskStackTop;  //保存任务的堆栈顶
+    unsigned int OSWaitTick;      //任务延时时钟
+  } TCB[OS_TASKS+1];
+
+  //防止被编译器占用
+  //register unsigned char tempR4  asm("r4");
+  register unsigned char tempR5  asm("r5");
+  register unsigned char tempR6  asm("r6");
+  register unsigned char tempR7  asm("r7");
+  register unsigned char tempR8  asm("r8");
+  register unsigned char tempR9  asm("r9");
+  register unsigned char tempR10 asm("r10");
+  register unsigned char tempR11 asm("r11");
+  register unsigned char tempR12 asm("r12");
+  register unsigned char tempR13 asm("r13");
+  register unsigned char tempR14 asm("r14");
+  register unsigned char tempR15 asm("r15");
+  //register unsigned char tempR16 asm("r16");
+  register unsigned char tempR16 asm("r17");
+
+  //建立任务
+  void OSTaskCreate(void (*Task)(void),unsigned char *Stack,unsigned char TaskID)
+  {
+    unsigned char i;
+    *Stack--=(unsigned int)Task>>8;    //将任务的地址高位压入堆栈，
+    *Stack--=(unsigned int)Task;         //将任务的地址低位压入堆栈，
+
+    *Stack--=0x00;                     //R1 __zero_reg__
+    *Stack--=0x00;                     //R0 __tmp_reg__
+    *Stack--=0x80;
+
+  //SREG 在任务中，开启全局中断
+    for(i=0;i<14;i++)    //在 avr-libc 中的 FAQ中的 What registers are used by the C compiler?
+      *Stack--=i;                    //描述了寄存器的作用
+    TCB[TaskID].OSTaskStackTop=(unsigned int)Stack;    //将人工堆栈的栈顶，保存到堆栈的数组中
+    OSRdyTbl|=0x01<<TaskID;      //任务就绪表已经准备好
+  }
+
+  //开始任务调度,从最低优先级的任务的开始
+  void OSStartTask()
+  {
+    OSTaskRunningPrio=OS_TASKS;
+    SP=TCB[OS_TASKS].OSTaskStackTop+17;
+    __asm__ __volatile__(    "reti"       "nt"  );
+  }
+
+  //进行任务调度
+  void OSSched(void)
+  {
+
+    __asm__ __volatile__("LDI  R16,0x01             nt");
+    //清除中断要求任务切换的标志位,设置正在任务切换标志位
+    __asm__ __volatile__("SEI                       nt");
+    //开中断,因为如果因中断在任务调度中进行,要重新进行调度时，已经关中断
+    //根据中断时保存寄存器的次序入栈，模拟一次中断后，入栈的情况
+    __asm__ __volatile__("PUSH __zero_reg__         nt");  //R1
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");  //R0
+    __asm__ __volatile__("IN   __tmp_reg__,__SREG__ nt");  //保存状态寄存器SREG
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");
+    __asm__ __volatile__("CLR  __zero_reg__         nt");  //R0重新清零
+    __asm__ __volatile__("PUSH R18                  nt");
+    __asm__ __volatile__("PUSH R19                  nt");
+    __asm__ __volatile__("PUSH R20                  nt");
+    __asm__ __volatile__("PUSH R21                  nt");
+    __asm__ __volatile__("PUSH R22                  nt");
+    __asm__ __volatile__("PUSH R23                  nt");
+    __asm__ __volatile__("PUSH R24                  nt");
+    __asm__ __volatile__("PUSH R25                  nt");
+    __asm__ __volatile__("PUSH R26                  nt");
+    __asm__ __volatile__("PUSH R27                  nt");
+    __asm__ __volatile__("PUSH R30                  nt");
+    __asm__ __volatile__("PUSH R31                  nt");
+
+    __asm__ __volatile__("Int_OSSched:              nt");  //当中断要求调度，直接进入这里
+    __asm__ __volatile__("SEI                       nt");
+  //开中断,因为如果因中断在任务调度中进行，已经关中断
+    __asm__ __volatile__("PUSH R28                  nt");  //R28与R29用于建立在堆栈上的指针
+    __asm__ __volatile__("PUSH R29                  nt");  //入栈完成
+
+    TCB[OSTaskRunningPrio].OSTaskStackTop=SP;           //将正在运行的任务的堆栈底保存
+
+    unsigned char OSNextTaskPrio;                            //在现有堆栈上开设新的空间
+    for (OSNextTaskPrio = 0;                                 //进行任务调度
+      OSNextTaskPrio < OS_TASKS && !(OSRdyTbl & (0x01<<OSNextTaskPrio));
+      OSNextTaskPrio++);
+      OSTaskRunningPrio = OSNextTaskPrio ;
+
+    cli();  //保护堆栈转换
+    SP=TCB[OSTaskRunningPrio].OSTaskStackTop;
+    sei();
+
+    //根据中断时的出栈次序
+    __asm__ __volatile__("POP  R29                  nt");
+    __asm__ __volatile__("POP  R28                  nt");
+    __asm__ __volatile__("POP  R31                  nt");
+    __asm__ __volatile__("POP  R30                  nt");
+    __asm__ __volatile__("POP  R27                  nt");
+    __asm__ __volatile__("POP  R26                  nt");
+    __asm__ __volatile__("POP  R25                  nt");
+    __asm__ __volatile__("POP  R24                  nt");
+    __asm__ __volatile__("POP  R23                  nt");
+    __asm__ __volatile__("POP  R22                  nt");
+    __asm__ __volatile__("POP  R21                  nt");
+    __asm__ __volatile__("POP  R20                  nt");
+    __asm__ __volatile__("POP  R19                  nt");
+    __asm__ __volatile__("POP  R18                  nt");
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //SERG 出栈并恢复
+    __asm__ __volatile__("OUT  __SREG__,__tmp_reg__ nt");      //
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //R0 出栈
+    __asm__ __volatile__("POP  __zero_reg__         nt");      //R1 出栈
+    //中断时出栈完成
+    __asm__ __volatile__("CLI                       nt");  //关中断
+    __asm__ __volatile__("SBRC R16,1                nt");  //SBRC当寄存器位为0刚跳过下一条指令
+    //检查是在调度时，是否有中断要求任务调度 0x02是中断要求调度的标志位
+    __asm__ __volatile__("RJMP OSSched              nt");  //重新调度
+    __asm__ __volatile__("LDI  R16,0x00             nt");
+    //清除中断要求任务切换的标志位,清除正在任务切换标志位
+    __asm__ __volatile__("RETI                      nt");     //返回并开中断
+  }
+
+  //从中断退出并进行调度
+  void IntSwitch(void)
+  {
+    //当中断无嵌套，并且没有在切换任务的过程中，直接进行任务切换
+    if(OSCoreState == 0x02 && IntNum==0)
+    {
+      //进入中断时，已经保存了SREG和R0,R1,R18~R27,R30,R31
+      __asm__ __volatile__("POP  R31                  nt");  //去除因调用子程序而入栈的PC
+      __asm__ __volatile__("POP  R31                  nt");
+      __asm__ __volatile__("LDI  R16,0x01             nt");
+      //清除中断要求任务切换的标志位,设置正在任务切换标志位
+      __asm__ __volatile__("RJMP Int_OSSched          nt");  //重新调度
+    }
+  }
+
+  // 任务延时
+  void OSTimeDly(unsigned int ticks)
+  {
+    if(ticks)                             //当延时有效
+    {
+      OSRdyTbl &= ~(0x01<<OSTaskRunningPrio);
+      TCB[OSTaskRunningPrio].OSWaitTick=ticks;
+      OSSched();                          //从新调度
+    }
+  }
+
+  void TCN0Init(void)    // 计时器0
+  {
+    TCCR0 = 0;
+    TCCR0 |= (1<<CS02);  // 256预分频
+    TIMSK |= (1<<TOIE0); // T0溢出中断允许
+    TCNT0 = 100;         // 置计数起始值
+
+  }
+
+  SIGNAL(SIG_OVERFLOW0)
+  {
+    IntNum++;     //中断嵌套+1
+    sei();  //在中断中，重开中断
+
+    unsigned char i,j=0;
+    for(i=0;i<OS_TASKS;i++)        //任务时钟
+    {
+      if(TCB[i].OSWaitTick)
+      {
+        TCB[i].OSWaitTick--;
+        if(TCB[i].OSWaitTick==0)         //当任务时钟到时,必须是由定时器减时的才行
+        {
+          OSRdyTbl |= (0x01<<i);         //使任务可以重新运行
+          OSCoreState|=0x02;              //要求任务切换的标志位
+        }
+      }
+    }
+    TCNT0=100;
+    cli();
+    IntNum--;               //中断嵌套-1
+    IntSwitch();         //进行任务调度
+  }
+
+  void Task0()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTB=j++;
+      OSTimeDly(50);
+    }
+  }
+
+  void Task1()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTC=j++;
+      OSTimeDly(20);
+    }
+  }
+
+  void Task2()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTD=j++;
+      OSTimeDly(5);
+    }
+  }
+
+  void TaskScheduler()
+  {
+    OSSched();
+    while(1)
+    {
+       //OSSched();      //反复进行调度
+    }
+  }
+
+  int main(void)
+  {
+    TCN0Init();
+    OSRdyTbl=0;
+    IntNum=0;
+    OSTaskCreate(Task0,&Stack[99],0);
+    OSTaskCreate(Task1,&Stack[199],1);
+    OSTaskCreate(Task2,&Stack[299],2);
+    OSTaskCreate(TaskScheduler,&Stack[399],OS_TASKS);
+    OSStartTask();
+  }
+  #+end_src
+
+  *** 占先式内核(完善的服务)
+
+  如果将前面所提到的占先式内核和协作式内核组合在一起，很容易就可以得到一个功能较为完善的占先式内核，它的功能有：
+      1,挂起和恢复任务
+      2,任务延时
+      3,信号量(包括共享型和独占型)
+      另外，在本例中，在各个任务中加入了从串口发送任务状态的功能。
+
+  #+begin_src C
+  #include <avr/io.h>
+  #include <avr/Interrupt.h>
+  #include <avr/signal.h>
+  unsigned char Stack[400];
+
+  register unsigned char OSRdyTbl          asm("r2");    //任务运行就绪表
+  register unsigned char OSTaskRunningPrio asm("r3");    //正在运行的任务
+  register unsigned char IntNum            asm("r4");     //中断嵌套计数器
+  //只有当中断嵌套数为0，并且有中断要求时，才能在退出中断时，进行任务调度
+  register unsigned char OSCoreState       asm("r16"); // 系统核心标志位 ,R16 编译器没有使用
+  //只有大于R15的寄存器才能直接赋值 例LDI R16,0x01
+  //0x01 正在任务 切换  0x02 有中断要求切换
+
+  #define OS_TASKS 3                    //设定运行任务的数量
+  struct TaskCtrBlock
+  {
+    unsigned int OSTaskStackTop;  //保存任务的堆栈顶
+    unsigned int OSWaitTick;      //任务延时时钟
+  } TCB[OS_TASKS+1];
+
+  //防止被编译器占用
+  //register unsigned char tempR4  asm("r4");
+  register unsigned char tempR5  asm("r5");
+  register unsigned char tempR6  asm("r6");
+  register unsigned char tempR7  asm("r7");
+  register unsigned char tempR8  asm("r8");
+  register unsigned char tempR9  asm("r9");
+  register unsigned char tempR10 asm("r10");
+  register unsigned char tempR11 asm("r11");
+  register unsigned char tempR12 asm("r12");
+  register unsigned char tempR13 asm("r13");
+  register unsigned char tempR14 asm("r14");
+  register unsigned char tempR15 asm("r15");
+  //register unsigned char tempR16 asm("r16");
+  register unsigned char tempR16 asm("r17");
+
+  //建立任务
+  void OSTaskCreate(void (*Task)(void),unsigned char *Stack,unsigned char TaskID)
+  {
+    unsigned char i;
+    *Stack--=(unsigned int)Task>>8;    //将任务的地址高位压入堆栈，
+    *Stack--=(unsigned int)Task;         //将任务的地址低位压入堆栈，
+
+    *Stack--=0x00;                     //R1 __zero_reg__
+    *Stack--=0x00;                     //R0 __tmp_reg__
+    *Stack--=0x80;
+
+  //SREG 在任务中，开启全局中断
+    for(i=0;i<14;i++)    //在 avr-libc 中的 FAQ中的 What registers are used by the C compiler?
+      *Stack--=i;                    //描述了寄存器的作用
+    TCB[TaskID].OSTaskStackTop=(unsigned int)Stack;    //将人工堆栈的栈顶，保存到堆栈的数组中
+    OSRdyTbl|=0x01<<TaskID;      //任务就绪表已经准备好
+  }
+
+  //开始任务调度,从最低优先级的任务的开始
+  void OSStartTask()
+  {
+    OSTaskRunningPrio=OS_TASKS;
+    SP=TCB[OS_TASKS].OSTaskStackTop+17;
+    __asm__ __volatile__(    "reti"       "nt"  );
+  }
+
+  //进行任务调度
+  void OSSched(void)
+  {
+
+    __asm__ __volatile__("LDI  R16,0x01             nt");
+    //清除中断要求任务切换的标志位,设置正在任务切换标志位
+    __asm__ __volatile__("SEI                       nt");
+    //开中断,因为如果因中断在任务调度中进行,要重新进行调度时，已经关中断
+     //  根据中断时保存寄存器的次序入栈，模拟一次中断后，入栈的情况
+    __asm__ __volatile__("PUSH __zero_reg__         nt");  //R1
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");  //R0
+    __asm__ __volatile__("IN   __tmp_reg__,__SREG__ nt");  //保存状态寄存器SREG
+    __asm__ __volatile__("PUSH __tmp_reg__          nt");
+    __asm__ __volatile__("CLR  __zero_reg__         nt");  //R0重新清零
+    __asm__ __volatile__("PUSH R18                  nt");
+    __asm__ __volatile__("PUSH R19                  nt");
+    __asm__ __volatile__("PUSH R20                  nt");
+    __asm__ __volatile__("PUSH R21                  nt");
+    __asm__ __volatile__("PUSH R22                  nt");
+    __asm__ __volatile__("PUSH R23                  nt");
+    __asm__ __volatile__("PUSH R24                  nt");
+    __asm__ __volatile__("PUSH R25                  nt");
+    __asm__ __volatile__("PUSH R26                  nt");
+    __asm__ __volatile__("PUSH R27                  nt");
+    __asm__ __volatile__("PUSH R30                  nt");
+    __asm__ __volatile__("PUSH R31                  nt");
+
+    __asm__ __volatile__("Int_OSSched:              nt");  //当中断要求调度，直接进入这里
+    __asm__ __volatile__("SEI                       nt");
+      //开中断,因为如果因中断在任务调度中进行，已经关中断
+    __asm__ __volatile__("PUSH R28                  nt");  //R28与R29用于建立在堆栈上的指针
+    __asm__ __volatile__("PUSH R29                  nt");  //入栈完成
+
+    TCB[OSTaskRunningPrio].OSTaskStackTop=SP;           //将正在运行的任务的堆栈底保存
+
+    unsigned char OSNextTaskPrio;                            //在现有堆栈上开设新的空间
+    for (OSNextTaskPrio = 0;                                 //进行任务调度
+      OSNextTaskPrio < OS_TASKS && !(OSRdyTbl & (0x01<<OSNextTaskPrio));
+      OSNextTaskPrio++);
+      OSTaskRunningPrio = OSNextTaskPrio ;
+
+    cli();  //保护堆栈转换
+    SP=TCB[OSTaskRunningPrio].OSTaskStackTop;
+    sei();
+
+    //根据中断时的出栈次序
+    __asm__ __volatile__("POP  R29                  nt");
+    __asm__ __volatile__("POP  R28                  nt");
+    __asm__ __volatile__("POP  R31                  nt");
+    __asm__ __volatile__("POP  R30                  nt");
+    __asm__ __volatile__("POP  R27                  nt");
+    __asm__ __volatile__("POP  R26                  nt");
+    __asm__ __volatile__("POP  R25                  nt");
+    __asm__ __volatile__("POP  R24                  nt");
+    __asm__ __volatile__("POP  R23                  nt");
+    __asm__ __volatile__("POP  R22                  nt");
+    __asm__ __volatile__("POP  R21                  nt");
+    __asm__ __volatile__("POP  R20                  nt");
+    __asm__ __volatile__("POP  R19                  nt");
+    __asm__ __volatile__("POP  R18                  nt");
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //SERG 出栈并恢复
+    __asm__ __volatile__("OUT  __SREG__,__tmp_reg__ nt");      //
+    __asm__ __volatile__("POP  __tmp_reg__          nt");      //R0 出栈
+    __asm__ __volatile__("POP  __zero_reg__         nt");      //R1 出栈
+    //中断时出栈完成
+    __asm__ __volatile__("CLI                       nt");  //关中断
+    __asm__ __volatile__("SBRC R16,1                nt");  //SBRC当寄存器位为0刚跳过下一条指令
+    //检查是在调度时，是否有中断要求任务调度 0x02是中断要求调度的标志位
+    __asm__ __volatile__("RJMP OSSched              nt");  //重新调度
+    __asm__ __volatile__("LDI  R16,0x00             nt");
+    //清除中断要求任务切换的标志位,清除正在任务切换标志位
+    __asm__ __volatile__("RETI                      nt");     //返回并开中断
+  }
+
+  //从中断退出并进行调度
+  void IntSwitch(void)
+  {
+    //当中断无嵌套，并且没有在切换任务的过程中，直接进行任务切换
+    if(OSCoreState == 0x02 && IntNum==0)
+    {
+      //进入中断时，已经保存了SREG和R0,R1,R18~R27,R30,R31
+      __asm__ __volatile__("POP  R31                  nt");  //去除因调用子程序而入栈的PC
+      __asm__ __volatile__("POP  R31                  nt");
+      __asm__ __volatile__("LDI  R16,0x01             nt");
+      //清除中断要求任务切换的标志位,设置正在任务切换标志位
+      __asm__ __volatile__("RJMP Int_OSSched          nt");  //重新调度
+    }
+  }
+  ////////////////////////////////////////////任务处理
+  //挂起任务
+  void OSTaskSuspend(unsigned char prio)
+  {
+    TCB[prio].OSWaitTick=0;
+    OSRdyTbl &= ~(0x01<<prio); //从任务就绪表上去除标志位
+    if(OSTaskRunningPrio==prio)  //当要挂起的任务为当前任务
+      OSSched();               //从新调度
+  }
+
+  //恢复任务 可以让被OSTaskSuspend或 OSTimeDly暂停的任务恢复
+  void OSTaskResume(unsigned char prio)
+  {
+    OSRdyTbl |= 0x01<<prio;    //从任务就绪表上重置标志位
+      TCB[prio].OSWaitTick=0;        //将时间计时设为0,到时
+    if(OSTaskRunningPrio>prio)   //当要当前任务的优先级低于重置位的任务的优先级
+      OSSched();               //从新调度              //从新调度
+  }
+
+  // 任务延时
+  void OSTimeDly(unsigned int ticks)
+  {
+    if(ticks)                             //当延时有效
+    {
+      OSRdyTbl &= ~(0x01<<OSTaskRunningPrio);
+      TCB[OSTaskRunningPrio].OSWaitTick=ticks;
+      OSSched();                          //从新调度
+    }
+  }
+
+  //信号量
+  struct SemBlk
+  {
+    unsigned char OSEventType;     //型号 0,信号量独占型；1信号量共享型
+    unsigned char OSEventState;    //状态 0,不可用;1,可用
+    unsigned char OSTaskPendTbl;   //等待信号量的任务列表
+  } Sem[10];
+
+  //初始化信号量
+  void OSSemCreat(unsigned char Index,unsigned char Type)
+  {
+    Sem[Index].OSEventType=Type;  //型号 0,信号量独占型；1信号量共享型
+    Sem[Index].OSTaskPendTbl=0;
+    Sem[Index].OSEventState=0;
+  }
+
+  //任务等待信号量,挂起
+  //当Timeout==0xffff时，为无限延时
+  unsigned char OSTaskSemPend(unsigned char Index,unsigned int Timeout)
+  {
+
+    //unsigned char i=0;
+    if(Sem[Index].OSEventState)                      //信号量有效
+    {
+      if(Sem[Index].OSEventType==0)                  //如果为独占型
+      Sem[Index].OSEventState = 0x00;                //信号量被独占，不可用
+    }
+    else
+    {                                                //加入信号的任务等待表
+      Sem[Index].OSTaskPendTbl |= 0x01<<OSTaskRunningPrio;
+      TCB[OSTaskRunningPrio].OSWaitTick=Timeout;    //如延时为0，刚无限等待
+      OSRdyTbl &= ~(0x01<<OSTaskRunningPrio);       //从任务就绪表中去除
+      OSSched();   //从新调度
+      if(TCB[OSTaskRunningPrio].OSWaitTick==0 )     //超时，未能拿到资源
+            return 0;
+    }
+    return 1;
+  }
+
+  //发送一个信号量，可以从任务或中断发送
+  void OSSemPost(unsigned char Index)
+  {
+  if(Sem[Index].OSEventType)                //当要求的信号量是共享型
+    {
+      Sem[Index].OSEventState=0x01;           //使信号量有效
+      OSRdyTbl |=Sem [Index].OSTaskPendTbl;   //使在等待该信号的所有任务就绪
+      Sem[Index].OSTaskPendTbl=0;             //清空所有等待该信号的等待任务
+    }
+    else                                       //当要求的信号量为独占型
+    {
+      unsigned char i;
+      for (i = 0; i < OS_TASKS && !(Sem[Index].OSTaskPendTbl & (0x01<<i));  i++);
+      if(i < OS_TASKS)                       //如果有任务需要
+      {
+        Sem[Index].OSTaskPendTbl &= ~(0x01<<i); //从等待表中去除
+        OSRdyTbl |= 0x01<<i;                     //任务就绪
+      }
+      else
+      {
+        Sem[Index].OSEventState =1;        //使信号量有效
+      }
+    }
+  }
+
+  //从任务发送一个信号量，并进行调度
+  void OSTaskSemPost(unsigned char Index)
+  {
+    OSSemPost(Index);
+    OSSched();
+  }
+
+  //清除一个信号量,只对共享型的有用。
+  //对于独占型的信号量，在任务占用后，就交得不可以用了。
+
+  void OSSemClean(unsigned char Index)
+  {
+    Sem[Index].OSEventState =0;          //要求的信号量无效
+  }
+
+  void TCN0Init(void)    // 计时器0
+  {
+    TCCR0 = 0;
+    TCCR0 |= (1<<CS02);  // 256预分频
+    TIMSK |= (1<<TOIE0); // T0溢出中断允许
+    TCNT0 = 100;         // 置计数起始值
+
+  }
+
+  SIGNAL(SIG_OVERFLOW0)
+  {
+    IntNum++;     //中断嵌套+1
+    sei();  //在中断中，重开中断
+
+    unsigned char i;
+    for(i=0;i<OS_TASKS;i++)        //任务时钟
+    {
+      if(TCB[i].OSWaitTick && TCB[i].OSWaitTick!=0xffff)
+      {
+        TCB[i].OSWaitTick--;
+        if(TCB[i].OSWaitTick==0)         //当任务时钟到时,必须是由定时器减时的才行
+        {
+          OSRdyTbl |= (0x01<<i);         //使任务可以重新运行
+          OSCoreState|=0x02;         //要求任务切换的标志位
+        }
+      }
+    }
+    TCNT0=100;
+    cli();
+    IntNum--;               //中断嵌套-1
+    IntSwitch();         //进行任务调度
+  }
+
+  unsigned char __attribute__ ((progmem)) proStrA[]="Task                       ";
+
+  unsigned char strA[20];
+
+  SIGNAL(SIG_UART_RECV)        //串口接收中断
+  {
+    strA[0]=UDR;
+  }
+
+  /////////////////////////////////////串口发送
+
+  unsigned char *pstr_UART_Send;
+  unsigned int  nUART_Sending=0;
+
+  void UART_Send(unsigned char *Res,unsigned int Len)    //发送字符串数组
+  {
+    if(Len>0)
+    {
+      pstr_UART_Send=Res;    //发送字串的指针
+      nUART_Sending=Len;    //发送字串的长度
+      UCSRB=0xB8;                    //发送中断使能
+    }
+  }
+
+  //SIGNAL 在中断期间，其它中断禁止
+
+  SIGNAL(SIG_UART_DATA)       //串口发送数据中断
+  {
+
+    IntNum++;     //中断嵌套+1,不充许中断
+
+    if(nUART_Sending)                    //如果未发完
+    {
+      UDR=*pstr_UART_Send;        //发送字节
+      pstr_UART_Send++;                //发送字串的指针加1
+      nUART_Sending--;                //等待发送的字串数减1
+    }
+    if(nUART_Sending==0)            //当已经发送完
+    {
+      OSSemPost(0);
+      OSCoreState|=0x02;      //要求任务切换的标志位
+      UCSRB=0x98;
+    }
+    cli();                        //关发送中断
+    IntNum--;
+    IntSwitch(); //进行任务调度
+  }
+
+  void UARTInit()    //初始化串口
+  {
+  #define fosc 8000000 //晶振8  MHZ UBRRL=(fosc/16/(baud+1))%256;
+  #define baud 9600     //波特率
+    OSCCAL=0x97;          //串口波特率校正值，从编程器中读出
+    //UCSRB=(1<<RXEN)|(1<<TXEN);//允许发送和接收
+    UCSRB=0x98;
+    //UCSRB=0x08;
+    UBRRL=(fosc/16/(baud+1))%256;
+    UBRRH=(fosc/16/(baud+1))/256;
+    UCSRC=(1<<URSEL)|(1<<UCSZ1)|(1<<UCSZ0);//8位数据+1位STOP位
+    UCSRB=0xB8;
+    UDR=0;
+  }
+
+  //打印unsigned int 到字符串中 00000
+  void strPUT_uInt(unsigned char *Des,unsigned int i)
+  {
+    unsigned char j;
+    Des=Des+4;
+    for(j=0;j<5;j++)
+    {
+      *Des=i%10+’0’;
+      i=i/10;
+      Des--;
+    }
+  }
+
+  void strPUT_Star(unsigned char *Des,unsigned char i)
+  {
+    unsigned char j;
+    for(j=0;j<i;j++)
+    {
+      *Des++=’*’;
+    }
+    *Des++=13;
+  }
+
+  unsigned int strPUT_TaskState(unsigned char *Des,
+                                unsigned char TaskID,
+                    unsigned char Num)
+  {
+    //unsigned int i=0;
+    *(Des+4)=’0’+TaskID;
+    strPUT_uInt(Des+6,Num);
+    strPUT_Star(Des+12,TaskID);
+    return 12+TaskID+1;
+  }
+
+  void Task0()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTB=j++;
+      if(OSTaskSemPend(0,0xffff))
+      {
+        unsigned int m;
+        m=strPUT_TaskState(strA,OSTaskRunningPrio,j);
+        UART_Send(strA,m);
+      }
+      OSTimeDly(200);
+    }
+  }
+
+  void Task1()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      PORTC=j++;
+      if(OSTaskSemPend(0,0xffff))
+      {
+        unsigned int m;
+        m=strPUT_TaskState(strA,OSTaskRunningPrio,j);
+        UART_Send(strA,m);
+      }
+      OSTimeDly(100);
+    }
+  }
+
+  void Task2()
+  {
+    unsigned int j=0;
+    while(1)
+    {
+      if(OSTaskSemPend(0,0xffff))
+      {
+        unsigned int m;
+        m=strPUT_TaskState(strA,OSTaskRunningPrio,j);
+        UART_Send(strA,m);
+      }
+      PORTD=j++;
+      OSTimeDly(50);
+    }
+  }
+
+  void TaskScheduler()
+  {
+    OSSched();
+    while(1)
+    {
+    }
+  }
+
+  int main(void)
+  {
+    strlcpy_P(strA,proStrA,20);
+    UARTInit();
+    TCN0Init();
+
+    OSRdyTbl=0;
+    IntNum=0;
+    OSTaskCreate(Task0,&Stack[99],0);
+    OSTaskCreate(Task1,&Stack[199],1);
+    OSTaskCreate(Task2,&Stack[299],2);
+    OSTaskCreate(TaskScheduler,&Stack[399],OS_TASKS);
+    OSStartTask();
+  }
+  #+end_src
+
+**** 结束语
+
+      本文中的例子，基本上用 WinAVR 和 Proteus 调试仿真成功，一定可能存在某些方面的缺陷,因为工作上时间的压力，就没有进一步查
+  找。
+
+*** STM32 启动过程
+*** bootloader 作用
+
+     控制器无法从硬件上定位 main 函数的入口地址，因为使用 C 语言作为开发语言后，变量/函数的地址便由编译器在编译时自行分配，这样一来 main 函数的入口地址在微控制器的内部存储空间中不再是绝对不变的。
+
+*** 启动文件作用
+
+     每一种微控制器(处理器)都必须有启动文件，一系列汇编指令，启动文件的作用便是负责执行微控制器从“复位”到“开始执行 main 函数”中间这段时间(称为启动过程)所必须进行的工作。
+
+     Cortex-M3 内核规定，起始地址必须存放堆顶指针，而第二个地址则必须存放复位中断入口向量地址，这样在 Cortex-M3 内核复位后，会自动从起始地址的下一个 32 位空间取出复位中断入口向量，跳转执行复位中断服务程序
+
+     1. 设置堆栈指针 SP
+     2. 将程序计数器指针 PC 指向 Reset_Handler
+     3. 设置中断向量表的对应中断地址
+     4. 设置程序入口函数为 main
+
+     如何引用 startup 文件？
+
+*** boot 引脚
+
+  1. 通过 boot 引脚设置可以将中断向量表定位于 SRAM 区，即起始地址为 0x2000000，同时复位后 PC 指针位于 0x2000000 处;
+  2. 通过 boot 引脚设置可以将中断向量表定位于 FLASH 区，即起始地址为 0x8000000，同时复位后 PC 指针位于 0x8000000 处;
+  3. 通过 boot 引脚设置可以将中断向量表定位于内置 Bootloader 区
+
+*** 启动过程
+
+     首先对栈和堆的大小进行定义，并在代码区的起始处建立中断向量表，其第一个表项是栈顶地址，第二个表项是复位中断服务入口地址。
+
+     然后在复位中断服务程序中跳转 C/C++标准实时库的__main 函数，完成用户堆栈等的初始化后，跳转.c 文件中的 main 函数开始执行 C 程序。
+     假设 STM32 被设置为从内部 FLASH 启动(这也是最常见的一种情况)，中断向量表起始地位为 0x8000000，则栈顶地址存放于 0x8000000 处，而复位中断服务入口地址存放于 0x8000004 处。
+     当 STM32 遇到复位信号后，则从 0x80000004 处取出复位中断服务入口地址，继而执行复位中断服务程序，然后跳转__main 函数，最后进入 mian 函数，来到 C 的世界。
+     __main()是编译系统提供的一个函数，负责完成库函数的初始化和初始化应用程序执行环境，最后自动跳转到 main();
+     __main 的一个主要作用是初始化堆栈(对于程序清单一来说则是跳转__user_initial_stackheap 标号进行初始化堆栈的)，并初始化映像文件，最后跳转 C 程序中的 main 函数。
+     IMPORT __main; LDR R0, =__main; BX R0;
+
+*** STM32 链接
+
+    ld 文件主要是当 GCC 最后链接 STM32 程序时候，为应用程序划分好对应的内存地址与大小，并将对应的数据、函数入口等信息存放到对应段中
+
+  STM32 内存分配
+
+  MEMORY
+  {
+  RAM (xrw)        : ORIGIN = 0x20000000, LENGTH = 128K 读写执行
+  CCMRAM (rw)      : ORIGIN = 0x10000000, LENGTH = 64K  读写
+  FLASH (rx)       : ORIGIN = 0x8000000, LENGTH = 1024K 读执行
+  }
+
+  * DONE RT-Thread
+  CLOSED: [2020-12-21 Mon 12:49]
+** DONE RTT
+   CLOSED: [2020-12-21 Mon 12:51]
+*** 源码技巧
+**** 宏：C语言内嵌函数
+
+      __inline 定义的类的内联函数，在编译期间将所调用的函数的代码直接嵌入到主调函数中，是一种以空间换时间的函数。
+
+      static __inline 限制函数的可见范围，只有本文件能够使用定义的内联函数
+
+**** 宏：字节对齐
+
+       __attribute__((aligned(n))) 每次放置变量时，其地址都是 n 的整数倍
+
+**** 宏：编译器报错
+
+       #error print_error_message
+
+**** 宏：NULL
+
+      宏 #define RT_NULL (0) 注意括号
+
+*** 对象容器
+
+     static struct rt_object_information rt_object_container[RT_Object_Info_Unknown]
+     1. 静态全局数组变量
+     2. 数组元素： struct rt_object_information，包含三个元素：对象类型、对象链表指针（prev next）、对象大小
+
+**** 对象
+
+     对象控制块{
+         对象数据类型;
+         对象信息;
+     }
+
+     对象数据类型的结构体包括：名字、类型、状态、指针、
+     对象数据类型中的指针是该对象的地址，通过插入到对象容器中和对象容器关联
+
+*** 线程
+
+     1. 栈
+     2. 线程控制块
+     3. 线程函数
+     4. 初始化线程，将线程插入就绪列表
+     5.
+
+*** 内核
+
+     架构：硬件-->板级支持，移植 --> 内核库，实时系统
+
+**** 启动过程
+
+  https://raw.githubusercontent.com/chxin/graph-bed/master/pic-go/rtthread.png
+  rtthread_startup() 函数是 RT-Thread 规定的统一启动入口。
+  #+begin_src C
+    int rtthread_startup(void)
+    {
+        rt_hw_interrupt_disable();
+    /* 板 级 初 始 化： 需 在 该 函 数 内 部 进 行 系 统 堆 的 初 始 化 */
+        rt_hw_board_init();
+    /* 打 印 RT-Thread 版 本 信 息 */
+        rt_show_version();
+    /* 定 时 器 初 始 化 */
+        rt_system_timer_init();
+    /* 调 度 器 初 始 化 */
+        rt_system_scheduler_init();
+    #ifdef RT_USING_SIGNALS
+    /* 信 号 初 始 化 */
+        rt_system_signal_init();
+    #endif
+    /* 由 此 创 建 一 个 用 户 main 线 程 */
+        rt_application_init();
+    /* 定 时 器 线 程 初 始 化 */
+        rt_system_timer_thread_init();
+    /* 空 闲 线 程 初 始 化 */
+        rt_thread_idle_init();
+    /* 启 动 调 度 器 */
+        rt_system_scheduler_start();
+    /* 不 会 执 行 至 此 */
+        return 0;
+    }
+  #+end_src
+  一般执行顺序是：系统启动后先从汇编代码 startup_stm32f103xe.s 开始运行，然后进入 RT-Thread 的 rtthread_startup() ，最后进入用户入口 main()，
+
+  为了在进入 main() 之前完成 RT-Thread 系统功能初始化，我们使用了 MDK 的扩展功能 $Sub$$ 和$Super$$。
+  可以给 main 添加 $Sub$$ 的前缀符号作为一个新功能函数 $Sub$$main，这个 $Sub$$main 可以先调用一些要补充在 main 之前的功能函数（这里添加 RT-Thread 系统启动，进行系统一系列初始化），再调用 $Super$$main 转到 main() 函数执行，这样可以让用户不用去管 main() 之前的系统初始化操作。
+
+  /* $Sub$$main 函 数 */
+  int $Sub$$main(void)
+  {
+   rtthread_startup();
+   return 0;
+  }
+
+  在 rtthread_startup()中的 rt_application_init()函数中创建的 main 函数线程，之后开始 main 进程的调度。
+
+***** $Sub$$ and $Super$$
+
+  一个已经存在的符号不能被修改，例如，如果该符号在外部库或在 ROM 。在这种情况下，你可以使用$Super$$ 和$Sub$$ 模式来匹配外部符号。
+
+  $Super$$foo 直接调用原始函数
+
+  $Sub$$foo 定义新函数，调用这个函数代替直接掉用原始 foo()。这么使用来增加原始函数的预处理和后处理
+
+  注意：这种机制只工作在静态链接阶段
+
+*** 程序内存分配
+
+     1. Code：代码段，存放程序的代码部分；
+     2. RO-data：只读数据段，存放程序中定义的常量；
+     3. RW-data：读写数据段，存放初始化为非 0 值的全局变量；
+     4. ZI-data：0 数据段，存放未初始化的全局变量及初始化为 0 的变量；
+
+     编译完工程会生成一个. map 的文件，该文件说明了各个函数占用的尺寸和地址，在文件的最后几行 也说明了上面几个字段的关系：
+     Total RO Size (Code + RO Data) 53668 ( 52.41kB) 表示程序占用 Flash 空间的大小；
+     Total RW Size (RW Data + ZI Data) 2728 ( 2.66kB) 表示运行时占用的 RAM 的大小；
+     Total ROM Size (Code + RO Data + RW Data) 53780 ( 52.52kB) 表示烧写程序所占用的 Flash 空间的大小；
+
+     STM32 在上电启动之后默认从 Flash 启动，启动之后会将 RW 段中的 RW-data（初始化的全局变量）搬运到 RAM 中，但不会搬运 RO 段，即 CPU 的执行代码从 Flash 中读取，另外根据编译器给出的 ZI 地址 和大小分配出 ZI 段，并将这块 RAM 区域清零
+
+*** RT-Thread 自动初始化机制
+
+     自动初始化机制是指初始化函数不需要被显式调用，只需要在函数定义处通过宏定义的方式进行申明，就会在系统启动过程中被执行。
+
+  | 初始化顺序 | 宏接口                    | 描述                                         |
+  |          1 | INIT_BOARD_EXPORT(fn)     | 非常早期的初始化，此时调度器还未启动         |
+  |          2 | INIT_PREV_EXPORT(fn)      | 主要是用于纯软件的初始化、没有太多依赖的函数 |
+  |          3 | INIT_DEVICE_EXPORT(fn)    | 外设驱动初始化相关，比如网卡设备             |
+  |          4 | INIT_COMPONENT_EXPORT(fn) | 组件初始化，比如文件系统或者 LWIP            |
+  |          5 | INIT_ENV_EXPORT(fn)       | 系统环境初始化，比如挂载文件系统             |
+  |          6 | INIT_APP_EXPORT(fn)       | 应用初始化，比如 GUI 应用                    |
+
+*** Finsh
+
+     - help: show command list
+
+*** 视频教程
+
+     [[https://www.bilibili.com/video/BV1JJ41167Lt?from=search&seid=6768614254174499571][RT-Thread内核入门指南]]
+
+**** rt-thread 源码结构
+
+      项目
+      - applications: 用户应用代码
+      - drivers: 驱动，不同低层驱动的实现
+      - kernel-sample: 内核例程
+      - libraries: stm32 固件库
+      - rt-thread: 源码
+        - src: 内核代码
+        - libcpu: 芯片或内核移植代码
+        - include: 头文件
+        - components: 外部组件，如 Finsh Lwip
+
+      Keil 工程
+      - Applications:
+      - Drivers:
+      - STM32_HAL:
+      - Kernel: rt-thread -> src
+      - CORTEX_M3: rt-thread -> libcpu
+      - DeviceDrivers: rt-thread -> components -> drivers
+      - finsh: rt-thread -> components -> finsh
+      - kernel-sameple:
+
+**** 启动过程
+
+      单步运行查看
+      SystemInit() -> $Sub$$main() -> rtthread_startup() -> main_thread_entry() -> $Super$$main() -> main()
+
+**** 内存分配
+
+      堆：程序员分配和释放 malloc
+      栈：编译器自动分配和释放
+
+      栈空间和堆空间在 startup 文件中设置
+
+      在 rt-thread 中，使用 rt_system_heap_init((void*)HEAP_BEGIN, (void *)HEAP_END)，在片内 ram 中分配
+      使用 rt_malloc 和 rt_free 动态分配和释放
+      使用 rt_memset() 内存复位
+
+**** 线程
+***** 线程代码
+
+       无限循环结构 vs 顺序执行结构
+
+***** 线程控制块
+
+       用于管理线程，记录线程信息，通常命名 struct rt_thread
+
+***** 控制线程
+
+       创建静态线程：rt_thread_init vs 动态线程：rt_thread_create；区别是 struct rt_thread 是否已经存在，运行效率无区别
+       启动线程：rt_thread_startup ，加入线程就绪队列，执行调度
+
+***** 线程状态
+
+       初始状态，就绪状态，运行状态，挂起状态，关闭状态
+
+       就绪状态和运行状态在系统调度下自动转换，其它状态的转换都是由命令控制
+
+***** 线程堆栈
+
+       finsh 查看系统线程状态 list_thread
+       在创建线程的时候，可跟据实际大小设置堆栈大小
+
+***** 线程优先级
+
+       支持最大 256 个优先级，在 STM32 有 32 个
+
+***** 线程时间片
+
+       时间片在相同优先级的就绪线程中起时间片轮询作用，保证优先级相同的任务能够轮流占有 CPU。
+
+***** 线程调度
+
+       最高优先级的就绪任务运行，当有更高优先级的任务就绪，就一定发生任务调度；当正在执行的任务挂起，寻找低优先级的任务执行
+
+**** 时钟
+
+      系统嘀嗒是由系统定时器中断产生；通常 10ms
+
+***** 延时
+
+      rt_thread_delay 系统嘀嗒延时
+      rt_thread_mdelay 系统毫秒延时
+      rt_thread_sleep
+
+**** IO
+
+      初始化：rt_pin_mode
+      IO 赋值：rt_pin_write
+      IO 读出：rt_pin_read
+
 * Basic
 ** DONE C++ string                                                     :NOTE:
    CLOSED: [2020-03-28 Sat 20:40]
@@ -1993,7 +4344,7 @@
 *** special usage
 **** string s = string(10, 'c');  // 拷贝初始化
 
-     string不接变量名，也是合法的。临时变量
+     string 不接变量名，也是合法的。临时变量
 
 **** for in const string
      :LOGBOOK:
@@ -2025,7 +4376,7 @@
 *** what is the memory usage?
 
     is the subfunction memory allocated when running? or when compiling?
-      
+
     the total memory equals to the sum of all functions? or the sum of the main and the max subfunction memories?
 
 *** what is the difference between string and char[]?
@@ -2045,3 +4396,50 @@
 
 *** essentially a stack
 *** binary recursive
+** C++ const
+https://blog.csdn.net/weixin_39345003/article/details/81276968
+https://blog.csdn.net/TanJiaLiang_/article/details/83992337
+* system of computer
+** DONE 计算机系统
+   CLOSED: [2020-08-26 Wed 21:34]
+
+*** book:深入理解计算机系统
+**** DONE chapter10:系统 IO
+     CLOSED: [2020-08-03 Mon 09:56] DEADLINE: <2020-08-03 Mon 09:55> SCHEDULED: <2020-08-03 Mon 09:00>
+     :LOGBOOK:
+     CLOCK: [2020-08-03 Mon 09:00]--[2020-08-03 Mon 09:25] =>  0:25
+     :END:
+ Linux 内核提供三个标准的数据结构表示打开的文件：描述符表、打开文件表、vnode 表
+
+ Linux 的读和写操作会出现不足值
+
+ Linux 函数能够提供元数据，C标准函数不能提供
+
+***** RIO 函数和 C 标准 IO 函数
+      :LOGBOOK:
+      CLOCK: [2020-08-03 Mon 09:30]--[2020-08-03 Mon 09:55] =>  0:25
+      :END:
+ 常见业务使用 C 标准函数，网络文件使用 RIO
+
+**** DONE chapter11:网络编程
+     CLOSED: [2020-08-04 Tue 09:39] SCHEDULED: <2020-08-03 Mon 19:00>
+     :LOGBOOK:
+     CLOCK: [2020-08-03 Mon 20:36]--[2020-08-03 Mon 21:05] =>  0:29
+     CLOCK: [2020-08-03 Mon 20:02]--[2020-08-03 Mon 20:27] =>  0:25
+     CLOCK: [2020-08-03 Mon 19:27]--[2020-08-03 Mon 19:52] =>  0:25
+     CLOCK: [2020-08-03 Mon 18:57]--[2020-08-03 Mon 19:22] =>  0:25
+     :END:
+ [[file+emacs:~/Documents/Snippet/CPP/Network/echo/client.c][echo demo]]
+
+**** DONE chapter12:并发编程
+     CLOSED: [2020-08-04 Tue 21:56] DEADLINE: <2020-08-04 Tue 21:00>
+     :LOGBOOK:
+     CLOCK: [2020-08-04 Tue 09:47]--[2020-08-04 Tue 10:21] =>  0:34
+     :END:
+
+***** 进程
+***** IO多路复用
+***** 线程
+      :LOGBOOK:
+      CLOCK: [2020-08-04 Tue 15:31]--[2020-08-04 Tue 16:19] =>  0:48
+      :END:

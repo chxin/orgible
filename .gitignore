@@ -11,3 +11,9 @@ elisp/init-site.el
 
 # stignore
 .stignore
+
+# org images
+ltximg/
+
+# layout
+workspace/

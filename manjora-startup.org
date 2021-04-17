@@ -1,0 +1,104 @@
+* tools
+** spacemacs
+*** requirements
+use C-c C-v t to tangle following command to a file
+#+begin_src sh :tangle ./linux_configure.sh
+sudo pacman -S git
+git clone https://aur.archlinux.org/emacs-git ~/Downloads/emacs-git
+# set MAGICK="YES"
+cd emacs-git && makepkg -si
+git clone https://gitee.com/mirrors/spacemacs.git ~/.emacs.d
+emacs
+#+end_src
+*** emacs applications framework
+#+begin_src shell :dir "/sudo::"
+echo "Y" | yay -S python-pyqt5 python-pyqt5-sip python-pyqtwebengine python-qrcode python-feedparser python-dbus python-pyinotify python-markdown nodejs aria2 libreoffice-fresh python-grip filebrowser-bin
+echo "Y" | sudo pacman -S python-pip
+#+end_src
+
+install pymupdf from pip to avoid undefined symbol jbig2_page_out error.
+
+#+begin_src shell
+sudo pacman -R python-pymupdf
+pip uninstall fitz
+pip install pymupdf
+#+end_src
+
+#+RESULTS:
+
+#+begin_src shell
+git clone https://github.com/manateelazycat/emacs-application-framework.git --depth=1 ~/.emacs.d/site-lisp/emacs-applications-framework/
+#+end_src
+
+#+RESULTS:
+
+*** email
+**** mu4e
+#+begin_src shell :dir "/sudo::" :exports output
+echo "Y" | sudo ysy -S mu
+#+end_src
+
+mu4e is installed with mu. change the 'mu4e-installation-path' to the actual path.
+**** offlineimap
+#+begin_src shell
+  sudo pacman -S offlineimap
+  cp .offlineimaprc ~/.offlineimaprc
+  offlineimap
+#+end_src
+**** mu
+#+begin_src shell
+  cd ~/.mail
+  mu init -m .
+  mu index
+#+end_src
+
+*** font
+#+begin_src shell
+  sudo pacman -S artwiz-fonts ttf-arphic-uming  ttf-arphic-ukai
+#+end_src
+*** emacsclient
+
+configuration in .zshrc
+
+#+begin_src shell
+alias emacs="emacsclient -t -a ''"
+alias killemacs="emacsclient -e '(kill-emacs)'"
+#+end_src
+*** spell check
+#+begin_src shell
+sudo pacman -S ispell ispell-en
+#+end_src
+*** org mode
+#+begin_src shell
+  sudo pacman -S graphviz
+  sudo pacman -S imagemagick
+  sudo pacman -S gnuplot
+  sudo pacman -S texlive-bin texlive-core texlive-langchinese
+#+end_src
+**** change imagemagick settings
+if security problem of 'gs', set imagemagick security:
+#+begin_src shell
+sudo vim /etc/ImageMagick-7/policy.xml
+#+end_src
+
+  <!-- <policy domain="delegate" rights="read | write" pattern="gs" /> -->
+  <policy domain="coder" rights="read | write" pattern="PDF" />
+**** change org preview settings
+if icc problem about the RGB color, the 'org-preview-latex-process-alist' value in org.el file, add '-strip' option to convert command
+     ("convert -density %D -trim -strip -antialias %f -quality 100 %O")))
+
+*** password
+    #+begin_src shell
+yay -S ccrypt
+    #+end_src
+** input method
+*** install fcitx
+#+begin_src shell
+sudo pacman -S fcitx-im fcitx-configtool
+sudo pacman -R ibus
+echo "export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=”@im=fcitx" > ~/.xprofile
+#+end_src
+
+reboot

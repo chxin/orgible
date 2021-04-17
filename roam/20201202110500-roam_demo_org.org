@@ -1,0 +1,9 @@
+#+title: roam-demo.org
+test org roam on emacs
+
+[[file:20201202111900-magit.org][magit]]
+
+* basic
+- org-roam-find-file [[file:20201202111400-insert_command.org][insert-command]]
+- org-roam-insert-immediate
+[[file:clip_org.org][clip.org]]

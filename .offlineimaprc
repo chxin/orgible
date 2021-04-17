@@ -1,0 +1,82 @@
+[general]
+# accounts = Outlook, College, 163
+accounts = College, 163
+maxsyncaccounts = 3
+
+# outlook mail
+[Account Outlook]
+localrepository = Outlook-Local
+remoterepository = Outlook-Remote
+
+[Repository Outlook-Local]
+type = Maildir
+localfolders = ~/.mail/outlook
+
+[Repository Outlook-Remote]
+type = IMAP
+remotehost = outlook.office365.com
+ssl = true
+remoteuser = chengxinhust@outlook.com
+remotepass = P@ssw0rd#WR
+maxconnections = 4
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda folder: not re.search('(Issue)', folder)
+
+# hust mail
+[Account College]
+localrepository = College-Local
+remoterepository = College-Remote
+
+[Repository College-Local]
+type = Maildir
+localfolders = ~/.mail/college
+
+[Repository College-Remote]
+type = IMAP
+remotehost = mail.hust.edu.cn
+ssl = true
+remoteuser = chengxin@hust.edu.cn
+remotepass = P@ssw0rd#HUST
+maxconnections = 4
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+# 163 mail
+[Account 163]
+localrepository = 163-Local
+remoterepository = 163-Remote
+utf8foldernames = True
+
+[Repository 163-Local]
+type = Maildir
+localfolders = ~/.mail/163
+
+[Repository 163-Remote]
+type = IMAP
+remotehost = imap.163.com
+ssl = true
+remoteuser = chengxinhust@163.com
+remotepass = TDMKDATOTIAHZYOR
+maxconnections = 4
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+# qq mail
+[Account QQ]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/.mail/qq
+
+[Repository Remote]
+type = IMAP
+remotehost = imap.qq.com
+ssl = yes
+remoteuser = chengxinhust@qq.com
+remotepass = P@ssw0rd#QQ
+maxconnections = 4
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

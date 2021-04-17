@@ -46,6 +46,7 @@
 (setq c-c++-enable-clang-support t
       c-c++-default-mode-for-headers 'c++-mode)
 ;; === format code when saving according to the .clang-format file
+;; https://eklitzke.org/smarter-emacs-clang-format
 ;; (defun clang-format-buffer-smart ()
 ;;   "reformat buffer if .clang-format exists in the projectile root."
 ;;   (when (f-exists? (expand-file-name ".clang-format" (projectile-project-root)))

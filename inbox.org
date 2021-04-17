@@ -1,8 +1,8 @@
 #+FILETAGS: Inbox
 #+STARTUP: content
 
-* TODO Notes
-* NEXT Tasks
+* Notes
+* Tasks
   :PROPERTIES:
   :ID:       EB155A82-92B2-4F25-A3C6-0304591AF2F9
   :END:
@@ -13,60 +13,315 @@
   CLOCK: [2020-07-16 周四 08:35]--[2020-07-16 周四 08:36] =>  0:01
   CLOCK: [2020-07-15 周三 16:57]--[2020-07-15 周三 16:58] =>  0:01
   :END:
-
-* 2020
-  :PROPERTIES:
-  :ID:       2DD17220-38CE-4242-AE15-CB4F17019192
-  :END:
-
-** 2020-07 July
-*** 2020-07-15 Wednesday
-**** 讨论http传输过程
-     :LOGBOOK:
-     CLOCK: [2020-07-15 周三 17:03]--[2020-07-15 周三 19:01] =>  1:58
-     :END:
-     代码问题
-   [2020-07-15 周三 17:03]
-
-*** 2020-07-16 Thursday
-**** Rest
-     :LOGBOOK:
-     CLOCK: [2020-07-16 周四 10:40]--[2020-07-16 周四 10:48] =>  0:08
-     :END:
-   [2020-07-16 周四 10:40]
-
-*** 2020-07-17 Friday
-**** rest
-     :LOGBOOK:
-     CLOCK: [2020-07-17 周五 10:33]--[2020-07-17 周五 10:53] =>  0:20
-     :END:
-   [2020-07-17 周五 10:33]
-
-** 2020-08 August
-*** 2020-08-03 Monday
-**** 311 gitlab不能访问
-
-DellHust这个主机名不能访问，可能是由于没有联网。
-用IP地址 211.67.22.146可以直接访问。
-     :LOGBOOK:
-     CLOCK: [2020-08-03 Mon 10:13]--[2020-08-03 Mon 10:27] =>  0:14
-     :END:
-   [2020-08-03 Mon 10:13]
-
-* FINISHED Meeting
-  CLOSED: [2020-08-27 Thu 11:40]
-* TODO Hust 311 team meeting
-  SCHEDULED: <2020-09-14 Mon 14:30 .+1w>
-  :PROPERTIES:
-  :STYLE:    habit
-  :REPEAT_TO_STATE: TODO
-  :LAST_REPEAT: [2020-09-07 Mon 11:25]
-  :END:
-
-  - State "DONE"       from "TODO"       [2020-09-07 Mon 11:25]
-** Slides
+* Meetings
+** DONE with Chenbin                                                :MEETING:
+   讨论 DINO 冰厚测量软件设计
    :LOGBOOK:
-   CLOCK: [2020-08-03 Mon 11:23]--[2020-08-03 Mon 11:30] =>  0:07
+   CLOCK: [2021-03-24 Wed 15:29]--[2021-03-24 Wed 16:10] =>  0:41
    :END:
-   [[file:~/Documents/SLD/work-update/group-discussion.key][311-workupdate]]
-   
+   [2021-03-24 Wed 15:29]
+* Habits
+** TODO Hust 311 team meeting
+   SCHEDULED: <2021-04-20 Tue 14:30 .+1w>
+   :PROPERTIES:
+   :STYLE:    habit
+   :REPEAT_TO_STATE: TODO
+   :LAST_REPEAT: [2021-04-01 Thu 19:18]
+   :END:
+   - State "DONE"       from "TODO"       [2021-04-01 Thu 19:18]
+   - State "DONE"       from "TODO"       [2021-03-23 Tue 18:10]
+   - State "DONE"       from "TODO"       [2021-03-22 Mon 08:57]
+   - State "DONE"       from "TODO"       [2021-02-24 Wed 09:28]
+    - State "DONE"       from "TODO"       [2021-01-26 Tue 10:04]
+    - State "DONE"       from "TODO"       [2021-01-18 Mon 20:04]
+    - State "DONE"       from "TODO"       [2021-01-11 Mon 17:09]
+    - State "DONE"       from "TODO"       [2021-01-05 Tue 21:04]
+    - State "DONE"       from "TODO"       [2020-12-29 Tue 09:13]
+    - State "DONE"       from "TODO"       [2020-12-21 Mon 15:38]
+    - State "DONE"       from "TODO"       [2020-09-07 Mon 11:25]
+
+*** Slides
+     :LOGBOOK:
+     CLOCK: [2020-08-03 Mon 11:23]--[2020-08-03 Mon 11:30] =>  0:07
+     :END:
+     [[file:~/Documents/SLD/work-update/group-discussion.key][311-workupdate]]
+** NEXT refile inbox
+   SCHEDULED: <2021-04-18 Sun 18:00 .+7d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :REPEAT_TO_STATE: NEXT
+   :LAST_REPEAT: [2021-04-17 Sat 10:48]
+   :END:
+   - State "DONE"       from "NEXT"       [2021-04-17 Sat 10:48]
+   - State "DONE"       from "NEXT"       [2021-03-28 Sun 16:59]
+   - State "DONE"       from "NEXT"       [2021-03-28 Sun 16:58]
+   - State "DONE"       from "NEXT"       [2021-03-22 Mon 08:58]
+ [2021-03-21 Sun 16:35]
+** DONE Done 毕业论文修改
+   CLOSED: [2021-04-17 Sat 10:46]
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-04-17 Sat 10:46]
+   :END:
+   - State "DONE"       from "TODO"       [2021-03-28 Sun 16:45]
+   - State "DONE"       from "NEXT"       [2021-03-23 Tue 18:10]
+   [[file:~/Documents/Garage/orgible/inbox.org::*毕业论文][毕业论文]]
+   SCHEDULED: <2021-04-17 Sun 08:50 .+0d>
+   :PROPERTIES:
+   :STYLE:    habit
+   :REPEAT_TO_STATE: NEXT
+   :END:
+ [2021-03-21 Sun 16:52]
+ [[/Users/xin/Documents/Ice/GP/latex/main.tex][latex project]]
+*** 题名
+    1. 光纤式飞机结冰探测技术与实验研究
+
+    不超过 20 个字，避免使用不常见的缩写词、字符和公式。
+    多为一个句子，能表达一个完整意思，定语+主语+谓语。
+
+    笼统，覆盖太大，冗长，一般化
+
+    尽可能删去多余词组，避免同义词近义词连用
+    2. 飞机复杂结冰探测技术与实验研究
+*** 0 摘要
+    https://www.zhihu.com/question/20028088/answer/131552544
+    摘要是一份文献内容的标准压缩，不加注释或评论
+**** 华科要求
+     摘要应该独立成文，致谢体现语言功底，这两个务必写好
+     英文摘要不能直接用软件翻译，注意专业术语表达
+
+ - 不必分层次：首先，其次……
+ - 背景、问题、成果、意义
+ - 关键词：从大到小，从领域到技术，便于文献编目与查询
+ - 英文摘要：不要直接软件翻译
+
+ 标准：当审稿人需要写评语时，可以直接在摘要部分找或者复制就可以
+
+ 自含性，独立性。需要包括：目的，结论
+
+ 要求：摘要可独立发表，应有独立性和自明性，500～600 字，不含参考文献，不用例证
+ 英文摘要：与中文对应，使用正确时态，必要冠词不能省略（可数名次前要有冠词，名词词组后有 of 或 from，前要加冠词）
+**** 四要素：
+      1. 目的
+         研究对象、范围、目的
+      2. 方法
+         采用了哪些手段、研究方法
+      3. 结果
+         陈述论文研究成果、新见解
+      4. 结论
+         通过对问题的研究，所得出的重要结论、主要观点、理论意义或实用价值
+**** 字数
+     充分简练：不超过总字数 5%
+**** 标准：
+     自含性，拥有与正文同等量的主要信息，不阅读全文，就能获得必要信息。
+     读者判断论文价值
+
+**** 主要事项：
+     1. 排除本学科领域的常识性内容，不要将引言中内容写入摘要
+     2. 不得简单重现题目中已有信息，不能列举例证，不能出现注释，不能出现引文、公式、插图、表格
+     3. 用第三人称，不使用“作者”、“本文”等作主语
+     4. 使用规范化的名词术语，不用非公知公用的符号和术语，不使用文学修饰
+
+**** 方法：
+     1. 在完成整篇论文后再写摘要。
+     2. 从前言 (Introduction) 和结论 (Conclusion) 章节挑出主要目的/假设跟结论。
+     3. 从方法 (Methods) 挑出重点句。
+     4. 从结果 (Results) 找出重要的结果。
+     5. 将 2、3、4 找出的句子和要点依据以下顺序组织成一段：前言 (Introduction)、方法(Methods)、结果(Results)、结论(Conclusion)。
+     6. 此段落不应包含：文章里没有提及的信息、未定义的缩写或组名、讨论过去的文献或参考引用、不必要的方法细节将
+     7. 第 6 点提到的信息删除，调整剩下的句子，使文意顺畅，建议信息顺序如下：目的；基础研究设计；使用的方法和技巧；主要研究发现；总结你的解释、结论和含义。
+     8. 确认摘要与内文的一致性。
+     9. 请同事/同学检查是否目的、目标、方法及结论表达清楚。
+     10. 检查摘要是否符合期刊要求（如字数、类型、建议的副标题等）。
+
+**** PARI 法 /pa:ri/
+     P = Problem: 文章要解决什么问题
+     A = Approach: 文章用得是什么方法解决提出的问题
+     R = Results: 解决了问题得到了些什么结果
+     I = Impacts: 这些结果有什么具体理论或者实际的影响
+
+     先按照以下四个句式写四句话，概括研究成果：
+     The problem I am trying to solve in this paper is ...
+     The approach I adopt to solve the problem is ...
+     The results obtained in this research include ...
+     The impacts of our obtained results are ...
+
+     仔细整理这四句概括的话，让他们各自成为独立的从句。
+     然后把这四句话联起来，就成了一个言简意赅的论文摘要了。
+
+     坏处： 别人的论文如果不按照这个套路，读起来会觉得抓不住要点。
+
+*** 1 绪论
+    :LOGBOOK:
+    CLOCK: [2021-03-24 Wed 09:41]--[2021-03-24 Wed 10:09] =>  0:28
+    CLOCK: [2021-03-24 Wed 09:06]--[2021-03-24 Wed 09:31] =>  0:25
+    CLOCK: [2021-03-23 Tue 16:15]--[2021-03-23 Tue 16:40] =>  0:25
+    CLOCK: [2021-03-23 Tue 15:00]--[2021-03-23 Tue 15:25] =>  0:25
+    :END:
+**** TODO 明冰淞冰在结冰包线中的位置
+*** 2 原理
+    :LOGBOOK:
+    CLOCK: [2021-03-24 Wed 14:35]--[2021-03-24 Wed 15:00] =>  0:25
+    CLOCK: [2021-03-22 Mon 16:41]--[2021-03-22 Mon 17:05] =>  0:24
+    CLOCK: [2021-03-22 Mon 15:59]--[2021-03-22 Mon 16:24] =>  0:25
+    CLOCK: [2021-03-22 Mon 15:09]--[2021-03-22 Mon 15:34] =>  0:25
+    CLOCK: [2021-03-22 Mon 14:29]--[2021-03-22 Mon 14:54] =>  0:25
+    CLOCK: [2021-03-22 Mon 13:51]--[2021-03-22 Mon 14:16] =>  0:25
+    CLOCK: [2021-03-22 Mon 13:14]--[2021-03-22 Mon 13:39] =>  0:25
+    CLOCK: [2021-03-22 Mon 10:50]--[2021-03-22 Mon 11:15] =>  0:25
+    CLOCK: [2021-03-22 Mon 10:19]--[2021-03-22 Mon 10:45] =>  0:26
+    CLOCK: [2021-03-22 Mon 09:49]--[2021-03-22 Mon 10:14] =>  0:25
+    CLOCK: [2021-03-22 Mon 09:05]--[2021-03-22 Mon 09:30] =>  0:25
+    :END:
+**** DONE 光纤结冰仿真
+     CLOSED: [2021-04-01 Thu 19:18] DEADLINE: <2021-03-30 Tue 17:30>
+     :LOGBOOK:
+     CLOCK: [2021-03-22 Mon 17:05]--[2021-03-22 Mon 17:06] =>  0:01
+     :END:
+   [2021-03-22 Mon 17:05]
+   [[file:~/Documents/Garage/orgible/inbox.org::*3 实验][3 实验]]
+
+   曲线：孔隙率从 0 到 1，冰厚从 0.5 到 39.5
+***** DONE 仿真代码
+      CLOSED: [2021-03-28 Sun 16:43]
+   代码已重写
+**** DONE 第二章符号意义表格
+     CLOSED: [2021-03-27 Sat 16:42] SCHEDULED: <2021-03-24 Wed 17:30>
+**** DONE 表面粗糙度仿真和图片
+     CLOSED: [2021-03-29 Mon 10:11] DEADLINE: <2021-03-29 Mon 12:00>
+     不能直接用这个图片
+
+     https://www.comsol.com/blogs/how-to-model-the-optical-properties-of-rough-surfaces/
+**** HOLD 冰厚单位                                                     :HOLD:
+**** TODO 理论分析结论要用到冰型分类中
+     讲增量、温度、和比值在曲线中的趋势和特征
+*** 3 实验
+    :LOGBOOK:
+    CLOCK: [2021-03-24 Wed 16:14]--[2021-03-24 Wed 16:39] =>  0:25
+    CLOCK: [2021-03-22 Mon 22:29]--[2021-03-22 Mon 22:54] =>  0:25
+    CLOCK: [2021-03-22 Mon 21:59]--[2021-03-22 Mon 22:24] =>  0:25
+    CLOCK: [2021-03-22 Mon 21:20]--[2021-03-22 Mon 21:45] =>  0:25
+    CLOCK: [2021-03-22 Mon 20:48]--[2021-03-22 Mon 21:13] =>  0:25
+    CLOCK: [2021-03-22 Mon 20:18]--[2021-03-22 Mon 20:43] =>  0:25
+    :END:
+
+**** 图 3-8 加真实图片
+**** DONE 4 种结冰条件选择依据
+     CLOSED: [2021-04-17 Sat 10:48] SCHEDULED: <2021-04-01 Thu 12:00>
+
+**** DONE 实验室实验和冰风洞实验曲线的描述
+     CLOSED: [2021-04-17 Sat 10:48]
+
+**** TODO 冰厚实验数据拟合的评估指标
+
+*** 4 数据
+    :LOGBOOK:
+    CLOCK: [2021-03-23 Tue 13:10]--[2021-03-23 Tue 13:35] =>  0:25
+    CLOCK: [2021-03-23 Tue 10:42]--[2021-03-23 Tue 11:07] =>  0:25
+    CLOCK: [2021-03-23 Tue 09:53]--[2021-03-23 Tue 10:18] =>  0:25
+    :END:
+**** TODO svm 和 SVR 结果
+*** 5 总结
+*** DONE 图表
+    CLOSED: [2021-04-17 Sat 10:49] SCHEDULED: <2021-04-02 Fri 17:00>
+    #+ATTR_ORG: :width 350
+    ~/Documents/Ice/GP/latex/figure/2-light-total-curve.png
+    ~/Documents/Ice/GP/latex/figure/2-simulation-light-path.png
+    ~/Documents/Ice/GP/latex/figure/2-simulation-curve.png
+    ~/Documents/Ice/GP/latex/figure/4-svm-v-distribution.png
+*** 搭配
+1. 得到了接收光功率随孔隙率和冰厚的变化规律
+* TODO emacs git push error
+  something wrong with azure configure
+* TODO 设置 spacemacs 的 modeline 设置，显示时间，去掉 minor mode，显示番茄
+  :LOGBOOK:
+  CLOCK: [2021-03-22 Mon 11:15]--[2021-03-22 Mon 11:16] =>  0:01
+  :END:
+[2021-03-22 Mon 11:15]
+[[file:~/Documents/Garage/orgible/inbox.org::*2 原理][2 原理]]
+
+** doom
+ 换用 doom，modeline 出现了大量的繁体字。用 =all icons install font= 解决。
+
+ doom 显示内容设置：具体参见设置https://github.com/seagle0128/doom-modeline
+ #+begin_src elisp
+   (setq doom-modeline-enable-word-count t)
+   (setq doom-modeline-gnus-timer 2)
+ #+end_src
+
+** all the icons
+   还是不用这个，没有番茄时钟
+** spaceline
+   [[/Users/xin/.emacs.d/elpa/27.1/develop/spaceline-20201016.1043/spaceline-segments.el]]
+* TODO emacs org mode image size
+* 孔隙率计算
+  0.1 孔隙率，在 1mm*1mm 的网格中，有一个气泡。
+  冰层 1mm，宽度 8mm，共 8 个气泡。
+
+  气泡数量和孔隙率和冰层的关系：8*n/0.1
+
+  |-----+-----+------|
+  | 0.1 | 2mm |   16 |
+  | 0.2 | 2mm |   32 |
+  | 0.3 | 2mm | 16*3 |
+  |     |     |      |
+16*(1+2+3+...+10)=16*(1+10)*5=16*11*5=880
+
+30 根光纤，纤芯*4+包层*6+胶层*3: 30*13=390
+
+* pyqt
+** python
+*** sha-bang 指定解释器
+    "#!/usr/bin/python"只能出现在第一行才有用
+
+    | python main.py    | ./main.py       |
+    | sha-bang 不起作用 | sha-bang 起作用 |
+
+   推荐使用"#!/usr/bin/env python" "#!/usr/bin/env python3"
+*** codencs
+    # -*- coding: utf-8 -*-
+    coding 与:之间不能有空格，：可以用=代替
+*** module
+**** sys
+     sys 模块是与 python 解释器交互的一个接口
+1. sys.argv: 命令行参数列表，第一个元素是脚本的名称，
+2. sys.path：返回模块的搜索路径的列表. “sys.path.append(path)”添加模块搜索路径
+3. sys.exit(n)：退出解释器，程序不再向下执行，n=0 为正常退出。
+4. sys.platform：返回操作系统平台名称
+5. sys.stdin/sys.stdout：标准输入/标准输出. sys.stdout.write("*") sys.stdout.flush()
+**** Qapplication
+Qapplication(sys.argv);
+
+app.exec_()的存在使得，软件不会闪退。因为 app.exec_()的含义是阻塞进程，程序一直循环运行直到主窗口被关闭终止进程，最后一个窗口关闭后，程序才停止。
+
+sys.exit(app.exec_())，窗口退出时，程序也结束
+*** 属性
+**** __main__
+
+Python 解释器在导入模块时，会将模块中没有缩进的代码全部执行一遍. 避免这些测试代码在模块被导入后执行，可以利用__name__属性。
+
+__name__属性是 Python 的一个内置属性，记录了一个字符串。
+若是在当前文件，__name__ 是__main__。
+若是导入的文件，__name__是模块名。
+
+*** 数据类型
+**** 列表与元组
+     元组使用小括号，列表使用方括号。
+     元组的元素不能修改
+*** 继承
+    class A:
+    class B(A):
+        def __init__:
+            super(B,self).__init__()
+
+
+    super()用法：super 关键字帮助我们实现了在子类中调用父类的方法 super(B,self).fun()
+** emacs
+
+*** 执行
+    =, c c= 执行代码
+
+    不能输入参数
+*** 环境
+    默认环境是 3.9.0，是系统的环境
+
+    执行代码的是/usr/local/bin/ipython

@@ -1,0 +1,927 @@
+@inproceedings{符澄2019结冰风洞中SLD模拟方法及其实验验证研究,
+  title={结冰风洞中SLD模拟方法及其实验验证研究},
+  author={符澄 and 徐兵兵 and 彭强 and 高兴龙 and 廖达雄},
+  booktitle={中国力学大会论文集（CCTAM 2019）},
+  year={2019},
+  file={"/Users/xin/Documents/SLD/docs/references/CN/2019/13-结冰风洞中SLD模拟方法及其实验验证研究-2019.pdf"},
+  group={SLD},
+}
+
+%% Created using Papers on Sat, 14 Mar 2020.
+%% http://papersapp.com/papers/
+
+@article{Anonymous:__K0bo-2,
+title = {{过冷大水滴结冰过程中动力学行为的影响因素_易贤}},
+year = {2019},
+pages = {1--1},
+month = nov
+}
+
+@article{Anonymous:2019je,
+title = {{过冷水滴碰撞过程的实验研究}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Raj:2019ko,
+author = {Raj, L Prince and Lee, J W and Myong, R S},
+title = {{Ice accretion and aerodynamic effects on a multi-element airfoil under SLD icing conditions}},
+journal = {Aerospace Science and Technology},
+year = {2019},
+volume = {85},
+pages = {320--333},
+month = feb
+}
+
+@article{Anonymous:2019cp,
+title = {{过冷大水滴飞溅特性数值分析}},
+year = {2019},
+pages = {1--8},
+month = nov
+}
+
+@article{Yang2019涡扇发动机短舱结冰试验相似方法,
+author = {Yang, Qian and Dong, Wei and Guo, Zhiqiang and Zheng, Mei},
+title = {{涡扇发动机短舱结冰试验相似方法 }},
+journal = {Hangkong Dongli Xuebao/Journal of Aerospace Power},
+year = {2019},
+volume = {34},
+number = {9},
+pages = {1988--2000},
+month = sep,
+file = {"/Users/xin/Documents/SLD/docs/references/CN/2019/12-涡扇发动机短舱结冰试验相似方法-2019-9-上交.pdf"},
+group = {SLD},
+}
+
+@article{Anonymous:MAivc5ZL,
+title = {{环境下的水滴破碎和模拟成冰}},
+year = {2011},
+pages = {1--72},
+month = mar
+}
+
+@article{Cao:2018jf,
+author = {Cao, Yihua and Xin, Miao},
+title = {{Numerical simulation of ice accretion in supercooled large droplet conditions}},
+journal = {Science China Technological Sciences},
+year = {2018},
+volume = {62},
+number = {7},
+pages = {1191--1201},
+month = aug
+}
+
+@inproceedings{Potapczuk:2019hm,
+author = {Potapczuk, Mark G and Tsao, Jen Ching},
+title = {{The Influence of SLD Drop Size Distributions on Ice Accretion in the NASA Icing Research Tunnel}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--2022--14},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Stebbins:2019ic,
+author = {Stebbins, Spencer J and Loth, Eric and Broeren, Andy P and Potapczuk, Mark},
+title = {{Review of computational methods for aerodynamic analysis of iced lifting surfaces}},
+journal = {Progress in Aerospace Sciences},
+year = {2019},
+volume = {111},
+pages = {100583--28},
+month = nov
+}
+
+@article{Li:2014il,
+author = {Li, Yanxin and Zhang, Chen and Liu, Hong and Wang, Fuxin},
+title = {{大粒径过冷水溢流结冰的翼型气动影响分析 }},
+journal = {Kongqi Donglixue Xuebao/Acta Aerodynamica Sinica},
+year = {2014},
+volume = {32},
+number = {3},
+pages = {376--382},
+month = jan
+}
+
+@article{Anonymous:2019df,
+title = {{飞机结冰相似准则研究进展}},
+year = {2019},
+pages = {1--7},
+month = sep,
+annote = {@article{马军林 2019 飞机结冰相似准则研究进展,
+author={马军林 and 肖京平 and 王桥 and 胡丽燕 and 王强},
+title={飞机结冰相似准则研究进展},
+journal={飞行力学},
+year={2019},
+volume={37},
+number={4},
+pages={1-7},
+month={9},
+}}
+}
+
+@article{Anonymous:hkDqGqNj,
+title = {{大粒径过冷水滴碰撞.结冰收集率}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Anonymous:GG5573Qr,
+title = {{Ice acretion simulation in supercooled large droplets regime}},
+year = {2019},
+pages = {1--11},
+month = nov
+}
+
+@article{Gultepe:2018ka,
+author = {Gultepe, Ismail and Agelin-Chaab, M and Komar, J and Elfstrom, G and Boudala, F and Zhou, B},
+title = {{A Meteorological Supersite for Aviation and Cold Weather Applications}},
+journal = {Pure and Applied Geophysics},
+year = {2018},
+volume = {176},
+number = {5},
+pages = {1977--2015},
+month = may
+}
+
+@inproceedings{Leopold:2019eg,
+author = {Leopold, David},
+title = {{Flight in Icing Regulatory Evolution and the Influence on Aircraft Design}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1958--7},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Gao:2019kp,
+author = {Gao, Guochi and Ding, Li and Li, Baoliang and Wang, Zixu and Jiang, Yubiao},
+title = {{气动除冰类飞机结冰风洞试验适航审定技术
+}},
+journal = {Shiyan Liuti Lixue/Journal of Experiments in Fluid Mechanics},
+year = {2019},
+volume = {33},
+number = {2},
+pages = {85--94},
+month = apr
+}
+
+@article{Shao:2015kp,
+author = {Shao, Xiaohai and Liu, Xing},
+title = {{Numerical method to simulate collection efficiency of supercooled droplets impinging on an airfoil}},
+journal = {Yingyong Lixue Xuebao/Chinese Journal of Applied Mechanics},
+year = {2015},
+volume = {32},
+number = {2},
+pages = {266--270},
+month = jan
+}
+
+@article{Anonymous:2019ct,
+title = {{过冷大水滴变形及阻力特性的温度影响实验研究}},
+year = {2019},
+pages = {1--6},
+month = jul
+}
+
+@inproceedings{Tsao:2019ex,
+author = {Tsao, Jen Ching},
+title = {{Scaling Evaluation of Ice-Crystal Icing on a Modern Turbofan Engine in PSL Using the COMDES-MELT Code}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1920--10},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:2019gg,
+title = {{考虑非平衡效应的过冷水滴凝固特性}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Anonymous:2019ey,
+title = {{2-发动机短舱过冷大水滴结冰数值模拟-2019:1}},
+year = {2019},
+pages = {1--5},
+month = nov,
+annote = {@article{曹宇 2019 发动机短舱过冷大水滴结冰数值模拟,
+author={曹宇 and 王正之 and 朱春玲},
+title={发动机短舱过冷大水滴结冰数值模拟},
+journal={航空计算技术},
+year={2019},
+volume={49},
+number={1},
+pages={59-63},
+month={5},
+}
+
+}
+}
+
+@article{Li:2019cb,
+author = {Li, Yu Lian and Sun, Xue Jin and Zhao, Shi Jun and Ji, Wen Ming},
+title = {{$^{Ka }$波段毫米波云雷达多普勒谱降雪微物理特征分析
+}},
+journal = {Hongwai Yu Haomibo Xuebao/Journal of Infrared and Millimeter Waves},
+year = {2019},
+volume = {38},
+number = {2},
+pages = {245--253},
+month = apr
+}
+
+@article{Anonymous:f8S2yAMu,
+title = {{SLD破碎效应对冰型的影响研究}},
+year = {2019},
+pages = {1--8},
+month = nov
+}
+
+@inproceedings{Sor:2019ik,
+author = {Sor, Suthyvann and Garcia-Magari{\~n}o, Adelaida and Velazquez, Angel},
+title = {{Droplet in the Shoulder Region of an Incoming Airfoil. Part II: Droplet Breakup}},
+booktitle = {AIAA Aviation 2019 Forum},
+year = {2019},
+pages = {34--12},
+publisher = {American Institute of Aeronautics and Astronautics},
+address = {Reston, Virginia},
+month = jun
+}
+
+@article{Anonymous:2019kn,
+title = {{过冷大水滴动力学特性对结冰影响数值研究}},
+year = {2019},
+pages = {1--7},
+month = jul
+}
+
+@article{Anonymous:dg6r7lNv,
+title = {{洞云雾参数测量方法}},
+year = {2019},
+pages = {1--1},
+month = nov
+}
+
+@article{Anonymous:8KgZ8pVt,
+title = {{SLD 结冰对舵面翼型及多段翼型的气动影响分析}},
+year = {2017},
+pages = {1--86},
+month = jun
+}
+
+@article{Anonymous:2019fl,
+title = {{变形破碎特性对SLD结冰过程影响_桑为民}},
+year = {2019},
+pages = {1--8},
+month = nov
+}
+
+@article{Anonymous:2019ef,
+title = {{过冷大水滴规章对结冰探测系统设计的影响}},
+year = {2019},
+pages = {1--5},
+month = nov
+}
+
+@article{Du:2014dv,
+author = {Du, Chen Hui and Yu, Jia and Lin, Gui Ping and Shen, Xiao Bin and Bu, Xue Qin},
+title = {{二维翼型大尺寸过冷水滴撞击特性及冰形分析
+}},
+journal = {Hangkong Dongli Xuebao/Journal of Aerospace Power},
+year = {2014},
+volume = {29},
+number = {4},
+pages = {783--791},
+month = jan
+}
+
+@article{Anonymous:AqPXxFZK,
+title = {{严酷结冰气象条件下临界冰形的确定方法}},
+year = {2018},
+pages = {1--5},
+month = oct
+}
+
+@article{Boudala:2019jm,
+author = {Boudala, Faisal and Isaac, George A and Wu, Di},
+title = {{Aircraft Icing Study Using Integrated Observations and Model Data}},
+journal = {Weather and Forecasting},
+year = {2019},
+volume = {34},
+number = {3},
+pages = {485--506},
+month = jun
+}
+
+@article{Anonymous:16R6ZHQU,
+title = {{飞机过冷大粒径水滴结冰 冰型数值模拟}},
+year = {2019},
+pages = {1--4},
+month = apr
+}
+
+@article{Shi:2019ez,
+author = {Shi, Hong and Wang, Junyi and Chen, Jiamin and Ding, Yuanyuan and Zhang, Tong},
+title = {{过冷大水滴条件下结冰相似准则
+}},
+journal = {Hangkong Dongli Xuebao/Journal of Aerospace Power},
+year = {2019},
+volume = {34},
+number = {5},
+pages = {1101--1110},
+month = may
+}
+
+@inproceedings{Avery:2019eg,
+author = {Avery, Alyssa S and Bunting, Lydia and Jacob, Jamey D},
+title = {{Low Altitude Icing for Small Unmanned Aircraft}},
+booktitle = {AIAA Aviation 2019 Forum},
+year = {2019},
+pages = {1--77},
+publisher = {American Institute of Aeronautics and Astronautics},
+address = {Reston, Virginia},
+month = jun
+}
+
+@article{Sun:2019bk,
+author = {Sun, Mingming and Kong, Weiliang and Wang, Fuxin and Liu, Hong},
+title = {{Impact freezing modes of supercooled droplets determined by both nucleation and icing evolution}},
+journal = {International Journal of Heat and Mass Transfer},
+year = {2019},
+volume = {142},
+pages = {118431--9},
+month = oct
+}
+
+@article{Cao:2019ds,
+author = {Cao, Yihua and Xin, Miao},
+title = {{Numerical Simulation of Supercooled Large Droplet Icing Phenomenon: A Review}},
+journal = {Archives of Computational Methods in Engineering},
+year = {2019},
+pages = {1--35},
+month = jul
+}
+
+@inproceedings{vantHoff:2019if,
+author = {van 't Hoff, Stefan and Lammers, Karel and Hwang, Yoo Sang and Kim, Jik Soo and Kim, Kyung Sam},
+title = {{Korean Utility Helicopter KUH-1 Icing Certification Program}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1989--11},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:2019fv,
+title = {{过冷大水滴规章对民机适航取证的影响}},
+year = {2019},
+pages = {1--2},
+month = nov,
+annote = {@article{李艳 2017 过冷大水滴规章对民机适航取证的影响,
+author={李艳},
+title={过冷大水滴规章对民机适航取证的影响},
+journal={中国科技信息},
+year={2017},
+number={10},
+pages={29-30},
+month={6},
+}}
+}
+
+@inproceedings{Jackson:2019gc,
+author = {Jackson, Darren Glenn},
+title = {{The Cloud Detectability Conundrum}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1932--23},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@inproceedings{Ozcer:2019gz,
+author = {Ozcer, Isik and Switchenko, David and Baruzzi, Guido S and Chen, Jian},
+title = {{Multi-Shot Icing Simulations with Automatic Re-Meshing}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1956--15},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@inproceedings{Ratvasky:2019ez,
+author = {Ratvasky, Thomas and Harrah, Steven and Strapp, J Walter and Lilie, Lyle and Proctor, Fred and Strickland, Justin and Hunt, Patricia and Bedka, Kristopher and Diskin, Glenn and Nowak, John B and Bui, T P and Bansemer, Aaron and Dumont, Christopher},
+title = {{Summary of the High Ice Water Content (HIWC) RADAR Flight Campaigns}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--2027--36},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:xTSB4mNG,
+title = {{一种过冷大水滴结冰探测器的设计方法及探测器}},
+year = {2015},
+pages = {1--19},
+month = mar
+}
+
+@article{Anonymous:qEGl5DJo,
+title = {{SLD结冰数值模拟方法研究}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Anonymous:2019bx,
+title = {{飞机结冰热力学行为研究综述}},
+year = {2019},
+pages = {1--12},
+month = mar
+}
+
+@article{Anonymous:wo21EKAt,
+title = {{SLD结冰数值模拟方法研究现状及发展_周志宏}},
+year = {2019},
+pages = {1--1},
+month = nov
+}
+
+@article{Anonymous:QSDHQ4R-,
+title = {{结冰模拟及气动特性分析}},
+year = {2014},
+pages = {1--81},
+month = feb
+}
+
+@article{Sun:2019hq,
+author = {Sun, Mingming and Kong, Weiliang and Wang, Fuxin and Liu, Hong},
+title = {{Effect of nucleation and icing evolution on run-back freezing of supercooled water droplet}},
+journal = {Aerospace Systems},
+year = {2019},
+volume = {2},
+number = {2},
+pages = {147--153},
+month = oct
+}
+
+@article{Anonymous:uMKq3STQ,
+title = {{5-壁面润湿性影响SLD撞击传热规律的研究_孙明明}},
+year = {2019},
+pages = {1--7},
+month = sep,
+annote = {@article{孙明明2019壁面润湿性影响,
+  title={壁面润湿性影响SLD撞击传热规律的研究},
+  author={孙明明 and 孔维梁 and 王福新 and 刘洪},
+  journal={工程热物理学报},
+  year={2019},
+}}
+}
+
+@inproceedings{Orchard:2019ff,
+author = {Orchard, David M and Clark, Catherine and Chevrette, Gislain},
+title = {{Measurement of Liquid Water Content for Supercooled Large Drop Conditions in the NRC{\textquoteright}s Altitude Icing Wind Tunnel}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--2007--8},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:YZ9jVzsj,
+title = {{过冷大水滴条件下机翼结冰数值仿真}},
+year = {2019},
+pages = {1--5},
+month = nov
+}
+
+@article{Anonymous:2019fq,
+title = {{飞机过冷大水滴结冰探测器设计及试验}},
+year = {2019},
+pages = {1--6},
+month = nov
+}
+
+@article{Xu:2019jr,
+author = {Xu, Mei and Thompson, Gregory and Adriaansen, Daniel R and Landolt, Scott D},
+title = {{On the Value of Time-Lag-Ensemble Averaging to Improve Numerical Model Predictions of Aircraft Icing Conditions}},
+journal = {Weather and Forecasting},
+year = {2019},
+volume = {34},
+number = {3},
+pages = {507--519},
+month = jun
+}
+
+@article{Anonymous:2019gy,
+title = {{六角冰晶生长过程的相场模拟}},
+year = {2019},
+pages = {1--6},
+month = nov,
+annote = {@article{韩端锋 2019 六角冰晶生长过程的相场模拟,
+author={韩端锋 and 王永魁 and 鞠磊 and 王庆 and 王春阳},
+title={六角冰晶生长过程的相场模拟},
+journal={哈尔滨工程大学学报},
+year={2019},
+volume={40},
+number={9},
+pages={1537-1542},
+month={9},
+}}
+}
+
+@article{Pendenza:2015gm,
+author = {Pendenza, Andrew and Habashi, Wagdi G and Fossati, Marco},
+title = {{A 3D mesh deformation technique for irregular in-flight ice accretion}},
+journal = {International Journal for Numerical Methods in Fluids},
+year = {2015},
+volume = {79},
+number = {5},
+pages = {215--242},
+month = jun
+}
+
+@article{Anonymous:uxcmeVaP,
+title = {{结冰风洞中 SLD 模拟方法及其实验验证研究
+}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Anonymous:be8WoPvL,
+title = {{适航需求的大型客机翼型结冰安全性研究}},
+year = {2013},
+pages = {1--86},
+month = feb
+}
+
+@article{Anonymous:G0hc6Hy2,
+title = {{翼型表面过冷大水滴的水滴收集系数求解_束珺}},
+year = {2019},
+pages = {1--1},
+month = nov
+}
+
+@article{Anonymous:_aiFqz8F,
+title = {{发动机进气流量对前缘水滴撞击特性的影响}},
+year = {2019},
+pages = {1--6},
+month = nov
+}
+
+@article{Anonymous:2019hy,
+title = {{浅析过冷大水滴规章对防冰系统设计的影响}},
+year = {2019},
+pages = {1--5},
+month = nov
+}
+
+@article{Wang:2019im,
+author = {Wang, Qiao and Zhao, Xianli and Liu, Senyun and Xiao, Jingping and Ma, Junlin},
+title = {{粗糙度对水滴飞溅特性的影响规律研究
+}},
+journal = {Kongqi Donglixue Xuebao/Acta Aerodynamica Sinica},
+year = {2019},
+volume = {37},
+number = {1},
+pages = {147--152},
+month = feb
+}
+
+@article{Anonymous:kGy2gPoT,
+title = {{发动机整流支板大尺寸过冷水滴撞击特性}},
+year = {2015},
+pages = {1--8},
+month = feb
+}
+
+@article{Anonymous:PqGwWa5n,
+title = {{水滴撞击特性的重力影响分析}},
+year = {2010},
+pages = {1--5},
+month = sep
+}
+
+@article{Cui:2019jb,
+author = {Cui, Xiangda and Bakkar, Ahmed and Habashi, Wagdi George},
+title = {{A multiphase SPH framework for supercooled large droplets dynamics}},
+journal = {International Journal of Numerical Methods for Heat {\&} Fluid Flow},
+year = {2019},
+volume = {29},
+number = {7},
+pages = {2434--2449},
+month = jul
+}
+
+@inproceedings{Sor:2019bw,
+author = {Sor, Suthyvann and Garcia-Magari{\~n}o, Adelaida and Velazquez, Angel},
+title = {{A Study of Droplet Breakup in the Vicinity of an Airfoil}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--2000--12},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:2019fu,
+title = {{过冷大水滴变形与破碎的影响因素}},
+year = {2019},
+pages = {1--9},
+month = may
+}
+
+@article{Fu:2017ch,
+author = {Fu, Cheng and Song, Wenping and Peng, Qiang and Liao, Daxiong and Wang, Chao},
+title = {{结冰风洞过冷大水滴结冰条件模拟能力综述
+}},
+journal = {Shiyan Liuti Lixue/Journal of Experiments in Fluid Mechanics},
+year = {2017},
+volume = {31},
+number = {4},
+pages = {1--7},
+month = aug
+}
+
+@inproceedings{Anderson:2019gt,
+author = {Anderson, Kaare J and Ray, Mark D},
+title = {{SLD and Ice Crystal Discrimination with the Optical Ice Detector}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1934--10},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@inproceedings{Hassler:2019jx,
+author = {Hassler, Wolfgang},
+title = {{A Refined In-Flight Icing Model and its Numerical Implementation}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1937--15},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:2019ez,
+title = {{结冰适航规章差异初步研究与分析}},
+year = {2019},
+pages = {1--5},
+month = nov
+}
+
+@article{Stiti:2019bg,
+author = {Stiti, M},
+title = {{Temperature measurement and state determination of supercooled droplets using laser-induced fluorescence}},
+journal = {Experiments in Fluids},
+year = {2019},
+volume = {60},
+number = {4},
+pages = {1--13},
+month = apr
+}
+
+@article{Anonymous:XuuL53cw,
+title = {{一种图像式过冷大水滴结冰探测系统}},
+year = {2015},
+pages = {1--5},
+month = dec
+}
+
+@inproceedings{McClain:2019ja,
+author = {McClain, Stephen T and Vargas, Mario and Tsao, Jen Ching and Broeren, Andy},
+title = {{Influence of Freestream Temperature on Ice Accretion Roughness}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1993--11},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Bachelor:2019bt,
+author = {Bachelor, Gray and Brusa, Eugenio and Ferretto, Davide and Mitschke, Andreas},
+title = {{Model-Based Design of Complex Aeronautical Systems Through Digital Twin and Thread Concepts}},
+journal = {IEEE Systems Journal},
+year = {2019},
+volume = {PP},
+number = {99},
+pages = {1--12},
+month = sep
+}
+
+@inproceedings{Leader:2019id,
+author = {Leader, Robert and Takahashi, Timothy T},
+title = {{Frosty Weather: The Regulatory History of Aircraft Operations in Freezing Conditions}},
+booktitle = {AIAA Scitech 2019 Forum},
+year = {2019},
+pages = {44466--15},
+publisher = {American Institute of Aeronautics and Astronautics},
+address = {Reston, Virginia},
+month = jan
+}
+
+@inproceedings{Deiler:2019dz,
+author = {Deiler, Christoph and Ohme, Per and Raab, Christian and Mendonca, Celso and Silva, Daniel},
+title = {{Facing the Challenges of Supercooled Large Droplet Icing: Results of a Flight Test Based Joint DLR-Embraer Research Project}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--1988--13},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{张洪过冷大水滴结冰探测技术研究进展2016,
+title={过冷大水滴结冰探测技术研究进展},
+journal={实验流体力学},
+number={3},
+pages={33-39},
+author = {张洪 and 张文倩 and 郑英},
+year = {2016},
+month = 6,
+doi = 10.11729/syltlx20160037;,
+file = {"/Users/xin/Documents/SLD/docs/references/CN/2016/过冷大水滴结冰探测技术研究进展_张洪.pdf"},
+group = {SLD},
+}
+
+@inproceedings{Zhang:2019jc,
+author = {Zhang, Chen and Hu, Shufan and Li, Yanxin and Liu, Hong and Xu, Wenhao},
+title = {{Modal Analysis of 3-D iced-airfoil aerodynamics based on Proper Orthogonal Decomposition Techniques}},
+booktitle = {AIAA Scitech 2019 Forum},
+year = {2019},
+pages = {980490--11},
+publisher = {American Institute of Aeronautics and Astronautics},
+address = {Reston, Virginia},
+month = jan
+}
+
+@inproceedings{Breitfuss:2019ky,
+author = {Breitfu{\ss}, Wolfgang and Wannemacher, Michael and Kn{\"o}bl, Florian and Ferschitz, Hermann},
+title = {{Aerodynamic Comparison of Freezing Rain and Freezing Drizzle Conditions at the RTA Icing Wind Tunnel}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--2023--11},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{Anonymous:ldievrI0,
+title = {{一种过冷大水滴结冰探测器}},
+year = {2016},
+pages = {1--18},
+month = dec
+}
+
+@inproceedings{Caraeni:2019gd,
+author = {Caraeni, Daniela and Bakkar, Ahmed and Habashi, Wagdi G},
+title = {{Correction: Fluid-Structure Interaction Extended-FEM Approach to Air-Ice Solidification}},
+booktitle = {AIAA Scitech 2019 Forum},
+year = {2019},
+pages = {1--1},
+publisher = {American Institute of Aeronautics and Astronautics},
+address = {Reston, Virginia},
+month = jan
+}
+
+@article{Shinan:2019kh,
+author = {Shinan, Chang and Liang, Ding and Mengjie, Song and Mengyao, Leng},
+title = {{Numerical investigation on impingement dynamics and freezing performance of micrometer-sized water droplet on dry flat surface in supercooled environment}},
+journal = {International Journal of Multiphase Flow},
+year = {2019},
+volume = {118},
+pages = {150--164},
+month = sep
+}
+
+@article{Anonymous:2019il,
+title = {{基于后流特性的SLD结冰探测数值研究_祁相莹}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Anonymous:9XktduFF,
+title = {{关于过冷大水滴的适航规章新趋势和影响解析}},
+year = {2019},
+pages = {1--1},
+month = nov
+}
+
+@article{Anonymous:Z_Si_Ruh,
+title = {{水滴撞击飞溅效应对过冷大水滴结冰影响研究}},
+year = {2019},
+pages = {1--8},
+month = jun
+}
+
+@inproceedings{Porter:2019gb,
+author = {Porter, Christopher},
+title = {{Predicted Ice Shape Formations on a Boundary Layer Ingesting Engine Inlet}},
+booktitle = {International Conference on Icing of Aircraft, Engines, and Structures},
+year = {2019},
+pages = {2019--01--2025--10},
+publisher = {SAE International},
+address = {400 Commonwealth Drive, Warrendale, PA, United States},
+month = jun
+}
+
+@article{吴俊杰2019机翼结冰过程中过冷水滴运动轨迹的数值研究,
+title = {{机翼结冰过程中过冷水滴运动轨迹的数值研究}},
+year = {2019},
+author={吴俊杰 and 陈志超 and 姚若鹏 and 袁敏},
+title={机翼结冰过程中过冷水滴运动轨迹的数值研究},
+journal={武汉大学学报（工学版）},
+volume={52},
+number={3},
+pages={277-282},
+month={5},
+file = {"/Users/xin/Documents/SLd/docs/references/cn/2019/10-机翼结冰过程中过冷水滴运动轨迹的数值研究_吴俊杰2019-3.pdf"},
+group = {SLD},
+}
+
+@article{Anonymous:2019bh,
+title = {{过冷大水滴相继撞壁对结冰影响的实验研究}},
+year = {2019},
+pages = {1--7},
+month = apr
+}
+
+@article{Anonymous:aFQyPIRX,
+title = {{大粒径过冷水滴结冰模拟破碎模型研究}},
+year = {2019},
+pages = {1--7},
+month = nov
+}
+
+@article{Burzynski:2019jm,
+author = {Burzynski, David A and Bansmer, Stephan E},
+title = {{Role of surrounding gas in the outcome of droplet splashing}},
+year = {2019},
+pages = {1--10},
+month = jul
+}
+
+@inproceedings{GarciaMagarino:2019dg,
+author = {Garcia-Magari{\~n}o, Adelaida and Sor, Suthyvann and Velazquez, Angel},
+title = {{Droplet Breakup Onset Modeling in Combination with Droplet Ratio Deformation Model}},
+booktitle = {AIAA Aviation 2019 Forum},
+year = {2019},
+pages = {289--10},
+publisher = {American Institute of Aeronautics and Astronautics},
+address = {Reston, Virginia},
+month = jun
+}
+
+@inproceedings{ikiades04_fiber,
+  author =       {Aris A. Ikiades and David J. Armstrong and George G. Hare and Mary Konstantaki and Samuel D. Crossley},
+  title =        {Fiber optic sensor technology for air conformal ice detection},
+  booktitle =    {Industrial and Highway Sensors Technology},
+  year =         2004,
+  pages =        {nil},
+  doi =          {10.1117/12.516910},
+  url =          {https://doi.org/10.1117/12.516910},
+  DATE_ADDED =   {Thu Nov 26 14:05:09 2020},
+  month =        3,
+}
+
+
+@article{politovich00_predic_glaze_or_rime_ice_growt_airfoil,
+  author =       {Marcia K. Politovich},
+  title =        {Predicting Glaze Or Rime Ice Growth on Airfoils},
+  journal =      {Journal of Aircraft},
+  volume =       37,
+  number =       1,
+  pages =        {117-121},
+  year =         2000,
+  doi =          {10.2514/2.2570},
+  url =          {https://doi.org/10.2514/2.2570},
+  DATE_ADDED =   {Mon Nov 30 10:09:21 2020},
+}
+
+@inproceedings{guangyuan2004,
+doi = {10.3969/j.issn.1006-883X.2004.11.002},
+title = {光纤传感器中光源的选用及比较},
+author = {方宏and秦曦and裴丽and简水生},
+journal = {传感器世界},
+year = {2004},
+issue = {11},
+pages = {13-17},
+keywords = {光纤传感器;光源;面发射激光器;光子晶体激光器},
+abstract = {在光纤传感器的设计中,光源的选择至关重要,本文对几种常用光源的基本发光机理进行了描述,对其主要特性、适用场合等进行了分析和比较,介绍了几种新型的激光器,并对光纤传感器用光源下一步的发展做出了预测和展望,本文的分析对设计光纤传感器时光源的选择具有一定的参考价值},
+ISBN/ISSN = {1006-883X},
+}
