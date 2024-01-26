@@ -1,0 +1,21 @@
+docker pull nginx
+docker images
+
+# 生成容器
+docker run --name nginx -p 9001:80 -d nginx
+# 将容器nginx.conf文件复制到宿主机
+docker cp nginx:/etc/nginx/nginx.conf /root/Documents/orgible/org-mode-blog/nginx/conf/nginx.conf
+# 将容器conf.d文件夹下内容复制到宿主机
+docker cp nginx:/etc/nginx/conf.d /root/Documents/orgible/org-mode-blog/home/nginx/conf/conf.d
+# 将容器中的html文件夹复制到宿主机
+# docker cp nginx:/usr/share/nginx/html /home/nginx/
+
+docker run \
+-p 8080:80 \
+--restart=always \
+--name nginx \
+-v /root/Documents/orgible/org-mode-blog/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /root/Documents/orgible/org-mode-blog/nginx/conf/conf.d:/etc/nginx/conf.d \
+-v /root/Documents/orgible/org-mode-blog/nginx/log:/var/log/nginx \
+-v /root/Documents/orgible/org-mode-blog:/usr/share/nginx/html \
+-d nginx:latest

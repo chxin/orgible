@@ -1,0 +1,3 @@
+docker pull diygod/rsshub
+docker run -d --name rsshub -p 8200:1200 --restart=always diygod/rsshub
+

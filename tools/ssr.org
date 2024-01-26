@@ -1,0 +1,2 @@
+
+docker run -d --name ss-libev --restart always -p 8090:8090 -p 8090:8090/udp -v /root/Documents/orgible/tools/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
