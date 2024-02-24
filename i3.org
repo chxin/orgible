@@ -19,6 +19,7 @@ sudo yum clean all && yum update -y && yum upgrade -y
 sudo yum install -y xorg-x11-server-Xorg xorg-x11-drv-vmware xorg-x11-drv-vmmouse xorg-x11-drv-evdev mesa-dri-drivers xorg-x11-xinit-session xterm
 sudo yum install -y dejavu-sans-fonts dejavu-sans-mono-fonts dejavu-serif-fonts
 sudo yum install -y i3 i3status lightdm dmenu
+sudo yum install -y xdg-utils
 sudo systemctl set-default graphical.target
 ** init
 sudo systemctl isolate graphical.target
