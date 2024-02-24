@@ -1,0 +1,86 @@
+* virtual box
+** 安装增强功能
+sudo mount /dev/cdrom /mnt
+sudo /mnt/VBoxLinuxAdditions.run
+* emacs
+sudo yum install vim emacs git
+** spacemacs
+*** prepare
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d --depth=1
+git checkout develop
+sudo yum install -y tar
+*** install all dependence
+emacs
+* i3
+** install
+sudo yum install -y epel-release
+sudo dnf config-manager --enable crb
+sudo yum clean all && yum update -y && yum upgrade -y
+sudo yum install -y xorg-x11-server-Xorg xorg-x11-drv-vmware xorg-x11-drv-vmmouse xorg-x11-drv-evdev mesa-dri-drivers xorg-x11-xinit-session xterm
+sudo yum install -y dejavu-sans-fonts dejavu-sans-mono-fonts dejavu-serif-fonts
+sudo yum install -y i3 i3status lightdm dmenu
+sudo systemctl set-default graphical.target
+** init
+sudo systemctl isolate graphical.target
+vim ~/.xinitrc
+add "exec i3"
+
+vim ~/.bash_profile
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+** font
+yum install -y langpacks-en
+/etc/locale.conf
+
+LANG=en_US.UTF-8
+LC_ADDRESS=en_US.UTF-8
+LC_IDENTIFICATION=en_US.UTF-8
+LC_MEASUREMENT=en_US.UTF-8
+LC_MONETARY=en_US.UTF-8
+LC_NAME=en_US.UTF-8
+LC_NUMERIC=en_US.UTF-8
+LC_PAPER=en_US.UTF-8
+LC_TELEPHONE=en_US.UTF-8
+LC_TIME=en_US.UTF-8
+
+sudo yum install -y google-noto-*
+sudo yum -y install adobe-source-sans-pro-fonts.noarch  adobe-source-code-pro-fonts.noarch 
+** cfg
+[[/home/chxin/Documents/_config/i3/config]]
+https://zjuyk.site/i3wm-userguide-zh/%E4%BD%BF%E7%94%A8i3/%E4%BD%BF%E7%94%A8i3.html
+** i3status
+wget https://www.fontsplace.com/free/fonts/u/urw_gothic_l_book.ttf
+wget https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SourceCodePro.zip
+
+** compton透明度
+  git clone https://github.com/chjj/compton.git
+  cd compton/
+  sudo yum install libdrm-devel libX11-devel libX11-xcb.i686 libXtst-devel libXcomposite-devel libXdamage-devel libXrender-devel libXrandr-devel libXinerama-devel libconfig-devel dbus-devel mesa-libGL-devel mesa-libGLU-devel  -y
+  make -j4
+  sudo make docs
+  sudo make install
+* alacritty
+** install
+dnf install cmake freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel
+dnf group install "Development Tools"
+git clone https://github.com/alacritty/alacritty.git --depth=1
+cargo build --release
+** cfg
+https://alacritty.org/config-alacritty.html
+** font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip
+unzip FiraCode.zip
+cp -r FiraCode/* ~/.fonts/
+fc-cache -fv
+
+* vnc
+  https://www.tecmint.com/install-and-configure-vnc-server-in-centos-7/
+  vi /etc/tigervnc/vncserver.users
+  add :1=chxin
+  
+
+  virtual box will create =:5901= for vncserver:1
+
+  sudo systemctl enable --now vncserver@:1

@@ -1,0 +1,20 @@
+* usage
+  管理dotfile，产生链接放到对应的目录
+  例如，.zshrc在dotfile/zsh目录下，应该放到$HOME目录，可以在dotfile目录下用命令 stow -t $HOME zsh
+* init
+
+#+BEGIN_SRC shell :tangle ~/Documents/Garage/dotfiles/stow.sh
+  # list=(zsh git tmux nvim ranger conda)
+  # for i in ${list[*]}; do
+  #     stow -t $HOME $i || exit -1
+  # done
+
+  list=(i3 i3status polybar alacritty ranger tmux)
+  for i in ${list[*]}; do
+      stow -t $HOME/.config/$i $i || exit -1
+  done
+#+END_SRC
+
+#+PROPERTY: tangle $HOME/Documents/Garage/dotfiles/stow.sh
+#+PROPERTY: comments org
+#+PROPERTY: shebang #!/bin/ruby
